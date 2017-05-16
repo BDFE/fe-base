@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试道路名</title>
+    <link rel="stylesheet" href="http://minedata.cn/minemapapi/v1.3/minemap.css">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+    <script src="http://minedata.cn/minemapapi/v1.3/minemap.js"></script>
+    <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="map">
+</div>
+<script>
+    //在本地开发时，除了要写  下面第一行和第二行必要代码之外，需要专门指定本地服务的地址，如第三行。
+    minemap.accessToken = '25cc55a69ea7422182d00d6b7c0ffa93';
+    minemap.solution = 307;
+
+    var map = new minemap.Map({
+        container: 'map',
+        style: 'http://minedata.cn/service/solu/style/id/307',
+        center: [116.4128023, 39.9049085],
+        zoom: 4,
+        pitch: 60
+    });
+    map.addControl(new minemap.Navigation(), 'bottom-right');
+    map.addControl(new minemap.Fullscreen(), 'bottom-left');
+
+    var start = [{name: '北京', lngLat: [116.406658, 39.898668], code: 1},
+        {name: '上海', lngLat: [121.53178, 31.205854], code: 2},
+        {name: '成都', lngLat: [103.865765, 30.678178], code: 3},
+        {name: '兰州', lngLat: [103.602093, 36.10469], code: 4}
+    ];
+
+    var end = [{name: '沈阳', lngLat: [123.377483, 41.67505]},
+        {name: '上海', lngLat: [121.53178, 31.205854]},
+        {name: '天津', lngLat: [117.210061, 39.135884]},
+        {name: '武汉', lngLat: [114.236858, 30.489018]},
+        {name: '成都', lngLat: [103.865765, 30.678178]},
+        {name: '昆明', lngLat: [102.811077, 24.889034]},
+        {name: '西安', lngLat: [108.743694, 34.273202]},
+        {name: '石家庄', lngLat: [114.324749, 37.963781]},
+        {name: '长沙', lngLat: [112.874554, 28.46155]},
+        {name: '拉萨', lngLat: [91.077679, 29.575947]},
+        {name: '福州', lngLat: [119.158733, 25.921101]},
+        {name: '香港', lngLat: [114.280804, 22.312075]},
+        {name: '澳门', lngLat: [113.54909, 22.198951]},
+        {name: '广州', lngLat: [113.258924, 23.151776]},
+        {name: '海口', lngLat: [110.19389, 20.017336]},
+        {name: '兰州', lngLat: [103.602093, 36.10469]},
+        {name: '贵阳', lngLat: [106.702359, 26.556565]},
+        {name: '南宁', lngLat: [108.314838, 22.826993]},
+        {name: '西宁', lngLat: [101.814342, 36.620174]},
+        {name: '哈尔滨', lngLat: [126.630806, 45.760082]},
+        {name: '长春', lngLat: [125.324537, 43.911417]},
+        {name: '杭州', lngLat: [120.213064, 30.291119]},
+        {name: '合肥', lngLat: [117.316933, 31.88513]},
+        {name: '南昌', lngLat: [115.919645, 28.661914]},
+        {name: '南京', lngLat: [118.797452, 32.087274]},
+        {name: '济南', lngLat: [116.991291, 36.670906]},
+        {name: '银川', lngLat: [106.17397, 38.491916]},
+        {name: '呼和浩特', lngLat: [111.66551, 40.831319]},
+        {name: '太原', lngLat: [112.610223, 37.791079]},
+        {name: '台北', lngLat: [121.515392, 24.995317]},
+        {name: '乌鲁木齐', lngLat: [87.69389, 43.709663]}]
+
+    var featureCollection = {
+        type: 'FeatureCollection',
+        features: []
+    }
+
+    function genGeo(start, end) {
+
+        for (var i = 0; i < start.length; i++) {
+            var startItem = start[i];
+            for (var j = 0; j < end.length; j++) {
+                var endItem = end[j];
+                spliteLineAndGenGeo(startItem.lngLat, endItem.lngLat, startItem.code);
+            }
+        }
+        console.log(featureCollection);
+    }
+
+    function spliteLineAndGenGeo(s, e, code) {
+
+        var dlng = e[0] - s[0]
+        var dlat = e[1] - s[1]
+        var seg = 100;
+        var count = Math.round(Math.random() * 100);
+
+        for (var i = 0; i < seg; i++) {
+            /**
+             * 航线最大高度
+             */
+            var height = 2000;
+            /**
+             * 抛物线计算方程
+             * @type {number}
+             */
+            var a = -4 * height / Math.pow(e[0] - s[0], 2);
+            var b = -a * (e[0] + s[0]);
+            var c = a * e[0] * s[0];
+            /**
+             * 航线每段geom
+             * @type {{type: string, geometry: {type: string, coordinates: [*]}, properties: {start_height: number, end_height: number, count: number, code: *}}}
+             */
+            var geom = {
+                "type": "Feature",
+                "geometry": {
+                    "type": "LineString",
+                    "coordinates": [
+                        [s[0] + i * dlng / seg, s[1] + i * dlat / seg], [s[0] + (i + 1) * dlng / seg, s[1] + (i + 1) * dlat / seg]
+                    ]
+                },
+                "properties": {
+                    "start_height": a * Math.pow(s[0] + i * dlng / seg, 2) + b * (s[0] + i * dlng / seg) + c,
+                    "end_height": a * Math.pow(s[0] + (i + 1) * dlng / seg, 2) + b * (s[0] + (i + 1) * dlng / seg) + c,
+                    "count": count,
+                    "code" : code
+                }
+            }
+            featureCollection.features.push(geom);
+        }
+    }
+
+    genGeo(start, end);
+
+    map.on("load", function () {
+        map.addSource("airLineSource", {
+            "type": "geojson",
+            'data': featureCollection
+        })
+
+        map.addLayer({
+            "id": "airlineLayer",
+            "type": "airline",
+            "source": "airLineSource",
+            "paint": {
+                'airline-seg-count': 3000,
+                'airline-speed': 30,
+                "airline-color": {
+                    "property": "count",
+                    "stops": [
+                        [0, '#C8F9F9'],
+                        [10, '#7FFFD4'],
+                        [20, '#90EE90'],
+                        [30, '#A8D032'],
+                        [80, '#FFFF00'],
+                        [100, '#FFD700']
+                    ]
+                },
+                "airline-width": 1,
+                'airline-opacity': 1
+            },
+            minzoom: 1,
+            maxzoom: 8
+        });
+
+//        var code = 1;
+//        setInterval(function () {
+//            code++;
+//            code = code == 5 ? 1 : code;
+//            map.setFilter('airlineLayer', ['==', 'code', code])
+//        }, 1000);
+
+    });
+
+</script>
+</body>

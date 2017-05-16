@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基础地图</title>
+    <link rel="stylesheet" href="http://minedata.cn/minemapapi/v1.1/minemap.css">
+    <script src="../../dist/minemap-dev.js"></script>
+    <link rel="stylesheet" href="lib/d3/d3.slider.css"/>
+    <script src="lib/d3/event.js"></script>
+    <script src="lib/d3/d3.v3.min.js"></script>
+    <script src="lib/d3/d3.slider.js"></script>
+    <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #attrib {
+            font-size: 12px;
+            color: white;
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            z-index: 1;
+        }
+        #attrib span{
+            display: block;
+        }
+        #origin-time {
+            font-size: 12px;
+            color: white;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1;
+        }
+
+        #overlay {
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        #display_img {
+            margin-top: 270px;
+            cursor: pointer;
+        }
+
+        #display_img:hover {
+            background-color: #999999;
+            border-radius: 2em;
+        }
+
+        .wrapper {
+            width: 600px;
+            bottom: 0;
+            left: 350px;
+            position: absolute;
+            color: white;
+        }
+
+        .wrapper > :first-child {
+            padding: 0 0 10px 40px;
+            display: none;
+        }
+
+        .wrapper > :last-child {
+            margin: 5px 0px;
+        }
+
+        .wrapper text {
+            fill: white;
+        }
+
+        #slidertext {
+            color: red;;
+        }
+    </style>
+</head>
+<body>
+<div id="map">
+    <div id="origin-time"></div>
+    <div id="attrib">
+        <img src="image/fantong.png">
+        <span>&copy;&nbsp;MineMap</span>
+    </div>
+</div>
+<div class="wrapper">
+    <div>轨迹运行时长：<span id="slidertext">0</span>min</div>
+    <div id="slider"></div>
+</div>
+<script>
+
+    var slider = d3.slider().min(0).max(60).ticks(12).showRange(true);
+    d3.select('#slider').call(slider);
+
+    EventObj.regist('value', function (e) {
+        document.getElementById('slidertext').innerText = parseInt(e.args.data);
+    });
+
+    //注册触发事件
+    document.getElementsByClassName('dragger')[0].onclick = function () {
+        map.repaint = !map.repaint;
+    }
+
+    minemap.accessToken = '0b871b483cfb42a7b0dd73b5f78792e8';
+    minemap.solution = 66;
+    minemap.TRW = {
+        setProgress: function (value) {
+            if (map.repaint) {
+                slider.setValue(value / 10.0);
+            }
+        }
+    }
+    var map = new minemap.Map({
+        container: 'map',
+        style: "http://minedata.cn/service/solu/style/id/491",
+        center: [116.34952, 39.89678],
+        zoom: 11,
+        pitch: 38,
+        bearing: 70
+    });
+
+    //map.showTileBoundaries = true;
+    map.on('load', function () {
+        map.addSource("tracking", {
+            'type': 'vector',
+            'tiles': ['http://123.207.109.239:8086/test_spring_boot-0.0.1-SNAPSHOT/test/trackinghistory50/{z}/{x}/{y}/didi_history_track2']
+        })
+
+        map.addLayer({
+            "id": "lines1",
+            "type": "tracking",
+            "source": "tracking",
+            "source-layer": "link",
+            "layout": {
+                "tracking-join": "round",
+                "tracking-cap": "round"
+            },
+            "paint": {
+                'tracking-type': 'history',
+                'tracking-seg-count': 600,
+                'tracking-speed': 20,
+                "tracking-color": "#63B8FF",
+                "tracking-width": 14,
+                'tracking-opacity': 0.02
+            }
+        })
+        map.addLayer({
+            "id": "lines",
+            "type": "tracking",
+            "source": "tracking",
+            "source-layer": "link",
+            "layout": {
+                "tracking-join": "round",
+                "tracking-cap": "round"
+            },
+            "paint": {
+                'tracking-type': 'history',
+                'tracking-seg-count': 600,
+                'tracking-speed': 20,
+                "tracking-color": "#63B8FF",
+                "tracking-width": 3,
+                'tracking-opacity': 0.5
+            }
+        })
+
+    });
+
+</script>
+</body>

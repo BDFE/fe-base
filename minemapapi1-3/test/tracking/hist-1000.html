@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基础地图</title>
+    <link rel="stylesheet" href="http://minedata.cn/minemapapi/v1.1/minemap.css">
+    <script src="../../dist/minemap-dev.js"></script>
+    <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #attrib {
+            font-size: 12px;
+            color: white;
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            z-index: 1;
+        }
+
+        #origin-time {
+            font-size: 12px;
+            color: white;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+<div id="map">
+    <div id="origin-time">2016.11.11</div>
+    <div id="attrib">©MineData ©DiDi</div>
+
+</div>
+
+<script>
+
+
+    minemap.accessToken = '0b871b483cfb42a7b0dd73b5f78792e8';
+    minemap.solution = 66;
+
+    var map = new minemap.Map({
+        container: 'map',
+        style: "http://minedata.cn/service/solu/style/id/491",
+        center: [116.34952, 39.89678],
+        zoom: 11,
+        pitch: 38,
+        bearing: 70
+    });
+    map.repaint = true;
+    //map.showTileBoundaries = true;
+    map.on('load', function () {
+        map.addSource("tracking", {
+            'type': 'vector',
+            'tiles': [getQueryString('service') || 'http://123.207.124.207:8083/mapspotter/view/labdynamic/{z}/{x}/{y}']
+        })
+        map.addSource("area", {
+            'type': 'vector',
+            'tiles': [getQueryString('service') || 'http://123.207.124.207:8083/mapspotter/view/labstatic/{z}/{x}/{y}']
+        })
+        map.addLayer({
+            "id": "area",
+            "type": "fill",
+            "source": "area",
+            "source-layer": "SEArea",
+            "paint": {
+                "fill-color": "red",
+                "fill-opacity": 0.3
+            }
+        })
+        map.addLayer({
+            "id": "line",
+            "type": "line",
+            "source": "area",
+            "source-layer": "track",
+            "paint": {
+                "line-color": "green"
+            }
+        })
+        map.addLayer({
+            "id": "lines",
+            "type": "tracking",
+            "source": "tracking",
+            "source-layer": "track",
+            "layout": {
+                "tracking-join": "round",
+                "tracking-cap": "round"
+            },
+            "paint": {
+                'tracking-type': 'history',
+                'tracking-seg-count': 600,
+                'tracking-speed': 100,
+                "tracking-color": "#ff00ff",
+                "tracking-width": 1,
+                'tracking-opacity': 1
+            }
+        })
+
+    });
+
+
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null)return unescape(r[2]);
+        return null;
+    }
+
+</script>
+</body>

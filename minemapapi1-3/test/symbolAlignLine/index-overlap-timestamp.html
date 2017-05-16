@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>车辆跟踪</title>
+    <link rel="stylesheet" href="http://minedata.cn/minemapapi/v1.2/minemap.css">
+    <script src="../../dist/minemap.js"></script>
+    <style>
+        html,
+        body,
+        #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+<div id="map"></div>
+<script>
+
+    //    开始时间  1487224800000     结束时间1487224800000   url   trackingpoc/{z}/{x}/{y}/10101010010101/400
+
+    minemap.accessToken = 'e9b8baf97fba4f0cad278f1b3dd47ffe';
+    minemap.solution = 745;
+
+    minemap.TRW = {
+        request: function () {
+            state.sourceName = state.order === 'symtracking' ? 'symtracking-replace' : 'symtracking';
+            state.layerName = state.sourceName + 'layer';
+            var _t = getTimestamp();
+            state.addSource(map, state.sourceName, _t, 1 * 60);
+            state.addLayer(map, state.layerName, state.sourceName, state.backgroundId);
+        },
+        replace: function () {
+
+            //替换删除的图层
+            map.removeSource(state.removeSource);
+            map.removeLayer(state.removeLayer);
+            state.removeSource = state.sourceName;
+            state.removeLayer = state.layerName;
+            //先把后台的移动到前台
+            map.moveLayer(state.layerName, state.frontId);
+            state.order === 'symtracking' ? state.order = 'symtracking-replace' : state.order = 'symtracking';
+        }
+    }
+
+    var map = new minemap.Map({
+        container: 'map',
+        style: "http://minedata.cn/service/solu/style/id/745",
+        center: [116.473783, 40.035983],
+        zoom: 12,
+        pitch: 0,
+        maxZoom: 16
+    });
+    map.repaint = true;
+
+    map.on('load', function () {
+        var _t = getTimestamp();
+        state.addSource(map, state.sourceName, _t, 1 * 60);
+
+        state.addLayer(map, state.layerName, state.sourceName);
+    });
+
+    function getTimestamp() {
+        return parseInt((new Date()).getTime() / 1000 / 20) * 20 * 1000;
+    }
+
+    var state = (function () {
+        var state = {
+            order: 'symtracking',
+            sourceName: 'symtracking',
+            layerName: 'symtrackinglayer',
+            removeSource: 'symtracking',
+            removeLayer: 'symtrackinglayer',
+            backgroundId: 'a48827ebe4b14a0093262f7b874ffbe4',
+            frontId: 'f1801c50931344b1b12ef545b349028d',
+            _offset: 1487225340000
+        };
+
+        state.addLayer = function (map, layerName, sourceName, layerBefore) {
+            map.addLayer({
+                "type": "symtracking",
+                "source": sourceName,
+                "id": layerName,
+                "source-layer": "link",
+                "layout": {
+                    "icon-image": "n-vehicle",
+                    "icon-allow-overlap": false,
+                    "icon-ignore-placement": true,
+                    "symbol-avoid-edges": false,
+                    "symbol-placement": "line",
+                    "symtracking-fps": 1,
+                    "symtracking-time-segment": 20
+                },
+                "paint": {
+                    "icon-color": "blue"
+                }
+            }, layerBefore);
+        }
+
+        state.addSource = function (map, sourceName, timestamp, offset) {
+            map.addSource(sourceName, {
+                'type': 'vector',
+                'tiles': ['http://123.207.109.239:8082/test/trackingpoctb/{z}/{x}/{y}' + (timestamp ? '/' + timestamp : '') + (offset ? '/' + offset : '')]
+            })
+        }
+
+        return state;
+    })();
+</script>
+</body>
