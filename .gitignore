@@ -2,4 +2,5 @@
 *.log
 minemapapi1-3/node_modules.zip
 minemapapi1-3/node_modules
+minemapapi1-3/node_modules/*
 minemapapi1-3/*.log
