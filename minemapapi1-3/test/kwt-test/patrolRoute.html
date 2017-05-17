@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>路径规划</title>
+    <link rel="stylesheet" href="http://minedata.cn/minemapapi/v1.1/minemap.css">
+    <!--<script src="http://minedata.cn/minemapapi/v1.1/minemap.js"></script>-->
+    <script src="../../dist/minemap-dev.js"></script>
+
+    <style>
+
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .distance-container {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+        }
+
+        .distance-container > * {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            font-size: 11px;
+            line-height: 18px;
+            display: block;
+            margin: 0;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+
+    </style>
+</head>
+
+<body>
+<div id='map'></div>
+<div id='distance' class='distance-container'></div>
+
+<script>
+    minemap.accessToken = '0b871b483cfb42a7b0dd73b5f78792e8';
+    minemap.solution = 66;
+    var map = new minemap.Map({
+        container: 'map',
+        style: "http://minedata.cn/service/solu/style/id/66",
+        center: [109.850705, 40.657452],
+        zoom: 16,
+        pitch: 0
+    });
+    var route_colletions = {
+        "type": "geojson",
+        "data": {
+            "type": "FeatureCollection",
+            "features": []
+        }
+    };
+    var measureDistance = new minemap.MeasureDistanceTool(map)
+    //内部传回来的数据格式同route_colletions
+    var patrolRoutePlan = new minemap.PatrolRoutePlanTool(map)
+    var distanceContainer = document.getElementById('distance');
+    var allPoints = []
+    var lastPoints  = []
+    var lastRouteFeatureLenth  = 0
+    var temp_road_collection = {} //用来暂存最后一次新增点后查询得到的最后两点之间的路线信息
+
+
+    map.on('load', function () {
+        measureDistance.startMeasure(map)
+        init_map(map)
+    });
+    map.on('click', function (e) {
+        plan_route(e)
+        map.getSource("_patrol_routePlan_source").setData(route_colletions.data);
+    });
+
+    map.on('mousemove', function (e) {
+        var features = map.queryRenderedFeatures(e.point, {layers: ['measure-points']});
+        map.getCanvas().style.cursor = (features.length) ? 'pointer' : 'crosshair';
+    });
+
+    /**
+     * MeasureDistance接口有一下两种方式清除数据：
+     * .clear()：只是清除数据记录的点的信息和总长度信息
+     * .destroy()：清除信息，同时删除添加的图层、数据源等
+     *          使用了destroy()之后再次测量要重新调用.startMeasure(map)
+     */
+    document.getElementById("map").addEventListener("contextmenu", function () {
+        document.getElementById("distance").innerHTML = "数据已清空";
+        measureDistance.clear()
+        //清空路线信息
+        route_colletions.data.features.length = 0
+    });
+
+
+    function init_map(map) {
+        if (map.getSource("_patrol_routePlan_source")) {
+            map.getSource("_patrol_routePlan_source").setData(route_colletions.data);
+        } else {
+            map.addSource("_patrol_routePlan_source", route_colletions);
+            map.addLayer({
+                "id": "_patrol_routePlan_layer",
+                "type": "line",
+                "source": "_patrol_routePlan_source",
+                "layout": {
+                    "line-join": "round",
+                    "line-cap": "round"
+                },
+                "paint": {
+                    "line-color": "#5c8ffd",
+                    "line-width": 5,
+                    "line-opacity": 0.8
+                }
+            });
+        }
+    }
+
+    function plan_route(e) {
+        var features = map.queryRenderedFeatures(e.point, {layers: ['measure-points']});
+            measureDistance.pushPointFeatures(e, features);
+
+        var allPoints = measureDistance.getAllPoints()
+        if(allPoints.length < lastPoints.length){
+            //从当前总的路线中删除最后一次增加的n多个feature[]
+            route_colletions.data.features.length -= temp_road_collection.data.features.length
+        }
+
+
+        //若没有feature，说明是新增点，push后查询该点信息，暂存用来下次对比（上句）
+        if (!features.length) {
+            lastPoints = allPoints
+            var len = allPoints.length
+            var que = []
+            if (len > 1) {
+                //只要获取到点信息，就push到数组里面，获取路线时候只有上次返回了数据才执行下次
+                var startEnd = {start : allPoints[allPoints.length - 2], end : allPoints[allPoints.length - 1]}
+                que.push(startEnd)
+                while(que.length){
+                    var temp = que.pop()
+                    temp_road_collection = {}
+                    temp_road_collection = patrolRoutePlan.getRoute(temp.start,temp.end)
+                    //等待返回的数据，没返回的时候一直打印log
+                    while (!temp_road_collection.data.features.length){
+                        setTimeout("console.log('wait route info.....')",100)
+                    }
+                    if (temp_road_collection.data.features.length > 0) {
+                        console.log("路线信息：")
+                        console.log(temp_road_collection)
+                        temp_road_collection.data.features.forEach(function (road) {
+                            route_colletions.data.features.push(road)
+                        })
+                    }
+                }
+            }
+        }
+
+        //这几行只是用来显示有哪些点
+        distanceContainer.innerHTML = '';
+        var points = document.createElement('allPoints');
+        points.textContent = '所有的点有：' + measureDistance.getAllPoints();
+        distanceContainer.appendChild(points);
+
+    }
+
+</script>
+
+</body>
+</html>
+

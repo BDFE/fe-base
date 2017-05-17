@@ -300,6 +300,9 @@
         "sprite": {
           "doc": "sprite"
         },
+        "cubicline": {
+          "doc": "cubicline"
+        },
         "extrusion": {
           "doc": "extrusion"
         },
@@ -371,6 +374,7 @@
     "layout_extrusion",
     "layout_histogram",
     "layout_sprite",
+    "layout_cubicline",
     "layout_tracking"
   ],
   "layout_extrusion": {
@@ -426,6 +430,7 @@
         }
       }
     },
+
     "sprite-join": {
       "type": "enum",
       "function": "piecewise-constant",
@@ -476,6 +481,107 @@
       "requires": [
         {
           "sprite-join": "round"
+        }
+      ],
+      "sdk-support": {
+        "basic": {
+          "js": "0.10.0",
+          "ios": "2.0.0",
+          "android": "2.0.1"
+        }
+      }
+    },
+    "visibility": {
+      "type": "enum",
+      "function": "piecewise-constant",
+      "zoom-function": true,
+      "values": [
+        "visible",
+        "none"
+      ],
+      "default": "visible",
+      "doc": "The display of this layer. `none` hides this layer.",
+      "sdk-support": {
+        "basic": {
+          "js": "0.10.0",
+          "ios": "2.0.0",
+          "android": "2.0.1"
+        }
+      }
+    }
+  },
+  "layout_cubicline": {
+    "cubicline-cap": {
+      "type": "enum",
+      "function": "piecewise-constant",
+      "zoom-function": true,
+      "property-function": true,
+      "values": [
+        "butt",
+        "round",
+        "square"
+      ],
+      "default": "butt",
+      "doc": "The display of cubicline endings.",
+      "sdk-support": {
+        "basic": {
+          "js": "0.10.0",
+          "ios": "2.0.0",
+          "android": "2.0.1"
+        }
+      }
+    },
+
+    "cubicline-join": {
+      "type": "enum",
+      "function": "piecewise-constant",
+      "zoom-function": true,
+      "property-function": true,
+      "values": [
+        "bevel",
+        "round",
+        "miter"
+      ],
+      "default": "miter",
+      "doc": "The display of cubicline when joining.",
+      "sdk-support": {
+        "basic": {
+          "js": "0.10.0",
+          "ios": "2.0.0",
+          "android": "2.0.1"
+        }
+      }
+    },
+    "cubicline-miter-limit": {
+      "type": "number",
+      "default": 2,
+      "function": "interpolated",
+      "zoom-function": true,
+      "property-function": true,
+      "doc": "Used to automatically convert miter joins to bevel joins for sharp angles.",
+      "requires": [
+        {
+          "cubicline-join": "miter"
+        }
+      ],
+      "sdk-support": {
+        "basic": {
+          "js": "0.10.0",
+          "ios": "2.0.0",
+          "android": "2.0.1"
+        }
+      }
+    },
+    "cubicline-round-limit": {
+      "type": "number",
+      "default": 1.05,
+      "function": "interpolated",
+      "zoom-function": true,
+      "property-function": true,
+      "doc": "Used to automatically convert round joins to miter joins for shallow angles.",
+      "requires": [
+        {
+          "cubicline-join": "round"
         }
       ],
       "sdk-support": {
@@ -2690,6 +2796,7 @@
     "paint_extrusion",
     "paint_histogram",
     "paint_sprite",
+    "paint_cubicline",
     "paint_tracking"
   ],
   "paint_extrusion": {
@@ -3199,6 +3306,219 @@
       }
     }
   },
+  "paint_cubicline": {
+    "cubicline-opacity": {
+      "type": "number",
+      "doc": "The opacity at which the cubicline will be drawn.",
+      "function": "interpolated",
+      "zoom-function": true,
+      "property-function": true,
+      "default": 1,
+      "minimum": 0,
+      "maximum": 1,
+      "transition": true,
+      "sdk-support": {
+        "basic": {
+          "js": "0.10.0",
+          "ios": "2.0.0",
+          "android": "2.0.1"
+        }
+      }
+    },
+    "cubicline-color": {
+      "type": "color",
+      "doc": "The color with which the cubicline will be drawn.",
+      "default": "#000000",
+      "function": "interpolated",
+      "zoom-function": true,
+      "property-function": true,
+      "transition": true,
+      "requires": [
+        {
+          "!": "cubicline-pattern"
+        }
+      ],
+      "sdk-support": {
+        "basic": {
+          "js": "0.10.0",
+          "ios": "2.0.0",
+          "android": "2.0.1"
+        }
+      }
+    },
+    "cubicline-translate": {
+      "type": "array",
+      "value": "number",
+      "length": 2,
+      "default": [
+        0,
+        0
+      ],
+      "function": "interpolated",
+      "zoom-function": true,
+      "property-function": true,
+      "transition": true,
+      "units": "pixels",
+      "doc": "The geometry's offset. Values are [x, y] where negatives indicate left and up, respectively.",
+      "sdk-support": {
+        "basic": {
+          "js": "0.10.0",
+          "ios": "2.0.0",
+          "android": "2.0.1"
+        }
+      }
+    },
+    "cubicline-translate-anchor": {
+      "type": "enum",
+      "function": "piecewise-constant",
+      "zoom-function": true,
+      "property-function": true,
+      "values": [
+        "map",
+        "viewport"
+      ],
+      "doc": "Control whether the translation is relative to the map (north) or viewport (screen)",
+      "default": "map",
+      "requires": [
+        "cubicline-translate"
+      ],
+      "sdk-support": {
+        "basic": {
+          "js": "0.10.0",
+          "ios": "2.0.0",
+          "android": "2.0.1"
+        }
+      }
+    },
+    "cubicline-width": {
+      "type": "number",
+      "default": 1,
+      "minimum": 0,
+      "function": "interpolated",
+      "zoom-function": true,
+      "property-function": true,
+      "transition": true,
+      "units": "pixels",
+      "doc": "Stroke thickness.",
+      "sdk-support": {
+        "basic": {
+          "js": "0.10.0",
+          "ios": "2.0.0",
+          "android": "2.0.1"
+        }
+      }
+    },
+    "cubicline-speed-factor": {
+      "type": "number",
+      "default": 1,
+      "minimum": 0,
+      "function": "interpolated",
+      "zoom-function": true,
+      "property-function": true,
+      "transition": true,
+      "units": "pixels",
+      "doc": "Stroke thickness.",
+      "sdk-support": {
+        "basic": {
+          "js": "0.10.0",
+          "ios": "2.0.0",
+          "android": "2.0.1"
+        }
+      }
+    },
+    "cubicline-gap-width": {
+      "type": "number",
+      "default": 0,
+      "minimum": 0,
+      "doc": "Draws a cubicline casing outside of a cubicline's actual path. Value indicates the width of the inner gap.",
+      "function": "interpolated",
+      "zoom-function": true,
+      "property-function": true,
+      "transition": true,
+      "units": "pixels",
+      "sdk-support": {
+        "basic": {
+          "js": "0.10.0",
+          "ios": "2.0.0",
+          "android": "2.0.1"
+        }
+      }
+    },
+    "cubicline-offset": {
+      "type": "number",
+      "default": 0,
+      "doc": "The cubicline's offset. For linear features, a positive value offsets the cubicline to the right, relative to the direction of the cubicline, and a negative value to the left. For polygon features, a positive value results in an inset, and a negative value results in an outset.",
+      "function": "interpolated",
+      "zoom-function": true,
+      "property-function": true,
+      "transition": true,
+      "units": "pixels",
+      "sdk-support": {
+        "basic": {
+          "js": "0.12.1",
+          "ios": "3.1.0",
+          "android": "3.0.0"
+        }
+      }
+    },
+    "cubicline-blur": {
+      "type": "number",
+      "default": 0,
+      "minimum": 0,
+      "function": "interpolated",
+      "zoom-function": true,
+      "property-function": true,
+      "transition": true,
+      "units": "pixels",
+      "doc": "Blur applied to the cubicline, in pixels.",
+      "sdk-support": {
+        "basic": {
+          "js": "0.10.0",
+          "ios": "2.0.0",
+          "android": "2.0.1"
+        }
+      }
+    },
+    "cubicline-dasharray": {
+      "type": "array",
+      "value": "number",
+      "function": "piecewise-constant",
+      "zoom-function": true,
+      "property-function": true,
+      "doc": "Specifies the lengths of the alternating dashes and gaps that form the dash pattern. The lengths are later scaled by the line width. To convert a dash length to pixels, multiply the length by the current line width.",
+      "minimum": 0,
+      "transition": true,
+      "units": "cubicline widths",
+      "requires": [
+        {
+          "!": "cubicline-pattern"
+        }
+      ],
+      "sdk-support": {
+        "basic": {
+          "js": "0.10.0",
+          "ios": "2.0.0",
+          "android": "2.0.1"
+        }
+      }
+    },
+    "cubicline-pattern": {
+      "type": "string",
+      "function": "piecewise-constant",
+      "zoom-function": true,
+      "property-function": true,
+      "transition": true,
+      "doc": "Name of image in cubicline to use for drawing image cubicline. For seamless patterns, image width must be a factor of two (2, 4, 8, ..., 512).",
+      "sdk-support": {
+        "basic": {
+          "js": "0.10.0",
+          "ios": "2.0.0",
+          "android": "2.0.1"
+        }
+      }
+    }
+  },
+
   "paint_tracking": {
     "tracking-opacity": {
       "type": "number",

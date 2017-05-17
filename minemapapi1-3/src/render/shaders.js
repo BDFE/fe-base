@@ -70,6 +70,10 @@ module.exports = {
         fragmentSource: fs.readFileSync(path.join(__dirname, '../shaders/sprite.fragment.glsl'), 'utf8'),
         vertexSource: fs.readFileSync(path.join(__dirname, '../shaders/sprite.vertex.glsl'), 'utf8')
     },
+    cubicline: {
+        fragmentSource: fs.readFileSync(path.join(__dirname, '../shaders/cubicline.fragment.glsl'), 'utf8'),
+        vertexSource: fs.readFileSync(path.join(__dirname, '../shaders/cubicline.vertex.glsl'), 'utf8')
+    },
     tracking: {
         fragmentSource: fs.readFileSync(path.join(__dirname, '../shaders/tracking.fragment.glsl'), 'utf8'),
         vertexSource: fs.readFileSync(path.join(__dirname, '../shaders/tracking.vertex.glsl'), 'utf8')

@@ -325,6 +325,7 @@ const subclasses = {
     'line': require('./style_layer/line_style_layer'),
     'airline': require('./style_layer/airline_style_layer'),
     'sprite': require('./style_layer/sprite_style_layer'),
+    'cubicline': require('./style_layer/cubicline_style_layer'),
     'tracking': require('./style_layer/tracking_style_layer'),
     'symbol': require('./style_layer/symbol_style_layer'),
     'symtracking': require('./style_layer/symtracking_style_layer')

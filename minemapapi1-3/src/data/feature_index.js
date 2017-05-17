@@ -118,7 +118,7 @@ class FeatureIndex {
             const styleLayer = styleLayers[id];
 
             let styleLayerDistance = 0;
-            if (styleLayer.type === 'line' || styleLayer.type === 'airline' || styleLayer.type === 'sprite' || styleLayer.type === 'tracking') {
+            if (styleLayer.type === 'line' || styleLayer.type === 'airline'|| styleLayer.type === 'cubicline'  || styleLayer.type === 'sprite' || styleLayer.type === 'tracking') {
                 const typePrefix = styleLayer.type;
 
                 const width = getLineWidth(this.getPaintValue(`${typePrefix}-width`, styleLayer),
@@ -207,7 +207,7 @@ class FeatureIndex {
 
                     if (!geometry) geometry = loadGeometry(feature);
                     //hack me
-                    if (styleLayer.type === 'line' || styleLayer.type === 'airline' || styleLayer.type === 'sprite' || styleLayer.type === 'tracking') {
+                    if (styleLayer.type === 'line' || styleLayer.type === 'airline' || styleLayer.type === 'cubicline'|| styleLayer.type === 'sprite' || styleLayer.type === 'tracking') {
                         const typePrefix = styleLayer.type;
 
                         translatedPolygon = translate(queryGeometry,

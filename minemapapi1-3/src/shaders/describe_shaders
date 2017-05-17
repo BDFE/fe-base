@@ -20,6 +20,7 @@ const circleProgramInterface = require('../data/bucket/circle_bucket').programIn
 const lineProgramInterface = require('../data/bucket/line_bucket').programInterface;
 const airlineProgramInterface = require('../data/bucket/airline_bucket').programInterface;
 const spriteProgramInterface = require('../data/bucket/sprite_bucket').programInterface;
+const cubiclineProgramInterface = require('../data/bucket/cubicline_bucket').programInterface;
 const trackingProgramInterface = require('../data/bucket/tracking_bucket').programInterface;
 const extrusionProgramInterface = require('../data/bucket/extrusion_bucket').programInterface;
 const histogramProgramInterface = require('../data/bucket/histogram_bucket').programInterface;
@@ -30,6 +31,7 @@ const programInterfaces = util.extend({
     line: lineProgramInterface,
     airline: airlineProgramInterface,
     sprite: spriteProgramInterface,
+    cubicline: cubiclineProgramInterface,
     tracking: trackingProgramInterface,
     extrusion: extrusionProgramInterface,
     histogram: histogramProgramInterface,

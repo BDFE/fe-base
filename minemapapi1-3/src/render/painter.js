@@ -23,6 +23,7 @@ const draw = {
     line: require('./draw_line'),
     airline: require('./draw_airline'),
     sprite: require('./draw_sprite'),
+    cubicline: require('./draw_cubicline'),
     tracking: require('./draw_tracking'),
     fill: require('./draw_fill'),
     extrusion: require('./draw_extrusion'),
