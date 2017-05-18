@@ -131,7 +131,7 @@ function keydown(ev, gl, n, u_ViewMatrix, viewMatrix) {
 
 function draw(gl, n, u_ViewMatrix, viewMatrix) {
   // Set the matrix to be used for to set the camera view
-  viewMatrix.setLookAt(g_EyeX, g_EyeY, g_EyeZ, 0, 0, 0, 0, 1, 0);
+  viewMatrix.setLookAt(g_EyeX, g_EyeY, g_EyeZ, 0, 0, 0, 1, 1, 0);
 
   // Pass the view projection matrix
   gl.uniformMatrix4fv(u_ViewMatrix, false, viewMatrix.elements);
