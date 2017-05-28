@@ -1,929 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f824fdd2-a21d-4c52-89f6-5561076b1169" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/.editorconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/.eslintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/.flowconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/ARCHITECTURE.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/ISSUE_TEMPLATE.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/PULL_REQUEST_TEMPLATE.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/RFC_TEMPLATE.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/_config.mb-pages.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/_config.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/.eslintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/benchmarks.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/benchmarks/buffer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/benchmarks/fps.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/benchmarks/frame_duration.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/benchmarks/geojson_setdata_large.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/benchmarks/geojson_setdata_small.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/benchmarks/map_load.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/benchmarks/query_box.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/benchmarks/query_point.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/benchmarks/style_load.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/benchmarks_view.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/data/naturalearth-land.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/lib/access_token.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/lib/coordinates.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/lib/create_map.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/lib/format_number.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/lib/measure_framerate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/lib/set_data_perf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/lib/setup_geojson_map.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/unit/bench_transform.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/unit/feature_filter/785.vector.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/unit/feature_filter/bench.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/unit/feature_filter/big.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/unit/feature_filter/filters.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/bench/unit/function/profile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/ci-scripts/dependencies.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/ci-scripts/deploy.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/ci-scripts/test.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/circle.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/cloudformation/travis-cn.template" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/cloudformation/travis.template" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/.eslintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/2762.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/3895.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/access_token.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/chinese.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/circles.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/cluster.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/color_spaces.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/dark-v9.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/debug.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/events.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/image.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/light-v9.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/markers.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/multiple.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/no_wrap.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/query_features.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/satellite.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/setstyle.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/video.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/debug/wms.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/dist/minemap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/dist/svg/mapboxgl-ctrl-attrib.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/dist/svg/mapboxgl-ctrl-compass.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/dist/svg/mapboxgl-ctrl-geolocate.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/dist/svg/mapboxgl-ctrl-zoom-in.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/dist/svg/mapboxgl-ctrl-zoom-out.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/dist/template.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_data/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_data/plugins.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_data/roadmap.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_includes/navigation.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_includes/quickstart-bundler.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_includes/quickstart-cdn.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_layouts/default.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_layouts/example.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_layouts/pages.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_layouts/redirect.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_layouts/wrapper.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_plugins/copyable.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_plugins/insert_token.rb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/.eslintrc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-01-simple-map.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-01-toggle-layers.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-01-vector-source.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-02-check-for-support.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-02-cluster.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-02-custom-style-id.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-02-heatmap.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-02-interactive-false.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-02-map-tiles.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-02-setstyle.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-02-wms.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-03-fitbounds.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-03-flyto-options.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-03-flyto.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-03-language-switch.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-03-scroll-fly-to.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-03-set-perspective.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-04-center-on-symbol.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-04-color-switcher.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-04-geojson-layer-in-stack.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-04-geojson-line.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-04-geojson-polygon.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-04-hover-styles.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-04-multiple-geometries.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-04-navigation.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-05-geojson-markers.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-05-locate-user.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-05-mouse-position.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-05-popup.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-05-queryrenderedfeatures.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-06-polygon-popup-on-click.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-06-popup-on-click.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-06-popup-on-hover.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-06-satellite-map.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-07-image-on-a-map.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-07-video-on-a-map.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-08-data-driven-circle-colors.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-08-third-party.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-09-disable-rotation.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-10-live-geojson.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-10-live-update-feature.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-10-rotating-controllable-marker.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-11-mapbox-gl-directions.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-12-mapbox-gl-geocoder.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-13-filter-markers.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-14-filter-features-within-map-view.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-14-filter-markers-by-input.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-14-restrict-bounds.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-14-toggle-interaction-handlers.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-15-animate-point-along-line.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-15-animate-point-along-route.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-15-attribution-position.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-16-point-from-geocoder-result.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-17-animate-images.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-17-disable-scroll-zoom.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-17-updating-choropleth.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-18-playback-locations.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-19-queryrenderedfeatures-around-point.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-19-using-box-queryrenderedfeatures.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-20-timeline-animation.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-21-mapbox-gl-compare.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-22-measure.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-23-adjust-layer-opacity.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-24-custom-marker-icons.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-24-drag-a-point.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-24-query-similar-features.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-25-mapbox-gl-draw.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-26-game-controls.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-27-3d-extrusion-floorplan.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-27-set-popup.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-28-fullscreen.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-28-zoomto-linestring.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-30-3d-buildings.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-31-data-driven-lines.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-31-data-join.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/examples/3400-01-31-mapbox-gl-rtl-text.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/redirects/3400-01-05-featuresat.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/redirects/3400-01-05-mapbox-gl-supported.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/redirects/3400-01-05-marker-popup.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_posts/redirects/3400-01-19-using-featuresin.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_theme/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_theme/assets/anchor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_theme/assets/site.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_theme/assets/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_theme/index.hbs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_theme/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_theme/note.hbs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_theme/screenshot.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_theme/section.hbs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/_theme/section_list.hbs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/assets/data/hike.geojson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/assets/data/indoor-3d-map.geojson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/assets/data/significant-earthquakes-2015.geojson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/assets/earthquakes.geojson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/assets/gallery.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/assets/radar.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/assets/radar0.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/assets/radar1.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/assets/radar2.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/assets/radar3.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/assets/radar4.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/assets/washington-monument.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/dist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/documentation.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/js/ZeroClipboard.swf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/js/site.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/plugins.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/roadmap/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/site.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/style-spec/_generate/generate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/style-spec/_generate/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/style-spec/_generate/item.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/docs/style-spec/site.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/flow-interfaces/mapbox-gl-js-test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/flow-interfaces/point-geometry.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/flow-interfaces/unitbezier.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/plugins/src/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/plugins/src/mapbox-gl-directions/v3.1.1/mapbox-gl-directions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/array_group.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/bucket.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/bucket/airline_bucket.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/bucket/circle_bucket.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/bucket/cubicline_bucket.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/bucket/extrusion_bucket.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/bucket/fill_bucket.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/bucket/histogram_bucket.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/bucket/line_bucket.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/bucket/sprite_bucket.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/bucket/symbol_bucket.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/bucket/symtracking_bucket.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/bucket/tracking_bucket.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/buffer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/buffer_group.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/element_array_type.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/extent.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/feature_index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/load_geometry.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/pos_array.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/program_configuration.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/raster_bounds_array.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/data/vertex_array_type.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/geo/coordinate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/geo/lng_lat.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/geo/lng_lat_bounds.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/geo/transform.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/draw_airline.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/draw_background.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/draw_circle.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/draw_collision_debug.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/draw_cubicline.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/draw_debug.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/draw_extrusion.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/draw_fill.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/draw_histogram.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/draw_line.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/draw_raster.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/draw_sprite.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/draw_symbol.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/draw_symtracking.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/draw_tracking.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/frame_history.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/line_atlas.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/painter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/pattern.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/shaders.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/render/vertex_array_object.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/_prelude.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/_prelude.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/airline.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/airline.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/airline_pattern.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/airline_pattern.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/airline_sdf.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/airline_sdf.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/circle.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/circle.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/collision_box.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/collision_box.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/cubicline.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/cubicline.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/debug.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/debug.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/describe_shaders" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/extrusion.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/extrusion.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/extrusion_pattern.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/extrusion_pattern.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/extrusion_texture.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/extrusion_texture.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/fill.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/fill.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/fill_outline.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/fill_outline.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/fill_outline_pattern.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/fill_outline_pattern.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/fill_pattern.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/fill_pattern.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/fill_water.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/fill_water.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/histogram.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/histogram.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/histogram_color.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/histogram_color.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/line.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/line.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/line_pattern.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/line_pattern.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/line_sdf.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/line_sdf.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/raster.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/raster.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/sprite.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/sprite.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/symbol_icon.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/symbol_icon.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/symbol_sdf.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/symbol_sdf.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/symtracking_icon.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/symtracking_icon.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/symtracking_sdf.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/symtracking_sdf.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/tracking.fragment.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/shaders/tracking.vertex.glsl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/canvas_source.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/geojson_source.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/geojson_worker_source.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/geojson_wrapper.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/image_source.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/load_tilejson.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/pixels_to_tile_units.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/query_features.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/raster_tile_source.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/rtl_text_plugin.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/source.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/source_cache.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/tile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/tile_coord.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/vector_tile_source.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/vector_tile_worker_source.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/video_source.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/worker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/source/worker_tile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/bin/gl-style-composite" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/bin/gl-style-format" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/bin/gl-style-migrate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/bin/gl-style-validate" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/composite.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/declass.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/deref.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/diff.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/error/parsing_error.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/error/validation_error.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/feature_filter/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/format.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/function/color_spaces.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/function/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/group_by_layout.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/migrate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/migrate/v7.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/migrate/v8.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/migrate/v9.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/minifyify_style_spec.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/reference/latest.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/reference/v6.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/reference/v7.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/reference/v8.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/util/extend.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/util/get_type.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/util/parse_color.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/util/ref_properties.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/util/unbundle_jsonlint.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/latest.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/validate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/validate_array.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/validate_boolean.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/validate_color.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/validate_constants.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/validate_enum.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/validate_filter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/validate_function.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/validate_glyphs_url.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/validate_layer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/validate_layout_property.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/validate_light.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/validate_number.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/validate_object.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/validate_paint_property.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/validate_property.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/validate_source.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate/validate_string.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate_style.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/validate_style.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style-spec/yarn.lock" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/animation_loop.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/image_sprite.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/light.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/style.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/style_declaration.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/style_layer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/style_layer/airline_style_layer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/style_layer/circle_style_layer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/style_layer/cubicline_style_layer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/style_layer/extrusion_style_layer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/style_layer/fill_style_layer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/style_layer/histogram_style_layer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/style_layer/line_style_layer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/style_layer/sprite_style_layer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/style_layer/symbol_style_layer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/style_layer/symtracking_style_layer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/style_layer/tracking_style_layer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/style_layer_index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/style_transition.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/style/validate_style.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/symbol/anchor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/symbol/check_max_angle.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/symbol/clip_line.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/symbol/collision_box.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/symbol/collision_feature.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/symbol/collision_tile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/symbol/get_anchors.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/symbol/glyph_atlas.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/symbol/glyph_source.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/symbol/mergelines.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/symbol/quads.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/symbol/resolve_text.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/symbol/shaping.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/symbol/sprite_atlas.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/template/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/template/middleware/echarts/EchartsLayer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/template/middleware/echarts/GLMap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/template/middleware/echarts/GLMapCoordSys.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/template/middleware/echarts/GLMapModel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/template/middleware/echarts/GLMapView.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/template/middleware/minemap/fill.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/template/util/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/bind_handlers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/camera.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/control/attribution_control.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/control/fullscreen_control.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/control/geolocate_control.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/control/logo_control.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/control/navigation_control.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/control/scale_control.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/handler/box_zoom.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/handler/dblclick_zoom.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/handler/drag_pan.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/handler/drag_rotate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/handler/keyboard.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/handler/scroll_zoom.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/handler/touch_zoom_rotate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/hash.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/map.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/marker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/ui/popup.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/actor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/ajax.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/browser.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/browser/web_worker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/browser/window.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/classify_rings.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/config.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/dictionary_coder.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/dispatcher.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/dom.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/evented.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/find_pole_of_inaccessibility.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/global_worker_pool.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/glyphs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/interpolate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/intersection_tests.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/is_char_in_unicode_block.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/lru_cache.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/minemap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/script_detection.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/struct_array.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/token.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/util.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/vectortile_to_geojson.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/verticalize_punctuation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/web_worker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/window.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/src/util/worker_pool.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/airline/page-airline-dynamic.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/airline/page-airline.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/build/browserify-test-fixture.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/build/dev.test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/build/min.test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/expected/text-shaping-default.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/expected/text-shaping-linebreak.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/expected/text-shaping-newline.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/expected/text-shaping-newlines-in-middle.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/expected/text-shaping-null.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/expected/text-shaping-spacing.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/fixtures/fontstack-glyphs.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/fixtures/mbsv5-6-18-23.vector.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/fixtures/source.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/fixtures/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/font/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/data/121points.geojson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/data/chinese.geojson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/data/feature.geojson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/data/invalid.geojson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/data/linestring.geojson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/data/malformed.geojson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/data/places.geojson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/data/winding.geojson" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/geojson/point.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/0-255.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/1024-1279.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/10240-10495.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/10496-10751.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/10752-11007.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/11008-11263.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/11264-11519.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/11520-11775.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/11776-12031.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/12032-12287.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/12288-12543.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/12544-12799.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/1280-1535.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/12800-13055.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/13056-13311.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/13312-13567.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/13568-13823.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/13824-14079.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/14080-14335.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/14336-14591.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/14592-14847.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/14848-15103.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/15104-15359.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/1536-1791.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/15360-15615.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/15616-15871.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/15872-16127.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/16128-16383.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/16384-16639.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/16640-16895.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/16896-17151.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/17152-17407.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/17408-17663.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/17664-17919.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/1792-2047.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/17920-18175.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/18176-18431.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/18432-18687.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/18688-18943.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/18944-19199.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/19200-19455.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/19456-19711.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/19712-19967.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/19968-20223.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/20224-20479.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/2048-2303.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/20480-20735.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/20736-20991.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/20992-21247.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/21248-21503.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/21504-21759.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/21760-22015.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/22016-22271.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/22272-22527.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/22528-22783.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/22784-23039.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/2304-2559.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/23040-23295.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/23296-23551.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/23552-23807.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/23808-24063.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/24064-24319.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/24320-24575.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/24576-24831.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/24832-25087.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/25088-25343.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/25344-25599.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/256-511.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/2560-2815.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/25600-25855.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/25856-26111.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/26112-26367.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/26368-26623.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/26624-26879.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/26880-27135.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/27136-27391.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/27392-27647.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/27648-27903.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/27904-28159.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/2816-3071.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/28160-28415.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/28416-28671.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/28672-28927.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/28928-29183.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/29184-29439.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/29440-29695.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/29696-29951.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/29952-30207.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/30208-30463.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/30464-30719.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/3072-3327.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/30720-30975.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/30976-31231.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/31232-31487.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/31488-31743.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/31744-31999.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/32000-32255.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/32256-32511.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/32512-32767.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/32768-33023.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/33024-33279.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/3328-3583.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/33280-33535.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/33536-33791.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/33792-34047.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/34048-34303.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/34304-34559.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/34560-34815.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/34816-35071.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/35072-35327.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/35328-35583.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/35584-35839.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/3584-3839.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/35840-36095.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/36096-36351.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/36352-36607.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/36608-36863.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/36864-37119.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/37120-37375.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/37376-37631.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/37632-37887.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/37888-38143.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/38144-38399.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/3840-4095.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/38400-38655.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/38656-38911.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/38912-39167.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/39168-39423.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/39424-39679.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/39680-39935.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/39936-40191.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/40192-40447.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/40448-40703.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/40704-40959.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/4096-4351.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/4352-4607.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/4608-4863.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/4864-5119.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/512-767.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/5120-5375.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/5376-5631.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/5632-5887.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/5888-6143.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/6144-6399.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/6400-6655.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/65024-65279.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/65280-65535.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/6656-6911.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/6912-7167.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/7168-7423.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/7424-7679.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/768-1023.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/7680-7935.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/7936-8191.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/8192-8447.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/8448-8703.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/8704-8959.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/8960-9215.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/9216-9471.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/9472-9727.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/9728-9983.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/NotoCJK/9984-10239.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/Open Sans Semibold,Arial Unicode MS Bold/0-255.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/Open Sans Semibold,Arial Unicode MS Bold/12288-12543.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/Open Sans Semibold,Arial Unicode MS Bold/1536-1791.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/Open Sans Semibold,Arial Unicode MS Bold/256-511.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/Open Sans Semibold,Arial Unicode MS Bold/64256-64511.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/Open Sans Semibold,Arial Unicode MS Bold/65024-65279.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/glyphs/Open Sans Semibold,Arial Unicode MS Bold/8192-8447.pbf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/image/0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/image/marker.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/lib/harness.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/lib/query.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/lib/render.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/lib/server.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-radius-features-in/inside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-radius-features-in/inside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-radius-features-in/outside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-radius-features-in/outside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-radius/inside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-radius/inside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-radius/outside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-radius/outside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-radius/property-function/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-radius/property-function/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-radius/zoom-and-property-function/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-radius/zoom-and-property-function/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-translate-anchor/map/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-translate-anchor/map/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-translate-anchor/viewport/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-translate-anchor/viewport/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-translate/inside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-translate/inside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-translate/outside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/circle-translate/outside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/edge-cases/box-cutting-antimeridian-z0/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/edge-cases/box-cutting-antimeridian-z0/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/edge-cases/box-cutting-antimeridian-z1/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/edge-cases/box-cutting-antimeridian-z1/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/edge-cases/null-island/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/edge-cases/null-island/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/edge-cases/unsorted-keys/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/edge-cases/unsorted-keys/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/fill-features-in/default/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/fill-features-in/default/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/fill-features-in/rotated/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/fill-features-in/rotated/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/fill-features-in/tilted/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/fill-features-in/tilted/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/fill-translate-anchor/map/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/fill-translate-anchor/map/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/fill-translate-anchor/viewport/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/fill-translate-anchor/viewport/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/fill-translate/literal/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/fill-translate/literal/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/fill/default/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/fill/default/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/fill/overscaled/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/fill/overscaled/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/geometry/linestring/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/geometry/linestring/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/geometry/multilinestring/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/geometry/multilinestring/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/geometry/multipoint/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/geometry/multipoint/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/geometry/multipolygon/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/geometry/multipolygon/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/geometry/point/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/geometry/point/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/geometry/polygon/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/geometry/polygon/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-gap-width/inside-fractional/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-gap-width/inside-fractional/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-gap-width/inside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-gap-width/inside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-gap-width/outside-fractional/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-gap-width/outside-fractional/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-gap-width/outside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-gap-width/outside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-gap-width/property-function/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-gap-width/property-function/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-offset/inside-fractional/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-offset/inside-fractional/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-offset/inside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-offset/inside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-offset/outside-fractional/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-offset/outside-fractional/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-offset/outside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-offset/outside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-offset/property-function/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-offset/property-function/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-translate-anchor/map/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-translate-anchor/map/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-translate-anchor/viewport/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-translate-anchor/viewport/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-translate/inside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-translate/inside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-translate/outside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-translate/outside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-width-features-in/inside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-width-features-in/inside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-width-features-in/outside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-width-features-in/outside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-width-features-in/tilt-inside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-width-features-in/tilt-inside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-width-features-in/tilt-outside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-width-features-in/tilt-outside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-width/inside-fractional/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-width/inside-fractional/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-width/inside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-width/inside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-width/outside-fractional/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-width/outside-fractional/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-width/outside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/line-width/outside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/options/filter-false/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/options/filter-false/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/options/filter-true/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/options/filter-true/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/options/layers-multiple/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/options/layers-multiple/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/options/layers-one/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/options/layers-one/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/regressions/mapbox-gl-js#3534/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/regressions/mapbox-gl-js#3534/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/regressions/mapbox-gl-js#4417/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/regressions/mapbox-gl-js#4417/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/results.html.tmpl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol-features-in/fractional-outside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol-features-in/fractional-outside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol-features-in/hidden/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol-features-in/hidden/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol-features-in/inside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol-features-in/inside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol-features-in/outside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol-features-in/outside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol-features-in/pitched-screen/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol-features-in/pitched-screen/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol-features-in/tilted-inside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol-features-in/tilted-inside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol-features-in/tilted-outside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol-features-in/tilted-outside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol-ignore-placement/inside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol-ignore-placement/inside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol/filtered/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol/filtered/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol/fractional-outside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol/fractional-outside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol/hidden/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol/hidden/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol/inside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol/inside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol/outside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol/outside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol/panned-after-insert/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol/panned-after-insert/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol/rotated-after-insert/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol/rotated-after-insert/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol/rotated-inside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol/rotated-inside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol/rotated-outside/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/symbol/rotated-outside/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/world-wrapping/box/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/world-wrapping/box/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/world-wrapping/point/expected.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/query-tests/world-wrapping/point/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-color/default/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-color/default/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-color/function/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-color/function/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-color/literal/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-color/literal/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-opacity/color/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-opacity/color/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-opacity/image/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-opacity/image/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-opacity/overlay/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-opacity/overlay/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-pattern/@2x/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-pattern/@2x/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-pattern/literal/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-pattern/literal/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-pattern/pitch/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-pattern/pitch/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-pattern/rotated/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-pattern/rotated/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-pattern/zoomed/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-pattern/zoomed/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-visibility/none/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-visibility/none/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-visibility/visible/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/background-visibility/visible/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-blur/default/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-blur/default/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-blur/function/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-blur/function/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-blur/literal-stroke/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-blur/literal-stroke/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-blur/literal/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-blur/literal/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-blur/property-function/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-blur/property-function/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-blur/zoom-and-property-function/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-blur/zoom-and-property-function/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-color/default/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-color/default/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-color/function/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-color/function/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-color/identity-property-function/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-color/identity-property-function/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-color/literal/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-color/literal/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-color/property-function/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-color/property-function/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-color/zoom-and-property-function/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-color/zoom-and-property-function/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-geometry/linestring/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-geometry/linestring/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-geometry/multilinestring/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-geometry/multilinestring/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-geometry/multipoint/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-geometry/multipoint/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-geometry/multipolygon/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-geometry/multipolygon/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-geometry/point/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-geometry/point/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-geometry/polygon/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-geometry/polygon/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-opacity/default/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-opacity/default/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-opacity/function/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-opacity/function/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-opacity/literal/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-opacity/literal/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-opacity/property-function/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-opacity/property-function/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-opacity/zoom-and-property-function/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-opacity/zoom-and-property-function/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-pitch-scale/default/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-pitch-scale/default/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-pitch-scale/map/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-pitch-scale/map/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-pitch-scale/viewport/expected.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/circle-pitch-scale/viewport/style.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/integration/render-tests/results.html.tmpl" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/query.test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/render.test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/test/suite_implementation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/minemapapi1-3/yarn.lock" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="f824fdd2-a21d-4c52-89f6-5561076b1169" name="Default" comment="" />
     <ignored path="DEMOS.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -948,18 +26,28 @@
       <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OpenLayers_OpenStreetMap/src/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
+            <state relative-caret-position="551">
               <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="openLayers-Amap.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="openLayers-Amap.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OpenLayers_OpenStreetMap/openLayers-Amap.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -981,6 +69,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/OpenLayers_OpenStreetMap/src/test.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -991,10 +80,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="330" />
+    <option name="width" value="1003" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -1026,31 +114,31 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DEMOS" />
+              <option name="myItemId" value="FrontEndKonwledgeDemos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DEMOS" />
+              <option name="myItemId" value="FrontEndKonwledgeDemos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DEMOS" />
+              <option name="myItemId" value="FrontEndKonwledgeDemos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DEMOS" />
+              <option name="myItemId" value="FrontEndKonwledgeDemos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="DEMOS" />
+              <option name="myItemId" value="FrontEndKonwledgeDemos" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="TestJsProtobuf" />
+              <option name="myItemId" value="JS-CSS-HTML" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1144,17 +232,18 @@
       <updated>1495261569600</updated>
       <workItem from="1495261571114" duration="2339000" />
       <workItem from="1495421623516" duration="306000" />
+      <workItem from="1495958485960" duration="504000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2645000" />
+    <option name="totallyTimeSpent" value="3149000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="330" y="0" width="1003" height="728" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24962743" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24870466" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1190,7 +279,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/OpenLayers_OpenStreetMap/src/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
+        <state relative-caret-position="551">
           <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
           <folding />
         </state>
@@ -1214,8 +303,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/OpenLayers_OpenStreetMap/openLayers-Amap.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenLayers_OpenStreetMap/src/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpenLayers_OpenStreetMap/openLayers-Amap.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding />
         </state>
       </provider>
