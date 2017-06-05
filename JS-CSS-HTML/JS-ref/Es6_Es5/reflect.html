@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>constructor and proxy</title>
+</head>
+<body>
+<script>
+    
+    var obj = {
+        set foo(value) { return this.bar(); },
+        bar: function() {
+            alert(1);
+        }
+    };
+    var wrapper = {
+        bar : function() {
+            console.log("wrapper");
+        }
+    }
+    Reflect.set(obj, "foo", "value", wrapper);
+</script>
+</body>
+</html>
