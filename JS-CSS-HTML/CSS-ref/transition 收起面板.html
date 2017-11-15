@@ -15,7 +15,7 @@
             height: 200px;
             position: relative;
             overflow: hidden;
-            transition: height 0.6s;
+            transition: 1s;
         }
 
         .container img {
@@ -41,7 +41,7 @@
     
     eleBtn.onclick = function() {
         display = !display;
-        eleMore.style.height = display? "192px": "0px"
+        eleMore.style.left = display? "0px": "-150px"
         return false;
     };
 })();
