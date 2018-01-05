@@ -6,9 +6,12 @@
 </head>
 <body>
 <script>
+    window.foo ='ddd';
     var myObject = {
-        foo: "bar", func: function () {
+        foo: "bar",
+         func: function () {
             var self = this;
+            this.foo ='ccc';
             console.log("outer func: this.foo = " + this.foo);
             console.log("outer func: self.foo = " + self.foo);
             (function () {
