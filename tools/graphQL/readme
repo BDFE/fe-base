@@ -1,0 +1,7 @@
+
+如果要运行 express-graphql 的 hello world 服务器：
+npm install express express-graphql graphql
+
+
+如果要运行 apollo-server-express 的 hello world 服务器：
+npm install apollo-server-express body-parser express graphql graphql-tools
