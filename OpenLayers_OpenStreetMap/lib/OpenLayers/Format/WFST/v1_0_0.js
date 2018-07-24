@@ -39,7 +39,7 @@ OpenLayers.Format.WFST.v1_0_0 = OpenLayers.Class(
      * {Object} Properties are namespace aliases, values are schema locations.
      */
     schemaLocations: {
-        "wfs": "http://schemas.opengis.net/wfs/1.0.0/WFS-transaction.xsd"
+        "wfs": "//schemas.opengis.net/wfs/1.0.0/WFS-transaction.xsd"
     },
 
     /**

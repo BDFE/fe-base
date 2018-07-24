@@ -372,7 +372,7 @@
 				dom.style.padding = '5px';
 				dom.style.border = '0px';
 				dom.style.textAlign = 'center';
-				dom.innerHTML = '<h1>WEBGL中文网在线编辑器<\/h1><a href="http://www.webgl.com" target="_blank"></a>.<br>欢迎使用WebGL中文网为大家精心设计的在线编辑器！相信他能为您学习带来很大的帮助。<br/>请大家多多支持。谢谢。';
+				dom.innerHTML = '<h1>WEBGL中文网在线编辑器<\/h1><a href="//www.webgl.com" target="_blank"></a>.<br>欢迎使用WebGL中文网为大家精心设计的在线编辑器！相信他能为您学习带来很大的帮助。<br/>请大家多多支持。谢谢。';
 				popup.set( dom );
 				popup.show();
 
@@ -391,11 +391,11 @@
 
 				var buttonClose = ( function () {
 
-					var svg = document.createElementNS( 'http://www.w3.org/2000/svg', 'svg' );
+					var svg = document.createElementNS( '//www.w3.org/2000/svg', 'svg' );
 					svg.setAttribute( 'width', 32 );
 					svg.setAttribute( 'height', 32 );
 
-					var path = document.createElementNS( 'http://www.w3.org/2000/svg', 'path' );
+					var path = document.createElementNS( '//www.w3.org/2000/svg', 'path' );
 					path.setAttribute( 'd', 'M 9,12 L 11,10 L 15,14 L 19,10 L 21,12 L 17,16 L 21,20 L 19,22 L 15,18 L 11,22 L 9,20 L 13,16' );
 					path.setAttribute( 'fill', 'rgb(235,235,235)' );
 					svg.appendChild( path );
@@ -535,7 +535,7 @@
 					var content = iframe.contentDocument || iframe.contentWindow.document;
 
 					// workaround for chrome bug
-					// http://code.google.com/p/chromium/issues/detail?id=35980#c12
+					// //code.google.com/p/chromium/issues/detail?id=35980#c12
 
 					value = value.replace( '<script>', '<script>if ( window.innerWidth === 0 ) { window.innerWidth = parent.innerWidth; window.innerHeight = parent.innerHeight; }' );
 

@@ -33,7 +33,7 @@ OpenLayers.Lang.it = {
         " Quindi la deprechiamo -- il controllo di minZoomLevel " +
         "sarà rimosso dalla versione 3.0. Si prega di utilizzare " +
         "l'impostazione della risoluzione min/max come descritto qui: " +
-        "http://trac.openlayers.org/wiki/SettingZoomLevels",
+        "//trac.openlayers.org/wiki/SettingZoomLevels",
 
     'commitSuccess': "Transazione WFS: SUCCESSO ${response}",
 
@@ -47,7 +47,7 @@ OpenLayers.Lang.it = {
         "non è stata inclusa nella pagina, oppure non contiene la " +
         "corretta API key per il tuo sito.<br><br>" +
         "Sviluppatori: per aiuto su come farlo funzionare correttamente, " +
-        "<a href='http://trac.openlayers.org/wiki/Google' " +
+        "<a href='//trac.openlayers.org/wiki/Google' " +
         "target='_blank'>fare clic qui</a>",
 
     'getLayerWarning':
@@ -57,7 +57,7 @@ OpenLayers.Lang.it = {
         "Probabilmente, ciò accade perché la libreria ${layerLib} " +
         "non è stata inclusa correttamente.<br><br>" +
         "Sviluppatori: per aiuto su come farlo funzionare correttamente, " +
-        "<a href='http://trac.openlayers.org/wiki/${layerLib}' " +
+        "<a href='//trac.openlayers.org/wiki/${layerLib}' " +
         "target='_blank'>fare clic qui</a>",
 
     'Scale = 1 : ${scaleDenom}': "Scala = 1 : ${scaleDenom}",
@@ -76,7 +76,7 @@ OpenLayers.Lang.it = {
         "supportare il disegno dei dati sopra mappe commerciali, ma tale " + 
         "funzionalità dovrebbe essere ottenuta tramite l'utilizzo della proiezione " +
         "Spherical Mercator. Per maggiori informazioni consultare " +
-        "http://trac.openlayers.org/wiki/SphericalMercator.",
+        "//trac.openlayers.org/wiki/SphericalMercator.",
 
     // console message
     'methodDeprecated':

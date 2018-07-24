@@ -354,7 +354,7 @@ class TrafficGuideMap extends Map {
                     lat:pt[1]
                 }
             }
-            let tempImg = "http://lbsyun.baidu.com/jsdemo/img/fox.gif"
+            let tempImg = "//lbsyun.baidu.com/jsdemo/img/fox.gif"
             let Icon = index == 0 ? '../../../static/images/start.png' : "../../../static/images/end.png"
             let myIcon = new BMap.Icon(Icon, new BMap.Size(32, 32), { imageSize: new BMap.Size(32, 32) });
             let marker2 = new BMap.Marker(new BMap.Point(pt.lng, pt.lat), { icon: myIcon });  // 创建标注

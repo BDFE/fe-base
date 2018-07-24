@@ -82,7 +82,7 @@ OpenLayers.Handler.MouseWheel = OpenLayers.Class(OpenLayers.Handler, {
     },
 
     /**
-     *  Mouse ScrollWheel code thanks to http://adomas.org/javascript-mouse-wheel/
+     *  Mouse ScrollWheel code thanks to //adomas.org/javascript-mouse-wheel/
      */
 
     /** 

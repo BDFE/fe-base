@@ -6,7 +6,7 @@
 /**
  * Note:
  * This work draws heavily from the public domain JSON serializer/deserializer
- *     at http://www.json.org/json.js. Rewritten so that it doesn't modify
+ *     at //www.json.org/json.js. Rewritten so that it doesn't modify
  *     basic data prototypes.
  */
 

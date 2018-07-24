@@ -26,12 +26,12 @@ OpenLayers.Format.WFST.v2_0_0 = OpenLayers.Class(
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        xlink: "http://www.w3.org/1999/xlink",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance",
-        wfs: "http://www.opengis.net/wfs/2.0",
-        gml: "http://www.opengis.net/gml/3.2",
-        fes: "http://www.opengis.net/fes/2.0",
-        xmlns: "http://www.w3.org/2000/xmlns/"
+        xlink: "//www.w3.org/1999/xlink",
+        xsi: "//www.w3.org/2001/XMLSchema-instance",
+        wfs: "//www.opengis.net/wfs/2.0",
+        gml: "//www.opengis.net/gml/3.2",
+        fes: "//www.opengis.net/fes/2.0",
+        xmlns: "//www.w3.org/2000/xmlns/"
     },
         
     /**
@@ -45,7 +45,7 @@ OpenLayers.Format.WFST.v2_0_0 = OpenLayers.Class(
      * {Object} Properties are namespace aliases, values are schema locations.
      */
     schemaLocations: {
-        "wfs": "http://schemas.opengis.net/wfs/2.0/wfs.xsd"
+        "wfs": "//schemas.opengis.net/wfs/2.0/wfs.xsd"
     },
 
     /**

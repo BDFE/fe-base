@@ -15,7 +15,7 @@
 			font-family: "微软雅黑";
 		}
 	</style>
-	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=wydmYg51LXqtUDpwkBkQj13C0KepuWrx"></script>
+	<script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=wydmYg51LXqtUDpwkBkQj13C0KepuWrx"></script>
 	<title>地址解析</title>
 </head>
 
@@ -82,8 +82,8 @@
 	function getPointByWebApi(name) {
 		let ak = '49tGfOjwBKkG9zG76wgcpIbce4VZdbv6';
 		let url =
-			`http://api.map.baidu.com/geocoder/v2/?address=${name}&output=json&ak=${ak}`;
-		url = 'http://www.baidu.com';
+			`//api.map.baidu.com/geocoder/v2/?address=${name}&output=json&ak=${ak}`;
+		url = '//www.baidu.com';
 		fetchData(url, res => {
 			console.log('back:');
 			console.log(res);

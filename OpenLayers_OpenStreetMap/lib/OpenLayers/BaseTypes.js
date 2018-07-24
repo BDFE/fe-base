@@ -142,7 +142,7 @@ OpenLayers.String = {
             // If replacement is undefined, return the string 'undefined'.
             // This is a workaround for a bugs in browsers not properly 
             // dealing with non-participating groups in regular expressions:
-            // http://blog.stevenlevithan.com/archives/npcg-javascript
+            // //blog.stevenlevithan.com/archives/npcg-javascript
             if (typeof replacement == 'undefined') {
                 return 'undefined';
             } else {
@@ -421,7 +421,7 @@ OpenLayers.Array = {
      *     Array.prototype.filter extension to the ECMA-262 standard.  Where
      *     available, Array.prototype.filter will be used.
      *
-     * Based on well known example from http://developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array/filter
+     * Based on well known example from //developer.mozilla.org/en/Core_JavaScript_1.5_Reference/Global_Objects/Array/filter
      *
      * Parameters:
      * array - {Array} The array to be filtered.  This array is not mutated.

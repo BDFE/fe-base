@@ -179,7 +179,7 @@ OpenLayers.Tween = OpenLayers.Class({
  * Namespace: OpenLayers.Easing
  * 
  * Credits:
- *      Easing Equations by Robert Penner, <http://www.robertpenner.com/easing/>
+ *      Easing Equations by Robert Penner, <//www.robertpenner.com/easing/>
  */
 OpenLayers.Easing = {
     /**

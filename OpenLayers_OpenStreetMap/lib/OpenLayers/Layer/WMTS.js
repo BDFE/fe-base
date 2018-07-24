@@ -201,7 +201,7 @@ OpenLayers.Layer.WMTS = OpenLayers.Class(OpenLayers.Layer.Grid, {
      * (code)
      * var wmts = new OpenLayers.Layer.WMTS({
      *     name: "My WMTS Layer",
-     *     url: "http://example.com/wmts", 
+     *     url: "//example.com/wmts", 
      *     layer: "layer_id",
      *     style: "default",
      *     matrixSet: "matrix_id"

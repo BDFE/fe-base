@@ -25,7 +25,7 @@ OpenLayers.Lang.ro = {
         " De aceea considerăm depreciat -- minZoomLevel " +
         "și îl vom înlătura în 3.0. Folosește " +
         "min/max resolution cum este descrisă aici: " +
-        "http://trac.openlayers.org/wiki/SettingZoomLevels",
+        "//trac.openlayers.org/wiki/SettingZoomLevels",
     'commitSuccess': "Tranzacție WFS: SUCCES ${response}",
     'commitFailed': "Tranzacție WFS : EȘEC ${response}",
     'googleWarning':
@@ -36,7 +36,7 @@ OpenLayers.Lang.ro = {
         "script nu este inclus, sau nu conține " +
         "cheia API corectă pentru situl tău.<br><br>" +
         "Developeri: Pentru ajutor, " +
-        "<a href='http://trac.openlayers.org/wiki/Google' " +
+        "<a href='//trac.openlayers.org/wiki/Google' " +
         "target='_blank'>apăsați aici</a>",
     'getLayerWarning':
         "Stratul ${layerType} nu a putut fi încărcat corect.<br><br>" +
@@ -44,7 +44,7 @@ OpenLayers.Lang.ro = {
         "Acesta eroare apare de obicei când ${layerLib} library " +
         "script nu a fost încărcat corect.<br><br>" +
         "Developeri: Pentru ajutor privind utilizarea corectă, " +
-        "<a href='http://trac.openlayers.org/wiki/${layerLib}' " +
+        "<a href='//trac.openlayers.org/wiki/${layerLib}' " +
         "target='_blank'>apasă aici</a>",
     'Scale = 1 : ${scaleDenom}': "Scara = 1 : ${scaleDenom}",
     //labels for the graticule control
@@ -59,7 +59,7 @@ OpenLayers.Lang.ro = {
         "pentru stratul ${layerName} . Această opțiune este depreciată: " +
         "a fost utilizată pentru afișarea straturilor de bază comerciale " + 
         "Mai multe informații despre proiecția Mercator sunt disponibile aici " +
-        "http://trac.openlayers.org/wiki/SphericalMercator.",
+        "//trac.openlayers.org/wiki/SphericalMercator.",
     // console message
     'methodDeprecated':
         "Această metodă este depreciată și va fi înlăturată in versiunea 3.0. " +

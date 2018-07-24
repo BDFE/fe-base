@@ -24,13 +24,13 @@ OpenLayers.Format.WFST.v1 = OpenLayers.Class(OpenLayers.Format.XML, {
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        xlink: "http://www.w3.org/1999/xlink",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance",
-        wfs: "http://www.opengis.net/wfs",
-        gml: "http://www.opengis.net/gml",
-        ogc: "http://www.opengis.net/ogc",
-        ows: "http://www.opengis.net/ows",
-        xmlns: "http://www.w3.org/2000/xmlns/"
+        xlink: "//www.w3.org/1999/xlink",
+        xsi: "//www.w3.org/2001/XMLSchema-instance",
+        wfs: "//www.opengis.net/wfs",
+        gml: "//www.opengis.net/gml",
+        ogc: "//www.opengis.net/ogc",
+        ows: "//www.opengis.net/ows",
+        xmlns: "//www.w3.org/2000/xmlns/"
     },
     
     /**

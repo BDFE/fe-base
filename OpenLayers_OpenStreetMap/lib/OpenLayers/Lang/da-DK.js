@@ -35,7 +35,7 @@ OpenLayers.Lang['da-DK'] = {
         "kontrollen herunder vil blive fjernet i version 3.0. " +
         "Benyt istedet min/max opløsnings indstillingerne, som " +
         "er beskrevet her: " +
-        "http://trac.openlayers.org/wiki/SettingZoomLevels",
+        "//trac.openlayers.org/wiki/SettingZoomLevels",
 
     'commitSuccess': "WFS transaktion: LYKKEDES ${response}",
 
@@ -49,7 +49,7 @@ OpenLayers.Lang['da-DK'] = {
         "scriptet ikke er inkluderet, eller ikke indeholder den " +
         "korrkte API nøgle for dit site.<br><br>" +
         "Udviklere: For hjælp til at få dette til at fungere, " +
-        "<a href='http://trac.openlayers.org/wiki/Google' " +
+        "<a href='//trac.openlayers.org/wiki/Google' " +
         "target='_blank'>klik her</a>",
 
     'getLayerWarning':
@@ -59,7 +59,7 @@ OpenLayers.Lang['da-DK'] = {
         "Fejlen skyldes formentlig at ${layerLib} bibliotekts " +
         "scriptet ikke er inkluderet.<br><br>" +
         "Udviklere: For hjælp til at få dette til at fungere, " +
-        "<a href='http://trac.openlayers.org/wiki/${layerLib}' " +
+        "<a href='//trac.openlayers.org/wiki/${layerLib}' " +
         "target='_blank'>klik her</a>",
 
     'Scale = 1 : ${scaleDenom}': "Målforhold = 1 : ${scaleDenom}",
@@ -71,7 +71,7 @@ OpenLayers.Lang['da-DK'] = {
         "til at vise data ovenpå kommercielle grundkort, men den funktionalitet " +
         "bør nu opnås ved at anvende Spherical Mercator understøttelsen. " +
         "Mere information er tilgængelig her: " +
-        "http://trac.openlayers.org/wiki/SphericalMercator.",
+        "//trac.openlayers.org/wiki/SphericalMercator.",
 
     // console message
     'methodDeprecated':

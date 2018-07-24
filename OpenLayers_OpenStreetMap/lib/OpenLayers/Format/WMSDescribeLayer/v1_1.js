@@ -14,7 +14,7 @@
  * WMS 1.1.X is tightly coupled to SLD 1.0.0
  *
  * Example DescribeLayer request: 
- * http://demo.opengeo.org/geoserver/wms?request=DescribeLayer&version=1.1.1&layers=topp:states
+ * //demo.opengeo.org/geoserver/wms?request=DescribeLayer&version=1.1.1&layers=topp:states
  *
  * Inherits from:
  *  - <OpenLayers.Format.WMSDescribeLayer>
@@ -117,6 +117,6 @@ OpenLayers.Format.WMSDescribeLayer.v1_1_1 = OpenLayers.Class(
 
 });
 
-// Version alias - workaround for http://trac.osgeo.org/mapserver/ticket/2257
+// Version alias - workaround for //trac.osgeo.org/mapserver/ticket/2257
 OpenLayers.Format.WMSDescribeLayer.v1_1_0 =
     OpenLayers.Format.WMSDescribeLayer.v1_1_1;

@@ -655,7 +655,7 @@ OpenLayers.Renderer.Canvas = OpenLayers.Class(OpenLayers.Renderer, {
              * solution for polygons with interior rings would be to draw the 
              * polygon on a sketch canvas first.  We could erase all holes 
              * there and then copy the drawing to the layer canvas. 
-             * TODO: http://trac.osgeo.org/openlayers/ticket/3130 
+             * TODO: //trac.osgeo.org/openlayers/ticket/3130 
              */
             this.canvas.globalCompositeOperation = "destination-out";
             if (this.hitDetection) {
@@ -913,6 +913,6 @@ OpenLayers.Renderer.Canvas.LABEL_FACTOR = {
  * Constant: OpenLayers.Renderer.Canvas.drawImageScaleFactor
  * {Number} Scale factor to apply to the canvas drawImage arguments. This
  *     is always 1 except for Android 2.1 devices, to work around
- *     http://code.google.com/p/android/issues/detail?id=5141.
+ *     //code.google.com/p/android/issues/detail?id=5141.
  */
 OpenLayers.Renderer.Canvas.drawImageScaleFactor = null;

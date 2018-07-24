@@ -33,7 +33,7 @@ OpenLayers.Lang["nb"] = {
         "minZoomLevel i sjekken nedenfor vil fjernes i 3.0. " +
         "Vennligst bruk innstillingene for min/maks oppløsning " +
         "som er beskrevet her: "+
-        "http://trac.openlayers.org/wiki/SettingZoomLevels",
+        "//trac.openlayers.org/wiki/SettingZoomLevels",
 
     'commitSuccess': "WFS-transaksjon: LYKTES ${response}",
 
@@ -47,7 +47,7 @@ OpenLayers.Lang["nb"] = {
         "ikke er riktig inkludert på nettsiden, eller at det ikke er " +
         "angitt riktig API-nøkkel for nettstedet.<br><br>" +
         "Utviklere: For hjelp til å få dette til å virke se "+
-        "<a href='http://trac.openlayers.org/wiki/Google' " +
+        "<a href='//trac.openlayers.org/wiki/Google' " +
         "target='_blank'>her</a>.",
 
     'getLayerWarning':
@@ -58,7 +58,7 @@ OpenLayers.Lang["nb"] = {
         "${layerLib}-biblioteket ikke var riktig inkludert " +
         "på nettsiden.<br><br>" +
         "Utviklere: For hjelp til å få dette til å virke se " +
-        "<a href='http://trac.openlayers.org/wiki/${layerLib}' " +
+        "<a href='//trac.openlayers.org/wiki/${layerLib}' " +
         "target='_blank'>her</a>.",
 
     'Scale = 1 : ${scaleDenom}': "Skala = 1 : ${scaleDenom}",
@@ -76,7 +76,7 @@ OpenLayers.Lang["nb"] = {
         "Denne innstillingen er foreldet, den var ment for å støtte " +
         "visning av kartdata over kommersielle bakgrunnskart, men det " +
         "bør nå gjøres med støtten for Spherical Mercator. Mer informasjon " +
-        "finnes på http://trac.openlayers.org/wiki/SphericalMercator.",
+        "finnes på //trac.openlayers.org/wiki/SphericalMercator.",
 
     // console message
     'methodDeprecated':

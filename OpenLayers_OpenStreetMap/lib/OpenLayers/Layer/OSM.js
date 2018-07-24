@@ -16,9 +16,9 @@
  * 
  * (code)
  *     new OpenLayers.Layer.OSM("OpenCycleMap", 
- *       ["http://a.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png",
- *        "http://b.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png",
- *        "http://c.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png"]); 
+ *       ["//a.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png",
+ *        "//b.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png",
+ *        "//c.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png"]); 
  * (end)
  *
  * Inherits from:
@@ -42,9 +42,9 @@ OpenLayers.Layer.OSM = OpenLayers.Class(OpenLayers.Layer.XYZ, {
      * like this:
      * (code)
      *     new OpenLayers.Layer.OSM("OpenCycleMap", 
-     *       ["http://a.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png",
-     *        "http://b.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png",
-     *        "http://c.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png"]); 
+     *       ["//a.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png",
+     *        "//b.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png",
+     *        "//c.tile.opencyclemap.org/cycle/${z}/${x}/${y}.png"]); 
      * (end)
      */
     url: [

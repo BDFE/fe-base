@@ -13,9 +13,9 @@
  *     ESRI ArcGIS Server 9.3 (and up?) Mapping Services using the REST API.
  *     Create a new ArcGIS93Rest layer with the <OpenLayers.Layer.ArcGIS93Rest>
  *     constructor.  More detail on the REST API is available at
- *     http://sampleserver1.arcgisonline.com/ArcGIS/SDK/REST/index.html ;
+ *     //sampleserver1.arcgisonline.com/ArcGIS/SDK/REST/index.html ;
  *     specifically, the URL provided to this layer should be an export service
- *     URL: http://sampleserver1.arcgisonline.com/ArcGIS/SDK/REST/export.html 
+ *     URL: //sampleserver1.arcgisonline.com/ArcGIS/SDK/REST/export.html 
  * 
  * Inherits from:
  *  - <OpenLayers.Layer.Grid>
@@ -44,7 +44,7 @@ OpenLayers.Layer.ArcGIS93Rest = OpenLayers.Class(OpenLayers.Layer.Grid, {
      * Example:
      * (code)
      * var arcims = new OpenLayers.Layer.ArcGIS93Rest("MyName",
-     *                                    "http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/Specialty/ESRI_StateCityHighway_USA/MapServer/export", 
+     *                                    "//sampleserver1.arcgisonline.com/ArcGIS/rest/services/Specialty/ESRI_StateCityHighway_USA/MapServer/export", 
      *                                    {
      *                                      layers: "show:0,1,2"
      *                                    });
@@ -174,7 +174,7 @@ OpenLayers.Layer.ArcGIS93Rest = OpenLayers.Class(OpenLayers.Layer.Grid, {
      * Parameters:
      * id - {String} The id of the layer to which the filter applies.
      * queryDef - {String} A sql-ish query filter, for more detail see the ESRI
-     *                     documentation at http://sampleserver1.arcgisonline.com/ArcGIS/SDK/REST/export.html
+     *                     documentation at //sampleserver1.arcgisonline.com/ArcGIS/SDK/REST/export.html
      */
     setLayerFilter: function ( id, queryDef ) {
         if (!this.layerDefs) {

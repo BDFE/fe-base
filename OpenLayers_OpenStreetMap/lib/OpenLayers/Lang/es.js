@@ -33,7 +33,7 @@ OpenLayers.Lang.es = {
         "Así pues estamos haciéndolo obsoleto --la comprobación " +
         "minZoomLevel se eliminará en la versión 3.0. Utilice el ajuste " +
         "de resolution min/max en su lugar, tal como se describe aquí: " +
-        "http://trac.openlayers.org/wiki/SettingZoomLevels",
+        "//trac.openlayers.org/wiki/SettingZoomLevels",
 
     'commitSuccess': "Transacción WFS: ÉXITO ${response}",
 
@@ -47,7 +47,7 @@ OpenLayers.Lang.es = {
         "Google Maps no fue correctamente incluido en su página, o no " +
         "contiene la clave del API correcta para su sitio.<br><br>" +
         "Desarrolladores: Para ayudar a hacer funcionar esto correctamente, " +
-        "<a href='http://trac.openlayers.org/wiki/Google' " +
+        "<a href='//trac.openlayers.org/wiki/Google' " +
         "target='_blank'>haga clic aquí</a>",
 
     'getLayerWarning':
@@ -58,7 +58,7 @@ OpenLayers.Lang.es = {
         "la biblioteca ${layerLib} " +
         "no fue correctamente incluido en su página.<br><br>" +
         "Desarrolladores: Para ayudar a hacer funcionar esto correctamente, " +
-        "<a href='http://trac.openlayers.org/wiki/${layerLib}' " +
+        "<a href='//trac.openlayers.org/wiki/${layerLib}' " +
         "target='_blank'>haga clic aquí</a>",
 
     'Scale = 1 : ${scaleDenom}': "Escala = 1 : ${scaleDenom}",
@@ -77,7 +77,7 @@ OpenLayers.Lang.es = {
         "para soportar la visualización de datos sobre mapas base comerciales, " + 
         "pero ahora esa funcionalidad debería conseguirse mediante el soporte " +
         "de la proyección Spherical Mercator. Más información disponible en " +
-        "http://trac.openlayers.org/wiki/SphericalMercator.",
+        "//trac.openlayers.org/wiki/SphericalMercator.",
 
     // console message
     'methodDeprecated':

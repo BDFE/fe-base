@@ -11,7 +11,7 @@
 /**
  * Class: OpenLayers.Format.SLD/v1_0_0_GeoServer
  * Read and write SLD version 1.0.0 with GeoServer-specific enhanced options.
- * See http://svn.osgeo.org/geotools/trunk/modules/extension/xsd/xsd-sld/src/main/resources/org/geotools/sld/bindings/StyledLayerDescriptor.xsd
+ * See //svn.osgeo.org/geotools/trunk/modules/extension/xsd/xsd-sld/src/main/resources/org/geotools/sld/bindings/StyledLayerDescriptor.xsd
  * for more information.
  *
  * Inherits from:

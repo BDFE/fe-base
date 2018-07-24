@@ -28,13 +28,13 @@ OpenLayers.Format.WFS = OpenLayers.Class(OpenLayers.Format.GML, {
      * APIProperty: wfsns
      * {String}
      */
-    wfsns: "http://www.opengis.net/wfs",
+    wfsns: "//www.opengis.net/wfs",
     
     /**
      * Property: ogcns
      * {String}
      */
-    ogcns: "http://www.opengis.net/ogc",
+    ogcns: "//www.opengis.net/ogc",
     
     /**
      * Constructor: OpenLayers.Format.WFS

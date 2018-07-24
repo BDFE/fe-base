@@ -27,8 +27,8 @@ OpenLayers.Format.Atom = OpenLayers.Class(OpenLayers.Format.XML, {
      *     <setNamespace> to add or set a namespace alias after construction.
      */
     namespaces: {
-        atom: "http://www.w3.org/2005/Atom",
-        georss: "http://www.georss.org/georss"
+        atom: "//www.w3.org/2005/Atom",
+        georss: "//www.georss.org/georss"
     },
     
     /**
@@ -326,7 +326,7 @@ OpenLayers.Format.Atom = OpenLayers.Class(OpenLayers.Format.XML, {
     initGmlParser: function() {
         this.gmlParser = new OpenLayers.Format.GML.v3({
             xy: this.xy,
-            featureNS: "http://example.com#feature",
+            featureNS: "//example.com#feature",
             internalProjection: this.internalProjection,
             externalProjection: this.externalProjection
         });

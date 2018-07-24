@@ -1,5 +1,5 @@
 /**
- * @author alteredq / http://alteredqualia.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.PathControls = function ( object, domElement ) {

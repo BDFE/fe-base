@@ -34,9 +34,9 @@ OpenLayers.Format.Filter.v2_0_0 = OpenLayers.Class(
     
     /**
      * Property: schemaLocation
-     * {String} http://schemas.opengis.net/filter/2.0/filterAll.xsd
+     * {String} //schemas.opengis.net/filter/2.0/filterAll.xsd
      */
-    schemaLocation: "http://schemas.opengis.net/filter/2.0/filterAll.xsd",
+    schemaLocation: "//schemas.opengis.net/filter/2.0/filterAll.xsd",
 
     /**
      * Constructor: OpenLayers.Format.Filter.v1_1_0

@@ -78,7 +78,7 @@ OpenLayers.WPSClient = OpenLayers.Class({
      *         local: '/geoserver/wps'
      *     }, {
      *         opengeo: {
-     *             url: 'http://demo.opengeo.org/geoserver/wps',
+     *             url: '//demo.opengeo.org/geoserver/wps',
      *             version: '1.0.0'
      *         }
      *     }

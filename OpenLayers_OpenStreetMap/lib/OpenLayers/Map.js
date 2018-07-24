@@ -782,7 +782,7 @@ OpenLayers.Map = OpenLayers.Class({
      *    map *before* this happens; otherwise, the page unload handler
      *    will fail because the DOM elements that map.destroy() wants
      *    to clean up will be gone. (See 
-     *    http://trac.osgeo.org/openlayers/ticket/2277 for more information).
+     *    //trac.osgeo.org/openlayers/ticket/2277 for more information).
      *    This will apply to GeoExt and also to other applications which
      *    modify the DOM of the container of the OpenLayers Map.
      */

@@ -24,30 +24,30 @@ OpenLayers.Format.GeoRSS = OpenLayers.Class(OpenLayers.Format.XML, {
     /**
      * APIProperty: rssns
      * {String} RSS namespace to use. Defaults to
-     *   "http://backend.userland.com/rss2"
+     *   "//backend.userland.com/rss2"
      */
-    rssns: "http://backend.userland.com/rss2",
+    rssns: "//backend.userland.com/rss2",
     
     /**
      * APIProperty: featurens
      * {String} Feature Attributes namespace.  Defaults to
-     *    "http://mapserver.gis.umn.edu/mapserver"
+     *    "//mapserver.gis.umn.edu/mapserver"
      */
-    featureNS: "http://mapserver.gis.umn.edu/mapserver",
+    featureNS: "//mapserver.gis.umn.edu/mapserver",
     
     /**
      * APIProperty: georssns
      * {String} GeoRSS namespace to use.  Defaults to
-     *     "http://www.georss.org/georss"
+     *     "//www.georss.org/georss"
      */
-    georssns: "http://www.georss.org/georss",
+    georssns: "//www.georss.org/georss",
 
     /**
      * APIProperty: geons
      * {String} W3C Geo namespace to use.  Defaults to
-     *     "http://www.w3.org/2003/01/geo/wgs84_pos#"
+     *     "//www.w3.org/2003/01/geo/wgs84_pos#"
      */
-    geons: "http://www.w3.org/2003/01/geo/wgs84_pos#",
+    geons: "//www.w3.org/2003/01/geo/wgs84_pos#",
     
     /**
      * APIProperty: featureTitle

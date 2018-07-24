@@ -24,9 +24,9 @@ OpenLayers.Format.WPSDescribeProcess.v1_0_0 = OpenLayers.Class(
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        wps: "http://www.opengis.net/wps/1.0.0",
-        ows: "http://www.opengis.net/ows/1.1",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance"
+        wps: "//www.opengis.net/wps/1.0.0",
+        ows: "//www.opengis.net/ows/1.1",
+        xsi: "//www.w3.org/2001/XMLSchema-instance"
     },
 
     /**
@@ -42,7 +42,7 @@ OpenLayers.Format.WPSDescribeProcess.v1_0_0 = OpenLayers.Class(
      * Property: schemaLocation
      * {String} Schema location
      */
-    schemaLocation: "http://www.opengis.net/wps/1.0.0 http://schemas.opengis.net/wps/1.0.0/wpsAll.xsd",
+    schemaLocation: "//www.opengis.net/wps/1.0.0 //schemas.opengis.net/wps/1.0.0/wpsAll.xsd",
 
     /**
      * Property: defaultPrefix

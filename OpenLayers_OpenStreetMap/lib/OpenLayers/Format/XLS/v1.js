@@ -22,9 +22,9 @@ OpenLayers.Format.XLS.v1 = OpenLayers.Class(OpenLayers.Format.XML, {
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        xls: "http://www.opengis.net/xls",
-        gml: "http://www.opengis.net/gml",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance"
+        xls: "//www.opengis.net/xls",
+        gml: "//www.opengis.net/gml",
+        xsi: "//www.w3.org/2001/XMLSchema-instance"
     },
 
     /**

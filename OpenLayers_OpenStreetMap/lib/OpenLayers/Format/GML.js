@@ -27,9 +27,9 @@ OpenLayers.Format.GML = OpenLayers.Class(OpenLayers.Format.XML, {
     /**
      * APIProperty: featureNS
      * {String} Namespace used for feature attributes.  Default is
-     *     "http://mapserver.gis.umn.edu/mapserver".
+     *     "//mapserver.gis.umn.edu/mapserver".
      */
-    featureNS: "http://mapserver.gis.umn.edu/mapserver",
+    featureNS: "//mapserver.gis.umn.edu/mapserver",
     
     /**
      * APIProperty: featurePrefix
@@ -66,7 +66,7 @@ OpenLayers.Format.GML = OpenLayers.Class(OpenLayers.Format.XML, {
      * APIProperty: gmlns
      * {String} GML Namespace.
      */
-    gmlns: "http://www.opengis.net/gml",
+    gmlns: "//www.opengis.net/gml",
 
     /**
      * APIProperty: extractAttributes
@@ -641,7 +641,7 @@ OpenLayers.Format.GML = OpenLayers.Class(OpenLayers.Format.XML, {
         if(!(OpenLayers.Util.isArray(features))) {
             features = [features];
         }
-        var gml = this.createElementNS("http://www.opengis.net/wfs",
+        var gml = this.createElementNS("//www.opengis.net/wfs",
                                        "wfs:" + this.collectionName);
         for(var i=0; i<features.length; i++) {
             gml.appendChild(this.createFeatureXML(features[i]));
@@ -711,7 +711,7 @@ OpenLayers.Format.GML = OpenLayers.Class(OpenLayers.Format.XML, {
         // TBD retrieve the srs from layer
         // srsName is non-standard, so not including it until it's right.
         // gml.setAttribute("srsName",
-        //                  "http://www.opengis.net/gml/srs/epsg.xml#4326");
+        //                  "//www.opengis.net/gml/srs/epsg.xml#4326");
 
         /**
          * Method: buildGeometry.point

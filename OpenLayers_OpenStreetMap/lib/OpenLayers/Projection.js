@@ -16,7 +16,7 @@
  *     coordinate reference systems.  See the <transform> method for details
  *     on usage.
  *
- * Additional transforms may be added by using the <proj4js at http://proj4js.org/>
+ * Additional transforms may be added by using the <proj4js at //proj4js.org/>
  *     library.  If the proj4js library is included, the <transform> method 
  *     will work between any two coordinate reference systems with proj4js 
  *     definitions.
@@ -274,7 +274,7 @@ OpenLayers.Projection.nullTransform = function(point) {
  * OSGEO:41001. OpenLayers originally started referring to EPSG:900913 as web
  * mercator. The EPSG has declared EPSG:3857 to be web mercator.
  * ArcGIS 10 recognizes the EPSG:3857, EPSG:102113, and EPSG:102100 as
- * equivalent.  See http://blogs.esri.com/Dev/blogs/arcgisserver/archive/2009/11/20/ArcGIS-Online-moving-to-Google-_2F00_-Bing-tiling-scheme_3A00_-What-does-this-mean-for-you_3F00_.aspx#12084.
+ * equivalent.  See //blogs.esri.com/Dev/blogs/arcgisserver/archive/2009/11/20/ArcGIS-Online-moving-to-Google-_2F00_-Bing-tiling-scheme_3A00_-What-does-this-mean-for-you_3F00_.aspx#12084.
  * For geographic, OpenLayers recognizes EPSG:4326, CRS:84 and
  * urn:ogc:def:crs:EPSG:6.6:4326. OpenLayers also knows about the reverse axis
  * order for EPSG:4326. 

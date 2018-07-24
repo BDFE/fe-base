@@ -21,8 +21,8 @@ OpenLayers.Format.OWSCommon.v1_1_0 = OpenLayers.Class(OpenLayers.Format.OWSCommo
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        ows: "http://www.opengis.net/ows/1.1",
-        xlink: "http://www.w3.org/1999/xlink"
+        ows: "//www.opengis.net/ows/1.1",
+        xlink: "//www.w3.org/1999/xlink"
     },    
     
     /**

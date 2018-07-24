@@ -33,7 +33,7 @@ OpenLayers.Lang.ca = {
         "Així doncs estem fent-la obsoleta -- la comprovació " +
         "minZoomLevel s'eliminarà a la versió 3.0. Feu servir " +
         "els paràmetres min/max resolution en substitució, tal com es descriu aquí: " +
-        "http://trac.openlayers.org/wiki/SettingZoomLevels",
+        "//trac.openlayers.org/wiki/SettingZoomLevels",
 
     'commitSuccess': "Transacció WFS: CORRECTA ${response}",
 
@@ -47,7 +47,7 @@ OpenLayers.Lang.ca = {
     "Google Maps no ha estat inclòs a la vostra pàgina, o no " +
     "conté la clau de l'API correcta per a la vostra adreça.<br><br>" +
         "Desenvolupadors: Per obtenir consells sobre com fer anar això, " +
-        "<a href='http://trac.openlayers.org/wiki/Google' " +
+        "<a href='//trac.openlayers.org/wiki/Google' " +
         "target='_blank'>féu clic aquí</a>",
 
     'getLayerWarning':
@@ -57,7 +57,7 @@ OpenLayers.Lang.ca = {
         "${layerLib} " +
         "no ha estat inclòs a la vostra pàgina.<br><br>" +
         "Desenvolupadors: Per obtenir consells sobre com fer anar això, " +
-        "<a href='http://trac.openlayers.org/wiki/${layerLib}' " +
+        "<a href='//trac.openlayers.org/wiki/${layerLib}' " +
         "target='_blank'>féu clic aquí</a>",
 
     'Scale = 1 : ${scaleDenom}': "Escala = 1 : ${scaleDenom}",
@@ -76,7 +76,7 @@ OpenLayers.Lang.ca = {
         "per suportar la visualització de dades sobre mapes base comercials, " + 
         "però ara aquesta funcionalitat s'hauria d'assolir mitjançant el suport " +
         "de la projecció Spherical Mercator. Més informació disponible a " +
-        "http://trac.openlayers.org/wiki/SphericalMercator.",
+        "//trac.openlayers.org/wiki/SphericalMercator.",
 
     // console message
     'methodDeprecated':

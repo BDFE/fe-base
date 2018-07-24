@@ -17,7 +17,7 @@
  * Provides a wrapper for Google's Maps API
  * Normally the Terms of Use for this API do not allow wrapping, but Google
  * have provided written consent to OpenLayers for this - see email in
- * http://osgeo-org.1560.n6.nabble.com/Google-Maps-API-Terms-of-Use-changes-tp4910013p4911981.html
+ * //osgeo-org.1560.n6.nabble.com/Google-Maps-API-Terms-of-Use-changes-tp4910013p4911981.html
  *
  * Inherits from:
  *  - <OpenLayers.Layer.SphericalMercator>

@@ -14,12 +14,12 @@ related examples.
 The folders named lesson01, lesson02, and so on are a sequential tutorial and
 are best understood using the explanatory text at:
 
-    <http://learningwebgl.com/lessons/>
+    <//learningwebgl.com/lessons/>
 
 The form of the first ten lessons is *very* loosely based on NeHe Productions'
 well-known OpenGL tutorial, which can be found here:
 
-    <http://nehe.gamedev.net/>
+    <//nehe.gamedev.net/>
 
 The lessons from 11 onwards are not related to the NeHe ones.
 
@@ -61,7 +61,7 @@ without thinking about it).  Still, if you want to do this:
    --disable-web-security switches command-line options (ideally just the
    first).  If you're using a Mac, Stuart Carnie has written a convenient
    application bundle for this here:
-   <http://aussiebloke.blogspot.com/2011/08/local-file-system-development-with.html>
+   <//aussiebloke.blogspot.com/2011/08/local-file-system-development-with.html>
 
 
 The safe way
@@ -69,7 +69,7 @@ The safe way
 
 Here are instructions on how to run a local web server to host these
 lessons using Apache under Mac OS X; GNU/Linux will be similar.  If you're
-on Windows, check out Xampp at <http://www.apachefriends.org/en/xampp.html>
+on Windows, check out Xampp at <//www.apachefriends.org/en/xampp.html>
 
 
 1) Add an entry for webgl-lessons.local in /etc/hosts.
@@ -86,10 +86,10 @@ Tell the operating system to flush and reload the local DNS cache:
 
     dscacheutil -flushcache
 
-Test to see if http://webgl-lessons.local/ is working:
+Test to see if //webgl-lessons.local/ is working:
 
-    $ dscacheutil -q host -a name http://webgl-lessons.local/
-    name: http://webgl-lessons.local/
+    $ dscacheutil -q host -a name //webgl-lessons.local/
+    name: //webgl-lessons.local/
     ip_address: <ip_address>
 
 2) Add an Apache vhost configuration:
@@ -124,4 +124,4 @@ If the syntax is OK then restart Apache:
     $ sudo apachectl restart
 
 Now you can open the webgl-lessons in any local browser at this url:
-<http://webgl-lessons.local/>
+<//webgl-lessons.local/>

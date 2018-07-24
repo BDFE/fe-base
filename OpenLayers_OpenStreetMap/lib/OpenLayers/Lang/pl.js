@@ -37,7 +37,7 @@ OpenLayers.Lang["pl"] = OpenLayers.Util.applyDefaults({
         "Dlatego jesteśmy za deprecjację -- minZoomLevel " +
         "zostanie usunięta w wersji 3.0. W zamian prosze użyj " +
         "min/max rozdzielczości w sposób opisany tutaj: " +
-        "http://trac.openlayers.org/wiki/SettingZoomLevels",
+        "//trac.openlayers.org/wiki/SettingZoomLevels",
 
     'commitSuccess': "Transakcja WFS: SUKCES ${response}",
 
@@ -50,7 +50,7 @@ OpenLayers.Lang["pl"] = OpenLayers.Util.applyDefaults({
         "Najprawdopodobniej jest to spowodowane tym, że biblioteka Google Maps " +
         "nie jest załadowana, lub nie zawiera poprawnego klucza do API dla twojej strony<br><br>" +
         "Programisto: Aby uzyskać pomoc , " +
-        "<a href='http://trac.openlayers.org/wiki/Google' " +
+        "<a href='//trac.openlayers.org/wiki/Google' " +
         "target='_blank'>kliknij tutaj</a>",
 
     'getLayerWarning':
@@ -61,7 +61,7 @@ OpenLayers.Lang["pl"] = OpenLayers.Util.applyDefaults({
         "nie jest załadowana, lub może(o ile biblioteka tego wymaga) " +
         "byc potrzebny klucza do API dla twojej strony<br><br>" +
         "Programisto: Aby uzyskać pomoc , " +
-        "<a href='http://trac.openlayers.org/wiki/${layerLib}' " +
+        "<a href='//trac.openlayers.org/wiki/${layerLib}' " +
         "target='_blank'>kliknij tutaj</a>",
 
     'Scale = 1 : ${scaleDenom}': "Skala = 1 : ${scaleDenom}",
@@ -80,7 +80,7 @@ OpenLayers.Lang["pl"] = OpenLayers.Util.applyDefaults({
         "jej zastosowanie został zaprojektowany, aby wspierać wyświetlania danych przez komercyjne mapy, "+
         "jednak obecnie ta funkcjonalność powinien zostać osiągnięty za pomocą Spherical Mercator " +
         "its use was designed to support displaying data over commercial. Więcje informacji na ten temat możesz znaleźć na stronie " + 
-        "http://trac.openlayers.org/wiki/SphericalMercator.",
+        "//trac.openlayers.org/wiki/SphericalMercator.",
 
     // console message
     'methodDeprecated':

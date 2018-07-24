@@ -30,7 +30,7 @@ OpenLayers.Layer.MapGuide = OpenLayers.Class(OpenLayers.Layer.Grid, {
      *    via mapguide server. This does require extra configuration on the Mapguide Server,
      *    and will only work when singleTile is false. The url for the layer must be set to the
      *    webserver path rather than the Mapguide mapagent.
-     *    See http://trac.osgeo.org/mapguide/wiki/CodeSamples/Tiles/ServingTilesViaHttp
+     *    See //trac.osgeo.org/mapguide/wiki/CodeSamples/Tiles/ServingTilesViaHttp
      **/
     useHttpTile: false,
     
@@ -144,7 +144,7 @@ OpenLayers.Layer.MapGuide = OpenLayers.Class(OpenLayers.Layer.Grid, {
      * Parameters:
      * name - {String} Name of the layer displayed in the interface
      * url - {String} Location of the MapGuide mapagent executable
-     *            (e.g. http://localhost:8008/mapguide/mapagent/mapagent.fcgi)
+     *            (e.g. //localhost:8008/mapguide/mapagent/mapagent.fcgi)
      * params - {Object} hashtable of additional parameters to use. Some
      *     parameters may require additional code on the server. The ones that
      *     you may want to use are: 

@@ -1,5 +1,5 @@
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.VTKLoader = function () {

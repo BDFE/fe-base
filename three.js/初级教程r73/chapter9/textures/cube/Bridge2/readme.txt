@@ -2,7 +2,7 @@ Author
 ======
 
 This is the work of Emil Persson, aka Humus.
-http://www.humus.name
+//www.humus.name
 humus@comhem.se
 
 

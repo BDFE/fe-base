@@ -27,16 +27,16 @@ OpenLayers.Format.CSWGetRecords.v2_0_2 = OpenLayers.Class(OpenLayers.Format.XML,
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        csw: "http://www.opengis.net/cat/csw/2.0.2",
-        dc: "http://purl.org/dc/elements/1.1/",
-        dct: "http://purl.org/dc/terms/",
-        gmd: "http://www.isotc211.org/2005/gmd",
-        geonet: "http://www.fao.org/geonetwork",
-        ogc: "http://www.opengis.net/ogc",
-        ows: "http://www.opengis.net/ows",
-        xlink: "http://www.w3.org/1999/xlink",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance",
-        xmlns: "http://www.w3.org/2000/xmlns/"
+        csw: "//www.opengis.net/cat/csw/2.0.2",
+        dc: "//purl.org/dc/elements/1.1/",
+        dct: "//purl.org/dc/terms/",
+        gmd: "//www.isotc211.org/2005/gmd",
+        geonet: "//www.fao.org/geonetwork",
+        ogc: "//www.opengis.net/ogc",
+        ows: "//www.opengis.net/ows",
+        xlink: "//www.w3.org/1999/xlink",
+        xsi: "//www.w3.org/2001/XMLSchema-instance",
+        xmlns: "//www.w3.org/2000/xmlns/"
     },
     
     /**
@@ -53,10 +53,10 @@ OpenLayers.Format.CSWGetRecords.v2_0_2 = OpenLayers.Class(OpenLayers.Format.XML,
     
     /**
      * Property: schemaLocation
-     * {String} http://www.opengis.net/cat/csw/2.0.2
-     *   http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd
+     * {String} //www.opengis.net/cat/csw/2.0.2
+     *   //schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd
      */
-    schemaLocation: "http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd",
+    schemaLocation: "//www.opengis.net/cat/csw/2.0.2 //schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd",
 
     /**
      * APIProperty: requestId

@@ -11,7 +11,7 @@
  * Namespace: OpenLayers.Date
  * Contains implementations of Date.parse and date.toISOString that match the
  *     ECMAScript 5 specification for parsing RFC 3339 dates.
- *     http://tools.ietf.org/html/rfc3339
+ *     //tools.ietf.org/html/rfc3339
  */
 OpenLayers.Date = {
 
@@ -27,7 +27,7 @@ OpenLayers.Date = {
      * APIMethod: toISOString
      * Generates a string representing a date.  The format of the string follows
      *     the profile of ISO 8601 for date and time on the Internet (see
-     *     http://tools.ietf.org/html/rfc3339).  If the toISOString method is
+     *     //tools.ietf.org/html/rfc3339).  If the toISOString method is
      *     available on the Date prototype, that is used.  The toISOString
      *     method for Date instances is defined in ECMA-262.
      *
@@ -75,7 +75,7 @@ OpenLayers.Date = {
      * APIMethod: parse
      * Generate a date object from a string.  The format for the string follows
      *     the profile of ISO 8601 for date and time on the Internet (see
-     *     http://tools.ietf.org/html/rfc3339).  We don't call the native
+     *     //tools.ietf.org/html/rfc3339).  We don't call the native
      *     Date.parse because of inconsistency between implmentations.  In
      *     Chrome, calling Date.parse with a string that doesn't contain any
      *     indication of the timezone (e.g. "2011"), the date is interpreted

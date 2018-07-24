@@ -19,13 +19,13 @@ OpenLayers.Renderer.SVG = OpenLayers.Class(OpenLayers.Renderer.Elements, {
      * Property: xmlns
      * {String}
      */
-    xmlns: "http://www.w3.org/2000/svg",
+    xmlns: "//www.w3.org/2000/svg",
     
     /**
      * Property: xlinkns
      * {String}
      */
-    xlinkns: "http://www.w3.org/1999/xlink",
+    xlinkns: "//www.w3.org/1999/xlink",
 
     /**
      * Constant: MAX_PIXEL
@@ -73,7 +73,7 @@ OpenLayers.Renderer.SVG = OpenLayers.Class(OpenLayers.Renderer.Elements, {
      * {Boolean} Whether or not the browser supports the SVG renderer
      */
     supported: function() {
-        var svgFeature = "http://www.w3.org/TR/SVG11/feature#";
+        var svgFeature = "//www.w3.org/TR/SVG11/feature#";
         return (document.implementation && 
            (document.implementation.hasFeature("org.w3c.svg", "1.0") || 
             document.implementation.hasFeature(svgFeature + "SVG", "1.1") || 
@@ -304,9 +304,9 @@ OpenLayers.Renderer.SVG = OpenLayers.Class(OpenLayers.Renderer.Elements, {
                 // The more appropriate way to implement this would be use/defs,
                 // but due to various issues in several browsers, it is safer to
                 // copy the symbols instead of referencing them. 
-                // See e.g. ticket http://trac.osgeo.org/openlayers/ticket/2985 
+                // See e.g. ticket //trac.osgeo.org/openlayers/ticket/2985 
                 // and this email thread
-                // http://osgeo-org.1803224.n2.nabble.com/Select-Control-Ctrl-click-on-Feature-with-a-graphicName-opens-new-browser-window-tc5846039.html
+                // //osgeo-org.1803224.n2.nabble.com/Select-Control-Ctrl-click-on-Feature-with-a-graphicName-opens-new-browser-window-tc5846039.html
                 node.firstChild && node.removeChild(node.firstChild);
                 node.appendChild(src.firstChild.cloneNode(true));
                 node.setAttributeNS(null, "viewBox", src.getAttributeNS(null, "viewBox"));
@@ -984,7 +984,7 @@ OpenLayers.Renderer.SVG.LABEL_ALIGN = {
  */
 OpenLayers.Renderer.SVG.LABEL_VSHIFT = {
     // according to
-    // http://www.w3.org/Graphics/SVG/Test/20061213/htmlObjectHarness/full-text-align-02-b.html
+    // //www.w3.org/Graphics/SVG/Test/20061213/htmlObjectHarness/full-text-align-02-b.html
     // a baseline-shift of -70% shifts the text exactly from the
     // bottom to the top of the baseline, so -35% moves the text to
     // the center of the baseline.

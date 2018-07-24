@@ -264,7 +264,7 @@ OpenLayers.Geometry.Collection = OpenLayers.Class(OpenLayers.Geometry, {
      * Reference:
      * Robert. G. Chamberlain and William H. Duquette, "Some Algorithms for
      *     Polygons on a Sphere", JPL Publication 07-03, Jet Propulsion
-     *     Laboratory, Pasadena, CA, June 2007 http://trs-new.jpl.nasa.gov/dspace/handle/2014/40409
+     *     Laboratory, Pasadena, CA, June 2007 //trs-new.jpl.nasa.gov/dspace/handle/2014/40409
      *
      * Returns:
      * {float} The approximate geodesic area of the geometry in square meters.

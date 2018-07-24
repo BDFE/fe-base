@@ -26,10 +26,10 @@ OpenLayers.Format.SLD.v1_0_0 = OpenLayers.Class(
     
     /**
      * Property: schemaLocation
-     * {String} http://www.opengis.net/sld
-     *   http://schemas.opengis.net/sld/1.0.0/StyledLayerDescriptor.xsd
+     * {String} //www.opengis.net/sld
+     *   //schemas.opengis.net/sld/1.0.0/StyledLayerDescriptor.xsd
      */
-    schemaLocation: "http://www.opengis.net/sld http://schemas.opengis.net/sld/1.0.0/StyledLayerDescriptor.xsd",
+    schemaLocation: "//www.opengis.net/sld //schemas.opengis.net/sld/1.0.0/StyledLayerDescriptor.xsd",
 
     /**
      * Constructor: OpenLayers.Format.SLD.v1_0_0

@@ -30,13 +30,13 @@ Tooltip: 'WebGL JavaScript'
 # --------------------------------------------------------------------------
 
 __author__ = "Dennis Ippel"
-__url__ = ("http://www.rozengain.com")
+__url__ = ("//www.rozengain.com")
 __version__ = "0.2"
 
 __bpydoc__ = """
 
 For more information please go to:
-http://www.rozengain.com
+//www.rozengain.com
 """
 import Blender
 from Blender import *

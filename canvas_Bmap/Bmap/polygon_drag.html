@@ -40,26 +40,26 @@
 
 </html>
 <script type="text/javascript">
-    window.onload = loadJScript;  //异步加载地图
+    window.onload = loadJScript; //异步加载地图
 
     var map = null
     //百度地图API功能
     function loadJScript() {
         var script = document.createElement("script");
         script.type = "text/javascript";
-        script.src = "http://api.map.baidu.com/api?v=2.0&ak=wydmYg51LXqtUDpwkBkQj13C0KepuWrx&callback=init";
-
+        script.src = "//api.map.baidu.com/api?v=2.0&ak=wydmYg51LXqtUDpwkBkQj13C0KepuWrx&callback=init";
         document.body.appendChild(script);
     }
+
     function init() {
-        map = new BMap.Map("container");            // 创建Map实例
+        map = new BMap.Map("container"); // 创建Map实例
         var point = new BMap.Point(116.404, 39.915); // 创建点坐标
         map.centerAndZoom(point, 15);
         map.addControl(new BMap.ScaleControl());
         map.addControl(new BMap.OverviewMapControl());
         map.setCurrentCity("北京"); // 仅当设置城市信息时，MapTypeControl的切换功能才能可用
         map.addControl(new BMap.MapTypeControl());
-        map.enableScrollWheelZoom();                 //启用滚轮放大缩小map.addControl(new BMap.NavigationControl());
+        map.enableScrollWheelZoom(); //启用滚轮放大缩小map.addControl(new BMap.NavigationControl());
         map.addControl(new BMap.CopyrightControl())
         map.addEventListener("click", coorTrans)
         setBoundary()
@@ -86,12 +86,17 @@
             new BMap.Point(rightTop[0], rightTop[1]),
             new BMap.Point(rightTop[0], leftBottom[1])
         ]
-        let polygon = new BMap.Polygon(points, { strokeColor: "blue", strokeWeight: 2, strokeOpacity: 1, fillOpacity: 0.15, fillColor: "green" });  //创建多边形
-       polygon.enableEditing();
+        let polygon = new BMap.Polygon(points, {
+            strokeColor: "blue",
+            strokeWeight: 2,
+            strokeOpacity: 1,
+            fillOpacity: 0.15,
+            fillColor: "green"
+        }); //创建多边形
+        polygon.enableEditing();
         map.setViewport(points);
-        map.addOverlay(polygon);   //增加多边形
+        map.addOverlay(polygon); //增加多边形
 
         polygon.addEventListener()
     }
-
 </script>

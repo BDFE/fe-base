@@ -56,9 +56,9 @@ OpenLayers.WPSProcess = OpenLayers.Class({
     /**
      * APIProperty: localWPS
      * {String} Service endpoint for locally chained WPS processes. Default is
-     *     'http://geoserver/wps'.
+     *     '//geoserver/wps'.
      */
-    localWPS: 'http://geoserver/wps',
+    localWPS: '//geoserver/wps',
     
     /**
      * Property: formats

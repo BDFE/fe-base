@@ -24,10 +24,10 @@ OpenLayers.Format.SOSCapabilities.v1_0_0 = OpenLayers.Class(
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        ows: "http://www.opengis.net/ows/1.1",
-        sos: "http://www.opengis.net/sos/1.0",
-        gml: "http://www.opengis.net/gml",
-        xlink: "http://www.w3.org/1999/xlink"
+        ows: "//www.opengis.net/ows/1.1",
+        sos: "//www.opengis.net/sos/1.0",
+        gml: "//www.opengis.net/gml",
+        xlink: "//www.w3.org/1999/xlink"
     },
 
     /**

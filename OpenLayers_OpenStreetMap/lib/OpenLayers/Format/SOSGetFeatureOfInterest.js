@@ -31,17 +31,17 @@ OpenLayers.Format.SOSGetFeatureOfInterest = OpenLayers.Class(
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        sos: "http://www.opengis.net/sos/1.0",
-        gml: "http://www.opengis.net/gml",
-        sa: "http://www.opengis.net/sampling/1.0",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance"
+        sos: "//www.opengis.net/sos/1.0",
+        gml: "//www.opengis.net/gml",
+        sa: "//www.opengis.net/sampling/1.0",
+        xsi: "//www.w3.org/2001/XMLSchema-instance"
     },
 
     /**
      * Property: schemaLocation
      * {String} Schema location
      */
-    schemaLocation: "http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosAll.xsd",
+    schemaLocation: "//www.opengis.net/sos/1.0 //schemas.opengis.net/sos/1.0.0/sosAll.xsd",
 
     /**
      * Property: defaultPrefix

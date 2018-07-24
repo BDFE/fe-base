@@ -23,9 +23,9 @@ OpenLayers.Format.WPSCapabilities.v1_0_0 = OpenLayers.Class(
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        ows: "http://www.opengis.net/ows/1.1",
-        wps: "http://www.opengis.net/wps/1.0.0",
-        xlink: "http://www.w3.org/1999/xlink"
+        ows: "//www.opengis.net/ows/1.1",
+        wps: "//www.opengis.net/wps/1.0.0",
+        xlink: "//www.w3.org/1999/xlink"
     },
 
     /**

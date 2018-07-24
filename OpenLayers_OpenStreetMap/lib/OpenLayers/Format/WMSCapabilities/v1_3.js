@@ -11,7 +11,7 @@
  * Class: OpenLayers.Format.WMSCapabilities/v1_3
  * Abstract base class for WMS Capabilities version 1.3.X. 
  * SLD 1.1.0 adds in the extra operations DescribeLayer and GetLegendGraphic, 
- * see: http://schemas.opengis.net/sld/1.1.0/sld_capabilities.xsd
+ * see: //schemas.opengis.net/sld/1.1.0/sld_capabilities.xsd
  * 
  * Note on <MinScaleDenominator> and <MaxScaleDenominator> parsing: If
  * the <MinScaleDenominator> value is set to "0", no maxScale will be

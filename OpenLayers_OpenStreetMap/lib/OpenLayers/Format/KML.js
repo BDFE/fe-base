@@ -30,15 +30,15 @@ OpenLayers.Format.KML = OpenLayers.Class(OpenLayers.Format.XML, {
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        kml: "http://www.opengis.net/kml/2.2",
-        gx: "http://www.google.com/kml/ext/2.2"
+        kml: "//www.opengis.net/kml/2.2",
+        gx: "//www.google.com/kml/ext/2.2"
     },
 
     /**
      * APIProperty: kmlns
      * {String} KML Namespace to use. Defaults to 2.0 namespace.
      */
-    kmlns: "http://earth.google.com/kml/2.0",
+    kmlns: "//earth.google.com/kml/2.0",
     
     /** 
      * APIProperty: placemarksDesc
@@ -434,7 +434,7 @@ OpenLayers.Format.KML = OpenLayers.Class(OpenLayers.Format.XML, {
                             // Settings for Google specific icons that are 64x64
                             // We set the width and height to 64 and halve the
                             // scale to prevent icons from being too big
-                            var google = "http://maps.google.com/mapfiles/kml";
+                            var google = "//maps.google.com/mapfiles/kml";
                             if (OpenLayers.String.startsWith(
                                                  href, google) && !w && !h) {
                                 w = 64;
@@ -475,7 +475,7 @@ OpenLayers.Format.KML = OpenLayers.Class(OpenLayers.Format.XML, {
                                 var posY = y ? (7 - y/32) : 7;
 
                                 var pos = posY * 8 + posX;
-                                href = "http://maps.google.com/mapfiles/kml/pal" 
+                                href = "//maps.google.com/mapfiles/kml/pal" 
                                      + palette + "/icon" + pos + file_extension;
                             }
 
@@ -1079,7 +1079,7 @@ OpenLayers.Format.KML = OpenLayers.Class(OpenLayers.Format.XML, {
     /**
      * Method: parseExtendedData
      * Parse ExtendedData from KML. Limited support for schemas/datatypes.
-     *     See http://code.google.com/apis/kml/documentation/kmlreference.html#extendeddata
+     *     See //code.google.com/apis/kml/documentation/kmlreference.html#extendeddata
      *     for more information on extendeddata.
      */
     parseExtendedData: function(node) {

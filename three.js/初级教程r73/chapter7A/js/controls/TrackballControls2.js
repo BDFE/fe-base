@@ -1,5 +1,5 @@
 /**
- * @author Eberhard Graether / http://egraether.com/
+ * @author Eberhard Graether / //egraether.com/
  */
 
 THREE.TrackballControls = function ( object, domElement ) {

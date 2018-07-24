@@ -35,7 +35,7 @@
  * Example text file:
  * (code)
  * lat	lon	title	description	iconSize	iconOffset	icon
- * 10	20	title	description	21,25		-10,-25		http://www.openlayers.org/dev/img/marker.png
+ * 10	20	title	description	21,25		-10,-25		//www.openlayers.org/dev/img/marker.png
  * (end)
  *
  * Inherits from:

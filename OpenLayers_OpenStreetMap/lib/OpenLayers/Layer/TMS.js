@@ -12,13 +12,13 @@
  * Class: OpenLayers.Layer.TMS
  * Create a layer for accessing tiles from services that conform with the 
  *     Tile Map Service Specification 
- *     (http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification).
+ *     (//wiki.osgeo.org/wiki/Tile_Map_Service_Specification).
  *
  * Example:
  * (code)
  *     var layer = new OpenLayers.Layer.TMS(
  *         "My Layer", // name for display in LayerSwitcher
- *         "http://tilecache.osgeo.org/wms-c/Basic.py/", // service endpoint
+ *         "//tilecache.osgeo.org/wms-c/Basic.py/", // service endpoint
  *         {layername: "basic", type: "png"} // required properties
  *     );
  * (end)
@@ -38,7 +38,7 @@ OpenLayers.Layer.TMS = OpenLayers.Class(OpenLayers.Layer.Grid, {
      * APIProperty: layername
      * {String} The identifier for the <TileMap> as advertised by the service.  
      *     For example, if the service advertises a <TileMap> with 
-     *    'href="http://tms.osgeo.org/1.0.0/vmap0"', the <layername> property 
+     *    'href="//tms.osgeo.org/1.0.0/vmap0"', the <layername> property 
      *     would be set to "vmap0".
      */
     layername: null,
@@ -72,7 +72,7 @@ OpenLayers.Layer.TMS = OpenLayers.Class(OpenLayers.Layer.Grid, {
      * (code)
      *     var layer = new OpenLayers.Layer.TMS(
      *         "My Layer",
-     *         "http://tilecache.osgeo.org/wms-c/Basic.py/",
+     *         "//tilecache.osgeo.org/wms-c/Basic.py/",
      *         {
      *             layername: "basic", 
      *             type: "png",
@@ -120,7 +120,7 @@ OpenLayers.Layer.TMS = OpenLayers.Class(OpenLayers.Layer.Grid, {
      * Parameters:
      * name - {String} Title to be displayed in a <OpenLayers.Control.LayerSwitcher>
      * url - {String} Service endpoint (without the version number).  E.g.
-     *     "http://tms.osgeo.org/".
+     *     "//tms.osgeo.org/".
      * options - {Object} Additional properties to be set on the layer.  The
      *     <layername> and <type> properties must be set here.
      */

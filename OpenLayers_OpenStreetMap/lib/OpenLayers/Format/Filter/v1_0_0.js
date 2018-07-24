@@ -27,9 +27,9 @@ OpenLayers.Format.Filter.v1_0_0 = OpenLayers.Class(
     
     /**
      * Property: schemaLocation
-     * {String} http://www.opengis.net/ogc/filter/1.0.0/filter.xsd
+     * {String} //www.opengis.net/ogc/filter/1.0.0/filter.xsd
      */
-    schemaLocation: "http://www.opengis.net/ogc/filter/1.0.0/filter.xsd",
+    schemaLocation: "//www.opengis.net/ogc/filter/1.0.0/filter.xsd",
 
     /**
      * Constructor: OpenLayers.Format.Filter.v1_0_0

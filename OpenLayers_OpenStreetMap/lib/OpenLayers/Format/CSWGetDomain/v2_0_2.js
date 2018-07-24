@@ -24,9 +24,9 @@ OpenLayers.Format.CSWGetDomain.v2_0_2 = OpenLayers.Class(OpenLayers.Format.XML, 
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        xlink: "http://www.w3.org/1999/xlink",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance",
-        csw: "http://www.opengis.net/cat/csw/2.0.2"
+        xlink: "//www.w3.org/1999/xlink",
+        xsi: "//www.w3.org/2001/XMLSchema-instance",
+        csw: "//www.opengis.net/cat/csw/2.0.2"
     },
 
     /**
@@ -43,10 +43,10 @@ OpenLayers.Format.CSWGetDomain.v2_0_2 = OpenLayers.Class(OpenLayers.Format.XML, 
     
     /**
      * Property: schemaLocation
-     * {String} http://www.opengis.net/cat/csw/2.0.2
-     *   http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd
+     * {String} //www.opengis.net/cat/csw/2.0.2
+     *   //schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd
      */
-    schemaLocation: "http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd",
+    schemaLocation: "//www.opengis.net/cat/csw/2.0.2 //schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd",
 
     /**
      * APIProperty: PropertyName

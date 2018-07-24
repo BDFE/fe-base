@@ -25,10 +25,10 @@ OpenLayers.Format.WMC.v1_0_0 = OpenLayers.Class(
     
     /**
      * Property: schemaLocation
-     * {String} http://www.opengis.net/context
-     *     http://schemas.opengis.net/context/1.0.0/context.xsd
+     * {String} //www.opengis.net/context
+     *     //schemas.opengis.net/context/1.0.0/context.xsd
      */
-    schemaLocation: "http://www.opengis.net/context http://schemas.opengis.net/context/1.0.0/context.xsd",
+    schemaLocation: "//www.opengis.net/context //schemas.opengis.net/context/1.0.0/context.xsd",
 
     /**
      * Constructor: OpenLayers.Format.WMC.v1_0_0

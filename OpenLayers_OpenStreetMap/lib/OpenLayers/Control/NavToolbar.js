@@ -17,7 +17,7 @@
  *
  * If you wish to change the properties of the Navigation control used
  *     in the NavToolbar, see: 
- *     http://trac.openlayers.org/wiki/Toolbars#SubclassingNavToolbar 
+ *     //trac.openlayers.org/wiki/Toolbars#SubclassingNavToolbar 
  * 
  * 
  * Inherits from:

@@ -10,7 +10,7 @@
 
     <script type="text/javascript">
         var obj = new Image();
-        obj.src = "http://www.w3school.com.cn/i/eg_tulip.jpg";
+        obj.src = "//www.w3school.com.cn/i/eg_tulip.jpg";
         obj.onload = function () {
             console.log('图片的宽度为：' + obj.width + '；图片的高度为：' + obj.height);
             document.getElementById("mypic1").innerHTML = "<img src='" + this.src + "' />";
@@ -19,7 +19,7 @@
 
     <script type="text/javascript">
         var obj1 = new Image();
-        obj1.src = "http://www.w3school.com.cn/i/eg_tulip.jpg";
+        obj1.src = "//www.w3school.com.cn/i/eg_tulip.jpg";
         obj1.onreadystatechange = function () {
             console.log('ready')
             if (obj1.readyState == "complete") {
@@ -30,7 +30,7 @@
     </script>
 
     <script>
-        const imgUrl = "http://www.w3school.com.cn/i/eg_tulip.jpg";
+        const imgUrl = "//www.w3school.com.cn/i/eg_tulip.jpg";
         var imgDiv = document.getElementById("replaceImg");
         loadImage(imgUrl, (img)=>{
             imgDiv.innerHTML = imgDiv;

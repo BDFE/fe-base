@@ -25,10 +25,10 @@ OpenLayers.Format.XLS.v1_1_0 = OpenLayers.Class(
     
     /**
      * Property: schemaLocation
-     * {String} http://www.opengis.net/xls
-     *   http://schemas.opengis.net/ols/1.1.0/LocationUtilityService.xsd
+     * {String} //www.opengis.net/xls
+     *   //schemas.opengis.net/ols/1.1.0/LocationUtilityService.xsd
      */
-    schemaLocation: "http://www.opengis.net/xls http://schemas.opengis.net/ols/1.1.0/LocationUtilityService.xsd",
+    schemaLocation: "//www.opengis.net/xls //schemas.opengis.net/ols/1.1.0/LocationUtilityService.xsd",
 
     /**
      * Constructor: OpenLayers.Format.XLS.v1_1_0

@@ -21,10 +21,10 @@ OpenLayers.Format.WCSGetCoverage = OpenLayers.Class(OpenLayers.Format.XML, {
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        ows: "http://www.opengis.net/ows/1.1",
-        wcs: "http://www.opengis.net/wcs/1.1",
-        xlink: "http://www.w3.org/1999/xlink",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance"
+        ows: "//www.opengis.net/ows/1.1",
+        wcs: "//www.opengis.net/wcs/1.1",
+        xlink: "//www.w3.org/1999/xlink",
+        xsi: "//www.w3.org/2001/XMLSchema-instance"
     },
 
     /**
@@ -48,7 +48,7 @@ OpenLayers.Format.WCSGetCoverage = OpenLayers.Class(OpenLayers.Format.XML, {
      * Property: schemaLocation
      * {String} Schema location
      */
-    schemaLocation: "http://www.opengis.net/wcs/1.1 http://schemas.opengis.net/wcs/1.1/wcsGetCoverage.xsd",
+    schemaLocation: "//www.opengis.net/wcs/1.1 //schemas.opengis.net/wcs/1.1/wcsGetCoverage.xsd",
 
     /**
      * Constructor: OpenLayers.Format.WCSGetCoverage

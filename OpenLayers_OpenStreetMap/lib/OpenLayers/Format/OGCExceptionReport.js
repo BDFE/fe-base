@@ -21,7 +21,7 @@ OpenLayers.Format.OGCExceptionReport = OpenLayers.Class(OpenLayers.Format.XML, {
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        ogc: "http://www.opengis.net/ogc"
+        ogc: "//www.opengis.net/ogc"
     },
 
     /**

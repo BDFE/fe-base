@@ -18,7 +18,7 @@
  */
 OpenLayers.Handler.Keyboard = OpenLayers.Class(OpenLayers.Handler, {
 
-    /* http://www.quirksmode.org/js/keys.html explains key x-browser
+    /* //www.quirksmode.org/js/keys.html explains key x-browser
         key handling quirks in pretty nice detail */
 
     /** 

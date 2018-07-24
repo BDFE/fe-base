@@ -799,7 +799,7 @@ OpenLayers.Util.distVincenty = function(p1, p2) {
  * Calculate destination point given start point lat/long (numeric degrees),
  * bearing (numeric degrees) & distance (in m).
  * Adapted from Chris Veness work, see
- * http://www.movable-type.co.uk/scripts/latlong-vincenty-direct.html
+ * //www.movable-type.co.uk/scripts/latlong-vincenty-direct.html
  *
  * Parameters:
  * lonlat  - {<OpenLayers.LonLat>} (or any object with both .lat, .lon
@@ -960,9 +960,9 @@ OpenLayers.Util.createUniqueID = function(prefix) {
 /**
  * Constant: INCHES_PER_UNIT
  * {Object} Constant inches per unit -- borrowed from MapServer mapscale.c
- * derivation of nautical miles from http://en.wikipedia.org/wiki/Nautical_mile
- * Includes the full set of units supported by CS-MAP (http://trac.osgeo.org/csmap/)
- * and PROJ.4 (http://trac.osgeo.org/proj/)
+ * derivation of nautical miles from //en.wikipedia.org/wiki/Nautical_mile
+ * Includes the full set of units supported by CS-MAP (//trac.osgeo.org/csmap/)
+ * and PROJ.4 (//trac.osgeo.org/proj/)
  * The hardcoded table is maintain in a CS-MAP source code module named CSdataU.c
  * The hardcoded table of PROJ.4 units are in pj_units.c.
  */
@@ -1137,7 +1137,7 @@ OpenLayers.Util.getScaleFromResolution = function (resolution, units) {
 /**
  * Function: pagePosition
  * Calculates the position of an element on the page (see
- * http://code.google.com/p/doctype/wiki/ArticlePageOffset)
+ * //code.google.com/p/doctype/wiki/ArticlePageOffset)
  *
  * OpenLayers.Util.pagePosition is based on Yahoo's getXY method, which is
  * Copyright (c) 2006, Yahoo! Inc.
@@ -1260,7 +1260,7 @@ OpenLayers.Util.pagePosition =  function(forElement) {
  * usually document.documentElement, except in IE,where it is either
  * document.body or document.documentElement, depending on the document's
  * compatibility mode (see
- * http://code.google.com/p/doctype/wiki/ArticleClientViewportElement)
+ * //code.google.com/p/doctype/wiki/ArticleClientViewportElement)
  *
  * Returns:
  * {DOMElement}
@@ -1644,7 +1644,7 @@ OpenLayers.Util.getRenderedDimensions = function(contentHTML, size, options) {
  *     written by Matthew Eernisse and released under the Apache 2 
  *     license here:
  * 
- *     http://www.fleegix.org/articles/2006/05/30/getting-the-scrollbar-width-in-pixels
+ *     //www.fleegix.org/articles/2006/05/30/getting-the-scrollbar-width-in-pixels
  * 
  *     It has been modified simply to cache its value, since it is physically 
  *     impossible that this code could ever run in more than one browser at 

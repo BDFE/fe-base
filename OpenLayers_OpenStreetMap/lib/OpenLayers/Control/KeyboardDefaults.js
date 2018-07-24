@@ -69,7 +69,7 @@ OpenLayers.Control.KeyboardDefaults = OpenLayers.Class(OpenLayers.Control, {
      * "IE keycodes", and so is supported by any keycode labeled "IE".
      * 
      * Very informative URL:
-     *    http://unixpapa.com/js/key.html
+     *    //unixpapa.com/js/key.html
      *
      * Parameters:
      * evt - {Event} 

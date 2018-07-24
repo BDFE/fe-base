@@ -2,7 +2,7 @@
  * $Id: rawdeflate.js,v 0.3 2009/03/01 19:05:05 dankogai Exp dankogai $
  *
  * Original:
- *   http://www.onicos.com/staff/iz/amuse/javascript/expert/deflate.txt
+ *   //www.onicos.com/staff/iz/amuse/javascript/expert/deflate.txt
  */
 
 (function(){

@@ -14,7 +14,7 @@
  * state of a web mapping application. In a way it is the successor to
  * Web Map Context (WMC), since it is more generic and more types of layers
  * can be stored. Also, nesting of layers is supported since version 0.3.1.
- * For more information see: http://www.ogcnetwork.net/context
+ * For more information see: //www.ogcnetwork.net/context
  *
  * Inherits from:
  *  - <OpenLayers.Format.Context>

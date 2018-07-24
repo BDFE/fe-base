@@ -71,7 +71,7 @@ OpenLayers.Layer.WMS = OpenLayers.Class(OpenLayers.Layer.Grid, {
      * The code below creates a simple WMS layer using the image/jpeg format.
      * (code)
      * var wms = new OpenLayers.Layer.WMS("NASA Global Mosaic",
-     *                                    "http://wms.jpl.nasa.gov/wms.cgi", 
+     *                                    "//wms.jpl.nasa.gov/wms.cgi", 
      *                                    {layers: "modis,global_mosaic"});
      * (end)
      * Note the 3rd argument (params). Properties added to this object will be
@@ -84,7 +84,7 @@ OpenLayers.Layer.WMS = OpenLayers.Class(OpenLayers.Layer.Grid, {
      * The code below creates a transparent WMS layer with additional options.
      * (code)
      * var wms = new OpenLayers.Layer.WMS("NASA Global Mosaic",
-     *                                    "http://wms.jpl.nasa.gov/wms.cgi", 
+     *                                    "//wms.jpl.nasa.gov/wms.cgi", 
      *                                    {
      *                                        layers: "modis,global_mosaic",
      *                                        transparent: true
@@ -101,7 +101,7 @@ OpenLayers.Layer.WMS = OpenLayers.Class(OpenLayers.Layer.Grid, {
      * Parameters:
      * name - {String} A name for the layer
      * url - {String} Base url for the WMS
-     *                (e.g. http://wms.jpl.nasa.gov/wms.cgi)
+     *                (e.g. //wms.jpl.nasa.gov/wms.cgi)
      * params - {Object} An object with key/value pairs representing the
      *                   GetMap query string parameters and parameter values.
      * options - {Object} Hashtable of extra options to tag onto the layer.

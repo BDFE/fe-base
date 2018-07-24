@@ -376,8 +376,8 @@ OpenLayers.Feature.Vector = OpenLayers.Class(OpenLayers.Feature, {
  *     style will typically be used if no other style is specified. These
  *     styles correspond for the most part, to the styling properties defined
  *     by the SVG standard. 
- *     Information on fill properties: http://www.w3.org/TR/SVG/painting.html#FillProperties
- *     Information on stroke properties: http://www.w3.org/TR/SVG/painting.html#StrokeProperties
+ *     Information on fill properties: //www.w3.org/TR/SVG/painting.html#FillProperties
+ *     Information on stroke properties: //www.w3.org/TR/SVG/painting.html#StrokeProperties
  *
  * Symbolizer properties:
  * fill - {Boolean} Set to false if no fill is desired.

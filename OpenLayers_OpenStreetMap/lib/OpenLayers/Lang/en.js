@@ -33,7 +33,7 @@ OpenLayers.Lang.en = {
         " Therefore we are deprecating it -- the minZoomLevel " +
         "check below will be removed at 3.0. Please instead " +
         "use min/max resolution setting as described here: " +
-        "http://trac.openlayers.org/wiki/SettingZoomLevels",
+        "//trac.openlayers.org/wiki/SettingZoomLevels",
 
     'commitSuccess': "WFS Transaction: SUCCESS ${response}",
 
@@ -47,7 +47,7 @@ OpenLayers.Lang.en = {
         "script was either not included, or does not contain the " +
         "correct API key for your site.<br><br>" +
         "Developers: For help getting this working correctly, " +
-        "<a href='http://trac.openlayers.org/wiki/Google' " +
+        "<a href='//trac.openlayers.org/wiki/Google' " +
         "target='_blank'>click here</a>",
 
     'getLayerWarning':
@@ -57,7 +57,7 @@ OpenLayers.Lang.en = {
         "Most likely, this is because the ${layerLib} library " +
         "script was not correctly included.<br><br>" +
         "Developers: For help getting this working correctly, " +
-        "<a href='http://trac.openlayers.org/wiki/${layerLib}' " +
+        "<a href='//trac.openlayers.org/wiki/${layerLib}' " +
         "target='_blank'>click here</a>",
 
     'Scale = 1 : ${scaleDenom}': "Scale = 1 : ${scaleDenom}",
@@ -76,7 +76,7 @@ OpenLayers.Lang.en = {
         "its use was designed to support displaying data over commercial " + 
         "basemaps, but that functionality should now be achieved by using " +
         "Spherical Mercator support. More information is available from " +
-        "http://trac.openlayers.org/wiki/SphericalMercator.",
+        "//trac.openlayers.org/wiki/SphericalMercator.",
 
     // console message
     'methodDeprecated':

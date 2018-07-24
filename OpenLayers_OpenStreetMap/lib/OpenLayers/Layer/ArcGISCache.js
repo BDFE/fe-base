@@ -14,9 +14,9 @@
  * ArcGIS Server itself.
  * 
  * A few attempts have been made at this kind of layer before. See 
- * http://trac.osgeo.org/openlayers/ticket/1967 
+ * //trac.osgeo.org/openlayers/ticket/1967 
  * and 
- * http://trac.osgeo.org/openlayers/browser/sandbox/tschaub/arcgiscache/lib/OpenLayers/Layer/ArcGISCache.js
+ * //trac.osgeo.org/openlayers/browser/sandbox/tschaub/arcgiscache/lib/OpenLayers/Layer/ArcGISCache.js
  *
  * Typically the problem encountered is that the tiles seem to "jump around".
  * This is due to the fact that the actual max extent for the tiles on AGS layers
@@ -28,10 +28,10 @@
  *
  * For reference, you can access mapcache meta data in two ways. For accessing a 
  * mapcache through ArcGIS Server, you can simply go to the landing page for the
- * layer. (ie. http://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer)
+ * layer. (ie. //services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer)
  * For accessing it directly through HTTP, there should always be a conf.xml file
  * in the root directory. 
- * (ie. http://serverx.esri.com/arcgiscache/DG_County_roads_yesA_backgroundDark/Layers/conf.xml)
+ * (ie. //serverx.esri.com/arcgiscache/DG_County_roads_yesA_backgroundDark/Layers/conf.xml)
  *  
  *Inherits from: 
  *  - <OpenLayers.Layer.XYZ>             
@@ -68,9 +68,9 @@ OpenLayers.Layer.ArcGISCache = OpenLayers.Class(OpenLayers.Layer.XYZ, {
      *     cache via an AGS MapServer or directly through HTTP. When accessing via
      *     AGS the path structure uses a standard z/y/x structure. But AGS actually
      *     stores the tile images on disk using a hex based folder structure that looks
-     *     like "http://example.com/mylayer/L00/R00000000/C00000000.png".  Learn more
+     *     like "//example.com/mylayer/L00/R00000000/C00000000.png".  Learn more
      *     about this here:
-     *     http://blogs.esri.com/Support/blogs/mappingcenter/archive/2010/08/20/Checking-Your-Local-Cache-Folders.aspx
+     *     //blogs.esri.com/Support/blogs/mappingcenter/archive/2010/08/20/Checking-Your-Local-Cache-Folders.aspx
      *     Defaults to true;
      */    
     useArcGISServer: true,
@@ -79,7 +79,7 @@ OpenLayers.Layer.ArcGISCache = OpenLayers.Class(OpenLayers.Layer.XYZ, {
      * APIProperty: type
      * {String} Image type for the layer.  This becomes the filename extension
      *     in tile requests.  Default is "png" (generating a url like
-     *     "http://example.com/mylayer/L00/R00000000/C00000000.png").
+     *     "//example.com/mylayer/L00/R00000000/C00000000.png").
      */
     type: 'png',
     

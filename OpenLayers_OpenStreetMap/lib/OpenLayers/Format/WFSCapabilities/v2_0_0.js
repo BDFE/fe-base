@@ -23,10 +23,10 @@ OpenLayers.Format.WFSCapabilities.v2_0_0 = OpenLayers.Class(
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        wfs: "http://www.opengis.net/wfs/2.0",
-        xlink: "http://www.w3.org/1999/xlink",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance",
-        ows: "http://www.opengis.net/ows/1.1"
+        wfs: "//www.opengis.net/wfs/2.0",
+        xlink: "//www.w3.org/1999/xlink",
+        xsi: "//www.w3.org/2001/XMLSchema-instance",
+        ows: "//www.opengis.net/ows/1.1"
     },
 
     /**

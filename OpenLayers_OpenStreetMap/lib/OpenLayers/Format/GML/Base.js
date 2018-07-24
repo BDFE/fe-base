@@ -30,10 +30,10 @@ OpenLayers.Format.GML.Base = OpenLayers.Class(OpenLayers.Format.XML, {
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        gml: "http://www.opengis.net/gml",
-        xlink: "http://www.w3.org/1999/xlink",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance",
-        wfs: "http://www.opengis.net/wfs" // this is a convenience for reading wfs:FeatureCollection
+        gml: "//www.opengis.net/gml",
+        xlink: "//www.w3.org/1999/xlink",
+        xsi: "//www.w3.org/2001/XMLSchema-instance",
+        wfs: "//www.opengis.net/wfs" // this is a convenience for reading wfs:FeatureCollection
     },
 
     /**

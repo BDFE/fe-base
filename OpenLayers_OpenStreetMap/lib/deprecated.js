@@ -118,7 +118,7 @@ OpenLayers.Util.clearArray = function(array) {
  * Set the opacity of a DOM Element
  *     Note that for this function to work in IE, elements must "have layout"
  *     according to:
- *     http://msdn.microsoft.com/workshop/author/dhtml/reference/properties/haslayout.asp
+ *     //msdn.microsoft.com/workshop/author/dhtml/reference/properties/haslayout.asp
  *
  * Parameters:
  * element - {DOMElement} Set the opacity on this DOM element
@@ -1359,7 +1359,7 @@ OpenLayers.Control.MouseDefaults = OpenLayers.Class(OpenLayers.Control, {
 
 
 /**
- *  Mouse ScrollWheel code thanks to http://adomas.org/javascript-mouse-wheel/
+ *  Mouse ScrollWheel code thanks to //adomas.org/javascript-mouse-wheel/
  */
 
 
@@ -1929,14 +1929,14 @@ OpenLayers.Layer.WMS.Post = OpenLayers.Class(OpenLayers.Layer.WMS, {
      * (code)
      * var wms = new OpenLayers.Layer.WMS.Post(
      *  "NASA Global Mosaic",
-     *  "http://wms.jpl.nasa.gov/wms.cgi",
+     *  "//wms.jpl.nasa.gov/wms.cgi",
      *  {layers: "modis, global_mosaic"});
      * (end)
      *
      * Parameters:
      * name - {String} A name for the layer
      * url - {String} Base url for the WMS
-     *                (e.g. http://wms.jpl.nasa.gov/wms.cgi)
+     *                (e.g. //wms.jpl.nasa.gov/wms.cgi)
      * params - {Object} An object with key/value pairs representing the
      *                   GetMap query string parameters and parameter values.
      * options - {Object} Hashtable of extra options to tag onto the layer.
@@ -2231,7 +2231,7 @@ OpenLayers.Tile.WFS = OpenLayers.Class(OpenLayers.Tile, {
                     doc = xml.read(doc);
                 }
                 var resultFeatures = xml.getElementsByTagNameNS(
-                    doc, "http://www.opengis.net/gml", "featureMember"
+                    doc, "//www.opengis.net/gml", "featureMember"
                 );
                 this.addResults(resultFeatures);
             }
@@ -2333,8 +2333,8 @@ OpenLayers.Feature.WFS = OpenLayers.Class(OpenLayers.Feature, {
     processXMLNode: function(xmlNode) {
         //this should be overridden by subclasses
         // must return an Object with 'id' and 'lonlat' values set
-        var point = OpenLayers.Ajax.getElementsByTagNameNS(xmlNode, "http://www.opengis.net/gml", "gml", "Point");
-        var text  = OpenLayers.Util.getXmlNodeValue(OpenLayers.Ajax.getElementsByTagNameNS(point[0], "http://www.opengis.net/gml","gml", "coordinates")[0]);
+        var point = OpenLayers.Ajax.getElementsByTagNameNS(xmlNode, "//www.opengis.net/gml", "gml", "Point");
+        var text  = OpenLayers.Util.getXmlNodeValue(OpenLayers.Ajax.getElementsByTagNameNS(point[0], "//www.opengis.net/gml","gml", "coordinates")[0]);
         var floats = text.split(",");
         return {lonlat: new OpenLayers.LonLat(parseFloat(floats[0]),
                                               parseFloat(floats[1])),
@@ -2949,7 +2949,7 @@ OpenLayers.Layer.WFS = OpenLayers.Class(
  *
  * Instances of OpenLayers.Layer.VirtualEarth are used to display the data from
  *     the Bing Maps AJAX Control (see e.g.
- *     http://msdn.microsoft.com/library/bb429619.aspx). Create a VirtualEarth
+ *     //msdn.microsoft.com/library/bb429619.aspx). Create a VirtualEarth
  *     layer with the <OpenLayers.Layer.VirtualEarth> constructor.
  *
  * Inherits from:
@@ -3084,7 +3084,7 @@ OpenLayers.Layer.VirtualEarth = OpenLayers.Class(
 
                 // The fourth argument is whether the map is 'fixed' -- not
                 // draggable. See:
-                // http://blogs.msdn.com/virtualearth/archive/2007/09/28/locking-a-virtual-earth-map.aspx
+                // //blogs.msdn.com/virtualearth/archive/2007/09/28/locking-a-virtual-earth-map.aspx
                 //
                 this.mapObject.LoadMap(null, null, this.type, true);
                 this.mapObject.AttachEvent("onmousedown", OpenLayers.Function.True);
@@ -3494,7 +3494,7 @@ OpenLayers.Protocol.SQL = OpenLayers.Class(OpenLayers.Protocol, {
 /**
  * Class: OpenLayers.Protocol.SQL.Gears
  * This Protocol stores feature in the browser via the Gears Database module
- * <http://code.google.com/apis/gears/api_database.html>.
+ * <//code.google.com/apis/gears/api_database.html>.
  *
  * The main advantage is that all the read, create, update and delete operations
  * can be done offline.
@@ -4544,7 +4544,7 @@ OpenLayers.Layer.GML = OpenLayers.Class(OpenLayers.Layer.Vector, {
         // Wait until initialisation is complete before loading GML
         // otherwise we can get a race condition where the root HTML DOM is
         // loaded after the GML is paited.
-        // See http://trac.openlayers.org/ticket/404
+        // See //trac.openlayers.org/ticket/404
         if(this.visibility && !this.loaded){
             this.loadGML();
         }
@@ -4883,13 +4883,13 @@ OpenLayers.Renderer.SVG2 = OpenLayers.Class(OpenLayers.Renderer.NG, {
      * Property: xmlns
      * {String}
      */
-    xmlns: "http://www.w3.org/2000/svg",
+    xmlns: "//www.w3.org/2000/svg",
 
     /**
      * Property: xlinkns
      * {String}
      */
-    xlinkns: "http://www.w3.org/1999/xlink",
+    xlinkns: "//www.w3.org/1999/xlink",
 
     /**
      * Property: symbolMetrics
@@ -4928,7 +4928,7 @@ OpenLayers.Renderer.SVG2 = OpenLayers.Class(OpenLayers.Renderer.NG, {
      * {Boolean} Whether or not the browser supports the SVG renderer
      */
     supported: function() {
-        var svgFeature = "http://www.w3.org/TR/SVG11/feature#";
+        var svgFeature = "//www.w3.org/TR/SVG11/feature#";
         return (document.implementation &&
            (document.implementation.hasFeature("org.w3c.svg", "1.0") ||
             document.implementation.hasFeature(svgFeature + "SVG", "1.1") ||
@@ -5099,9 +5099,9 @@ OpenLayers.Renderer.SVG2 = OpenLayers.Class(OpenLayers.Renderer.NG, {
                 // The more appropriate way to implement this would be use/defs,
                 // but due to various issues in several browsers, it is safer to
                 // copy the symbols instead of referencing them.
-                // See e.g. ticket http://trac.osgeo.org/openlayers/ticket/2985
+                // See e.g. ticket //trac.osgeo.org/openlayers/ticket/2985
                 // and this email thread
-                // http://osgeo-org.1803224.n2.nabble.com/Select-Control-Ctrl-click-on-Feature-with-a-graphicName-opens-new-browser-window-tc5846039.html
+                // //osgeo-org.1803224.n2.nabble.com/Select-Control-Ctrl-click-on-Feature-with-a-graphicName-opens-new-browser-window-tc5846039.html
                 node.firstChild && node.removeChild(node.firstChild);
                 node.appendChild(src.firstChild.cloneNode(true));
                 node.setAttributeNS(null, "viewBox", src.getAttributeNS(null, "viewBox"));
@@ -5634,7 +5634,7 @@ OpenLayers.Renderer.SVG2.LABEL_ALIGN = {
  */
 OpenLayers.Renderer.SVG2.LABEL_VSHIFT = {
     // according to
-    // http://www.w3.org/Graphics/SVG/Test/20061213/htmlObjectHarness/full-text-align-02-b.html
+    // //www.w3.org/Graphics/SVG/Test/20061213/htmlObjectHarness/full-text-align-02-b.html
     // a baseline-shift of -70% shifts the text exactly from the
     // bottom to the top of the baseline, so -35% moves the text to
     // the center of the baseline.

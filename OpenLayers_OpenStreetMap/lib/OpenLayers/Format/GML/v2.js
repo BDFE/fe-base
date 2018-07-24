@@ -20,7 +20,7 @@ OpenLayers.Format.GML.v2 = OpenLayers.Class(OpenLayers.Format.GML.Base, {
      * Property: schemaLocation
      * {String} Schema location for a particular minor version.
      */
-    schemaLocation: "http://www.opengis.net/gml http://schemas.opengis.net/gml/2.1.2/feature.xsd",
+    schemaLocation: "//www.opengis.net/gml //schemas.opengis.net/gml/2.1.2/feature.xsd",
 
     /**
      * Constructor: OpenLayers.Format.GML.v2

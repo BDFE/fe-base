@@ -47,7 +47,7 @@ OpenLayers.Layer.HTTPRequest = OpenLayers.Class(OpenLayers.Layer, {
     
     /** 
      * APIProperty: reproject
-     * *Deprecated*. See http://docs.openlayers.org/library/spherical_mercator.html
+     * *Deprecated*. See //docs.openlayers.org/library/spherical_mercator.html
      * for information on the replacement for this functionality. 
      * {Boolean} Whether layer should reproject itself based on base layer 
      *           locations. This allows reprojection onto commercial layers. 

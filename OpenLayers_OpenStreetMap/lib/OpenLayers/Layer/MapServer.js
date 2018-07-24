@@ -33,7 +33,7 @@ OpenLayers.Layer.MapServer = OpenLayers.Class(OpenLayers.Layer.Grid, {
      * Parameters:
      * name - {String} A name for the layer
      * url - {String} Base url for the MapServer CGI
-     *       (e.g. http://www2.dmsolutions.ca/cgi-bin/mapserv)
+     *       (e.g. //www2.dmsolutions.ca/cgi-bin/mapserv)
      * params - {Object} An object with key/value pairs representing the
      *          GetMap query string parameters and parameter values.
      * options - {Object} Hashtable of extra options to tag onto the layer

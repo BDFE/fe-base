@@ -1,14 +1,14 @@
 /**
- * @author sole / http://soledadpenades.com
- * @author mrdoob / http://mrdoob.com
- * @author Robert Eisele / http://www.xarg.org
- * @author Philippe / http://philippe.elsass.me
- * @author Robert Penner / http://www.robertpenner.com/easing_terms_of_use.html
- * @author Paul Lewis / http://www.aerotwist.com/
+ * @author sole / //soledadpenades.com
+ * @author mrdoob / //mrdoob.com
+ * @author Robert Eisele / //www.xarg.org
+ * @author Philippe / //philippe.elsass.me
+ * @author Robert Penner / //www.robertpenner.com/easing_terms_of_use.html
+ * @author Paul Lewis / //www.aerotwist.com/
  * @author lechecacharro
- * @author Josh Faul / http://jocafa.com/
- * @author egraether / http://egraether.com/
- * @author endel / http://endel.me
+ * @author Josh Faul / //jocafa.com/
+ * @author egraether / //egraether.com/
+ * @author endel / //endel.me
  */
 
 var TWEEN = TWEEN || ( function () {

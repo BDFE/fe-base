@@ -8,8 +8,8 @@ NETWORK:
 kakou.png
 video.png
 
-http://minedata.cn/minemapapi/v1.2/minemap.js
-http://www.w3school.com.cn/example/html5/demo_time.js
+//minedata.cn/minemapapi/v1.2/minemap.js
+//www.w3school.com.cn/example/html5/demo_time.js
 ./vue.min.js
 
 

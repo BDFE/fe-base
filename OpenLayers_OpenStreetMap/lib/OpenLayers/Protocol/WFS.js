@@ -18,9 +18,9 @@
  * (code)
  *     var protocol = new OpenLayers.Protocol.WFS({
  *         version: "1.1.0",
- *         url:  "http://demo.opengeo.org/geoserver/wfs",
+ *         url:  "//demo.opengeo.org/geoserver/wfs",
  *         featureType: "tasmania_roads",
- *         featureNS: "http://www.openplans.org/topp",
+ *         featureNS: "//www.openplans.org/topp",
  *         geometryName: "the_geom"
  *     });
  * (end)

@@ -26,11 +26,11 @@ OpenLayers.Format.WCSDescribeCoverage.v1_1_0 = OpenLayers.Class(
      * of ArcGIS Server that specifies an out-of-date schema.
      */
     namespaces: {
-        wcs: "http://www.opengis.net/wcs/1.1",
-        xlink: "http://www.w3.org/1999/xlink",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance",
-        ows: "http://www.opengis.net/ows/1.1",
-        owsesri: "http://www.opengis.net/ows"
+        wcs: "//www.opengis.net/wcs/1.1",
+        xlink: "//www.w3.org/1999/xlink",
+        xsi: "//www.w3.org/2001/XMLSchema-instance",
+        ows: "//www.opengis.net/ows/1.1",
+        owsesri: "//www.opengis.net/ows"
     },
 
     /**

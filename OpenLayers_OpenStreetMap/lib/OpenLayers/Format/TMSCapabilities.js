@@ -12,7 +12,7 @@
 /**
  * Class: OpenLayers.Format.TMSCapabilities
  * Parse TMS Capabilities.
- * See http://wiki.osgeo.org/wiki/Tile_Map_Service_Specification
+ * See //wiki.osgeo.org/wiki/Tile_Map_Service_Specification
  * 
  * Inherits from:
  *  - <OpenLayers.Format.XML>

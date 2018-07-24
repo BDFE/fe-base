@@ -23,7 +23,7 @@
  *     // Create a new kaMapCache layer. 
  *     var kamap_base = new OpenLayers.Layer.KaMapCache(
  *         "Satellite",
- *         "http://www.example.org/web/acessible/cache",
+ *         "//www.example.org/web/acessible/cache",
  *         {g: "satellite", map: "world", i: 'png24', metaTileSize: {w: 5, h: 5} }
  *       );
  *    
@@ -31,7 +31,7 @@
  *     // Forces the output to be a "gif", using the "i" parameter.
  *     var kamap_overlay = new OpenLayers.Layer.KaMapCache(
  *         "Streets",
- *         "http://www.example.org/web/acessible/cache",
+ *         "//www.example.org/web/acessible/cache",
  *         {g: "streets", map: "world", i: "gif", metaTileSize: {w: 5, h: 5} },
  *         {isBaseLayer: false}
  *       );

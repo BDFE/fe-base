@@ -61,16 +61,16 @@ OpenLayers.Format.GPX = OpenLayers.Class(OpenLayers.Format.XML, {
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        gpx: "http://www.topografix.com/GPX/1/1",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance"
+        gpx: "//www.topografix.com/GPX/1/1",
+        xsi: "//www.w3.org/2001/XMLSchema-instance"
     },
 
     /**
      * Property: schemaLocation
      * {String} Schema location. Defaults to
-     *  "http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
+     *  "//www.topografix.com/GPX/1/1 //www.topografix.com/GPX/1/1/gpx.xsd"
      */
-    schemaLocation: "http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd",
+    schemaLocation: "//www.topografix.com/GPX/1/1 //www.topografix.com/GPX/1/1/gpx.xsd",
 
     /**
      * APIProperty: creator

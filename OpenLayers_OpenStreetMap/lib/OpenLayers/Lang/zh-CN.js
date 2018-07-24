@@ -33,7 +33,7 @@ OpenLayers.Lang["zh-CN"] = {
         "因此，我们废除了它 -- minZoomLevel " +
         "将会在3.0中被移除。请改用 " +
         "min/max resolution 设置，参考：" +
-        "http://trac.openlayers.org/wiki/SettingZoomLevels",
+        "//trac.openlayers.org/wiki/SettingZoomLevels",
 
     'commitSuccess': "WFS Transaction: 成功。 ${response}",
 
@@ -47,7 +47,7 @@ OpenLayers.Lang["zh-CN"] = {
         "或者是没有包含在你的站点上" +
         "使用的正确的Google Maps API密匙。<br><br>" +
         "开发者：获取使其正确工作的帮助信息，" +
-        "<a href='http://trac.openlayers.org/wiki/Google' " +
+        "<a href='//trac.openlayers.org/wiki/Google' " +
         "target='_blank'>点击这里</a>",
 
     'getLayerWarning':
@@ -57,7 +57,7 @@ OpenLayers.Lang["zh-CN"] = {
         "这种情况很可能是没有正确的包含" +
         "${layerLib} 脚本库。<br><br>" +
         "开发者：获取使其正确工作的帮助信息，" +
-        "<a href='http://trac.openlayers.org/wiki/${layerLib}' " +
+        "<a href='//trac.openlayers.org/wiki/${layerLib}' " +
         "target='_blank'>点击这里</a>",
 
     'Scale = 1 : ${scaleDenom}': "比例尺 = 1 : ${scaleDenom}",
@@ -69,7 +69,7 @@ OpenLayers.Lang["zh-CN"] = {
         "它是被设计用来支持显示商业的地图数据，" + 
         "不过现在该功能可以通过使用Spherical Mercator来实现。" +
         "更多信息可以参阅" +
-        "http://trac.openlayers.org/wiki/SphericalMercator.",
+        "//trac.openlayers.org/wiki/SphericalMercator.",
 
     // console message
     'methodDeprecated':

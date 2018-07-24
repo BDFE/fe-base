@@ -26,7 +26,7 @@
  * (start code)
  * var world_utfgrid = new OpenLayers.Layer.UTFGrid( 
  *     'UTFGrid Layer', 
- *     "http://tiles/world_utfgrid/${z}/${x}/${y}.json"
+ *     "//tiles/world_utfgrid/${z}/${x}/${y}.json"
  * );
  * map.addLayer(world_utfgrid);
  * 

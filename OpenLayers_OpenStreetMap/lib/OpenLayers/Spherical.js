@@ -14,8 +14,8 @@
  * effects), which is accurate enough for most purposes.
  *
  * Relevant links:
- * * http://www.movable-type.co.uk/scripts/latlong.html
- * * http://code.google.com/apis/maps/documentation/javascript/reference.html#spherical
+ * * //www.movable-type.co.uk/scripts/latlong.html
+ * * //code.google.com/apis/maps/documentation/javascript/reference.html#spherical
  */
 
 OpenLayers.Spherical = OpenLayers.Spherical || {};

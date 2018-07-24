@@ -23,10 +23,10 @@ OpenLayers.Format.Filter.v2 = OpenLayers.Class(OpenLayers.Format.XML, {
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        fes: "http://www.opengis.net/fes/2.0",
-        gml: "http://www.opengis.net/gml/3.2",
-        xlink: "http://www.w3.org/1999/xlink",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance"
+        fes: "//www.opengis.net/fes/2.0",
+        gml: "//www.opengis.net/gml/3.2",
+        xlink: "//www.w3.org/1999/xlink",
+        xsi: "//www.w3.org/2001/XMLSchema-instance"
     },
 
     /**

@@ -27,14 +27,14 @@ OpenLayers.Format.OWSContext.v0_3_1 = OpenLayers.Class(OpenLayers.Format.XML, {
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        owc: "http://www.opengis.net/ows-context",
-        gml: "http://www.opengis.net/gml",
-        kml: "http://www.opengis.net/kml/2.2",
-        ogc: "http://www.opengis.net/ogc",
-        ows: "http://www.opengis.net/ows",
-        sld: "http://www.opengis.net/sld",
-        xlink: "http://www.w3.org/1999/xlink",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance"
+        owc: "//www.opengis.net/ows-context",
+        gml: "//www.opengis.net/gml",
+        kml: "//www.opengis.net/kml/2.2",
+        ogc: "//www.opengis.net/ogc",
+        ows: "//www.opengis.net/ows",
+        sld: "//www.opengis.net/sld",
+        xlink: "//www.w3.org/1999/xlink",
+        xsi: "//www.w3.org/2001/XMLSchema-instance"
     },
 
     /**
@@ -47,7 +47,7 @@ OpenLayers.Format.OWSContext.v0_3_1 = OpenLayers.Class(OpenLayers.Format.XML, {
      * Property: schemaLocation
      * {String} Schema location
      */
-    schemaLocation: "http://www.opengis.net/ows-context http://www.ogcnetwork.net/schemas/owc/0.3.1/owsContext.xsd",
+    schemaLocation: "//www.opengis.net/ows-context //www.ogcnetwork.net/schemas/owc/0.3.1/owsContext.xsd",
 
     /**
      * Property: defaultPrefix
@@ -89,7 +89,7 @@ OpenLayers.Format.OWSContext.v0_3_1 = OpenLayers.Class(OpenLayers.Format.XML, {
      * Property: featureNS
      * {String} The namespace uri to use for writing InlineGeometry
      */
-    featureNS: "http://mapserver.gis.umn.edu/mapserver",
+    featureNS: "//mapserver.gis.umn.edu/mapserver",
 
     /**
      * Property: featureType

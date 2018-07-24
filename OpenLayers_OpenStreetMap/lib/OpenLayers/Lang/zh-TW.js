@@ -34,7 +34,7 @@ OpenLayers.Lang["zh-TW"] = {
         "因此我們將會迴避使用它 -- minZoomLevel " +
         "會在3.0被移除，請改" +
         "用在這邊描述的 min/max resolution 設定: " +
-        "http://trac.openlayers.org/wiki/SettingZoomLevels",
+        "//trac.openlayers.org/wiki/SettingZoomLevels",
 
     'commitSuccess': "WFS Transaction: 成功 ${response}",
 
@@ -48,7 +48,7 @@ OpenLayers.Lang["zh-TW"] = {
         "腳本沒有被正確的置入，或沒有包含 " +
         "您網站上正確的 API key <br><br>" +
         "開發者: 要幫助這個行為正確完成，" +
-        "<a href='http://trac.openlayers.org/wiki/Google' " +
+        "<a href='//trac.openlayers.org/wiki/Google' " +
         "target='_blank'>請按這裡</a>",
 
     'getLayerWarning':
@@ -58,7 +58,7 @@ OpenLayers.Lang["zh-TW"] = {
         "很有可能是因為 ${layerLib} 的函式庫" +
         "腳本沒有被正確的置入。<br><br>" +
         "開發者: 要幫助這個行為正確完成，" +
-        "<a href='http://trac.openlayers.org/wiki/${layerLib}' " +
+        "<a href='//trac.openlayers.org/wiki/${layerLib}' " +
         "target='_blank'>請按這裡</a>",
 
     'Scale = 1 : ${scaleDenom}': "Scale = 1 : ${scaleDenom}",
@@ -70,7 +70,7 @@ OpenLayers.Lang["zh-TW"] = {
         "它的使用原本是設計用來支援在商業地圖上秀出資料，" + 
         "但這個功能已經被" +
         "Spherical Mercator所取代。更多的資訊可以在 " +
-        "http://trac.openlayers.org/wiki/SphericalMercator 找到。",
+        "//trac.openlayers.org/wiki/SphericalMercator 找到。",
 
     // console message
     'methodDeprecated':

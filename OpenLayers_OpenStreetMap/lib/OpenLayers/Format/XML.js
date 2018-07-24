@@ -792,7 +792,7 @@ OpenLayers.Format.XML = OpenLayers.Class(OpenLayers.Format, {
      *
      * For browsers that support it, this calls the native lookupNamesapceURI
      *     function.  In other browsers, this is an implementation of
-     *     http://www.w3.org/TR/DOM-Level-3-Core/core.html#Node3-lookupNamespaceURI.
+     *     //www.w3.org/TR/DOM-Level-3-Core/core.html#Node3-lookupNamespaceURI.
      *
      * For browsers that don't support the attribute.ownerElement property, this
      *     method cannot be called on attribute nodes.
@@ -892,7 +892,7 @@ OpenLayers.Format.XML.CONTENT_TYPE = {EMPTY: 0, SIMPLE: 1, COMPLEX: 2, MIXED: 3}
  *
  * For browsers that support it, this calls the native lookupNamesapceURI
  *     function.  In other browsers, this is an implementation of
- *     http://www.w3.org/TR/DOM-Level-3-Core/core.html#Node3-lookupNamespaceURI.
+ *     //www.w3.org/TR/DOM-Level-3-Core/core.html#Node3-lookupNamespaceURI.
  *
  * For browsers that don't support the attribute.ownerElement property, this
  *     method cannot be called on attribute nodes.

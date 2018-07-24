@@ -1,7 +1,7 @@
 // File:src/Three.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 var THREE = { REVISION: '73' };
@@ -349,7 +349,7 @@ THREE.CanvasRenderer = function () {
 // File:src/math/Color.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.Color = function ( color ) {
@@ -843,10 +843,10 @@ THREE.ColorKeywords = { 'aliceblue': 0xF0F8FF, 'antiquewhite': 0xFAEBD7, 'aqua':
 // File:src/math/Quaternion.js
 
 /**
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
- * @author WestLangley / http://github.com/WestLangley
- * @author bhouston / http://clara.io
+ * @author mikael emtinger / //gomo.se/
+ * @author alteredq / //alteredqualia.com/
+ * @author WestLangley / //github.com/WestLangley
+ * @author bhouston / //clara.io
  */
 
 THREE.Quaternion = function ( x, y, z, w ) {
@@ -954,7 +954,7 @@ THREE.Quaternion.prototype = {
 
 		}
 
-		// http://www.mathworks.com/matlabcentral/fileexchange/
+		// //www.mathworks.com/matlabcentral/fileexchange/
 		// 	20696-function-to-convert-between-dcm-euler-angles-quaternions-and-euler-vectors/
 		//	content/SpinCalc.m
 
@@ -1019,7 +1019,7 @@ THREE.Quaternion.prototype = {
 
 	setFromAxisAngle: function ( axis, angle ) {
 
-		// http://www.euclideanspace.com/maths/geometry/rotations/conversions/angleToQuaternion/index.htm
+		// //www.euclideanspace.com/maths/geometry/rotations/conversions/angleToQuaternion/index.htm
 
 		// assumes axis is normalized
 
@@ -1038,7 +1038,7 @@ THREE.Quaternion.prototype = {
 
 	setFromRotationMatrix: function ( m ) {
 
-		// http://www.euclideanspace.com/maths/geometry/rotations/conversions/matrixToQuaternion/index.htm
+		// //www.euclideanspace.com/maths/geometry/rotations/conversions/matrixToQuaternion/index.htm
 
 		// assumes the upper 3x3 of m is a pure rotation matrix (i.e, unscaled)
 
@@ -1097,7 +1097,7 @@ THREE.Quaternion.prototype = {
 
 	setFromUnitVectors: function () {
 
-		// http://lolengine.net/blog/2014/02/24/quaternion-from-two-vectors-final
+		// //lolengine.net/blog/2014/02/24/quaternion-from-two-vectors-final
 
 		// assumes direction vectors vFrom and vTo are normalized
 
@@ -1225,7 +1225,7 @@ THREE.Quaternion.prototype = {
 
 	multiplyQuaternions: function ( a, b ) {
 
-		// from http://www.euclideanspace.com/maths/algebra/realNormedAlgebra/quaternions/code/index.htm
+		// from //www.euclideanspace.com/maths/algebra/realNormedAlgebra/quaternions/code/index.htm
 
 		var qax = a._x, qay = a._y, qaz = a._z, qaw = a._w;
 		var qbx = b._x, qby = b._y, qbz = b._z, qbw = b._w;
@@ -1255,7 +1255,7 @@ THREE.Quaternion.prototype = {
 
 		var x = this._x, y = this._y, z = this._z, w = this._w;
 
-		// http://www.euclideanspace.com/maths/algebra/realNormedAlgebra/quaternions/slerp/
+		// //www.euclideanspace.com/maths/algebra/realNormedAlgebra/quaternions/slerp/
 
 		var cosHalfTheta = w * qb._w + x * qb._x + y * qb._y + z * qb._z;
 
@@ -1369,10 +1369,10 @@ THREE.Quaternion.slerp = function ( qa, qb, qm, t ) {
 // File:src/math/Vector2.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author philogb / http://blog.thejit.org/
- * @author egraether / http://egraether.com/
- * @author zz85 / http://www.lab4games.net/zz85/blog
+ * @author mrdoob / //mrdoob.com/
+ * @author philogb / //blog.thejit.org/
+ * @author egraether / //egraether.com/
+ * @author zz85 / //www.lab4games.net/zz85/blog
  */
 
 THREE.Vector2 = function ( x, y ) {
@@ -1806,12 +1806,12 @@ THREE.Vector2.prototype = {
 // File:src/math/Vector3.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author *kile / http://kile.stravaganza.org/
- * @author philogb / http://blog.thejit.org/
- * @author mikael emtinger / http://gomo.se/
- * @author egraether / http://egraether.com/
- * @author WestLangley / http://github.com/WestLangley
+ * @author mrdoob / //mrdoob.com/
+ * @author *kile / //kile.stravaganza.org/
+ * @author philogb / //blog.thejit.org/
+ * @author mikael emtinger / //gomo.se/
+ * @author egraether / //egraether.com/
+ * @author WestLangley / //github.com/WestLangley
  */
 
 THREE.Vector3 = function ( x, y, z ) {
@@ -2610,11 +2610,11 @@ THREE.Vector3.prototype = {
 // File:src/math/Vector4.js
 
 /**
- * @author supereggbert / http://www.paulbrunt.co.uk/
- * @author philogb / http://blog.thejit.org/
- * @author mikael emtinger / http://gomo.se/
- * @author egraether / http://egraether.com/
- * @author WestLangley / http://github.com/WestLangley
+ * @author supereggbert / //www.paulbrunt.co.uk/
+ * @author philogb / //blog.thejit.org/
+ * @author mikael emtinger / //gomo.se/
+ * @author egraether / //egraether.com/
+ * @author WestLangley / //github.com/WestLangley
  */
 
 THREE.Vector4 = function ( x, y, z, w ) {
@@ -2853,7 +2853,7 @@ THREE.Vector4.prototype = {
 
 	setAxisAngleFromQuaternion: function ( q ) {
 
-		// http://www.euclideanspace.com/maths/geometry/rotations/conversions/quaternionToAngle/index.htm
+		// //www.euclideanspace.com/maths/geometry/rotations/conversions/quaternionToAngle/index.htm
 
 		// q is assumed to be normalized
 
@@ -2881,7 +2881,7 @@ THREE.Vector4.prototype = {
 
 	setAxisAngleFromRotationMatrix: function ( m ) {
 
-		// http://www.euclideanspace.com/maths/geometry/rotations/conversions/matrixToAngle/index.htm
+		// //www.euclideanspace.com/maths/geometry/rotations/conversions/matrixToAngle/index.htm
 
 		// assumes the upper 3x3 of m is a pure rotation matrix (i.e, unscaled)
 
@@ -3229,9 +3229,9 @@ THREE.Vector4.prototype = {
 // File:src/math/Euler.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author WestLangley / http://github.com/WestLangley
- * @author bhouston / http://clara.io
+ * @author mrdoob / //mrdoob.com/
+ * @author WestLangley / //github.com/WestLangley
+ * @author bhouston / //clara.io
  */
 
 THREE.Euler = function ( x, y, z, order ) {
@@ -3557,7 +3557,7 @@ THREE.Euler.prototype = {
 // File:src/math/Line3.js
 
 /**
- * @author bhouston / http://clara.io
+ * @author bhouston / //clara.io
  */
 
 THREE.Line3 = function ( start, end ) {
@@ -3686,7 +3686,7 @@ THREE.Line3.prototype = {
 // File:src/math/Box2.js
 
 /**
- * @author bhouston / http://clara.io
+ * @author bhouston / //clara.io
  */
 
 THREE.Box2 = function ( min, max ) {
@@ -3925,8 +3925,8 @@ THREE.Box2.prototype = {
 // File:src/math/Box3.js
 
 /**
- * @author bhouston / http://clara.io
- * @author WestLangley / http://github.com/WestLangley
+ * @author bhouston / //clara.io
+ * @author WestLangley / //github.com/WestLangley
  */
 
 THREE.Box3 = function ( min, max ) {
@@ -4282,9 +4282,9 @@ THREE.Box3.prototype = {
 // File:src/math/Matrix3.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
- * @author WestLangley / http://github.com/WestLangley
- * @author bhouston / http://clara.io
+ * @author alteredq / //alteredqualia.com/
+ * @author WestLangley / //github.com/WestLangley
+ * @author bhouston / //clara.io
  */
 
 THREE.Matrix3 = function () {
@@ -4450,7 +4450,7 @@ THREE.Matrix3.prototype = {
 	getInverse: function ( matrix, throwOnInvertible ) {
 
 		// input: THREE.Matrix4
-		// ( based on http://code.google.com/p/webgl-mjs/ )
+		// ( based on //code.google.com/p/webgl-mjs/ )
 
 		var me = matrix.elements;
 		var te = this.elements;
@@ -4580,16 +4580,16 @@ THREE.Matrix3.prototype = {
 // File:src/math/Matrix4.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author supereggbert / http://www.paulbrunt.co.uk/
- * @author philogb / http://blog.thejit.org/
- * @author jordi_ros / http://plattsoft.com
- * @author D1plo1d / http://github.com/D1plo1d
- * @author alteredq / http://alteredqualia.com/
- * @author mikael emtinger / http://gomo.se/
- * @author timknip / http://www.floorplanner.com/
- * @author bhouston / http://clara.io
- * @author WestLangley / http://github.com/WestLangley
+ * @author mrdoob / //mrdoob.com/
+ * @author supereggbert / //www.paulbrunt.co.uk/
+ * @author philogb / //blog.thejit.org/
+ * @author jordi_ros / //plattsoft.com
+ * @author D1plo1d / //github.com/D1plo1d
+ * @author alteredq / //alteredqualia.com/
+ * @author mikael emtinger / //gomo.se/
+ * @author timknip / //www.floorplanner.com/
+ * @author bhouston / //clara.io
+ * @author WestLangley / //github.com/WestLangley
  */
 
 THREE.Matrix4 = function () {
@@ -5129,7 +5129,7 @@ THREE.Matrix4.prototype = {
 		var n41 = te[ 3 ], n42 = te[ 7 ], n43 = te[ 11 ], n44 = te[ 15 ];
 
 		//TODO: make this more efficient
-		//( based on http://www.euclideanspace.com/maths/algebra/matrix/functions/inverse/fourD/index.htm )
+		//( based on //www.euclideanspace.com/maths/algebra/matrix/functions/inverse/fourD/index.htm )
 
 		return (
 			n41 * (
@@ -5244,7 +5244,7 @@ THREE.Matrix4.prototype = {
 
 	getInverse: function ( m, throwOnInvertible ) {
 
-		// based on http://www.euclideanspace.com/maths/algebra/matrix/functions/inverse/fourD/index.htm
+		// based on //www.euclideanspace.com/maths/algebra/matrix/functions/inverse/fourD/index.htm
 		var te = this.elements;
 		var me = m.elements;
 
@@ -5422,7 +5422,7 @@ THREE.Matrix4.prototype = {
 
 	makeRotationAxis: function ( axis, angle ) {
 
-		// Based on http://www.gamedev.net/reference/articles/article1199.asp
+		// Based on //www.gamedev.net/reference/articles/article1199.asp
 
 		var c = Math.cos( angle );
 		var s = Math.sin( angle );
@@ -5619,7 +5619,7 @@ THREE.Matrix4.prototype = {
 // File:src/math/Ray.js
 
 /**
- * @author bhouston / http://clara.io
+ * @author bhouston / //clara.io
  */
 
 THREE.Ray = function ( origin, direction ) {
@@ -5733,7 +5733,7 @@ THREE.Ray.prototype = {
 
 		return function ( v0, v1, optionalPointOnRay, optionalPointOnSegment ) {
 
-			// from http://www.geometrictools.com/LibMathematics/Distance/Wm5DistRay3Segment3.cpp
+			// from //www.geometrictools.com/LibMathematics/Distance/Wm5DistRay3Segment3.cpp
 			// It returns the min distance between the ray and the segment
 			// defined by v0 and v1
 			// It can also set two optional targets :
@@ -5861,7 +5861,7 @@ THREE.Ray.prototype = {
 
 	intersectSphere: function () {
 
-		// from http://www.scratchapixel.com/lessons/3d-basic-lessons/lesson-7-intersecting-simple-shapes/ray-sphere-intersection/
+		// from //www.scratchapixel.com/lessons/3d-basic-lessons/lesson-7-intersecting-simple-shapes/ray-sphere-intersection/
 
 		var v1 = new THREE.Vector3();
 
@@ -5980,7 +5980,7 @@ THREE.Ray.prototype = {
 
 	intersectBox: function ( box, optionalTarget ) {
 
-		// http://www.scratchapixel.com/lessons/3d-basic-lessons/lesson-7-intersecting-simple-shapes/ray-box-intersection/
+		// //www.scratchapixel.com/lessons/3d-basic-lessons/lesson-7-intersecting-simple-shapes/ray-box-intersection/
 
 		var tmin, tmax, tymin, tymax, tzmin, tzmax;
 
@@ -6059,7 +6059,7 @@ THREE.Ray.prototype = {
 
 		return function ( a, b, c, backfaceCulling, optionalTarget ) {
 
-			// from http://www.geometrictools.com/LibMathematics/Intersection/Wm5IntrRay3Triangle3.cpp
+			// from //www.geometrictools.com/LibMathematics/Intersection/Wm5IntrRay3Triangle3.cpp
 
 			edge1.subVectors( b, a );
 			edge2.subVectors( c, a );
@@ -6154,8 +6154,8 @@ THREE.Ray.prototype = {
 // File:src/math/Sphere.js
 
 /**
- * @author bhouston / http://clara.io
- * @author mrdoob / http://mrdoob.com/
+ * @author bhouston / //clara.io
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.Sphere = function ( center, radius ) {
@@ -6310,9 +6310,9 @@ THREE.Sphere.prototype = {
 // File:src/math/Frustum.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- * @author bhouston / http://clara.io
+ * @author mrdoob / //mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
+ * @author bhouston / //clara.io
  */
 
 THREE.Frustum = function ( p0, p1, p2, p3, p4, p5 ) {
@@ -6493,7 +6493,7 @@ THREE.Frustum.prototype = {
 // File:src/math/Plane.js
 
 /**
- * @author bhouston / http://clara.io
+ * @author bhouston / //clara.io
  */
 
 THREE.Plane = function ( normal, constant ) {
@@ -6684,7 +6684,7 @@ THREE.Plane.prototype = {
 		return function ( matrix, optionalNormalMatrix ) {
 
 			// compute new normal based on theory here:
-			// http://www.songho.ca/opengl/gl_normaltransform.html
+			// //www.songho.ca/opengl/gl_normaltransform.html
 			var normalMatrix = optionalNormalMatrix || m1.getNormalMatrix( matrix );
 			var newNormal = v1.copy( this.normal ).applyMatrix3( normalMatrix );
 
@@ -6718,15 +6718,15 @@ THREE.Plane.prototype = {
 // File:src/math/Math.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
- * @author mrdoob / http://mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.Math = {
 
 	generateUUID: function () {
 
-		// http://www.broofa.com/Tools/Math.uuid.htm
+		// //www.broofa.com/Tools/Math.uuid.htm
 
 		var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split( '' );
 		var uuid = new Array( 36 );
@@ -6784,7 +6784,7 @@ THREE.Math = {
 
 	},
 
-	// http://en.wikipedia.org/wiki/Smoothstep
+	// //en.wikipedia.org/wiki/Smoothstep
 
 	smoothstep: function ( x, min, max ) {
 
@@ -6897,10 +6897,10 @@ THREE.Math = {
 
 /**
  * Spline from Tween.js, slightly optimized (and trashed)
- * http://sole.github.com/tween.js/examples/05_spline.html
+ * //sole.github.com/tween.js/examples/05_spline.html
  *
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.Spline = function ( points ) {
@@ -7075,8 +7075,8 @@ THREE.Spline = function ( points ) {
 // File:src/math/Triangle.js
 
 /**
- * @author bhouston / http://clara.io
- * @author mrdoob / http://mrdoob.com/
+ * @author bhouston / //clara.io
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.Triangle = function ( a, b, c ) {
@@ -7113,7 +7113,7 @@ THREE.Triangle.normal = function () {
 }();
 
 // static/instance method to calculate barycentric coordinates
-// based on: http://www.blackpawn.com/texts/pointinpoly/default.html
+// based on: //www.blackpawn.com/texts/pointinpoly/default.html
 THREE.Triangle.barycoordFromPoint = function () {
 
 	var v0 = new THREE.Vector3();
@@ -7270,7 +7270,7 @@ THREE.Triangle.prototype = {
 // File:src/core/Channels.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.Channels = function () {
@@ -7312,7 +7312,7 @@ THREE.Channels.prototype = {
 // File:src/core/Clock.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.Clock = function ( autoStart ) {
@@ -7494,9 +7494,9 @@ THREE.EventDispatcher.prototype = {
 // File:src/core/Raycaster.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author bhouston / http://clara.io/
- * @author stephomi / http://stephaneginier.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author bhouston / //clara.io/
+ * @author stephomi / //stephaneginier.com/
  */
 
 ( function ( THREE ) {
@@ -7632,10 +7632,10 @@ THREE.EventDispatcher.prototype = {
 // File:src/core/Object3D.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
- * @author WestLangley / http://github.com/WestLangley
+ * @author mrdoob / //mrdoob.com/
+ * @author mikael emtinger / //gomo.se/
+ * @author alteredq / //alteredqualia.com/
+ * @author WestLangley / //github.com/WestLangley
  * @author elephantatwork / www.elephantatwork.ch
  */
 
@@ -8406,8 +8406,8 @@ THREE.Object3DIdCount = 0;
 // File:src/core/Face3.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.Face3 = function ( a, b, c, normal, color, materialIndex ) {
@@ -8468,7 +8468,7 @@ THREE.Face3.prototype = {
 // File:src/core/Face4.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.Face4 = function ( a, b, c, d, normal, color, materialIndex ) {
@@ -8481,7 +8481,7 @@ THREE.Face4 = function ( a, b, c, d, normal, color, materialIndex ) {
 // File:src/core/BufferAttribute.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.BufferAttribute = function ( array, itemSize ) {
@@ -9133,12 +9133,12 @@ THREE.InterleavedBufferAttribute.prototype = {
 // File:src/core/Geometry.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author kile / http://kile.stravaganza.org/
- * @author alteredq / http://alteredqualia.com/
- * @author mikael emtinger / http://gomo.se/
- * @author zz85 / http://www.lab4games.net/zz85/blog
- * @author bhouston / http://clara.io
+ * @author mrdoob / //mrdoob.com/
+ * @author kile / //kile.stravaganza.org/
+ * @author alteredq / //alteredqualia.com/
+ * @author mikael emtinger / //gomo.se/
+ * @author zz85 / //www.lab4games.net/zz85/blog
+ * @author bhouston / //clara.io
  */
 
 THREE.Geometry = function () {
@@ -9546,7 +9546,7 @@ THREE.Geometry.prototype = {
 		if ( areaWeighted ) {
 
 			// vertex normals weighted by triangle areas
-			// http://www.iquilezles.org/www/articles/normals/normals.htm
+			// //www.iquilezles.org/www/articles/normals/normals.htm
 
 			var vA, vB, vC;
 			var cb = new THREE.Vector3(), ab = new THREE.Vector3();
@@ -10310,7 +10310,7 @@ THREE.GeometryIdCount = 0;
 // File:src/core/DirectGeometry.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.DirectGeometry = function () {
@@ -10599,8 +10599,8 @@ THREE.EventDispatcher.prototype.apply( THREE.DirectGeometry.prototype );
 // File:src/core/BufferGeometry.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
- * @author mrdoob / http://mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.BufferGeometry = function () {
@@ -11693,8 +11693,8 @@ THREE.EventDispatcher.prototype.apply( THREE.InstancedBufferGeometry.prototype )
  *
  * A clip that has been explicitly scheduled.
  *
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
+ * @author Ben Houston / //clara.io/
+ * @author David Sarno / //lighthaus.us/
  */
 
 THREE.AnimationAction = function ( clip, startTime, timeScale, weight, loop ) {
@@ -11861,8 +11861,8 @@ THREE.AnimationAction.prototype = {
  *
  * Reusable set of Tracks that represent an animation.
  *
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
+ * @author Ben Houston / //clara.io/
+ * @author David Sarno / //lighthaus.us/
  */
 
 THREE.AnimationClip = function ( name, duration, tracks ) {
@@ -12175,8 +12175,8 @@ THREE.AnimationClip.parseAnimation = function( animation, bones, nodeName ) {
  * Mixes together the AnimationClips scheduled by AnimationActions and applies them to the root and subtree
  *
  *
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
+ * @author Ben Houston / //clara.io/
+ * @author David Sarno / //lighthaus.us/
  */
 
 THREE.AnimationMixer = function( root ) {
@@ -12415,8 +12415,8 @@ THREE.EventDispatcher.prototype.apply( THREE.AnimationMixer.prototype );
 // File:src/animation/AnimationUtils.js
 
 /**
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
+ * @author Ben Houston / //clara.io/
+ * @author David Sarno / //lighthaus.us/
  */
 
 THREE.AnimationUtils = {
@@ -12533,8 +12533,8 @@ THREE.AnimationUtils = {
  *
  * A Track that returns a keyframe interpolated value, currently linearly interpolated
  *
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
+ * @author Ben Houston / //clara.io/
+ * @author David Sarno / //lighthaus.us/
  */
 
 THREE.KeyframeTrack = function ( name, keys ) {
@@ -12810,8 +12810,8 @@ THREE.KeyframeTrack.GetTrackTypeForTypeName = function( typeName ) {
  *
  * A track bound to a real value in the scene graph.
  *
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
+ * @author Ben Houston / //clara.io/
+ * @author David Sarno / //lighthaus.us/
  */
 
 THREE.PropertyBinding = function ( rootNode, trackName ) {
@@ -13204,8 +13204,8 @@ THREE.PropertyBinding.findNode = function( root, nodeName ) {
  *
  * A Track that interpolates Vectors
  *
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
+ * @author Ben Houston / //clara.io/
+ * @author David Sarno / //lighthaus.us/
  */
 
 THREE.VectorKeyframeTrack = function ( name, keys ) {
@@ -13283,8 +13283,8 @@ THREE.VectorKeyframeTrack.parse = function( json ) {
  *
  * A Track that interpolates Quaternion
  *
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
+ * @author Ben Houston / //clara.io/
+ * @author David Sarno / //lighthaus.us/
  */
 
 THREE.QuaternionKeyframeTrack = function ( name, keys ) {
@@ -13371,8 +13371,8 @@ THREE.QuaternionKeyframeTrack.parse = function( json ) {
  *
  * A Track that interpolates Strings
  *
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
+ * @author Ben Houston / //clara.io/
+ * @author David Sarno / //lighthaus.us/
  */
 
 THREE.StringKeyframeTrack = function ( name, keys ) {
@@ -13437,8 +13437,8 @@ THREE.StringKeyframeTrack.parse = function( json ) {
  *
  * A Track that interpolates Boolean
  *
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
+ * @author Ben Houston / //clara.io/
+ * @author David Sarno / //lighthaus.us/
  */
 
 THREE.BooleanKeyframeTrack = function ( name, keys ) {
@@ -13503,8 +13503,8 @@ THREE.BooleanKeyframeTrack.parse = function( json ) {
  *
  * A Track that interpolates Numbers
  *
- * @author Ben Houston / http://clara.io/
- * @author David Sarno / http://lighthaus.us/
+ * @author Ben Houston / //clara.io/
+ * @author David Sarno / //lighthaus.us/
  */
 
 THREE.NumberKeyframeTrack = function ( name, keys ) {
@@ -13566,9 +13566,9 @@ THREE.NumberKeyframeTrack.parse = function( json ) {
 // File:src/cameras/Camera.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author mikael emtinger / http://gomo.se/
- * @author WestLangley / http://github.com/WestLangley
+ * @author mrdoob / //mrdoob.com/
+ * @author mikael emtinger / //gomo.se/
+ * @author WestLangley / //github.com/WestLangley
 */
 
 THREE.Camera = function () {
@@ -13640,7 +13640,7 @@ THREE.Camera.prototype.copy = function ( source ) {
  * Camera for rendering cube maps
  *	- renders scene into axis-aligned cube
  *
- * @author alteredq / http://alteredqualia.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.CubeCamera = function ( near, far, cubeResolution ) {
@@ -13724,7 +13724,7 @@ THREE.CubeCamera.prototype.constructor = THREE.CubeCamera;
 // File:src/cameras/OrthographicCamera.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.OrthographicCamera = function ( left, right, top, bottom, near, far ) {
@@ -13797,9 +13797,9 @@ THREE.OrthographicCamera.prototype.toJSON = function ( meta ) {
 // File:src/cameras/PerspectiveCamera.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author greggman / http://games.greggman.com/
- * @author zz85 / http://www.lab4games.net/zz85/blog
+ * @author mrdoob / //mrdoob.com/
+ * @author greggman / //games.greggman.com/
+ * @author zz85 / //www.lab4games.net/zz85/blog
  */
 
 THREE.PerspectiveCamera = function ( fov, aspect, near, far ) {
@@ -13826,7 +13826,7 @@ THREE.PerspectiveCamera.prototype.constructor = THREE.PerspectiveCamera;
 /**
  * Uses Focal Length (in mm) to estimate and set FOV
  * 35mm (full-frame) camera is used if frame size is not specified;
- * Formula based on http://www.bobatkins.com/photography/technical/field_of_view.html
+ * Formula based on //www.bobatkins.com/photography/technical/field_of_view.html
  */
 
 THREE.PerspectiveCamera.prototype.setLens = function ( focalLength, frameHeight ) {
@@ -13952,8 +13952,8 @@ THREE.PerspectiveCamera.prototype.toJSON = function ( meta ) {
 // File:src/lights/Light.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.Light = function ( color ) {
@@ -14069,7 +14069,7 @@ THREE.Light.prototype.toJSON = function ( meta ) {
 // File:src/lights/LightShadow.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.LightShadow = function ( camera ) {
@@ -14112,7 +14112,7 @@ THREE.LightShadow.prototype = {
 // File:src/lights/AmbientLight.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.AmbientLight = function ( color ) {
@@ -14131,8 +14131,8 @@ THREE.AmbientLight.prototype.constructor = THREE.AmbientLight;
 // File:src/lights/DirectionalLight.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.DirectionalLight = function ( color, intensity ) {
@@ -14171,7 +14171,7 @@ THREE.DirectionalLight.prototype.copy = function ( source ) {
 // File:src/lights/HemisphereLight.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.HemisphereLight = function ( skyColor, groundColor, intensity ) {
@@ -14207,7 +14207,7 @@ THREE.HemisphereLight.prototype.copy = function ( source ) {
 // File:src/lights/PointLight.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 
@@ -14245,7 +14245,7 @@ THREE.PointLight.prototype.copy = function ( source ) {
 // File:src/lights/SpotLight.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.SpotLight = function ( color, intensity, distance, angle, exponent, decay ) {
@@ -14293,7 +14293,7 @@ THREE.SpotLight.prototype.copy = function ( source ) {
 // File:src/loaders/Cache.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.Cache = {
@@ -14339,7 +14339,7 @@ THREE.Cache = {
 // File:src/loaders/Loader.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.Loader = function () {
@@ -14636,7 +14636,7 @@ THREE.Loader.Handlers = {
 // File:src/loaders/XHRLoader.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.XHRLoader = function ( manager ) {
@@ -14739,7 +14739,7 @@ THREE.XHRLoader.prototype = {
 // File:src/loaders/ImageLoader.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.ImageLoader = function ( manager ) {
@@ -14833,8 +14833,8 @@ THREE.ImageLoader.prototype = {
 // File:src/loaders/JSONLoader.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.JSONLoader = function ( manager ) {
@@ -15382,7 +15382,7 @@ THREE.JSONLoader.prototype = {
 // File:src/loaders/LoadingManager.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.LoadingManager = function ( onLoad, onProgress, onError ) {
@@ -15455,7 +15455,7 @@ THREE.DefaultLoadingManager = new THREE.LoadingManager();
 // File:src/loaders/BufferGeometryLoader.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.BufferGeometryLoader = function ( manager ) {
@@ -15551,7 +15551,7 @@ THREE.BufferGeometryLoader.prototype = {
 // File:src/loaders/MaterialLoader.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.MaterialLoader = function ( manager ) {
@@ -15693,7 +15693,7 @@ THREE.MaterialLoader.prototype = {
 // File:src/loaders/ObjectLoader.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.ObjectLoader = function ( manager ) {
@@ -16313,7 +16313,7 @@ THREE.ObjectLoader.prototype = {
 // File:src/loaders/TextureLoader.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.TextureLoader = function ( manager ) {
@@ -16360,7 +16360,7 @@ THREE.TextureLoader.prototype = {
 // File:src/loaders/CubeTextureLoader.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.CubeTextureLoader = function ( manager ) {
@@ -16522,7 +16522,7 @@ THREE.BinaryTextureLoader.prototype = {
 // File:src/loaders/CompressedTextureLoader.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  *
  * Abstract Base class to block based textures loader (dds, pvr, ...)
  */
@@ -16660,8 +16660,8 @@ THREE.CompressedTextureLoader.prototype = {
 // File:src/materials/Material.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.Material = function () {
@@ -16928,8 +16928,8 @@ THREE.MaterialIdCount = 0;
 // File:src/materials/LineBasicMaterial.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
  *
  * parameters = {
  *  color: <hex>,
@@ -16993,7 +16993,7 @@ THREE.LineBasicMaterial.prototype.copy = function ( source ) {
 // File:src/materials/LineDashedMaterial.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
+ * @author alteredq / //alteredqualia.com/
  *
  * parameters = {
  *  color: <hex>,
@@ -17063,8 +17063,8 @@ THREE.LineDashedMaterial.prototype.copy = function ( source ) {
 // File:src/materials/MeshBasicMaterial.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
  *
  * parameters = {
  *  color: <hex>,
@@ -17184,8 +17184,8 @@ THREE.MeshBasicMaterial.prototype.copy = function ( source ) {
 // File:src/materials/MeshLambertMaterial.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
  *
  * parameters = {
  *  color: <hex>,
@@ -17298,8 +17298,8 @@ THREE.MeshLambertMaterial.prototype.copy = function ( source ) {
 // File:src/materials/MeshPhongMaterial.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
  *
  * parameters = {
  *  color: <hex>,
@@ -17481,8 +17481,8 @@ THREE.MeshPhongMaterial.prototype.copy = function ( source ) {
 // File:src/materials/MeshDepthMaterial.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
  *
  * parameters = {
  *  opacity: <float>,
@@ -17527,7 +17527,7 @@ THREE.MeshDepthMaterial.prototype.copy = function ( source ) {
 // File:src/materials/MeshNormalMaterial.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  *
  * parameters = {
  *  opacity: <float>,
@@ -17574,7 +17574,7 @@ THREE.MeshNormalMaterial.prototype.copy = function ( source ) {
 // File:src/materials/MultiMaterial.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.MultiMaterial = function ( materials ) {
@@ -17643,8 +17643,8 @@ THREE.MeshFaceMaterial = THREE.MultiMaterial;
 // File:src/materials/PointsMaterial.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
  *
  * parameters = {
  *  color: <hex>,
@@ -17733,7 +17733,7 @@ THREE.ParticleSystemMaterial = function ( parameters ) {
 // File:src/materials/ShaderMaterial.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
+ * @author alteredq / //alteredqualia.com/
  *
  * parameters = {
  *  defines: { "label" : "value" },
@@ -17871,7 +17871,7 @@ THREE.ShaderMaterial.prototype.toJSON = function ( meta ) {
 // File:src/materials/RawShaderMaterial.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.RawShaderMaterial = function ( parameters ) {
@@ -17887,7 +17887,7 @@ THREE.RawShaderMaterial.prototype.constructor = THREE.RawShaderMaterial;
 // File:src/materials/SpriteMaterial.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
+ * @author alteredq / //alteredqualia.com/
  *
  * parameters = {
  *  color: <hex>,
@@ -17945,8 +17945,8 @@ THREE.SpriteMaterial.prototype.copy = function ( source ) {
 // File:src/textures/Texture.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
  * @author szimek / https://github.com/szimek/
  */
 
@@ -17981,7 +17981,7 @@ THREE.Texture = function ( image, mapping, wrapS, wrapT, magFilter, minFilter, f
 	this.generateMipmaps = true;
 	this.premultiplyAlpha = false;
 	this.flipY = true;
-	this.unpackAlignment = 4; // valid values: 1, 2, 4, 8 (see http://www.khronos.org/opengles/sdk/docs/man/xhtml/glPixelStorei.xml)
+	this.unpackAlignment = 4; // valid values: 1, 2, 4, 8 (see //www.khronos.org/opengles/sdk/docs/man/xhtml/glPixelStorei.xml)
 
 	this.version = 0;
 	this.onUpdate = null;
@@ -18219,7 +18219,7 @@ THREE.TextureIdCount = 0;
 // File:src/textures/CanvasTexture.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.CanvasTexture = function ( canvas, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy ) {
@@ -18236,7 +18236,7 @@ THREE.CanvasTexture.prototype.constructor = THREE.CanvasTexture;
 // File:src/textures/CubeTexture.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.CubeTexture = function ( images, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy ) {
@@ -18265,7 +18265,7 @@ THREE.CubeTexture.prototype.copy = function ( source ) {
 // File:src/textures/CompressedTexture.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.CompressedTexture = function ( mipmaps, width, height, format, type, mapping, wrapS, wrapT, magFilter, minFilter, anisotropy ) {
@@ -18293,7 +18293,7 @@ THREE.CompressedTexture.prototype.constructor = THREE.CompressedTexture;
 // File:src/textures/DataTexture.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.DataTexture = function ( data, width, height, format, type, mapping, wrapS, wrapT, magFilter, minFilter, anisotropy ) {
@@ -18316,7 +18316,7 @@ THREE.DataTexture.prototype.constructor = THREE.DataTexture;
 // File:src/textures/VideoTexture.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.VideoTexture = function ( video, mapping, wrapS, wrapT, magFilter, minFilter, format, type, anisotropy ) {
@@ -18349,7 +18349,7 @@ THREE.VideoTexture.prototype.constructor = THREE.VideoTexture;
 // File:src/objects/Group.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.Group = function () {
@@ -18365,7 +18365,7 @@ THREE.Group.prototype.constructor = THREE.Group;
 // File:src/objects/Points.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.Points = function ( geometry, material ) {
@@ -18511,7 +18511,7 @@ THREE.ParticleSystem = function ( geometry, material ) {
 // File:src/objects/Line.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.Line = function ( geometry, material, mode ) {
@@ -18701,7 +18701,7 @@ THREE.LinePieces = 1;
 // File:src/objects/LineSegments.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.LineSegments = function ( geometry, material ) {
@@ -18718,10 +18718,10 @@ THREE.LineSegments.prototype.constructor = THREE.LineSegments;
 // File:src/objects/Mesh.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
- * @author mikael emtinger / http://gomo.se/
- * @author jonobr1 / http://jonobr1.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
+ * @author mikael emtinger / //gomo.se/
+ * @author jonobr1 / //jonobr1.com/
  */
 
 THREE.Mesh = function ( geometry, material ) {
@@ -19052,9 +19052,9 @@ THREE.Mesh.prototype.clone = function () {
 // File:src/objects/Bone.js
 
 /**
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
- * @author ikerr / http://verold.com
+ * @author mikael emtinger / //gomo.se/
+ * @author alteredq / //alteredqualia.com/
+ * @author ikerr / //verold.com
  */
 
 THREE.Bone = function ( skin ) {
@@ -19083,10 +19083,10 @@ THREE.Bone.prototype.copy = function ( source ) {
 // File:src/objects/Skeleton.js
 
 /**
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
- * @author michael guerrero / http://realitymeltdown.com
- * @author ikerr / http://verold.com
+ * @author mikael emtinger / //gomo.se/
+ * @author alteredq / //alteredqualia.com/
+ * @author michael guerrero / //realitymeltdown.com
+ * @author ikerr / //verold.com
  */
 
 THREE.Skeleton = function ( bones, boneInverses, useVertexTexture ) {
@@ -19262,9 +19262,9 @@ THREE.Skeleton.prototype.clone = function () {
 // File:src/objects/SkinnedMesh.js
 
 /**
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
- * @author ikerr / http://verold.com
+ * @author mikael emtinger / //gomo.se/
+ * @author alteredq / //alteredqualia.com/
+ * @author ikerr / //verold.com
  */
 
 THREE.SkinnedMesh = function ( geometry, material, useVertexTexture ) {
@@ -19415,9 +19415,9 @@ THREE.SkinnedMesh.prototype.clone = function() {
 // File:src/objects/LOD.js
 
 /**
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
- * @author mrdoob / http://mrdoob.com/
+ * @author mikael emtinger / //gomo.se/
+ * @author alteredq / //alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.LOD = function () {
@@ -19594,8 +19594,8 @@ THREE.LOD.prototype.toJSON = function ( meta ) {
 // File:src/objects/Sprite.js
 
 /**
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
+ * @author mikael emtinger / //gomo.se/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.Sprite = ( function () {
@@ -19668,8 +19668,8 @@ THREE.Particle = THREE.Sprite;
 // File:src/objects/LensFlare.js
 
 /**
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
+ * @author mikael emtinger / //gomo.se/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.LensFlare = function ( texture, size, distance, blending, color ) {
@@ -19767,7 +19767,7 @@ THREE.LensFlare.prototype.copy = function ( source ) {
 // File:src/scenes/Scene.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.Scene = function () {
@@ -19803,8 +19803,8 @@ THREE.Scene.prototype.copy = function ( source ) {
 // File:src/scenes/Fog.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.Fog = function ( color, near, far ) {
@@ -19827,8 +19827,8 @@ THREE.Fog.prototype.clone = function () {
 // File:src/scenes/FogExp2.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.FogExp2 = function ( color, density ) {
@@ -20318,9 +20318,9 @@ THREE.UniformsLib = {
 /**
  * Webgl Shader Library for three.js
  *
- * @author alteredq / http://alteredqualia.com/
- * @author mrdoob / http://mrdoob.com/
- * @author mikael emtinger / http://gomo.se/
+ * @author alteredq / //alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author mikael emtinger / //gomo.se/
  */
 
 
@@ -21100,13 +21100,13 @@ THREE.ShaderLib = {
 	/* Depth encoding into RGBA texture
 	 *
 	 * based on SpiderGL shadow map example
-	 * http://spidergl.org/example.php?id=6
+	 * //spidergl.org/example.php?id=6
 	 *
 	 * originally from
-	 * http://www.gamedev.net/topic/442138-packing-a-float-into-a-a8r8g8b8-texture-shader/page__whichpage__1%25EF%25BF%25BD
+	 * //www.gamedev.net/topic/442138-packing-a-float-into-a-a8r8g8b8-texture-shader/page__whichpage__1%25EF%25BF%25BD
 	 *
 	 * see also
-	 * http://aras-p.info/blog/2009/07/30/encoding-floats-to-rgba-the-final/
+	 * //aras-p.info/blog/2009/07/30/encoding-floats-to-rgba-the-final/
 	 */
 
 	'depthRGBA': {
@@ -21246,9 +21246,9 @@ THREE.ShaderLib = {
 // File:src/renderers/WebGLRenderer.js
 
 /**
- * @author supereggbert / http://www.paulbrunt.co.uk/
- * @author mrdoob / http://mrdoob.com/
- * @author alteredq / http://alteredqualia.com/
+ * @author supereggbert / //www.paulbrunt.co.uk/
+ * @author mrdoob / //mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
  * @author szimek / https://github.com/szimek/
  */
 
@@ -24825,7 +24825,7 @@ THREE.WebGLRenderer = function ( parameters ) {
 
 /**
  * @author szimek / https://github.com/szimek/
- * @author alteredq / http://alteredqualia.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.WebGLRenderTarget = function ( width, height, options ) {
@@ -25062,7 +25062,7 @@ THREE.EventDispatcher.prototype.apply( THREE.WebGLRenderTarget.prototype );
 // File:src/renderers/WebGLRenderTargetCube.js
 
 /**
- * @author alteredq / http://alteredqualia.com
+ * @author alteredq / //alteredqualia.com
  */
 
 THREE.WebGLRenderTargetCube = function ( width, height, options ) {
@@ -25079,7 +25079,7 @@ THREE.WebGLRenderTargetCube.prototype.constructor = THREE.WebGLRenderTargetCube;
 // File:src/renderers/webgl/WebGLBufferRenderer.js
 
 /**
-* @author mrdoob / http://mrdoob.com/
+* @author mrdoob / //mrdoob.com/
 */
 
 THREE.WebGLBufferRenderer = function ( _gl, extensions, _infoRender ) {
@@ -25136,7 +25136,7 @@ THREE.WebGLBufferRenderer = function ( _gl, extensions, _infoRender ) {
 // File:src/renderers/webgl/WebGLIndexedBufferRenderer.js
 
 /**
-* @author mrdoob / http://mrdoob.com/
+* @author mrdoob / //mrdoob.com/
 */
 
 THREE.WebGLIndexedBufferRenderer = function ( _gl, extensions, _infoRender ) {
@@ -25204,7 +25204,7 @@ THREE.WebGLIndexedBufferRenderer = function ( _gl, extensions, _infoRender ) {
 // File:src/renderers/webgl/WebGLExtensions.js
 
 /**
-* @author mrdoob / http://mrdoob.com/
+* @author mrdoob / //mrdoob.com/
 */
 
 THREE.WebGLExtensions = function ( gl ) {
@@ -25327,7 +25327,7 @@ THREE.WebGLCapabilities = function ( gl, extensions, parameters ) {
 // File:src/renderers/webgl/WebGLGeometries.js
 
 /**
-* @author mrdoob / http://mrdoob.com/
+* @author mrdoob / //mrdoob.com/
 */
 
 THREE.WebGLGeometries = function ( gl, properties, info ) {
@@ -25446,7 +25446,7 @@ THREE.WebGLGeometries = function ( gl, properties, info ) {
 // File:src/renderers/webgl/WebGLObjects.js
 
 /**
-* @author mrdoob / http://mrdoob.com/
+* @author mrdoob / //mrdoob.com/
 */
 
 THREE.WebGLObjects = function ( gl, properties, info ) {
@@ -26562,8 +26562,8 @@ THREE.WebGLShader = ( function () {
 // File:src/renderers/webgl/WebGLShadowMap.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
- * @author mrdoob / http://mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.WebGLShadowMap = function ( _renderer, _lights, _objects ) {
@@ -26964,7 +26964,7 @@ THREE.WebGLShadowMap = function ( _renderer, _lights, _objects ) {
 // File:src/renderers/webgl/WebGLState.js
 
 /**
-* @author mrdoob / http://mrdoob.com/
+* @author mrdoob / //mrdoob.com/
 */
 
 THREE.WebGLState = function ( gl, extensions, paramThreeToGL ) {
@@ -27497,8 +27497,8 @@ THREE.WebGLState = function ( gl, extensions, paramThreeToGL ) {
 // File:src/renderers/webgl/plugins/LensFlarePlugin.js
 
 /**
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
+ * @author mikael emtinger / //gomo.se/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.LensFlarePlugin = function ( renderer, flares ) {
@@ -27974,8 +27974,8 @@ THREE.LensFlarePlugin = function ( renderer, flares ) {
 // File:src/renderers/webgl/plugins/SpritePlugin.js
 
 /**
- * @author mikael emtinger / http://gomo.se/
- * @author alteredq / http://alteredqualia.com/
+ * @author mikael emtinger / //gomo.se/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.SpritePlugin = function ( renderer, sprites ) {
@@ -28344,7 +28344,7 @@ THREE.SpritePlugin = function ( renderer, sprites ) {
 // File:src/extras/CurveUtils.js
 
 /**
- * @author zz85 / http://www.lab4games.net/zz85/blog
+ * @author zz85 / //www.lab4games.net/zz85/blog
  */
 
 THREE.CurveUtils = {
@@ -28396,7 +28396,7 @@ THREE.CurveUtils = {
 // File:src/extras/GeometryUtils.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.GeometryUtils = {
@@ -28432,8 +28432,8 @@ THREE.GeometryUtils = {
 // File:src/extras/ImageUtils.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
- * @author mrdoob / http://mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
  * @author Daosheng Mu / https://github.com/DaoshengMu/
  */
 
@@ -28488,7 +28488,7 @@ THREE.ImageUtils = {
 // File:src/extras/SceneUtils.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.SceneUtils = {
@@ -28531,7 +28531,7 @@ THREE.SceneUtils = {
 // File:src/extras/ShapeUtils.js
 
 /**
- * @author zz85 / http://www.lab4games.net/zz85/blog
+ * @author zz85 / //www.lab4games.net/zz85/blog
  */
 
 THREE.ShapeUtils = {
@@ -28559,13 +28559,13 @@ THREE.ShapeUtils = {
 		 * This code is a quick port of code written in C++ which was submitted to
 		 * flipcode.com by John W. Ratcliff  // July 22, 2000
 		 * See original code and more information here:
-		 * http://www.flipcode.com/archives/Efficient_Polygon_Triangulation.shtml
+		 * //www.flipcode.com/archives/Efficient_Polygon_Triangulation.shtml
 		 *
 		 * ported to actionscript by Zevan Rosser
 		 * www.actionsnippet.com
 		 *
 		 * ported to javascript by Joshua Koo
-		 * http://www.lab4games.net/zz85/blog
+		 * //www.lab4games.net/zz85/blog
 		 *
 		 */
 
@@ -29207,7 +29207,7 @@ THREE.ShapeUtils = {
 	},
 
 	// Bezier Curves formulas obtained from
-	// http://en.wikipedia.org/wiki/B%C3%A9zier_curve
+	// //en.wikipedia.org/wiki/B%C3%A9zier_curve
 
 	// Quad Bezier Functions
 
@@ -29284,7 +29284,7 @@ THREE.ShapeUtils = {
 // File:src/extras/audio/Audio.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.Audio = function ( listener ) {
@@ -29520,7 +29520,7 @@ THREE.Audio.prototype.updateMatrixWorld = ( function () {
 // File:src/extras/audio/AudioListener.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.AudioListener = function () {
@@ -29565,7 +29565,7 @@ THREE.AudioListener.prototype.updateMatrixWorld = ( function () {
 // File:src/extras/core/Curve.js
 
 /**
- * @author zz85 / http://www.lab4games.net/zz85/blog
+ * @author zz85 / //www.lab4games.net/zz85/blog
  * Extensible curve object
  *
  * Some common of Curve methods
@@ -29855,7 +29855,7 @@ THREE.Curve.create = function ( constructor, getPointFunc ) {
 // File:src/extras/core/CurvePath.js
 
 /**
- * @author zz85 / http://www.lab4games.net/zz85/blog
+ * @author zz85 / //www.lab4games.net/zz85/blog
  *
  **/
 
@@ -30034,7 +30034,7 @@ THREE.CurvePath.prototype.createGeometry = function( points ) {
 // File:src/extras/core/Path.js
 
 /**
- * @author zz85 / http://www.lab4games.net/zz85/blog
+ * @author zz85 / //www.lab4games.net/zz85/blog
  * Creates free form 2d path using series of points, lines or curves.
  *
  **/
@@ -30761,7 +30761,7 @@ THREE.Path.prototype.toShapes = function( isCCW, noHoles ) {
 // File:src/extras/core/Shape.js
 
 /**
- * @author zz85 / http://www.lab4games.net/zz85/blog
+ * @author zz85 / //www.lab4games.net/zz85/blog
  * Defines a 2d shape plane using paths.
  **/
 
@@ -31214,7 +31214,7 @@ THREE.SplineCurve3 = THREE.Curve.create(
  *
  * Centripetal CatmullRom Curve - which is useful for avoiding
  * cusps and self-intersections in non-uniform catmull rom curves.
- * http://www.cemyuksel.com/research/catmullrom_param/catmullrom.pdf
+ * //www.cemyuksel.com/research/catmullrom_param/catmullrom.pdf
  *
  * curve.type accepts centripetal(default), chordal and catmullrom
  * curve.tension is used for catmullrom which defaults to 0.5
@@ -31230,8 +31230,8 @@ THREE.CatmullRomCurve3 = ( function() {
 
 	/*
 	Based on an optimized c++ solution in
-	 - http://stackoverflow.com/questions/9489736/catmull-rom-curve-with-no-cusps-and-no-self-intersections/
-	 - http://ideone.com/NoEbVM
+	 - //stackoverflow.com/questions/9489736/catmull-rom-curve-with-no-cusps-and-no-self-intersections/
+	 - //ideone.com/NoEbVM
 
 	This CubicPoly class could be used for reusing some variables and calculations,
 	but for three.js curve use, it could be possible inlined and flatten into a single function call
@@ -31432,8 +31432,8 @@ THREE.ClosedSplineCurve3 = THREE.Curve.create(
 // File:src/extras/geometries/BoxGeometry.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * based on http://papervision3d.googlecode.com/svn/trunk/as3/trunk/src/org/papervision3d/objects/primitives/Cube.as
+ * @author mrdoob / //mrdoob.com/
+ * based on //papervision3d.googlecode.com/svn/trunk/as3/trunk/src/org/papervision3d/objects/primitives/Cube.as
  */
 
 THREE.BoxGeometry = function ( width, height, depth, widthSegments, heightSegments, depthSegments ) {
@@ -31701,7 +31701,7 @@ THREE.CircleBufferGeometry.prototype.clone = function () {
 // File:src/extras/geometries/CylinderGeometry.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.CylinderGeometry = function ( radiusTop, radiusBottom, height, radialSegments, heightSegments, openEnded, thetaStart, thetaLength ) {
@@ -31893,7 +31893,7 @@ THREE.CylinderGeometry.prototype.clone = function () {
 // File:src/extras/geometries/EdgesGeometry.js
 
 /**
- * @author WestLangley / http://github.com/WestLangley
+ * @author WestLangley / //github.com/WestLangley
  */
 
 THREE.EdgesGeometry = function ( geometry, thresholdAngle ) {
@@ -31991,7 +31991,7 @@ THREE.EdgesGeometry.prototype.constructor = THREE.EdgesGeometry;
 // File:src/extras/geometries/ExtrudeGeometry.js
 
 /**
- * @author zz85 / http://www.lab4games.net/zz85/blog
+ * @author zz85 / //www.lab4games.net/zz85/blog
  *
  * Creates extruded geometry from a path shape.
  *
@@ -32192,7 +32192,7 @@ THREE.ExtrudeGeometry.prototype.addShape = function ( shape, options ) {
 		var v_trans_x, v_trans_y, shrink_by = 1;		// resulting translation vector for inPt
 
 		// good reading for geometry algorithms (here: line-line intersection)
-		// http://geomalgorithms.com/a05-_intersect-1.html
+		// //geomalgorithms.com/a05-_intersect-1.html
 
 		var v_prev_x = inPt.x - inPrev.x, v_prev_y = inPt.y - inPrev.y;
 		var v_next_x = inNext.x - inPt.x, v_next_y = inNext.y - inPt.y;
@@ -32698,7 +32698,7 @@ THREE.ExtrudeGeometry.WorldUVGenerator = {
 // File:src/extras/geometries/ShapeGeometry.js
 
 /**
- * @author jonobr1 / http://jonobr1.com
+ * @author jonobr1 / //jonobr1.com
  *
  * Creates a one-sided polygonal geometry from a path shape. Similar to
  * ExtrudeGeometry.
@@ -32832,9 +32832,9 @@ THREE.ShapeGeometry.prototype.addShape = function ( shape, options ) {
 // File:src/extras/geometries/LatheGeometry.js
 
 /**
- * @author astrodud / http://astrodud.isgreat.org/
+ * @author astrodud / //astrodud.isgreat.org/
  * @author zz85 / https://github.com/zz85
- * @author bhouston / http://clara.io
+ * @author bhouston / //clara.io
  */
 
 // points - to create a closed torus, one must use a set of points 
@@ -32941,8 +32941,8 @@ THREE.LatheGeometry.prototype.constructor = THREE.LatheGeometry;
 // File:src/extras/geometries/PlaneGeometry.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * based on http://papervision3d.googlecode.com/svn/trunk/as3/trunk/src/org/papervision3d/objects/primitives/Plane.as
+ * @author mrdoob / //mrdoob.com/
+ * based on //papervision3d.googlecode.com/svn/trunk/as3/trunk/src/org/papervision3d/objects/primitives/Plane.as
  */
 
 THREE.PlaneGeometry = function ( width, height, widthSegments, heightSegments ) {
@@ -32981,8 +32981,8 @@ THREE.PlaneGeometry.prototype.clone = function () {
 // File:src/extras/geometries/PlaneBufferGeometry.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * based on http://papervision3d.googlecode.com/svn/trunk/as3/trunk/src/org/papervision3d/objects/primitives/Plane.as
+ * @author mrdoob / //mrdoob.com/
+ * based on //papervision3d.googlecode.com/svn/trunk/as3/trunk/src/org/papervision3d/objects/primitives/Plane.as
  */
 
 THREE.PlaneBufferGeometry = function ( width, height, widthSegments, heightSegments ) {
@@ -33203,7 +33203,7 @@ THREE.RingGeometry.prototype.clone = function () {
 // File:src/extras/geometries/SphereGeometry.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.SphereGeometry = function ( radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength ) {
@@ -33369,8 +33369,8 @@ THREE.SphereBufferGeometry.prototype.clone = function () {
 
 /**
  * @author oosmoxiecode
- * @author mrdoob / http://mrdoob.com/
- * based on http://code.google.com/p/away3d/source/browse/trunk/fp10/Away3DLite/src/away3dlite/primitives/Torus.as?r=2888
+ * @author mrdoob / //mrdoob.com/
+ * based on //code.google.com/p/away3d/source/browse/trunk/fp10/Away3DLite/src/away3dlite/primitives/Torus.as?r=2888
  */
 
 THREE.TorusGeometry = function ( radius, tube, radialSegments, tubularSegments, arc ) {
@@ -33465,7 +33465,7 @@ THREE.TorusGeometry.prototype.clone = function () {
 
 /**
  * @author oosmoxiecode
- * based on http://code.google.com/p/away3d/source/browse/trunk/fp10/Away3D/src/away3d/primitives/TorusKnot.as?spec=svn2473&r=2473
+ * based on //code.google.com/p/away3d/source/browse/trunk/fp10/Away3D/src/away3d/primitives/TorusKnot.as?spec=svn2473&r=2473
  */
 
 THREE.TorusKnotGeometry = function ( radius, tube, radialSegments, tubularSegments, p, q, heightScale ) {
@@ -33607,7 +33607,7 @@ THREE.TorusKnotGeometry.prototype.clone = function () {
  * Creates a tube which extrudes along a 3d spline
  *
  * Uses parallel transport frames as described in
- * http://www.cs.indiana.edu/pub/techreports/TR425.pdf
+ * //www.cs.indiana.edu/pub/techreports/TR425.pdf
  */
 
 THREE.TubeGeometry = function ( path, segments, radius, radialSegments, closed, taper ) {
@@ -33915,7 +33915,7 @@ THREE.TubeGeometry.FrenetFrames = function ( path, segments, closed ) {
 /**
  * @author clockworkgeek / https://github.com/clockworkgeek
  * @author timothypratley / https://github.com/timothypratley
- * @author WestLangley / http://github.com/WestLangley
+ * @author WestLangley / //github.com/WestLangley
 */
 
 THREE.PolyhedronGeometry = function ( vertices, indices, radius, detail ) {
@@ -34374,7 +34374,7 @@ THREE.TetrahedronGeometry.prototype.clone = function () {
 /**
  * @author zz85 / https://github.com/zz85
  * Parametric Surfaces Geometry
- * based on the brilliant article by @prideout http://prideout.net/blog/?p=44
+ * based on the brilliant article by @prideout //prideout.net/blog/?p=44
  *
  * new THREE.ParametricGeometry( parametricFunction, uSegments, ySegements );
  *
@@ -34460,7 +34460,7 @@ THREE.ParametricGeometry.prototype.constructor = THREE.ParametricGeometry;
 // File:src/extras/geometries/WireframeGeometry.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.WireframeGeometry = function ( geometry ) {
@@ -34645,8 +34645,8 @@ THREE.WireframeGeometry.prototype.constructor = THREE.WireframeGeometry;
 // File:src/extras/helpers/AxisHelper.js
 
 /**
- * @author sroucheray / http://sroucheray.org/
- * @author mrdoob / http://mrdoob.com/
+ * @author sroucheray / //sroucheray.org/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.AxisHelper = function ( size ) {
@@ -34681,9 +34681,9 @@ THREE.AxisHelper.prototype.constructor = THREE.AxisHelper;
 // File:src/extras/helpers/ArrowHelper.js
 
 /**
- * @author WestLangley / http://github.com/WestLangley
- * @author zz85 / http://github.com/zz85
- * @author bhouston / http://clara.io
+ * @author WestLangley / //github.com/WestLangley
+ * @author zz85 / //github.com/zz85
+ * @author bhouston / //clara.io
  *
  * Creates an arrow for visualizing directions
  *
@@ -34794,7 +34794,7 @@ THREE.ArrowHelper.prototype.setColor = function ( color ) {
 // File:src/extras/helpers/BoxHelper.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.BoxHelper = function ( object ) {
@@ -34871,7 +34871,7 @@ THREE.BoxHelper.prototype.update = ( function () {
 // File:src/extras/helpers/BoundingBoxHelper.js
 
 /**
- * @author WestLangley / http://github.com/WestLangley
+ * @author WestLangley / //github.com/WestLangley
  */
 
 // a helper to show the world-axis-aligned bounding box for an object
@@ -34904,12 +34904,12 @@ THREE.BoundingBoxHelper.prototype.update = function () {
 // File:src/extras/helpers/CameraHelper.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
+ * @author alteredq / //alteredqualia.com/
  *
  *	- shows frustum, line of sight and up of the camera
  *	- suitable for fast updates
  * 	- based on frustum visualization in lightgl.js shadowmap example
- *		http://evanw.github.com/lightgl.js/tests/shadowmap.html
+ *		//evanw.github.com/lightgl.js/tests/shadowmap.html
  */
 
 THREE.CameraHelper = function ( camera ) {
@@ -35096,9 +35096,9 @@ THREE.CameraHelper.prototype.update = function () {
 // File:src/extras/helpers/DirectionalLightHelper.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
- * @author mrdoob / http://mrdoob.com/
- * @author WestLangley / http://github.com/WestLangley
+ * @author alteredq / //alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author WestLangley / //github.com/WestLangley
  */
 
 THREE.DirectionalLightHelper = function ( light, size ) {
@@ -35182,7 +35182,7 @@ THREE.DirectionalLightHelper.prototype.update = function () {
 // File:src/extras/helpers/EdgesHelper.js
 
 /**
- * @author WestLangley / http://github.com/WestLangley
+ * @author WestLangley / //github.com/WestLangley
  * @param object THREE.Mesh whose geometry will be used
  * @param hex line color
  * @param thresholdAngle the minimum angle (in degrees),
@@ -35208,8 +35208,8 @@ THREE.EdgesHelper.prototype.constructor = THREE.EdgesHelper;
 // File:src/extras/helpers/FaceNormalsHelper.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author WestLangley / http://github.com/WestLangley
+ * @author mrdoob / //mrdoob.com/
+ * @author WestLangley / //github.com/WestLangley
 */
 
 THREE.FaceNormalsHelper = function ( object, size, hex, linewidth ) {
@@ -35321,7 +35321,7 @@ THREE.FaceNormalsHelper.prototype.update = ( function () {
 // File:src/extras/helpers/GridHelper.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.GridHelper = function ( size, step ) {
@@ -35364,8 +35364,8 @@ THREE.GridHelper.prototype.setColors = function( colorCenterLine, colorGrid ) {
 // File:src/extras/helpers/HemisphereLightHelper.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
- * @author mrdoob / http://mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.HemisphereLightHelper = function ( light, sphereSize ) {
@@ -35427,8 +35427,8 @@ THREE.HemisphereLightHelper.prototype.update = function () {
 // File:src/extras/helpers/PointLightHelper.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
- * @author mrdoob / http://mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.PointLightHelper = function ( light, sphereSize ) {
@@ -35503,10 +35503,10 @@ THREE.PointLightHelper.prototype.update = function () {
 // File:src/extras/helpers/SkeletonHelper.js
 
 /**
- * @author Sean Griffin / http://twitter.com/sgrif
- * @author Michael Guerrero / http://realitymeltdown.com
- * @author mrdoob / http://mrdoob.com/
- * @author ikerr / http://verold.com
+ * @author Sean Griffin / //twitter.com/sgrif
+ * @author Michael Guerrero / //realitymeltdown.com
+ * @author mrdoob / //mrdoob.com/
+ * @author ikerr / //verold.com
  */
 
 THREE.SkeletonHelper = function ( object ) {
@@ -35606,9 +35606,9 @@ THREE.SkeletonHelper.prototype.update = function () {
 // File:src/extras/helpers/SpotLightHelper.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
- * @author mrdoob / http://mrdoob.com/
- * @author WestLangley / http://github.com/WestLangley
+ * @author alteredq / //alteredqualia.com/
+ * @author mrdoob / //mrdoob.com/
+ * @author WestLangley / //github.com/WestLangley
 */
 
 THREE.SpotLightHelper = function ( light ) {
@@ -35671,8 +35671,8 @@ THREE.SpotLightHelper.prototype.update = function () {
 // File:src/extras/helpers/VertexNormalsHelper.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
- * @author WestLangley / http://github.com/WestLangley
+ * @author mrdoob / //mrdoob.com/
+ * @author WestLangley / //github.com/WestLangley
 */
 
 THREE.VertexNormalsHelper = function ( object, size, hex, linewidth ) {
@@ -35819,7 +35819,7 @@ THREE.VertexNormalsHelper.prototype.update = ( function () {
 // File:src/extras/helpers/WireframeHelper.js
 
 /**
- * @author mrdoob / http://mrdoob.com/
+ * @author mrdoob / //mrdoob.com/
  */
 
 THREE.WireframeHelper = function ( object, hex ) {
@@ -35839,7 +35839,7 @@ THREE.WireframeHelper.prototype.constructor = THREE.WireframeHelper;
 // File:src/extras/objects/ImmediateRenderObject.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.ImmediateRenderObject = function ( material ) {
@@ -35857,7 +35857,7 @@ THREE.ImmediateRenderObject.prototype.constructor = THREE.ImmediateRenderObject;
 // File:src/extras/objects/MorphBlendMesh.js
 
 /**
- * @author alteredq / http://alteredqualia.com/
+ * @author alteredq / //alteredqualia.com/
  */
 
 THREE.MorphBlendMesh = function( geometry, material ) {

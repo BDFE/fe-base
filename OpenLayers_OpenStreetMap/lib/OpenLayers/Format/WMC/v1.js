@@ -22,11 +22,11 @@ OpenLayers.Format.WMC.v1 = OpenLayers.Class(OpenLayers.Format.XML, {
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        ol: "http://openlayers.org/context",
-        wmc: "http://www.opengis.net/context",
-        sld: "http://www.opengis.net/sld",
-        xlink: "http://www.w3.org/1999/xlink",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance"
+        ol: "//openlayers.org/context",
+        wmc: "//www.opengis.net/context",
+        sld: "//www.opengis.net/sld",
+        xlink: "//www.w3.org/1999/xlink",
+        xsi: "//www.w3.org/2001/XMLSchema-instance"
     },
     
     /**

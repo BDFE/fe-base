@@ -87,7 +87,7 @@ OpenLayers.Layer.ArcIMS = OpenLayers.Class(OpenLayers.Layer.Grid, {
      * (code)
      * var arcims = new OpenLayers.Layer.ArcIMS(
      *     "Global Sample",
-     *     "http://sample.avencia.com/servlet/com.esri.esrimap.Esrimap", 
+     *     "//sample.avencia.com/servlet/com.esri.esrimap.Esrimap", 
      *     {
      *         service: "OpenLayers_Sample", 
      *         layers: [

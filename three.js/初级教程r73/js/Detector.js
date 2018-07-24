@@ -1,6 +1,6 @@
 /**
- * @author alteredq / http://alteredqualia.com/
- * @author mr.doob / http://mrdoob.com/
+ * @author alteredq / //alteredqualia.com/
+ * @author mr.doob / //mrdoob.com/
  */
 
 var Detector = {
@@ -27,11 +27,11 @@ var Detector = {
 		if ( ! this.webgl ) {
 
 			element.innerHTML = window.WebGLRenderingContext ? [
-				'Your graphics card does not seem to support <a href="http://khronos.org/webgl/wiki/Getting_a_WebGL_Implementation" style="color:#000">WebGL</a>.<br />',
-				'Find out how to get it <a href="http://get.webgl.org/" style="color:#000">here</a>.'
+				'Your graphics card does not seem to support <a href="//khronos.org/webgl/wiki/Getting_a_WebGL_Implementation" style="color:#000">WebGL</a>.<br />',
+				'Find out how to get it <a href="//get.webgl.org/" style="color:#000">here</a>.'
 			].join( '\n' ) : [
-				'Your browser does not seem to support <a href="http://khronos.org/webgl/wiki/Getting_a_WebGL_Implementation" style="color:#000">WebGL</a>.<br/>',
-				'Find out how to get it <a href="http://get.webgl.org/" style="color:#000">here</a>.'
+				'Your browser does not seem to support <a href="//khronos.org/webgl/wiki/Getting_a_WebGL_Implementation" style="color:#000">WebGL</a>.<br/>',
+				'Find out how to get it <a href="//get.webgl.org/" style="color:#000">here</a>.'
 			].join( '\n' );
 
 		}

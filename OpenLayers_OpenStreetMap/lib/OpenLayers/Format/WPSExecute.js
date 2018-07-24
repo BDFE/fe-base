@@ -24,14 +24,14 @@ OpenLayers.Format.WPSExecute = OpenLayers.Class(OpenLayers.Format.XML,
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        ows: "http://www.opengis.net/ows/1.1",
-        gml: "http://www.opengis.net/gml",
-        wps: "http://www.opengis.net/wps/1.0.0",
-        wfs: "http://www.opengis.net/wfs",
-        ogc: "http://www.opengis.net/ogc",
-        wcs: "http://www.opengis.net/wcs",
-        xlink: "http://www.w3.org/1999/xlink",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance"
+        ows: "//www.opengis.net/ows/1.1",
+        gml: "//www.opengis.net/gml",
+        wps: "//www.opengis.net/wps/1.0.0",
+        wfs: "//www.opengis.net/wfs",
+        ogc: "//www.opengis.net/ogc",
+        wcs: "//www.opengis.net/wcs",
+        xlink: "//www.w3.org/1999/xlink",
+        xsi: "//www.w3.org/2001/XMLSchema-instance"
     },
 
     /**
@@ -55,7 +55,7 @@ OpenLayers.Format.WPSExecute = OpenLayers.Class(OpenLayers.Format.XML,
      * Property: schemaLocation
      * {String} Schema location
      */
-    schemaLocation: "http://www.opengis.net/wps/1.0.0 http://schemas.opengis.net/wps/1.0.0/wpsAll.xsd",
+    schemaLocation: "//www.opengis.net/wps/1.0.0 //schemas.opengis.net/wps/1.0.0/wpsAll.xsd",
 
     schemaLocationAttr: function(options) {
         return undefined;

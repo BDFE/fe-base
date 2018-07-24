@@ -418,7 +418,7 @@
         }
 
         // use "parser-inserted scripts" for guaranteed execution order
-        // http://hsivonen.iki.fi/script-execution/
+        // //hsivonen.iki.fi/script-execution/
         var scriptTags = new Array(jsFiles.length);
         var host = OpenLayers._getScriptLocation() + "lib/";
         for (var i=0, len=jsFiles.length; i<len; i++) {

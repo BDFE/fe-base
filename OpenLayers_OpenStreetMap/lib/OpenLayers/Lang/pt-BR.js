@@ -27,15 +27,15 @@ OpenLayers.Lang["pt-BR"] = OpenLayers.Util.applyDefaults({
 
     'browserNotSupported': "Seu navegador não suporta renderização de vetores. Os renderizadores suportados atualmente são:\n${renderers}",
 
-    'minZoomLevelError': "A propriedade minZoomLevel é de uso restrito das camadas descendentes de FixedZoomLevels. A verificação dessa propriedade pelas camadas wfs é um resíduo do passado. Não podemos, entretanto não é possível removê-la sem possívelmente quebrar o funcionamento de aplicações OL que possuem depência com ela. Portanto estamos tornando seu uso obsoleto -- a verificação desse atributo será removida na versão 3.0. Ao invés, use as opções de resolução min/max como descrito em: http://trac.openlayers.org/wiki/SettingZoomLevels",
+    'minZoomLevelError': "A propriedade minZoomLevel é de uso restrito das camadas descendentes de FixedZoomLevels. A verificação dessa propriedade pelas camadas wfs é um resíduo do passado. Não podemos, entretanto não é possível removê-la sem possívelmente quebrar o funcionamento de aplicações OL que possuem depência com ela. Portanto estamos tornando seu uso obsoleto -- a verificação desse atributo será removida na versão 3.0. Ao invés, use as opções de resolução min/max como descrito em: //trac.openlayers.org/wiki/SettingZoomLevels",
 
     'commitSuccess': "Transação WFS : SUCESSO ${response}",
 
     'commitFailed': "Transação WFS : ERRO ${response}",
 
-    'googleWarning': "Não foi possível carregar a camada Google corretamente.\x3cbr\x3e\x3cbr\x3ePara se livrar dessa mensagem, selecione uma nova Camada Base, na ferramenta de alternação de camadas localização do canto superior direito.\x3cbr\x3e\x3cbr\x3eMuito provavelmente, isso foi causado porque o script da biblioteca do Google Maps não foi incluído, ou porque ele não contém a chave correta da API para o seu site.\x3cbr\x3e\x3cbr\x3eDesenvolvedores: Para obter ajuda em solucionar esse problema \x3ca href=\'http://trac.openlayers.org/wiki/Google\' target=\'_blank\'\x3ecliquem aqui\x3c/a\x3e",
+    'googleWarning': "Não foi possível carregar a camada Google corretamente.\x3cbr\x3e\x3cbr\x3ePara se livrar dessa mensagem, selecione uma nova Camada Base, na ferramenta de alternação de camadas localização do canto superior direito.\x3cbr\x3e\x3cbr\x3eMuito provavelmente, isso foi causado porque o script da biblioteca do Google Maps não foi incluído, ou porque ele não contém a chave correta da API para o seu site.\x3cbr\x3e\x3cbr\x3eDesenvolvedores: Para obter ajuda em solucionar esse problema \x3ca href=\'//trac.openlayers.org/wiki/Google\' target=\'_blank\'\x3ecliquem aqui\x3c/a\x3e",
 
-    'getLayerWarning': "Não foi possível carregar a camada ${layerType} corretamente.\x3cbr\x3e\x3cbr\x3ePara se livrar dessa mensagem, selecione uma nova Camada Base, na ferramenta de alternação de camadas localização do canto superior direito.\x3cbr\x3e\x3cbr\x3eMuito provavelmente, isso foi causado porque o script da biblioteca ${layerLib} não foi incluído corretamente.\x3cbr\x3e\x3cbr\x3eDesenvolvedores: Para obter ajuda em solucionar esse problema \x3ca href=\'http://trac.openlayers.org/wiki/${layerLib}\' target=\'_blank\'\x3ecliquem aqui\x3c/a\x3e",
+    'getLayerWarning': "Não foi possível carregar a camada ${layerType} corretamente.\x3cbr\x3e\x3cbr\x3ePara se livrar dessa mensagem, selecione uma nova Camada Base, na ferramenta de alternação de camadas localização do canto superior direito.\x3cbr\x3e\x3cbr\x3eMuito provavelmente, isso foi causado porque o script da biblioteca ${layerLib} não foi incluído corretamente.\x3cbr\x3e\x3cbr\x3eDesenvolvedores: Para obter ajuda em solucionar esse problema \x3ca href=\'//trac.openlayers.org/wiki/${layerLib}\' target=\'_blank\'\x3ecliquem aqui\x3c/a\x3e",
 
     'Scale = 1 : ${scaleDenom}': "Escala = 1 : ${scaleDenom}",
 
@@ -47,7 +47,7 @@ OpenLayers.Lang["pt-BR"] = OpenLayers.Util.applyDefaults({
 
     'S': "S",
 
-    'reprojectDeprecated': "Você está usando a opção \'reproject\' na camada ${layerName}. Essa opção está obsoleta: seu uso foi projetado para suportar a visualização de dados sobre bases de mapas comerciais, entretanto essa funcionalidade deve agora ser alcançada usando o suporte à projeção Mercator. Mais informação está disponível em: http://trac.openlayers.org/wiki/SphericalMercator.",
+    'reprojectDeprecated': "Você está usando a opção \'reproject\' na camada ${layerName}. Essa opção está obsoleta: seu uso foi projetado para suportar a visualização de dados sobre bases de mapas comerciais, entretanto essa funcionalidade deve agora ser alcançada usando o suporte à projeção Mercator. Mais informação está disponível em: //trac.openlayers.org/wiki/SphericalMercator.",
 
     'methodDeprecated': "Esse método está obsoleto e será removido na versão 3.0. Ao invés, por favor use ${newMethod}."
 

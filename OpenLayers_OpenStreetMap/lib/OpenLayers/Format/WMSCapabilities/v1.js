@@ -25,9 +25,9 @@ OpenLayers.Format.WMSCapabilities.v1 = OpenLayers.Class(
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        wms: "http://www.opengis.net/wms",
-        xlink: "http://www.w3.org/1999/xlink",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance"
+        wms: "//www.opengis.net/wms",
+        xlink: "//www.w3.org/1999/xlink",
+        xsi: "//www.w3.org/2001/XMLSchema-instance"
     },
 
     /**

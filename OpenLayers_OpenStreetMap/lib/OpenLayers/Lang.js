@@ -51,7 +51,7 @@ OpenLayers.Lang = {
      *
      * Parameters:
      * code - {String} These codes follow the IETF recommendations at
-     *     http://www.ietf.org/rfc/rfc3066.txt.  If no value is set, the
+     *     //www.ietf.org/rfc/rfc3066.txt.  If no value is set, the
      *     browser's language setting will be tested.  If no <OpenLayers.Lang>
      *     dictionary exists for the code, the <OpenLayers.String.defaultLang>
      *     will be used.

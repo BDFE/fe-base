@@ -31,7 +31,7 @@ OpenLayers.Format.WFSDescribeFeatureType = OpenLayers.Class(
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        xsd: "http://www.w3.org/2001/XMLSchema"
+        xsd: "//www.w3.org/2001/XMLSchema"
     },
     
     /**

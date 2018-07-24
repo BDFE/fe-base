@@ -833,7 +833,7 @@ OpenLayers.Layer = OpenLayers.Class({
      *  
      * For a detailed explanation, see the following wiki from the 
      *     openlayers.org homepage:
-     *     http://trac.openlayers.org/wiki/SettingZoomLevels
+     *     //trac.openlayers.org/wiki/SettingZoomLevels
      */
     initResolutions: function() {
 

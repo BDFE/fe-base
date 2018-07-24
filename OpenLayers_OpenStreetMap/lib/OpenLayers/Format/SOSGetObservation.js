@@ -23,15 +23,15 @@ OpenLayers.Format.SOSGetObservation = OpenLayers.Class(OpenLayers.Format.XML, {
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        ows: "http://www.opengis.net/ows",
-        gml: "http://www.opengis.net/gml",
-        sos: "http://www.opengis.net/sos/1.0",
-        ogc: "http://www.opengis.net/ogc",
-        om: "http://www.opengis.net/om/1.0",
-        sa: "http://www.opengis.net/sampling/1.0",
-        xlink: "http://www.w3.org/1999/xlink",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance",
-        xmlns: "http://www.w3.org/2000/xmlns/"
+        ows: "//www.opengis.net/ows",
+        gml: "//www.opengis.net/gml",
+        sos: "//www.opengis.net/sos/1.0",
+        ogc: "//www.opengis.net/ogc",
+        om: "//www.opengis.net/om/1.0",
+        sa: "//www.opengis.net/sampling/1.0",
+        xlink: "//www.w3.org/1999/xlink",
+        xsi: "//www.w3.org/2001/XMLSchema-instance",
+        xmlns: "//www.w3.org/2000/xmlns/"
     },
 
     /**
@@ -55,7 +55,7 @@ OpenLayers.Format.SOSGetObservation = OpenLayers.Class(OpenLayers.Format.XML, {
      * Property: schemaLocation
      * {String} Schema location
      */
-    schemaLocation: "http://www.opengis.net/sos/1.0 http://schemas.opengis.net/sos/1.0.0/sosGetObservation.xsd",
+    schemaLocation: "//www.opengis.net/sos/1.0 //schemas.opengis.net/sos/1.0.0/sosGetObservation.xsd",
 
     /**
      * Property: defaultPrefix

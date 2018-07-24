@@ -68,7 +68,7 @@ OpenLayers.Protocol.Script = OpenLayers.Class(OpenLayers.Protocol, {
      *     recognizes as the callback identifier.  Default is "callback".
      *     This key is used to generate the URL for the script.  For example
      *     setting <callbackKey> to "myCallback" would result in a URL like 
-     *     http://example.com/?myCallback=...
+     *     //example.com/?myCallback=...
      */
     callbackKey: "callback",
 
@@ -77,7 +77,7 @@ OpenLayers.Protocol.Script = OpenLayers.Class(OpenLayers.Protocol, {
      * {String} Where a service requires that the callback query string 
      *     parameter value is prefixed by some string, this value may be set.
      *     For example, setting <callbackPrefix> to "foo:" would result in a
-     *     URL like http://example.com/?callback=foo:...  Default is "".
+     *     URL like //example.com/?callback=foo:...  Default is "".
      */
     callbackPrefix: "",
 

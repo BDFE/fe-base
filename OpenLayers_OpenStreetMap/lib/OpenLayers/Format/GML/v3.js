@@ -21,7 +21,7 @@ OpenLayers.Format.GML.v3 = OpenLayers.Class(OpenLayers.Format.GML.Base, {
      * {String} Schema location for a particular minor version.  The writers
      *     conform with the Simple Features Profile for GML.
      */
-    schemaLocation: "http://www.opengis.net/gml http://schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd",
+    schemaLocation: "//www.opengis.net/gml //schemas.opengis.net/gml/3.1.1/profiles/gmlsfProfile/1.0.0/gmlsf.xsd",
 
     /**
      * Property: curve

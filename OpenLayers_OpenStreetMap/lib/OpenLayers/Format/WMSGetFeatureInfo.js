@@ -258,7 +258,7 @@ OpenLayers.Format.WMSGetFeatureInfo = OpenLayers.Class(OpenLayers.Format.XML, {
                         if (grandchild.nodeType == 3 ||
                                 grandchild.nodeType == 4) {
                             // wholeText doesn't exist everywhere but we need it for FireFox
-                            // see i.e.: http://msdn.microsoft.com/en-us/library/ie/ff974769%28v=vs.85%29.aspx
+                            // see i.e.: //msdn.microsoft.com/en-us/library/ie/ff974769%28v=vs.85%29.aspx
                             var attribute = grandchild.wholeText ?
                                 grandchild.wholeText :
                                 grandchild.nodeValue;

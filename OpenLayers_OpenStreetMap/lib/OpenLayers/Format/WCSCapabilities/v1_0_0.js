@@ -33,10 +33,10 @@ OpenLayers.Format.WCSCapabilities.v1_0_0 = OpenLayers.Class(
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        wcs: "http://www.opengis.net/wcs",
-        xlink: "http://www.w3.org/1999/xlink",
-        xsi: "http://www.w3.org/2001/XMLSchema-instance",
-        ows: "http://www.opengis.net/ows"
+        wcs: "//www.opengis.net/wcs",
+        xlink: "//www.w3.org/1999/xlink",
+        xsi: "//www.w3.org/2001/XMLSchema-instance",
+        ows: "//www.opengis.net/ows"
     },
 
     /**
@@ -169,7 +169,7 @@ OpenLayers.Format.WCSCapabilities.v1_0_0 = OpenLayers.Class(
                 }
             },
             "lonLatEnvelope": function(node, coverageOfferingBrief) {
-                var nodeList = this.getElementsByTagNameNS(node, "http://www.opengis.net/gml", "pos");
+                var nodeList = this.getElementsByTagNameNS(node, "//www.opengis.net/gml", "pos");
 
                 // We expect two nodes here, to create the corners of a bounding box
                 if(nodeList.length == 2) {

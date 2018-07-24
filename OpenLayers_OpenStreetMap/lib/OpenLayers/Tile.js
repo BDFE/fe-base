@@ -58,7 +58,7 @@ OpenLayers.Tile = OpenLayers.Class({
      * <OpenLayers.Layer.Grid>. For example, to be notified of the
      * ``loadend`` event of each tiles:
      * (code)
-     * new OpenLayers.Layer.OSM('osm', 'http://tile.openstreetmap.org/${z}/${x}/${y}.png', {
+     * new OpenLayers.Layer.OSM('osm', '//tile.openstreetmap.org/${z}/${x}/${y}.png', {
      *     tileOptions: {
      *         eventListeners: {
      *             'loadend': function(evt) {

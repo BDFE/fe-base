@@ -70,7 +70,7 @@ OpenLayers.Control.Geolocate = OpenLayers.Class(OpenLayers.Control, {
     /**
      * APIProperty: geolocationOptions
      * {Object} Options to pass to the navigator's geolocation API. See
-     *     <http://dev.w3.org/geo/api/spec-source.html>. No specific
+     *     <//dev.w3.org/geo/api/spec-source.html>. No specific
      *     option is passed to the geolocation API by default.
      */
     geolocationOptions: null,

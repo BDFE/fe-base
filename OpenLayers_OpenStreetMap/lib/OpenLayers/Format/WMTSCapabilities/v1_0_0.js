@@ -29,9 +29,9 @@ OpenLayers.Format.WMTSCapabilities.v1_0_0 = OpenLayers.Class(
      * {Object} Mapping of namespace aliases to namespace URIs.
      */
     namespaces: {
-        ows: "http://www.opengis.net/ows/1.1",
-        wmts: "http://www.opengis.net/wmts/1.0",
-        xlink: "http://www.w3.org/1999/xlink"
+        ows: "//www.opengis.net/ows/1.1",
+        wmts: "//www.opengis.net/wmts/1.0",
+        xlink: "//www.w3.org/1999/xlink"
     },    
     
     /**

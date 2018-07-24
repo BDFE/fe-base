@@ -10,7 +10,7 @@
 /** 
  * Class: OpenLayers.Layer.Bing
  * Bing layer using direct tile access as provided by Bing Maps REST Services.
- * See http://msdn.microsoft.com/en-us/library/ff701713.aspx for more
+ * See //msdn.microsoft.com/en-us/library/ff701713.aspx for more
  * information. Note: Terms of Service compliant use requires the map to be
  * configured with an <OpenLayers.Control.Attribution> control and the
  * attribution placed on or near the map.
@@ -23,7 +23,7 @@ OpenLayers.Layer.Bing = OpenLayers.Class(OpenLayers.Layer.XYZ, {
     /**
      * Property: key
      * {String} API key for Bing maps, get your own key 
-     *     at http://bingmapsportal.com/ .
+     *     at //bingmapsportal.com/ .
      */
     key: null,
 
@@ -47,10 +47,10 @@ OpenLayers.Layer.Bing = OpenLayers.Class(OpenLayers.Layer.XYZ, {
      * {String}
      */
     attributionTemplate: '<span class="olBingAttribution ${type}">' +
-         '<div><a target="_blank" href="http://www.bing.com/maps/">' +
+         '<div><a target="_blank" href="//www.bing.com/maps/">' +
          '<img src="${logo}" /></a></div>${copyrights}' +
          '<a style="white-space: nowrap" target="_blank" '+
-         'href="http://www.microsoft.com/maps/product/terms.html">' +
+         'href="//www.microsoft.com/maps/product/terms.html">' +
          'Terms of Use</a></span>',
 
     /**
@@ -68,14 +68,14 @@ OpenLayers.Layer.Bing = OpenLayers.Class(OpenLayers.Layer.XYZ, {
     /**
      * APIProperty: type
      * {String} The layer identifier.  Any non-birdseye imageryType
-     *     from http://msdn.microsoft.com/en-us/library/ff701716.aspx can be
+     *     from //msdn.microsoft.com/en-us/library/ff701716.aspx can be
      *     used.  Default is "Road".
      */
     type: "Road",
     
     /**
      * APIProperty: culture
-     * {String} The culture identifier.  See http://msdn.microsoft.com/en-us/library/ff701709.aspx
+     * {String} The culture identifier.  See //msdn.microsoft.com/en-us/library/ff701709.aspx
      * for the definition and the possible values.  Default is "en-US".
      */
     culture: "en-US",
@@ -83,7 +83,7 @@ OpenLayers.Layer.Bing = OpenLayers.Class(OpenLayers.Layer.XYZ, {
     /**
      * APIProperty: metadataParams
      * {Object} Optional url parameters for the Get Imagery Metadata request
-     * as described here: http://msdn.microsoft.com/en-us/library/ff701716.aspx
+     * as described here: //msdn.microsoft.com/en-us/library/ff701716.aspx
      */
     metadataParams: null,
 
@@ -129,9 +129,9 @@ OpenLayers.Layer.Bing = OpenLayers.Class(OpenLayers.Layer.XYZ, {
      *
      * Required configuration properties:
      * key - {String} Bing Maps API key for your application. Get one at
-     *     http://bingmapsportal.com/.
+     *     //bingmapsportal.com/.
      * type - {String} The layer identifier.  Any non-birdseye imageryType
-     *     from http://msdn.microsoft.com/en-us/library/ff701716.aspx can be
+     *     from //msdn.microsoft.com/en-us/library/ff701716.aspx can be
      *     used.
      *
      * Any other documented layer properties can be provided in the config object.
@@ -236,7 +236,7 @@ OpenLayers.Layer.Bing = OpenLayers.Class(OpenLayers.Layer.XYZ, {
     /**
      * Method: updateAttribution
      * Updates the attribution according to the requirements outlined in
-     * http://gis.638310.n2.nabble.com/Bing-imagery-td5789168.html
+     * //gis.638310.n2.nabble.com/Bing-imagery-td5789168.html
      */
     updateAttribution: function() {
         var metadata = this.metadata;
