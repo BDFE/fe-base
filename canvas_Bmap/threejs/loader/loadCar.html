@@ -20,9 +20,12 @@
             margin: 0;
         }
     </style>
-    <script src="https://unpkg.com/three"></script>
-    <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+    <link rel="stylesheet" href="dist/style/style.css">
+    <script src="./dist/three.js"></script>
+    <script src="./dist/OrbitControls.js"></script>
     <script src="https://threejs.org/examples/js/loaders/OBJLoader.js"></script>
+    <script src="dist/catModels-js/catModels.js"></script>
+    <script src="dist/unit-js/unit.js"></script>
 </head>
 
 <body>
@@ -63,28 +66,39 @@
             var points
 
             // 创建模型加载器
-            var loader = new THREE.OBJLoader();
-            loader.load(
-                './model/porsche/porsche-cayman.json',
-                obj => {
-                    scene.add(obj);
-                    renderer.render(scene, camera)
-            })
+            // var loader = new THREE.OBJLoader();
+            // loader.load(
+            //     './model/porsche/porsche-cayman.json',
+            //     obj => {
+            //         scene.add(obj);
+            //         renderer.render(scene, camera)
+            //     })
+            var loader = new THREE.JSONLoader();
 
-            // render()
-
-            // function render() {
-            //     // 渲染，即摄像机拍下此刻的场景
-
-            //     if (points) {
-            //         points.rotation.y += 0.005
-            //     }
-            //     requestAnimationFrame(render)
+            // function renderCar(e, r) {
+            //     loader.load(e, function (e, n) {
+            //         switch (r) {
+            //             case "baoma":
+            //                 createBaomaScene(e, n);
+            //                 break;
+            //                 // case "kayan":
+            //                 //     createKayanScene(e, n);
+            //                 //     break;
+            //                 // case "aodi":
+            //                 //     createAodiScene(e, n);
+            //                 //     break;
+            //                 // case "luhu":
+            //                 //     createlandRoverScene(e, n)
+            //         }
+            //         carMesh.position.set(0, -40, 0), carMesh.castShadow = !0, scene.add(carMesh)
+            //     })
             // }
-
+            renderCar('model/BMW/baoma.js', 'baoma');
         }
+
         init()
     </script>
+
 </body>
 
 </html>
