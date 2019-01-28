@@ -34,12 +34,9 @@
     <script>
         /* global BMapGL */
         var map = new window.BMapGL.Map('map_container');
-
         map.setTilt(47);
         var point = new BMapGL.Point(12958166.99, 4825919.72);
-
         map.centerAndZoom(point, 13);
-
         map.enableKeyboard();
         map.enableScrollWheelZoom();
         map.enableInertialDragging();
@@ -92,12 +89,6 @@
             // threeLayer.add(points);
             renderer.render(scene, camera)
 
-            // render()
-            // function render() {
-            //     // 渲染，即摄像机拍下此刻的场景
-            //     renderer.render(scene, camera)
-            //     requestAnimationFrame(render)
-            // }
 
         }
         init()
