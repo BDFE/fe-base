@@ -21,11 +21,20 @@
         }
     </style>
     <script src="https://unpkg.com/three"></script>
+    <script src="./Stats.js"></script>
     <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
 </head>
 
 <body>
     <script>
+        var stats = new Stats();
+        stats.setMode(0); // 0: fps, 1: ms
+        // 将stats的界面对应左上角
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.left = '0px';
+        stats.domElement.style.top = '0px';
+        document.body.appendChild(stats.domElement);
+
         // 获取浏览器窗口的宽高，后续会用
         let width = window.innerWidth
         let height = window.innerHeight
@@ -164,6 +173,8 @@
         let MAX_POINTS = 100;
 
         function render() {
+            stats.begin();
+
             let time = Date.now() * 0.0005;
             for (let i = 0; i < scene.children.length; i++) {
                 let object = scene.children[i];
@@ -185,13 +196,13 @@
                     line.geometry.attributes.position.needsUpdate = true; // required after the first render
                     line.geometry.computeBoundingSphere();
                     // line.material.color.setHSL(Math.random(), 1, 0.5);
-                    console.log('line', line.material, line.geometry.color)
                 }
                 drawStart++;
             });
             camera.lookAt(scene.position)
             renderer.render(scene, camera);
             requestAnimationFrame(render)
+            stats.end();
         }
         render()
     </script>

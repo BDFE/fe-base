@@ -23,7 +23,7 @@
     <script src="https://unpkg.com/three"></script>
     <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
     <script type="text/javascript" src="http://huiyan.baidu.com/bmapgl/?libraries=visualization"></script>
-    <script type="text/javascript" src="http://threejs.org/build/three.js"></script>
+    <script src="./Stats.js"></script>
 
 </head>
 
@@ -32,6 +32,14 @@
     <div id="map_container"></div>
 
     <script>
+        var stats = new Stats();
+        stats.setMode(0); // 0: fps, 1: ms
+        // 将stats的界面对应左上角
+        stats.domElement.style.position = 'absolute';
+        stats.domElement.style.left = '0px';
+        stats.domElement.style.top = '0px';
+        document.body.appendChild(stats.domElement);
+
         /* global BMapGL */
         var map = new window.BMapGL.Map('map_container');
 
@@ -50,6 +58,14 @@
         let yBase = point.lat + 1000;
         let zBase = 2500;
 
+        // 获取浏览器窗口的宽高，后续会用
+        var width = window.innerWidth
+        var height = window.innerHeight
+        var renderer = threeLayer.getRenderer();
+        var camera = threeLayer.getCamera();
+        var scene = threeLayer.getScene();
+        var points = null;
+
         function getVerticesAndColors(amplify = Math.random() * 5) {
             let vertices = [];
             let colors = [];
@@ -62,9 +78,10 @@
                         let yr = Math.random();
                         let zr = Math.random();
                         ps.push({
-                            x: xBase + x * amplify * 20 * xr,
-                            y: yBase + y * amplify * 20 * yr,
-                            z: zBase + z * amplify * 20 * zr
+                            x: xBase + x * amplify * 2000 * xr,
+                            y: yBase + y * amplify * 2000 * yr,
+                            // z: zBase,
+                            z: zBase + z * amplify * 200 * zr,
                         })
                     }
                 }
@@ -95,7 +112,6 @@
             let {
                 vertices,
                 colors,
-                points
             } = getVerticesAndColors(Math.random() * 10);
             for (var i = 0; i < _positions.length; i++) {
                 _positions[i] = vertices[i];
@@ -103,36 +119,54 @@
             }
         }
 
-        function init() {
-            // 获取浏览器窗口的宽高，后续会用
-            var width = window.innerWidth
-            var height = window.innerHeight
-            var renderer = threeLayer.getRenderer();
-            var camera = threeLayer.getCamera();
-            var scene = threeLayer.getScene();
-            var geometry = new THREE.Geometry()
-            var material = new THREE.PointsMaterial({
-                size: 100,
-                vertexColors: true, // 是否为几何体的每个顶点应用颜色，默认值是为所有面应用材质的颜色
-                color: 0xffffff
-            })
 
+        function init() {
+            let {
+                vertices,
+                colors,
+            } = getVerticesAndColors(Math.random() * 5);
+
+            let geometry = new THREE.BufferGeometry();
+            geometry.addAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+            geometry.addAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+            let material = new THREE.LineBasicMaterial({
+                // color: 0xffffff,
+                vertexColors: THREE.VertexColors,
+                linewidth: 1,
+                linecap: 'round', //ignored by WebGLRenderer
+                linejoin: 'round' //ignored by WebGLRenderer
+            });
 
             // 相较于 THREE.Sprite，THREE.Points 更适合粒子数量多的情况。
-            var points = new THREE.Points(geometry, material)
+            points = new THREE.Points(geometry, material)
+            scene.add(points);
+            // threeLayer.add(scene);
 
-            function animate() {
+            points.geometry.tangentsNeedUpdate = true;
+            points.geometry.colorsNeedUpdate = true;
+            points.geometry.attributes.position.needsUpdate = true;
+            points.geometry.computeBoundingSphere();
+        }
+
+        function animate() {
+            console.log('points', points);
+            stats.begin();
+            if (points) {
                 updateLine(points);
-                points.geometry.tangentsNeedUpdate = true;
+                // points.geometry.tangentsNeedUpdate = true;
                 points.geometry.colorsNeedUpdate = true;
                 points.geometry.attributes.position.needsUpdate = true; // required after the first render
-                points.geometry.computeBoundingSphere();
+                // points.geometry.computeBoundingSphere();
+                // camera.lookAt(scene.position)
                 renderer.render(scene, camera);
             }
-            threeLayer.add(points);
-            animate();
+            stats.end();
+            requestAnimationFrame(animate)
         }
+
+
         init()
+        animate();
     </script>
 </body>
 
