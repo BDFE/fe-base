@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+</head>
+
+<body>
+    <div id="can" width="1000px" height="900px">
+    </div>
+
+    <script type="text/javascript">
+        // 生成纹理
+        function generateSprite() {
+            // var canvas = document.getElementById('canvas');
+
+            var canvas = document.createElement('canvas');
+            canvas.width = 546;
+            canvas.height = 306;
+
+            var context = canvas.getContext('2d');
+            // var ctx = canvas.getContext('2d');
+
+            var gradient = context.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2,
+                canvas.height / 2, canvas.width / 2);
+            gradient.addColorStop(0, 'rgba(255,255,255,1)');
+            gradient.addColorStop(0.2, 'rgba(0,255,255,1)');
+            gradient.addColorStop(0.4, 'rgba(0,0,64,1)');
+            gradient.addColorStop(1, 'rgba(0,0,0,1)');
+
+            context.fillStyle = gradient;
+            context.fillRect(0, 0, canvas.width, canvas.height);
+
+            // var texture = new THREE.Texture(canvas);
+            // texture.needsUpdate = true;
+            // return texture;
+            return canvas;
+        }
+        let radioCanvas = generateSprite();
+        let container = document.getElementById('can');
+        if (container) {
+            container.appendChild(radioCanvas)
+        }
+    </script>
+</body>
+
+</html>

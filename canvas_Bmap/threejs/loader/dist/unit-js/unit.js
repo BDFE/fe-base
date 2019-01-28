@@ -112,49 +112,7 @@ window.onload = function () {
     var e = document.getElementById("ThreeJS");
     init(e);
     var r = "./images/";
-    SetSkyBox(r), bartimer(), window.addEventListener("resize", onWindowResize, !1)
+    SetSkyBox(r), bartimer();
+    // window.addEventListener("resize", onWindowResize, !1)
 };
 var carmenbashou, carcheding, carcexian, carlugu, carhoushijing, carMesh, carzuoyi, geometry, part, controls, textureCube, carhoushijingx, carOther, material;
-document.querySelector("#carpatch").addEventListener("click", function (e) {
-    var r = e || window.event;
-    switch (r.target.className) {
-        case "cheke":
-            part = carbody, removeClass(r.target);
-            break;
-        case "cheding":
-            part = carcheding, removeClass(r.target);
-            break;
-        case "menba":
-            part = carmenbashou, removeClass(r.target);
-            break;
-        case "shijing":
-            part = carhoushijing, removeClass(r.target);
-            break;
-        case "zuoyi":
-            part = carzuoyi, removeClass(r.target);
-            break;
-        case "lungu":
-            part = carlugu, removeClass(r.target)
-    }
-}, !1), document.querySelector("#chinldcolor").addEventListener("click", function (e) {
-    var r = e || window.event;
-    switch (r.target.className) {
-        case "color1":
-            resetColor(2302757);
-            break;
-        case "color2":
-            resetColor(12632256);
-            break;
-        case "color3":
-            resetColor(16510025);
-            break;
-        case "color4":
-            resetColor(1864652);
-            break;
-        case "color5":
-            resetColor("skyblue");
-            break;
-        case "color6":
-            resetColor(10820369)
-    }
-}, !1);
