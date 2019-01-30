@@ -64,12 +64,8 @@
         var renderer = threeLayer.getRenderer();
         var camera = threeLayer.getCamera();
         var scene = threeLayer.getScene();
-<<<<<<< HEAD:canvas_Bmap/threejs/mapWithDynamicPoints.html
-        var points = null;
-=======
         var matrixPoints;
         var carObj;
->>>>>>> 41cb0ca7135b47af8825ac1164be001d7a2554b2:canvas_Bmap/threejs/map_points_changing.html
 
         function getVerticesAndColors(amplify = Math.random() * 5) {
             let vertices = [];
@@ -77,20 +73,6 @@
             let ps = [];
 
             for (let x = 0; x < 10; x++) {
-<<<<<<< HEAD:canvas_Bmap/threejs/mapWithDynamicPoints.html
-                for (let z = 0; z < 10; z++) {
-                    for (let y = 0; y < 10; y++) {
-                        let xr = Math.random();
-                        let yr = Math.random();
-                        let zr = Math.random();
-                        ps.push({
-                            x: xBase + x * amplify * 2000 * xr,
-                            y: yBase + y * amplify * 2000 * yr,
-                            // z: zBase,
-                            z: zBase + z * amplify * 200 * zr,
-                        })
-                    }
-=======
                 for (let y = 0; y < 10; y++) {
                     // for (let z = 0; z < 10; z++) {
                     let xr = Math.random();
@@ -103,7 +85,6 @@
                         z: 0
                     })
                     // }
->>>>>>> 41cb0ca7135b47af8825ac1164be001d7a2554b2:canvas_Bmap/threejs/map_points_changing.html
                 }
             }
 
@@ -140,56 +121,6 @@
             console.log('update', _positions, _colors);
         }
 
-<<<<<<< HEAD:canvas_Bmap/threejs/mapWithDynamicPoints.html
-
-        function init() {
-            let {
-                vertices,
-                colors,
-            } = getVerticesAndColors(Math.random() * 5);
-
-            let geometry = new THREE.BufferGeometry();
-            geometry.addAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-            geometry.addAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
-            let material = new THREE.LineBasicMaterial({
-                // color: 0xffffff,
-                vertexColors: THREE.VertexColors,
-                linewidth: 1,
-                linecap: 'round', //ignored by WebGLRenderer
-                linejoin: 'round' //ignored by WebGLRenderer
-            });
-
-            // 相较于 THREE.Sprite，THREE.Points 更适合粒子数量多的情况。
-            points = new THREE.Points(geometry, material)
-            scene.add(points);
-            // threeLayer.add(scene);
-
-            points.geometry.tangentsNeedUpdate = true;
-            points.geometry.colorsNeedUpdate = true;
-            points.geometry.attributes.position.needsUpdate = true;
-            points.geometry.computeBoundingSphere();
-        }
-
-        function animate() {
-            console.log('points', points);
-            stats.begin();
-            if (points) {
-                updateLine(points);
-                // points.geometry.tangentsNeedUpdate = true;
-                points.geometry.colorsNeedUpdate = true;
-                points.geometry.attributes.position.needsUpdate = true; // required after the first render
-                // points.geometry.computeBoundingSphere();
-                // camera.lookAt(scene.position)
-                renderer.render(scene, camera);
-            }
-            stats.end();
-            requestAnimationFrame(animate)
-        }
-
-
-        init()
-        animate();
-=======
         function getPoints() {
             let {
                 vertices,
@@ -232,7 +163,6 @@
         init()
         animate();
         
->>>>>>> 41cb0ca7135b47af8825ac1164be001d7a2554b2:canvas_Bmap/threejs/map_points_changing.html
     </script>
 </body>
 

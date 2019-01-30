@@ -37,7 +37,7 @@
     <script>
         /* global BMapGL */
         BMapGL.setMapStyle({
-            styleJson: mapStyle,
+            // styleJson: mapStyle,
         }, () => {
             var map = new window.BMapGL.Map('map_container', );
             map.setTilt(47);
@@ -176,26 +176,37 @@
 
             function addCarToScene(layer) {
                 var loader1 = new THREE.AssimpJSONLoader();
-                loader1.load('./loader/model/jeep/jeep.assimp.json', function (object) {
-                    carObj = object;
-                    carInitRotate = {
-                        x: 0,
-                        // y: 0,
-                        // z: 0
-                        y: Math.PI / 2,
-                        z: Math.PI / 2
-                    }
-                    carObj.scale.multiplyScalar(200);
-                    object.rotation.x = carInitRotate.x;
-                    object.rotation.y = carInitRotate.y;
-                    object.rotation.z = carInitRotate.z;
-                    object.position.x = point.lng;
-                    object.position.y = point.lat;
-                    world.add(object);
-                    //threeLayer.add(carObj, point);
-                    console.log(carObj)
-                    // layer.add(carObj);
-                });
+                carInitRotate = {
+                    x: 0,
+                    y: 0,
+                    z: 0,
+                }
+                // loader1.load('./loader/model/jeep/jeep.assimp.json', function (object) {
+                //     carObj = object;
+                //     
+                //     carObj.scale.multiplyScalar(200);
+                //     object.rotation.x = carInitRotate.x;
+                //     object.rotation.y = carInitRotate.y;
+                //     object.rotation.z = carInitRotate.z;
+                //     object.position.x = point.lng;
+                //     object.position.y = point.lat;
+                //     world.add(object);
+                //     // threeLayer.add(carObj, point);
+                //     console.log(carObj)
+                //     // layer.add(carObj);
+                // });
+                let s = localStorage.getItem('carmodel');
+                let m = JSON.parse(s);
+                let loader = new THREE.ObjectLoader();
+                // 场景只有一个 先拿到数据保留到变量去
+                let object = loader.parse(m);
+                object.position.x = point.lng;
+                object.position.y = point.lat;
+                object.scale.multiplyScalar(20);
+                carObj = object;
+                world.add(object);
+                // scene.add(object);
+                // renderer.render(scene, camera);
 
                 // var pointLight = new THREE.PointLight(0xffffff, 0, 1000);
                 // pointLight.position.set(0, 0, 0);
@@ -223,8 +234,8 @@
                 changanRoad = locationsToMercator(map, roads.changanRoad)
 
                 addCarToScene(threeLayer);
-                matrixPoints = getPoints();
-                threeLayer.add(matrixPoints);
+                // matrixPoints = getPoints();
+                // threeLayer.add(matrixPoints);
             }
 
 
@@ -244,6 +255,9 @@
                 let t1 = new Date().valueOf();
                 let ms = parseInt(Number(t1 - t));
                 if (ms > 100) {
+                    let mo = scene.toJSON();
+                    console.log(world, mo)
+                    // localStorage.setItem('carmodel', JSON.stringify(mo))
                     t = t1;
                     if (matrixPoints) {
                         updateLine(matrixPoints);

@@ -26,6 +26,7 @@
     <script type="text/javascript" src="http://threejs.org/build/three.js"></script>
     <script type="text/javascript" src="./js/mapStyleDark.js"></script>
 </head>
+
 <body>
     <div id="map_container"></div>
 
@@ -53,6 +54,9 @@
             var width = window.innerWidth
             var height = window.innerHeight
             var renderer = threeLayer.getRenderer();
+            var camera = threeLayer.getCamera();
+            var scene = threeLayer.getScene();
+            var world = threeLayer.getWorld();
             var geometry = new THREE.Geometry()
             var material = new THREE.PointsMaterial({
                 size: 100,
@@ -72,6 +76,17 @@
             // 相较于 THREE.Sprite，THREE.Points 更适合粒子数量多的情况。
             var points = new THREE.Points(geometry, material)
             threeLayer.add(points);
+
+            let carModel = localStorage.getItem('carmodel');
+            let result = JSON.parse(carModel);
+            if(result){
+
+                let loader = new THREE.ObjectLoader();
+                // 场景只有一个 先拿到数据保留到变量去
+                let obj = loader.parse(result);
+                scene.add(obj);
+                renderer.render(scene, camera);
+            }
         }
         init()
     </script>
