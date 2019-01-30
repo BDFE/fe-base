@@ -64,7 +64,12 @@
         var renderer = threeLayer.getRenderer();
         var camera = threeLayer.getCamera();
         var scene = threeLayer.getScene();
+<<<<<<< HEAD:canvas_Bmap/threejs/mapWithDynamicPoints.html
         var points = null;
+=======
+        var matrixPoints;
+        var carObj;
+>>>>>>> 41cb0ca7135b47af8825ac1164be001d7a2554b2:canvas_Bmap/threejs/map_points_changing.html
 
         function getVerticesAndColors(amplify = Math.random() * 5) {
             let vertices = [];
@@ -72,6 +77,7 @@
             let ps = [];
 
             for (let x = 0; x < 10; x++) {
+<<<<<<< HEAD:canvas_Bmap/threejs/mapWithDynamicPoints.html
                 for (let z = 0; z < 10; z++) {
                     for (let y = 0; y < 10; y++) {
                         let xr = Math.random();
@@ -84,6 +90,20 @@
                             z: zBase + z * amplify * 200 * zr,
                         })
                     }
+=======
+                for (let y = 0; y < 10; y++) {
+                    // for (let z = 0; z < 10; z++) {
+                    let xr = Math.random();
+                    let yr = Math.random();
+                    let zr = Math.random();
+                    ps.push({
+                        x: xBase + x * amplify * 20 * xr,
+                        y: yBase + y * amplify * 20 * yr,
+                        // z: zBase
+                        z: 0
+                    })
+                    // }
+>>>>>>> 41cb0ca7135b47af8825ac1164be001d7a2554b2:canvas_Bmap/threejs/map_points_changing.html
                 }
             }
 
@@ -117,8 +137,10 @@
                 _positions[i] = vertices[i];
                 _colors[i] = colors[i];
             }
+            console.log('update', _positions, _colors);
         }
 
+<<<<<<< HEAD:canvas_Bmap/threejs/mapWithDynamicPoints.html
 
         function init() {
             let {
@@ -167,6 +189,50 @@
 
         init()
         animate();
+=======
+        function getPoints() {
+            let {
+                vertices,
+                colors,
+                points
+            } = getVerticesAndColors(Math.random() * 10);
+
+            let geometry = new THREE.BufferGeometry();
+            geometry.addAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+            geometry.addAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+
+            // var geometry = new THREE.Geometry()
+            var material = new THREE.PointsMaterial({
+                size: 10,
+                vertexColors: true, // 是否为几何体的每个顶点应用颜色，默认值是为所有面应用材质的颜色
+                color: 0xffffff
+            })
+
+            // 相较于 THREE.Sprite，THREE.Points 更适合粒子数量多的情况。
+            var _points = new THREE.Points(geometry, material)
+            return _points;
+        }
+
+        function init() {
+            matrixPoints = getPoints();
+            threeLayer.add(matrixPoints);
+            animate();
+        }
+
+
+        function animate() {
+            updateLine(matrixPoints);
+            matrixPoints.geometry.tangentsNeedUpdate = true;
+            matrixPoints.geometry.colorsNeedUpdate = true;
+            matrixPoints.geometry.attributes.position.needsUpdate = true; // required after the first render
+            matrixPoints.geometry.computeBoundingSphere();
+            renderer.render(scene, camera);
+            requestAnimationFrame(animate)
+        }
+        init()
+        animate();
+        
+>>>>>>> 41cb0ca7135b47af8825ac1164be001d7a2554b2:canvas_Bmap/threejs/map_points_changing.html
     </script>
 </body>
 
