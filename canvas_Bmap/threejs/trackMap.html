@@ -81,36 +81,38 @@
             };
 
 
-            function getVerticesAndColors(mercators, headKey, _color = '', MAX_POINTS = 100, step = 5) {
+            function getVerticesAndColors(mercators, headKey, _color = '', POINTS_COUNT = 60, step = 5) {
                 let vertices = [];
                 let colors = [];
                 let ps = [];
 
-                for (let i = 0; i < MAX_POINTS; i++) {
+                for (let i = 0; i < POINTS_COUNT; i++) {
                     let pAr = mercators[i + headIndexs[headKey]];
-                    let p = {
-                        x: pAr[0],
-                        y: pAr[1],
-                        // z: zBase
-                        z: 0
-                    };
-                    ps.push(p);
-                    vertices.push(p.x, p.y, p.z);
-                    let rans = [
-                        Math.random(p.x),
-                        Math.random(p.y),
-                        Math.random(p.z),
-                    ]
-                    // color.setHSL(0.6, 1.0, Math.max(0, -p.x / 200) + 0.5);
-                    let color = new THREE.Color(rans[0], rans[1], rans[2]);
-                    if (_color) {
-                        color = new THREE.Color(_color);
+                    if (pAr && pAr.hasOwnProperty(0) && pAr.hasOwnProperty(1)) {
+                        let p = {
+                            x: pAr[0],
+                            y: pAr[1],
+                            // z: zBase
+                            z: 0
+                        };
+                        ps.push(p);
+                        vertices.push(p.x, p.y, p.z);
+                        let rans = [
+                            Math.random(p.x),
+                            Math.random(p.y),
+                            Math.random(p.z),
+                        ]
+                        // color.setHSL(0.6, 1.0, Math.max(0, -p.x / 200) + 0.5);
+                        let color = new THREE.Color(rans[0], rans[1], rans[2]);
+                        if (_color) {
+                            color = new THREE.Color(_color);
+                        }
+                        colors.push(color.r, color.g, color.b);
                     }
-                    colors.push(color.r, color.g, color.b);
                 }
 
                 headIndexs[headKey] = headIndexs[headKey] + step;
-                if (headIndexs[headKey] > mercators.length - MAX_POINTS) {
+                if (headIndexs[headKey] > mercators.length - POINTS_COUNT - 10) {
                     headIndexs[headKey] = 0;
                 }
                 return {
@@ -128,6 +130,9 @@
                     colors,
                     points
                 } = getVerticesAndColors(roadsMercators[roadKey], roadKey, color);
+                if (roadKey == 'thirdRing') {
+                    console.log(roadKey, vertices);
+                }
                 for (var i = 0; i < _positions.length; i++) {
                     _positions[i] = vertices[i];
                     _colors[i] = colors[i];
@@ -262,6 +267,8 @@
                 threeLayer.add(roadsPoints['secondRing']);
                 roadsPoints['thirdRing'] = getPoints('thirdRing', '#00ff00');
                 threeLayer.add(roadsPoints['thirdRing']);
+                roadsPoints['changanRoad'] = getPoints('changanRoad', '#ff0000');
+                threeLayer.add(roadsPoints['changanRoad']);
                 addCarToScene(threeLayer);
             }
 
@@ -296,7 +303,7 @@
                 renderer.render(scene, camera);
                 requestAnimationFrame(animate)
             }
-            init()
+            init();
             animate();
         })
     </script>
