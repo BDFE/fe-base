@@ -122,14 +122,14 @@
                 }
             }
 
-            function updateRoadPoints(obj, roadKey, color = '') {
+            function updateRoadPoints(obj, roadKey, color = '', pointCount, step) {
                 var _positions = obj.geometry.attributes.position.array;
                 var _colors = obj.geometry.attributes.color.array;
                 let {
                     vertices,
                     colors,
                     points
-                } = getVerticesAndColors(roadsMercators[roadKey], roadKey, color);
+                } = getVerticesAndColors(roadsMercators[roadKey], roadKey, color, pointCount, step);
                 if (roadKey == 'thirdRing') {
                     console.log(roadKey, vertices);
                 }
@@ -265,9 +265,9 @@
 
                 roadsPoints['secondRing'] = getPoints('secondRing');
                 threeLayer.add(roadsPoints['secondRing']);
-                roadsPoints['thirdRing'] = getPoints('thirdRing', '#00ff00');
+                roadsPoints['thirdRing'] = getPoints('thirdRing', '#ff0000');
                 threeLayer.add(roadsPoints['thirdRing']);
-                roadsPoints['changanRoad'] = getPoints('changanRoad', '#ff0000');
+                roadsPoints['changanRoad'] = getPoints('changanRoad', '#00ff00');
                 threeLayer.add(roadsPoints['changanRoad']);
                 addCarToScene(threeLayer);
             }
@@ -285,10 +285,18 @@
                     Object.keys(roadsPoints).map(k => {
                         if (roadsPoints[k]) {
                             let color = '';
-                            if (k == 'thirdRing') {
-                                color = '#00ff00'
+                            let pointCount = 30;
+                            let step = 2;
+                            if (k == 'changanRoad') {
+                                color = '#ff0000'
+                                step = 3
                             }
-                            updateRoadPoints(roadsPoints[k], k, color);
+                            if (k == 'thirdRing') {
+                                color = '#ff0000'
+                                pointCount = 50
+                                step = 1
+                            }
+                            updateRoadPoints(roadsPoints[k], k, color, pointCount, step)
                             roadsPoints[k].geometry.tangentsNeedUpdate = true;
                             roadsPoints[k].geometry.colorsNeedUpdate = true;
                             roadsPoints[k].geometry.attributes.position.needsUpdate = true; // required after the first render
@@ -296,7 +304,7 @@
                         }
                     })
                     if (carObj) {
-                        updateCar(carObj, 'changanRoad');
+                        updateCar(carObj, 'changanRoad', 1);
                         carObj.updateMatrix();
                     }
                 }
