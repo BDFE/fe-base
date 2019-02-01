@@ -122,14 +122,14 @@
                 }
             }
 
-            function updateRoadPoints(obj, roadKey, color = '') {
+            function updateRoadPoints(obj, roadKey, color = '', pointCount, step) {
                 var _positions = obj.geometry.attributes.position.array;
                 var _colors = obj.geometry.attributes.color.array;
                 let {
                     vertices,
                     colors,
                     points
-                } = getVerticesAndColors(roadsMercators[roadKey], roadKey, color);
+                } = getVerticesAndColors(roadsMercators[roadKey], roadKey, color, pointCount, step);
                 if (roadKey == 'thirdRing') {
                     console.log(roadKey, vertices);
                 }
@@ -153,11 +153,11 @@
                     let pArr = mercators[headIndexs[headKey]];
                     let nextParr = mercators[headIndexs[headKey] + 1];
                     let to = [nextParr[0] - pArr[0], nextParr[1] - pArr[1]]
-                    let from = [-1, 0]
+                    let from = [1, 0]
                     let newRotate = getRotateAngle(from, to, carInitRotate['y'])
                     // obj.rotation.x =newRotate;
-                    // obj.rotation.y = newRotate;
-                    // obj.rotation.z += Math.PI / 10;
+                    obj.rotation.y = newRotate;
+                    // obj.rotation.y += Math.PI / 10;
                     obj.rotation.z = Math.PI;
 
                     obj.position.x = pArr[0];
@@ -194,36 +194,38 @@
             function addCarToScene(layer) {
                 var loader1 = new THREE.AssimpJSONLoader();
                 carInitRotate = {
-                    x: 0,
-                    y: 0,
-                    z: 0,
+                    x: -Math.PI / 2,
+                    y: -Math.PI / 2,
+                    z: Math.PI / 2,
                 }
-                // loader1.load('./loader/model/jeep/jeep.assimp.json', function (object) {
-                //     carObj = object;
-                //     
-                //     carObj.scale.multiplyScalar(200);
-                //     object.rotation.x = carInitRotate.x;
-                //     object.rotation.y = carInitRotate.y;
-                //     object.rotation.z = carInitRotate.z;
-                //     object.position.x = point.lng;
-                //     object.position.y = point.lat;
-                //     world.add(object);
-                //     // threeLayer.add(carObj, point);
-                //     console.log(carObj)
-                //     // layer.add(carObj);
-                // });
-                let s = localStorage.getItem('carmodel');
-                let m = JSON.parse(s);
-                let loader = new THREE.ObjectLoader();
-                // 场景只有一个 先拿到数据保留到变量去
-                let object = loader.parse(m);
-                object.position.x = point.lng;
-                object.position.y = point.lat;
-                object.scale.multiplyScalar(20);
-                carObj = object;
-                world.add(object);
-                // scene.add(object);
-                renderer.render(scene, camera);
+                loader1.load('./loader/model/jeep/jeep.assimp.json', function (object) {
+                    carObj = object;
+
+                    carObj.scale.multiplyScalar(200);
+                    object.rotation.x = carInitRotate.x;
+                    object.rotation.y = carInitRotate.y;
+                    object.rotation.z = carInitRotate.z;
+
+                    object.position.x = point.lng;
+                    object.position.y = point.lat;
+                    world.add(object);
+                    // threeLayer.add(carObj, point);
+                    // console.log(carObj)
+                    // layer.add(carObj);
+                });
+
+                // let s = localStorage.getItem('carmodel');
+                // let m = JSON.parse(s);
+                // let loader = new THREE.ObjectLoader();
+                // // 场景只有一个 先拿到数据保留到变量去
+                // let object = loader.parse(m);
+                // object.position.x = point.lng;
+                // object.position.y = point.lat;
+                // object.scale.multiplyScalar(20);
+                // carObj = object;
+                // world.add(object);
+                // // scene.add(object);
+                // renderer.render(scene, camera);
 
                 // var pointLight = new THREE.PointLight(0xffffff, 0, 1000);
                 // pointLight.position.set(0, 0, 0);
@@ -265,9 +267,9 @@
 
                 roadsPoints['secondRing'] = getPoints('secondRing');
                 threeLayer.add(roadsPoints['secondRing']);
-                roadsPoints['thirdRing'] = getPoints('thirdRing', '#00ff00');
+                roadsPoints['thirdRing'] = getPoints('thirdRing', '#ff0000');
                 threeLayer.add(roadsPoints['thirdRing']);
-                roadsPoints['changanRoad'] = getPoints('changanRoad', '#ff0000');
+                roadsPoints['changanRoad'] = getPoints('changanRoad', '#00ff00');
                 threeLayer.add(roadsPoints['changanRoad']);
                 addCarToScene(threeLayer);
             }
@@ -285,10 +287,18 @@
                     Object.keys(roadsPoints).map(k => {
                         if (roadsPoints[k]) {
                             let color = '';
-                            if (k == 'thirdRing') {
-                                color = '#00ff00'
+                            let pointCount = 30;
+                            let step = 2;
+                            if (k == 'changanRoad') {
+                                color = '#ff0000'
+                                step = 5
                             }
-                            updateRoadPoints(roadsPoints[k], k, color);
+                            if (k == 'thirdRing') {
+                                color = '#ff0000'
+                                pointCount = 50
+                                step = 1
+                            }
+                            updateRoadPoints(roadsPoints[k], k, color, pointCount, step)
                             roadsPoints[k].geometry.tangentsNeedUpdate = true;
                             roadsPoints[k].geometry.colorsNeedUpdate = true;
                             roadsPoints[k].geometry.attributes.position.needsUpdate = true; // required after the first render
@@ -296,7 +306,7 @@
                         }
                     })
                     if (carObj) {
-                        updateCar(carObj, 'changanRoad');
+                        updateCar(carObj, 'changanRoad', 10);
                         carObj.updateMatrix();
                     }
                 }
