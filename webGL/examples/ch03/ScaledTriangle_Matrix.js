@@ -54,6 +54,7 @@ function main() {
     console.log('Failed to get the storage location of u_xformMatrix');
     return;
   }
+  
   gl.uniformMatrix4fv(u_xformMatrix, false, xformMatrix);
 
   // Specify the color for clearing <canvas>

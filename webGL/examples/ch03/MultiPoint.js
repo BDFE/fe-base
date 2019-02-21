@@ -1,9 +1,9 @@
 // MultiPoint.js (c) 2012 matsuda
 // Vertex shader program
 var VSHADER_SOURCE =
-  'attribute vec4 a_Position;\n' +
+  'attribute vec4 a_Position_t;\n' +
   'void main() {\n' +
-  '  gl_Position = a_Position;\n' +
+  '  gl_Position = a_Position_t;\n' +
   '  gl_PointSize = 10.0;\n' +
   '}\n';
 
@@ -65,16 +65,16 @@ function initVertexBuffers(gl) {
   // Write date into the buffer object
   gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
 
-  var a_Position = gl.getAttribLocation(gl.program, 'a_Position');
-  if (a_Position < 0) {
-    console.log('Failed to get the storage location of a_Position');
+  var a_Position_t = gl.getAttribLocation(gl.program, 'a_Position_t');
+  if (a_Position_t < 0) {
+    console.log('Failed to get the storage location of a_Position_t');
     return -1;
   }
-  // Assign the buffer object to a_Position variable
-  gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, 0, 0);
+  // Assign the buffer object to a_Position_t variable
+  gl.vertexAttribPointer(a_Position_t, 2, gl.FLOAT, false, 0, 0);
 
-  // Enable the assignment to a_Position variable
-  gl.enableVertexAttribArray(a_Position);
+  // Enable the assignment to a_Position_t variable
+  gl.enableVertexAttribArray(a_Position_t);
 
   return n;
 }
