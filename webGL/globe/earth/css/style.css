@@ -26,7 +26,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -moz-font-feature-settings: "liga" on;
+  -moz-font-feature-settings: "liga"on;
   color: #FFFFFF;
   overflow-x: hidden;
   background: #8D07C8;
@@ -39,8 +39,8 @@ body {
 /* GLOBE */
 .globe {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 400px;
+  height: 350px;
 }
 
 .globe .globe-list {
@@ -64,7 +64,7 @@ body {
   opacity: 1;
 }
 
-.globe .globe-list > li {
+.globe .globe-list>li {
   opacity: 0.4;
   position: absolute;
   margin-left: -8px;
@@ -80,7 +80,7 @@ body {
   transition: opacity 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.globe .globe-list > li.active {
+.globe .globe-list>li.active {
   opacity: 1;
   margin-left: -12px;
   margin-top: -12px;
@@ -88,7 +88,7 @@ body {
   height: 24px;
 }
 
-.globe .globe-list > li:before {
+.globe .globe-list>li:before {
   content: "";
   opacity: 0.5;
   pointer-events: none;
@@ -112,71 +112,86 @@ body {
   0% {
     -webkit-transform: scale(1);
   }
+
   50% {
     opacity: 0.5;
   }
+
   100% {
     opacity: 0;
     -webkit-transform: scale(2);
   }
 }
+
 @-moz-keyframes pulse {
   0% {
     -moz-transform: scale(1);
   }
+
   50% {
     opacity: 0.5;
   }
+
   100% {
     opacity: 0;
     -moz-transform: scale(2);
   }
 }
+
 @-ms-keyframes pulse {
   0% {
     -ms-transform: scale(1);
   }
+
   50% {
     opacity: 0.5;
   }
+
   100% {
     opacity: 0;
     -ms-transform: scale(2);
   }
 }
+
 @-o-keyframes pulse {
   0% {
     -o-transform: scale(1);
   }
+
   50% {
     opacity: 0.5;
   }
+
   100% {
     opacity: 0;
     -o-transform: scale(2);
   }
 }
+
 @keyframes pulse {
   0% {
     transform: scale(1);
   }
+
   50% {
     opacity: 0.5;
   }
+
   100% {
     opacity: 0;
     transform: scale(2);
   }
 }
-.globe .globe-list > li.active:before {
+
+.globe .globe-list>li.active:before {
   margin-left: -12px;
   margin-top: -12px;
   width: 24px;
   height: 24px;
 }
 
-.globe .globe-list > li.active,
-.globe .globe-list > li.active:before {
+.globe .globe-list>li.active,
+.globe .globe-list>li.active:before {
   background: #FFFFFF;
 }
 
@@ -200,7 +215,7 @@ body {
   transform: translateY(-50%);
 }
 
-.globe .globe-list > li.active .text {
+.globe .globe-list>li.active .text {
   opacity: 1;
   right: 29px;
   font-size: 20px;
@@ -213,4 +228,13 @@ body {
   position: absolute;
   left: 0;
   top: 0;
+}
+
+.container {
+  position: relative;
+  top: 50px;
+  left: 50px;
+  background: black;
+  width: 400px;
+  height: 350px;
 }

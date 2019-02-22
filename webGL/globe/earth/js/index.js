@@ -1,13 +1,14 @@
 /* VARIABLES */
 
-var canvas, scene, renderer, data;
+var canvas, scene, renderer;
 
 // Cache DOM selectors
 var container = document.getElementsByClassName('js-globe')[0];
 
 // Object for country HTML elements and variables
 var elements = {};
-
+var data = {};
+var initWindowSize = {};
 // Three group objects
 var groups = {
 	main: null, // A group containing everything
@@ -21,11 +22,11 @@ var groups = {
 var props = {
 	mapSize: {
 		// Size of the map from the intial source image (on which the dots are positioned on)
-		width: 2048 / 2,
-		height: 1024 / 2
+		width: 400,
+		height: 300
 	},
-	globeRadius: 200, // Radius of the globe (used for many calculations)
-	dotsAmount: 20, // Amount of dots to generate and animate randomly across the lines
+	globeRadius: 50, // Radius of the globe (used for many calculations)
+	dotsAmount: 10, // Amount of dots to generate and animate randomly across the lines
 	startingCountry: 'hongkong', // The key of the country to rotate the camera to during the introduction animation (and which country to start the cycle at)
 	colours: {
 		// Cache the colours
@@ -91,23 +92,123 @@ var isHidden = false;
 
 function getData() {
 
+	// var request = new XMLHttpRequest();
+	// // request.open('GET', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/617753/globe-points.json', true);
+	// request.open('GET', './globe-points.json', true);
+	// request.onload = function () {
+	// 	if (request.status >= 200 && request.status < 400) {
+	// 		data = JSON.parse(request.responseText);
+	// 	} else {
+	// 		showFallback();
+	// 	}
+	// };
+	// request.onerror = showFallback;
+	// request.send();
+	getBoundaryPoints(ps => {
+		data['points'] = ps;
+		useTestCountryData()
+		formatCountryData(data.countries);
+		let firstCountryName = Object.keys(data.countries)[0];
+		props.startingCountry = firstCountryName;
+		setupScene();
+	});
+}
+
+function getBoundaryPoints(cb) {
 	var request = new XMLHttpRequest();
-	request.open('GET', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/617753/globe-points.json', true);
-
-	request.onload = function() {
+	request.open('GET', './countries.geojson', true);
+	request.onload = function () {
 		if (request.status >= 200 && request.status < 400) {
-			data = JSON.parse(request.responseText);
-			setupScene();
-		}
-		else {
-			showFallback();
-		}
+			let gj = JSON.parse(request.responseText);
+			let points = [];
+			for (let c of gj.features) {
+				for (let cors of c.geometry.coordinates) {
+					for (let loc of cors) {
+						points.push(lnglatToScreenPos(loc[0], loc[1]))
+					}
+				}
+			}
+			cb && cb(points);
+		} else {}
 	};
-
 	request.onerror = showFallback;
-
 	request.send();
+}
 
+
+function useTestCountryData() {
+	// data.countries = {
+	// 	"pakistan": {
+	// 		"x": 525,
+	// 		"y": 279,
+	// 		"name": "WalletPAK",
+	// 		"country": "Pakistan"
+	// 	},
+	// 	"hongkong": {
+	// 		"x": 768,
+	// 		"y": 342,
+	// 		"name": "TNG Wallet",
+	// 		"country": "Hong Kong"
+	// 	},
+
+	// }
+	data.countries = {
+		"test": {
+			"x": 0,
+			"y": 0,
+			"name": "0,0",
+			"country": "0,0",
+			"lat": 0,
+			"lng": 0
+		},
+		"india": {
+			"x": 561,
+			"y": 378,
+			"name": "india",
+			"country": "india",
+			"lat": 21.225643,
+			"lng": 79.053291,
+		},
+		"singapore": {
+			"x": -561,
+			"y": 378,
+			"name": "singapore",
+			"country": "singapore",
+			"lat": 21.225643,
+			"lng": 79.053291,
+		},
+		"indonesia": {
+			"x": 561,
+			"y": -378,
+			"name": "indonesia",
+			"country": "indonesia",
+			"lat": 21.225643,
+			"lng": 79.053291,
+		},
+	}
+}
+
+function formatCountryData(countries) {
+	Object.keys(countries).map(k => {
+		let country = countries[k];
+		if (country['lng'] && country['lat']) {
+			let {
+				x,
+				y
+			} = lnglatToScreenPos(country['lng'], country['lat']);
+			country['x'] = x;
+			country['y'] = y;
+		} else {
+			if (country['x'] && country['y']) {
+				let {
+					lat,
+					lng
+				} = screenPosToLngLat(country['x'], country['y']);
+				country['lat'] = lat;
+				country['lng'] = lng;
+			}
+		}
+	})
 }
 
 function showFallback() {
@@ -123,7 +224,10 @@ function showFallback() {
 function setupScene() {
 
 	canvas = container.getElementsByClassName('js-canvas')[0];
-
+	initWindowSize = {
+		width: window.innerWidth,
+		height: window.innerHeight,
+	}
 	scene = new THREE.Scene();
 	renderer = new THREE.WebGLRenderer({
 		canvas: canvas,
@@ -168,13 +272,18 @@ function setupScene() {
 	render();
 	animate();
 
-	var canvasResizeBehaviour = function() {
-
-		container.width = window.innerWidth;
-		container.height = window.innerHeight;
-		container.style.width = window.innerWidth + 'px';
-		container.style.height = window.innerHeight + 'px';
-
+	var canvasResizeBehaviour = function () {
+		// let cs = window.getComputedStyle(container)
+		// let width = cs.width.replace('px', '');
+		// let height = cs.height.replace('px', '');
+		// if (width && height) {
+		// 	let w = ~~(width * window.innerWidth / initWindowSize.width);
+		// 	let h = ~~(height * window.innerHeight / initWindowSize.height);
+		// 	container.width = w;
+		// 	container.height = h;
+		// 	container.style.width = w + 'px';
+		// 	container.style.height = h + 'px';
+		// }
 		camera.object.aspect = container.offsetWidth / container.offsetHeight;
 		camera.object.updateProjectionMatrix();
 		renderer.setSize(container.offsetWidth, container.offsetHeight);
@@ -182,7 +291,7 @@ function setupScene() {
 	};
 
 	window.addEventListener('resize', canvasResizeBehaviour);
-	window.addEventListener('orientationchange', function() {
+	window.addEventListener('orientationchange', function () {
 		setTimeout(canvasResizeBehaviour, 0);
 	});
 	canvasResizeBehaviour();
@@ -226,20 +335,15 @@ function render() {
 
 if ('hidden' in document) {
 	document.addEventListener('visibilitychange', onFocusChange);
-}
-else if ('mozHidden' in document) {
+} else if ('mozHidden' in document) {
 	document.addEventListener('mozvisibilitychange', onFocusChange);
-}
-else if ('webkitHidden' in document) {
+} else if ('webkitHidden' in document) {
 	document.addEventListener('webkitvisibilitychange', onFocusChange);
-}
-else if ('msHidden' in document) {
+} else if ('msHidden' in document) {
 	document.addEventListener('msvisibilitychange', onFocusChange);
-}
-else if ('onfocusin' in document) {
+} else if ('onfocusin' in document) {
 	document.onfocusin = document.onfocusout = onFocusChange;
-}
-else {
+} else {
 	window.onpageshow = window.onpagehide = window.onfocus = window.onblur = onFocusChange;
 }
 
@@ -260,8 +364,7 @@ function onFocusChange(event) {
 
 	if (event.type in eventMap) {
 		isHidden = true;
-	}
-	else {
+	} else {
 		isHidden = false;
 	}
 
@@ -367,7 +470,7 @@ function addGlobeDots() {
 		size: props.globeRadius / 120
 	});
 
-	var addDot = function(targetX, targetY) {
+	var addDot = function (targetX, targetY) {
 
 		// Add a point with zero coordinates
 		var point = new THREE.Vector3(0, 0, 0);
@@ -480,7 +583,7 @@ function addLineDots() {
 	});
 
 	// Returns a sphere geometry positioned at coordinates
-	var returnLineDot = function() {
+	var returnLineDot = function () {
 		var sphere = new THREE.Mesh(geometry, material);
 		return sphere;
 	};
@@ -543,8 +646,7 @@ function animateDots() {
 				dot._pathIndex = 0;
 			}
 
-		}
-		else if (dot._path !== null && dot._pathIndex < dot._path.length - 1) {
+		} else if (dot._path !== null && dot._pathIndex < dot._path.length - 1) {
 
 			// Show the dot
 			if (dot.visible === false) {
@@ -559,8 +661,7 @@ function animateDots() {
 			// Advance the path index by 1
 			dot._pathIndex++;
 
-		}
-		else {
+		} else {
 
 			// Hide the dot
 			dot.visible = false;
@@ -582,9 +683,9 @@ var list;
 
 function createListElements() {
 
- 	list = document.getElementsByClassName('js-list')[0];
+	list = document.getElementsByClassName('js-list')[0];
 
-	var pushObject = function(coordinates, target) {
+	var pushObject = function (coordinates, target) {
 
 		// Create the element
 		var element = document.createElement('li');
@@ -632,8 +733,7 @@ function createListElements() {
 			camera.angles.target.azimuthal = angles.azimuthal;
 			camera.angles.target.polar = angles.polar;
 
-		}
-		else {
+		} else {
 			i++;
 		}
 
@@ -676,15 +776,15 @@ function positionElements() {
 
 // Easing reference: https://gist.github.com/gre/1650294
 
-var easeInOutCubic = function(t) {
+var easeInOutCubic = function (t) {
 	return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
 };
 
-var easeOutCubic = function(t) {
+var easeOutCubic = function (t) {
 	return (--t) * t * t + 1;
 };
 
-var easeInOutQuad = function(t) {
+var easeInOutQuad = function (t) {
 	return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 };
 
@@ -784,8 +884,7 @@ function changeCountry(key, init) {
 	for (var name in elements) {
 		if (name === key) {
 			elements[name].element.classList.add('active');
-		}
-		else {
+		} else {
 			elements[name].element.classList.remove('active');
 		}
 	}
@@ -826,8 +925,7 @@ function animateCountryCycle() {
 
 		animations.countries.current++;
 
-	}
-	else {
+	} else {
 
 		animations.countries.animating = false;
 		animations.countries.current = 0;
@@ -853,28 +951,47 @@ function showNextCountry() {
 
 
 
+function lnglatToScreenPos(lng, lat) {
+	let x = ((lng + 180) / (360)) * props.mapSize.width;
+	let y = ((lat + 90) / (180)) * props.mapSize.height;
+	return {
+		x,
+		y
+	}
+}
+
+function screenPosToLngLat(x, y) {
+	let lng = ((x % props.mapSize.width) / props.mapSize.width) * 360 - 180;
+	let lat = ((y % props.mapSize.height) / props.mapSize.height) * 180 - 90;
+
+	return {
+		lat,
+		lng
+	}
+}
+
+
 /* COORDINATE CALCULATIONS */
 
 // Returns an object of 3D spherical coordinates
-function returnSphericalCoordinates(latitude, longitude) {
+function returnSphericalCoordinates(x, y) {
 
 	/*
-		This function will take a latitude and longitude and calcualte the
-		projected 3D coordiantes using Mercator projection relative to the
+		This function will take a x and y and calcualte the
+		projected 3D coordiantes using Mercator projection rexive to the
 		radius of the globe.
 
 		Reference: https://stackoverflow.com/a/12734509
 	*/
 
-	// Convert latitude and longitude on the 90/180 degree axis
-	latitude = ((latitude - props.mapSize.width) / props.mapSize.width) * -180;
-	longitude = ((longitude - props.mapSize.height) / props.mapSize.height) * -90;
-
-	// Calculate the projected starting point
-	var radius = Math.cos(longitude / 180 * Math.PI) * props.globeRadius;
-	var targetX = Math.cos(latitude / 180 * Math.PI) * radius;
-	var targetY = Math.sin(longitude / 180 * Math.PI) * props.globeRadius;
-	var targetZ = Math.sin(latitude / 180 * Math.PI) * radius;
+	// Convert x and y on the 90/180 degree axis
+	lng = ((x % props.mapSize.width) / props.mapSize.width) * 360 - 180;
+	lat = ((y % props.mapSize.height) / props.mapSize.height) * 180 - 90;
+	// Calcuxe the projected starting point
+	var equatorProjectL = Math.cos(lat / 180 * Math.PI) * props.globeRadius;
+	var targetX = Math.cos(lng / 180 * Math.PI) * equatorProjectL;
+	var targetY = Math.sin(lat / 180 * Math.PI) * props.globeRadius;
+	var targetZ = Math.sin(lng / 180 * Math.PI) * equatorProjectL;
 
 	return {
 		x: targetX,
@@ -885,13 +1002,13 @@ function returnSphericalCoordinates(latitude, longitude) {
 }
 
 // Reference: https://codepen.io/ya7gisa0/pen/pisrm?editors=0010
-function returnCurveCoordinates(latitudeA, longitudeA, latitudeB, longitudeB) {
+function returnCurveCoordinates(xA, yA, xB, yB) {
 
 	// Calculate the starting point
-	var start = returnSphericalCoordinates(latitudeA, longitudeA);
+	var start = returnSphericalCoordinates(xA, yA);
 
 	// Calculate the end point
-	var end = returnSphericalCoordinates(latitudeB, longitudeB);
+	var end = returnSphericalCoordinates(xB, yB);
 
 	// Calculate the mid-point
 	var midPointX = (start.x + end.x) / 2;
@@ -909,8 +1026,10 @@ function returnCurveCoordinates(latitudeA, longitudeA, latitudeB, longitudeB) {
 	multipleVal += Math.pow(midPointY, 2);
 	multipleVal += Math.pow(midPointZ, 2);
 	multipleVal = Math.pow(distance, 2) / multipleVal;
-	multipleVal = multipleVal * 0.7;
-
+	multipleVal = multipleVal * 0.5;
+	if (multipleVal > 10) {
+		multipleVal /= 2
+	}
 	// Apply the vector length to get new mid-points
 	var midX = midPointX + multipleVal * midPointX;
 	var midY = midPointY + multipleVal * midPointY;
@@ -973,7 +1092,7 @@ function returnCameraAngles(latitude, longitude) {
 	var targetAzimuthalAngle = ((latitude - props.mapSize.width) / props.mapSize.width) * Math.PI;
 	targetAzimuthalAngle = targetAzimuthalAngle + (Math.PI / 2);
 	targetAzimuthalAngle = targetAzimuthalAngle + 0.1; // Add a small offset
-	
+
 	var targetPolarAngle = (longitude / (props.mapSize.height * 2)) * Math.PI;
 
 	return {
@@ -989,7 +1108,6 @@ function returnCameraAngles(latitude, longitude) {
 
 if (!window.WebGLRenderingContext) {
 	showFallback();
-}
-else {
+} else {
 	getData();
 }
