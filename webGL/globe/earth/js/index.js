@@ -116,15 +116,24 @@ function getData() {
 
 function getBoundaryPoints(cb) {
 	var request = new XMLHttpRequest();
-	request.open('GET', './countries.geojson', true);
+	request.open('GET', './custom.geo.json', true);
 	request.onload = function () {
 		if (request.status >= 200 && request.status < 400) {
 			let gj = JSON.parse(request.responseText);
 			let points = [];
 			for (let c of gj.features) {
+				
 				for (let cors of c.geometry.coordinates) {
-					for (let loc of cors) {
-						points.push(lnglatToScreenPos(loc[0], loc[1]))
+					if(c.geometry.type=='MultiPolygon'){
+						for (let locs of cors) {
+							for (let loc of locs) {
+								points.push(lnglatToScreenPos(loc[0], loc[1]));
+							}
+						}
+					}else{
+						for (let loc of cors) {
+							points.push(lnglatToScreenPos(loc[0], loc[1]))
+						}
 					}
 				}
 			}
@@ -154,36 +163,28 @@ function useTestCountryData() {
 	// }
 	data.countries = {
 		"test": {
-			"x": 0,
-			"y": 0,
-			"name": "0,0",
-			"country": "0,0",
+			"name": "test",
+			"country": "test",
 			"lat": 0,
 			"lng": 0
 		},
-		"india": {
-			"x": 561,
-			"y": 378,
-			"name": "india",
-			"country": "india",
-			"lat": 21.225643,
-			"lng": 79.053291,
+		"Canada": {
+			"name": "Canada",
+			"country": "Canada",
+			"lat": 62.110521,
+			"lng": 111.7530810
 		},
-		"singapore": {
-			"x": -561,
-			"y": 378,
-			"name": "singapore",
-			"country": "singapore",
-			"lat": 21.225643,
-			"lng": 79.053291,
+		"India": {
+			"name": "India",
+			"country": "India",
+			"lat": 21.682407,
+			"lng": 77.816056,
 		},
-		"indonesia": {
-			"x": 561,
-			"y": -378,
-			"name": "indonesia",
-			"country": "indonesia",
-			"lat": 21.225643,
-			"lng": 79.053291,
+		"China": {
+			"name": "China",
+			"country": "China",
+			"lat": 33.207797,
+			"lng": 106.589429,
 		},
 	}
 }
@@ -191,7 +192,7 @@ function useTestCountryData() {
 function formatCountryData(countries) {
 	Object.keys(countries).map(k => {
 		let country = countries[k];
-		if (country['lng'] && country['lat']) {
+		if (country.hasOwnProperty('lng') && country.hasOwnProperty('lat')) {
 			let {
 				x,
 				y
@@ -199,7 +200,7 @@ function formatCountryData(countries) {
 			country['x'] = x;
 			country['y'] = y;
 		} else {
-			if (country['x'] && country['y']) {
+			if (country.hasOwnProperty('x') && country.hasOwnProperty('y')) {
 				let {
 					lat,
 					lng
@@ -381,11 +382,11 @@ function animate() {
 	}
 
 	if (animations.finishedIntro === true) {
-		animateDots();
+		// animateDots();
 	}
 
 	if (animations.countries.animating === true) {
-		animateCountryCycle();
+		// animateCountryCycle();
 	}
 
 	positionElements();
