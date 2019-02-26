@@ -1,10 +1,11 @@
 /* VARIABLES */
 
-var canvas, scene, renderer;
+var canvas, scene, renderer, raycaster, mouse, intersects;
+var INTERSECTED;
+var lineObjects = [];
 
 // Cache DOM selectors
 var container = document.getElementsByClassName('js-globe')[0];
-
 // Object for country HTML elements and variables
 var elements = {};
 var data = {};
@@ -122,15 +123,15 @@ function getBoundaryPoints(cb) {
 			let gj = JSON.parse(request.responseText);
 			let points = [];
 			for (let c of gj.features) {
-				
+
 				for (let cors of c.geometry.coordinates) {
-					if(c.geometry.type=='MultiPolygon'){
+					if (c.geometry.type == 'MultiPolygon') {
 						for (let locs of cors) {
 							for (let loc of locs) {
 								points.push(lnglatToScreenPos(loc[0], loc[1]));
 							}
 						}
-					}else{
+					} else {
 						for (let loc of cors) {
 							points.push(lnglatToScreenPos(loc[0], loc[1]))
 						}
@@ -143,7 +144,6 @@ function getBoundaryPoints(cb) {
 	request.onerror = showFallback;
 	request.send();
 }
-
 
 function useTestCountryData() {
 	// data.countries = {
@@ -213,17 +213,10 @@ function formatCountryData(countries) {
 }
 
 function showFallback() {
-
-	/*
-		This function will display an alert if WebGL is not supported.
-	*/
-
 	alert('WebGL not supported. Please use a browser that supports WebGL.');
-
 }
 
 function setupScene() {
-
 	canvas = container.getElementsByClassName('js-canvas')[0];
 	initWindowSize = {
 		width: window.innerWidth,
@@ -268,7 +261,7 @@ function setupScene() {
 		addLines();
 		createListElements();
 	}
-
+	addMouseEvents()
 	// Start the requestAnimationFrame loop
 	render();
 	animate();
@@ -296,22 +289,41 @@ function setupScene() {
 		setTimeout(canvasResizeBehaviour, 0);
 	});
 	canvasResizeBehaviour();
+}
+/* Mouse Events And RayCaster to get clicked Objects */
+function addMouseEvents() {
+	try {
+		raycaster = new THREE.Raycaster();
+		mouse = new THREE.Vector2();
+		window.addEventListener('resize', onWindowResize, false);
+		document.addEventListener('mousemove', onDocumentMouseMove, false);
+		raycaster.setFromCamera(mouse, camera.object);
+	} catch (error) {
+		console.log('RayCaster error', scene.children, error);
+	}
 
 }
 
+function onDocumentMouseMove(event) {
+	event.preventDefault();
+	mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+	mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+	console.log('.');
+}
 
+function onWindowResize() {
+	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.updateProjectionMatrix();
+	renderer.setSize(window.innerWidth, window.innerHeight);
+}
 
 /* CAMERA AND CONTROLS */
-
 function addCamera() {
-
 	camera.object = new THREE.PerspectiveCamera(60, canvas.clientWidth / canvas.clientHeight, 1, 10000);
 	camera.object.position.z = props.globeRadius * 2.2;
-
 }
 
 function addControls() {
-
 	camera.controls = new OrbitControls(camera.object, canvas);
 	// camera.controls.enableKeys = false;
 	// camera.controls.enablePan = false;
@@ -323,7 +335,6 @@ function addControls() {
 	// Set the initial camera angles to something crazy for the introduction animation
 	camera.angles.current.azimuthal = -Math.PI;
 	camera.angles.current.polar = 0;
-
 }
 
 
@@ -372,6 +383,12 @@ function onFocusChange(event) {
 }
 
 function animate() {
+	// intersects = raycaster.intersectObjects(scene.children);
+	intersects = raycaster.intersectObjects(lineObjects);
+	if (intersects && intersects.length > 0) {
+		console.log(intersects)
+		if (INTERSECTED != intersects[0].index) {}
+	}
 
 	if (isHidden === false) {
 		requestAnimationFrame(animate);
@@ -501,7 +518,6 @@ function addGlobeDots() {
 }
 
 
-
 /* COUNTRY LINES AND DOTS */
 
 function addLines() {
@@ -553,7 +569,7 @@ function addLines() {
 			// Create the final object to add to the scene
 			var curveObject = new THREE.Mesh(line.geometry, material);
 			curveObject._path = geometry.vertices;
-
+			lineObjects.push(curveObject);
 			group.add(curveObject);
 
 		}
