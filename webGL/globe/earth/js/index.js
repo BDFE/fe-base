@@ -2,8 +2,8 @@
 
 var canvas, scene, renderer, raycaster, mouse, intersects;
 var INTERSECTED;
+var gl;
 var lineObjects = [];
-
 // Cache DOM selectors
 var container = document.getElementsByClassName('js-globe')[0];
 // Object for country HTML elements and variables
@@ -26,6 +26,7 @@ var props = {
 		width: 400,
 		height: 300
 	},
+	control: {},
 	globeRadius: 50, // Radius of the globe (used for many calculations)
 	dotsAmount: 10, // Amount of dots to generate and animate randomly across the lines
 	startingCountry: 'hongkong', // The key of the country to rotate the camera to during the introduction animation (and which country to start the cycle at)
@@ -218,6 +219,8 @@ function showFallback() {
 
 function setupScene() {
 	canvas = container.getElementsByClassName('js-canvas')[0];
+	gl = canvas.getContext('webgl');
+
 	initWindowSize = {
 		width: window.innerWidth,
 		height: window.innerHeight,
@@ -308,7 +311,6 @@ function onDocumentMouseMove(event) {
 	event.preventDefault();
 	mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
 	mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-	console.log('.');
 }
 
 function onWindowResize() {
@@ -330,7 +332,7 @@ function addControls() {
 	// camera.controls.enableZoom = false;
 	// camera.controls.enableDamping = false;
 	// camera.controls.enableRotate = false;
-	camera.controls.autoRotate = true
+	camera.controls.autoRotate = !!props.control.autoRotate
 
 	// Set the initial camera angles to something crazy for the introduction animation
 	camera.angles.current.azimuthal = -Math.PI;
@@ -384,7 +386,7 @@ function onFocusChange(event) {
 
 function animate() {
 	// intersects = raycaster.intersectObjects(scene.children);
-	intersects = raycaster.intersectObjects(lineObjects);
+	intersects = raycaster.intersectObjects(groups.globeDots, true);
 	if (intersects && intersects.length > 0) {
 		console.log(intersects)
 		if (INTERSECTED != intersects[0].index) {}
@@ -399,11 +401,11 @@ function animate() {
 	}
 
 	if (animations.finishedIntro === true) {
-		// animateDots();
+		animateDots();
 	}
 
 	if (animations.countries.animating === true) {
-		// animateCountryCycle();
+		animateCountryCycle();
 	}
 
 	positionElements();
@@ -419,13 +421,9 @@ function animate() {
 /* GLOBE */
 
 function addGlobe() {
-
-	var textureLoader = new THREE.TextureLoader();
-	textureLoader.setCrossOrigin(true);
-
 	var radius = props.globeRadius - (props.globeRadius * 0.02);
-	var segments = 64;
-	var rings = 64;
+	var segments = 128;
+	var rings = 128;
 
 	// Make gradient
 	var canvasSize = 128;
@@ -435,22 +433,33 @@ function addGlobe() {
 	var canvasContext = textureCanvas.getContext('2d');
 	canvasContext.rect(0, 0, canvasSize, canvasSize);
 	var canvasGradient = canvasContext.createLinearGradient(0, 0, 0, canvasSize);
-	canvasGradient.addColorStop(0, '#5B0BA0');
-	canvasGradient.addColorStop(0.5, '#260F76');
-	canvasGradient.addColorStop(1, '#130D56');
+	canvasGradient.addColorStop(0, '#ff0000');
+	canvasGradient.addColorStop(0.5, '#0000ff');
+	canvasGradient.addColorStop(1, '#fff');
 	canvasContext.fillStyle = canvasGradient;
 	canvasContext.fill();
 
+	var textureLoader = new THREE.TextureLoader();
+	textureLoader.setCrossOrigin(true);
+	// var MapIndexBase64 = require();
+
+	var mapIndexedTexture = textureLoader.load('./data/MapIndex.js');
+
 	// Make texture
-	var texture = new THREE.Texture(textureCanvas);
-	texture.needsUpdate = true;
+	// var texture = new THREE.Texture(textureCanvas);
+	// texture.needsUpdate = true;
 
 	var geometry = new THREE.SphereGeometry(radius, segments, rings);
 	var material = new THREE.MeshBasicMaterial({
-		map: texture,
+		// map: texture,
+		map: mapIndexedTexture,
 		transparent: true,
-		opacity: 0
+		opacity: 1
 	});
+
+	// var u_Sampler0 = gl.getUniformLocation(gl.program, 'u_Sampler0');
+
+
 	globe = new THREE.Mesh(geometry, material);
 
 	groups.globe = new THREE.Group();
@@ -461,6 +470,38 @@ function addGlobe() {
 
 	addGlobeDots();
 
+}
+
+// Specify whether the texture unit is ready to use
+var g_texUnit0 = false,
+	g_texUnit1 = false;
+
+function loadTexture(gl, n, texture, u_Sampler, image, texUnit) {
+	gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 1); // Flip the image's y-axis
+	// Make the texture unit active
+	if (texUnit == 0) {
+		gl.activeTexture(gl.TEXTURE0);
+		g_texUnit0 = true;
+	} else {
+		gl.activeTexture(gl.TEXTURE1);
+		g_texUnit1 = true;
+	}
+	// Bind the texture object to the target
+	gl.bindTexture(gl.TEXTURE_2D, texture);
+
+	// Set texture parameters
+	gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+	// Set the image to texture
+	gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+
+	gl.uniform1i(u_Sampler, texUnit); // Pass the texure unit to u_Sampler
+
+	// Clear <canvas>
+	gl.clear(gl.COLOR_BUFFER_BIT);
+
+	if (g_texUnit0 && g_texUnit1) {
+		gl.drawArrays(gl.TRIANGLE_STRIP, 0, n); // Draw the rectangle
+	}
 }
 
 function addGlobeDots() {
@@ -526,7 +567,6 @@ function addLines() {
 	var geometry = new THREE.Geometry();
 
 	for (var countryStart in data.countries) {
-
 		var group = new THREE.Group();
 		group.name = countryStart;
 
@@ -559,23 +599,23 @@ function addLines() {
 			var line = new MeshLine();
 			line.setGeometry(geometry);
 
-			// Create the mesh line material using the plugin
+			// // Create the mesh line material using the plugin
 			var material = new MeshLineMaterial({
 				color: props.colours.lines,
 				transparent: true,
 				opacity: props.alphas.lines
 			});
+			// var material = new THREE.LineBasicMaterial( { vertexColors: THREE.VertexColors } );
 
 			// Create the final object to add to the scene
 			var curveObject = new THREE.Mesh(line.geometry, material);
 			curveObject._path = geometry.vertices;
-			lineObjects.push(curveObject);
+			// lineObjects.push(curveObject);
 			group.add(curveObject);
 
 		}
 
 		group.visible = false;
-
 		groups.lines.add(group);
 
 	}
@@ -702,16 +742,19 @@ function createListElements() {
 
 	list = document.getElementsByClassName('js-list')[0];
 
-	var pushObject = function (coordinates, target) {
+	var pushObject = function (coordinates, countryName) {
 
 		// Create the element
 		var element = document.createElement('li');
 
 		var innerContent;
-		var targetCountry = data.countries[target];
+		var targetCountry = data.countries[countryName];
 
 		element.innerHTML = '<span class="text">' + targetCountry.country + '</span>';
-
+		element.addEventListener('click', (e) => {
+			console.log('click start', e)
+			changeCountry(countryName, false)
+		})
 		var object = {
 			position: coordinates,
 			element: element
@@ -719,7 +762,7 @@ function createListElements() {
 
 		// Add the element to the DOM and add the object to the array
 		list.appendChild(element);
-		elements[target] = object;
+		elements[countryName] = object;
 
 	};
 
@@ -962,7 +1005,7 @@ function showNextCountry() {
 	}
 
 	var key = Object.keys(data.countries)[animations.countries.index];
-	changeCountry(key, false);
+	// changeCountry(key, false);
 
 }
 
