@@ -219,20 +219,13 @@ function EarthSurfaceShader(configure) {
             "float indexedColor = mapColor.x;",
             "vec2 lookupUV = vec2( indexedColor, 0. );",
             "vec4 lookupColor = texture2D( lookup, lookupUV );",
-            // "vec4 lookupColor = vec4(.0, 0.0, 0.0, .1);",
-            "float mask = lookupColor.x + (1.-outlineLevel) * indexedColor;",
-            "mask = clamp(mask,0.,1.);",
-            "float outlineColor = texture2D( outline, vUv ).x * outlineLevel;",
+            "float outlineColor = texture2D( outline, vUv ).x;",
             "float diffuse = mask + outlineColor;",
 
             "vec3 earthColor = vec3(0.0, 0.0, 0.0);",
             "earthColor.x = flag * surfaceColor.x * diffuse + (1.0 - flag) * diffuse;",
             "earthColor.y = flag * surfaceColor.y * diffuse + (1.0 - flag) * diffuse;",
             "earthColor.z = flag * surfaceColor.z * diffuse + (1.0 - flag) * diffuse;",
-
-            "if (lookupColor.x > 0.9) {",
-            "earthColor = selectedColor * diffuse;",
-            "}",
 
             "gl_FragColor = vec4( earthColor, 1.  );",
 

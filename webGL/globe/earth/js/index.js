@@ -386,9 +386,9 @@ function onFocusChange(event) {
 
 function animate() {
 	// intersects = raycaster.intersectObjects(scene.children);
-	intersects = raycaster.intersectObjects(groups.globeDots, true);
+	intersects = raycaster.intersectObjects(groups.globeDots.children, false);
+	console.log(intersects, groups.globeDots.children)
 	if (intersects && intersects.length > 0) {
-		console.log(intersects)
 		if (INTERSECTED != intersects[0].index) {}
 	}
 
