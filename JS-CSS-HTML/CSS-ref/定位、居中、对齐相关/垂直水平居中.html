@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>水平垂直居中</title>
+</head>
+
+<body>
+  <div class="p">
+    <div class="c">
+      已知宽度
+    </div>
+  </div>
+  <style>
+    .p {
+      position: relative;
+      background: #ccc;
+      height: 100px;
+    }
+
+    .c {
+      position: absolute;
+      background: red;
+      width: 100px;
+      /* width: auto; */
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  </style>
+  -------------top,left,translate--------------------
+  <div class="p1">
+    <div class="c1">
+      未知宽度
+    </div>
+  </div>
+  <style>
+    .p1 {
+      position: relative;
+      background: #ccc;
+      height: 100px;
+    }
+
+    .c1 {
+      position: absolute;
+      background: blue;
+      height: 40px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+  --------------grid-------------------
+  <div class="p2">
+    <div class="c2">
+      未知宽度2
+    </div>
+  </div>
+  ----------------flex布局-----------------
+  <div class="p3">
+    <div class="c2">
+      未知宽度2
+    </div>
+  </div>
+  <style>
+    .p2 {
+      display: grid;
+      background: #ccc;
+      height: 100px;
+    }
+
+    .p3 {
+      display: flex;
+      background: #ccc;
+      height: 100px;
+    }
+
+    .c2 {
+      background: blue;
+      margin: auto;
+    }
+  </style>
+
+</html>

@@ -13,7 +13,7 @@
                 window.webkitRequestAnimationFrame ||
                 window.mozRequestAnimationFrame ||
                 function (callback) {
-                    window.setTimeout(callback, 1000 / 60);
+                    window.setTimeout(callback, 1000 / .1);
                 };
         })();
         // now we will setup our basic variables for the demo
@@ -221,16 +221,16 @@
             ctx.beginPath();
 
             // move to the last tracked coordinate in the set, then draw a line to the current x and y
-
-            ctx.moveTo(this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length -
-                1][1]);
+            let pos = [this.coordinates[this.coordinates.length - 1][0], this.coordinates[this.coordinates.length -
+                1][1]];
+            ctx.moveTo(pos[0], pos[1]);
 
             ctx.lineTo(this.x, this.y);
-
-            ctx.strokeStyle = 'hsl(' + hue + ', 100%, ' + this.brightness + '%)';
-
+            hue = 200;
+            let hsl = 'hsl(' + hue + ', 100%, ' + 0 + '%)';
+            ctx.strokeStyle = '#f00' || hsl
+            console.log(~~(pos[0] - this.x), ~~(pos[1] - this.y), hue)
             ctx.stroke();
-
 
 
             ctx.beginPath();
@@ -376,6 +376,9 @@
             // this function will run endlessly with requestAnimationFrame
 
             requestAnimFrame(loop);
+            // setTimeout(e => {
+            //     loop();
+            // }, 2 * 100)
 
 
 
@@ -425,13 +428,13 @@
 
             var i = particles.length;
 
-            while (i--) {
+            // while (i--) {
 
-                particles[i].draw();
+            //     particles[i].draw();
 
-                particles[i].update(i);
+            //     particles[i].update(i);
 
-            }
+            // }
 
 
 

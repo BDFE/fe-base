@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <title>元素</title>
+    <script type="text/javascript" src="./elements.js"></script>
+
+</head>
+
+<body>
+    <div id="canvas-warp">
+        <canvas id="canvas" style="border: 1px solid #aaaaaa; display: block; margin: 50px auto;">
+            你的浏览器居然不支持Canvas？！赶快换一个吧！！
+        </canvas>
+    </div>
+
+    <script>
+        init("canvas")
+
+        function init(id, width = 1200, height = 800) {
+            var list = [];
+            var canvas = document.getElementById(id);
+            canvas.width = width;
+            canvas.height = height;
+            var ctx = canvas.getContext("2d");
+            ctx.fillStyle = '#000';
+            ctx.fillRect(0, 0, width, height)
+            let dots = [{
+                x: 100,
+                y: 100,
+                radius: 20,
+                color: '#ccc'
+            }];
+
+            for (let e of dots) {
+                let {
+                    x,
+                    y,
+                    radius,
+                    color
+                } = e;
+                let dot = new Dot(x, y, radius, color);
+                list.push(dot);
+            }
+            let dashLines = [{
+                x: 150,
+                y: 50,
+                toX: 150,
+                toY: 300,
+                lineWidth: 2,
+                color: '#f00'
+            }];
+            let lines = [{
+                x: 160,
+                y: 50,
+                toX: 160,
+                toY: 300,
+                lineWidth: 2,
+                color: '#f00'
+            }];
+            for (let e of dashLines) {
+                let l = new DashLine(e.x, e.y, e.toX, e.toY, e.lineWidth, e.color, {
+                    dashed: true
+                });
+                list.push(l);
+            }
+            for (let e of lines) {
+                let l = new DashLine(e.x, e.y, e.toX, e.toY, e.lineWidth, e.color, );
+                list.push(l);
+            }
+
+            let icons = [{
+                src: "../left&back.png",
+                x: 0,
+                y: 0,
+                width: 50,
+                height: 50,
+                color: '#f00'
+            }]
+            for (let e of icons) {
+                console.log(e);
+                let image = new Image(); // Create a new blank image.
+                image.crossOrigin = "";
+                image.src = e.src;
+                image.onload = function () {
+                    console.log(image);
+                    let l = new ImageIcon(image, e.x, e.y, e.width, e.height, e.color, );
+                    list.push(l);
+                    startDraw(ctx, list);
+                }
+            }
+
+        }
+
+        function startDraw(ctx, list) {
+            for (let e of list) {
+                e.draw(ctx);
+            }
+        }
+    </script>
+</body>
+
+</html>
