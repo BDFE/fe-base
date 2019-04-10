@@ -127,7 +127,6 @@
         ctx.drawImage(image, 0, 0, picWidth, picHeight);
         // Get and modify the image data.
         image = ctx.getImageData(0, 0, picWidth, picHeight);
-        console.log(this, picLength, uint8Array, image.data)
         for (let i = 0; i < picLength * 4; i += 4) {
             if (uint8Array.length == 4) {
                 for (let j = 0; j < 3; j++) {
@@ -138,10 +137,9 @@
                     // Fourth bytes are alpha bytes
                 }
             }
-
         }
         ctx.putImageData(image, 0, 0);
-        document.body.appendChild(vCanvas)
+        // document.body.appendChild(vCanvas)
         return vCanvas;
     });
     ImageIcon.method("draw", function (ctx) {
@@ -149,12 +147,12 @@
         if (this.color) {
             let color = this.color;
             let uint8Array = color_convert.to_rgba_array(color)
-            _image = this.getCanvasImage(this.image, this.dWidth, this.dHeight, uint8Array)
+            _image = this.getCanvasImage(this.image, this.dWidth, this.dHeight, uint8Array);
         }
         ctx.drawImage(_image, this.dx, this.dy, this.dWidth, this.dHeight);
     });
 
-    function DashLine(x, y, toX, toY, lineWidth = 2, strokeStyle, options) {
+    function Line(x, y, toX, toY, lineWidth = 2, strokeStyle, options) {
         this.lineWidth = lineWidth;
         this.strokeStyle = strokeStyle;
         this.lines = [];
@@ -187,7 +185,7 @@
         }
     }
 
-    DashLine.method("draw", function (ctx) {
+    Line.method("draw", function (ctx) {
         let {
             lineWidth,
             strokeStyle,

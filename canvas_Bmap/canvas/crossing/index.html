@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>元素</title>
     <script type="text/javascript" src="./elements.js"></script>
+    <script type="text/javascript" src="./draw.js"></script>
 
 </head>
 
@@ -16,88 +17,69 @@
     </div>
 
     <script>
-        init("canvas")
+        let ctx = init("canvas", 1050, 850)
 
-        function init(id, width = 1200, height = 800) {
+        function getVirtueCanvas(picWidth = 100, picHeight = 200) {
+            let vCanvas = document.createElement("CANVAS");
+            vCanvas.width = picWidth;
+            vCanvas.height = picHeight;
+            let ctx = vCanvas.getContext("2d");
             var list = [];
-            var canvas = document.getElementById(id);
-            canvas.width = width;
-            canvas.height = height;
-            var ctx = canvas.getContext("2d");
-            ctx.fillStyle = '#000';
-            ctx.fillRect(0, 0, width, height)
-            let dots = [{
-                x: 100,
-                y: 100,
-                radius: 20,
-                color: '#ccc'
-            }];
 
-            for (let e of dots) {
-                let {
-                    x,
-                    y,
-                    radius,
-                    color
-                } = e;
-                let dot = new Dot(x, y, radius, color);
-                list.push(dot);
-            }
-            let dashLines = [{
-                x: 150,
-                y: 50,
-                toX: 150,
-                toY: 300,
-                lineWidth: 2,
-                color: '#f00'
-            }];
-            let lines = [{
-                x: 160,
-                y: 50,
-                toX: 160,
-                toY: 300,
-                lineWidth: 2,
-                color: '#f00'
-            }];
-            for (let e of dashLines) {
-                let l = new DashLine(e.x, e.y, e.toX, e.toY, e.lineWidth, e.color, {
-                    dashed: true
-                });
-                list.push(l);
-            }
-            for (let e of lines) {
-                let l = new DashLine(e.x, e.y, e.toX, e.toY, e.lineWidth, e.color, );
-                list.push(l);
-            }
-
-            let icons = [{
+            let sources = [{
+                type: 'Dot',
+                x: 40,
+                y: 40,
+                radius: 8,
+                color: '#0f0'
+            }, {
+                type: 'ImageIcon',
                 src: "../left&back.png",
-                x: 0,
-                y: 0,
-                width: 50,
-                height: 50,
+                x: 30,
+                y: 50,
+                width: 20,
+                height: 20,
                 color: '#f00'
-            }]
-            for (let e of icons) {
-                console.log(e);
-                let image = new Image(); // Create a new blank image.
-                image.crossOrigin = "";
-                image.src = e.src;
-                image.onload = function () {
-                    console.log(image);
-                    let l = new ImageIcon(image, e.x, e.y, e.width, e.height, e.color, );
-                    list.push(l);
-                    startDraw(ctx, list);
+            }, {
+                type: 'Line',
+                x: 30,
+                y: 50,
+                toX: 30,
+                toY: 160,
+                lineWidth: 2,
+                color: '#f00',
+                options: {
+                    dashed: true
+                }
+            }, {
+                type: 'Line',
+                x: 50,
+                y: 50,
+                toX: 50,
+                toY: 160,
+                lineWidth: 2,
+                color: '#f00'
+            }];
+
+            list = addElements(sources, () => {
+                startDraw(ctx, list);
+            })
+
+            function startDraw(ctx, list) {
+                for (let e of list) {
+                    e.draw(ctx);
                 }
             }
-
+            return vCanvas;
         }
-
-        function startDraw(ctx, list) {
-            for (let e of list) {
-                e.draw(ctx);
-            }
+        // let image = getVirtueCanvas();
+        for (let i = 0; i < 4; i++) {
+            // Rotated rectangle
+            ctx.rotate(10 * Math.PI / 180);
+            ctx.fillStyle = 'red'
+            ctx.fillRect(100, 0, 80, 20);
         }
+        ctx.setTransform(1, 0, 0, 1, 0, 0)
     </script>
 </body>
 

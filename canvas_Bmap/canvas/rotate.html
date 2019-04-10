@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+</head>
+
+<body>
+    <canvas id="canvas" width="1000px" height="900px">
+    </canvas>
+
+    <script type="text/javascript">
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Point of transform origin
+        ctx.arc(0, 0, 5, 0, 2 * Math.PI);
+        ctx.fillStyle = 'blue';
+        ctx.fill();
+        let colors = ['red', 'black', 'green', 'yellow'];
+        for (let i in colors) {
+            // Rotated rectangle
+            ctx.rotate(10 * Math.PI / 180);
+            ctx.fillStyle = colors[i];
+            ctx.fillRect(100, 0, 80, 20);
+        }
+
+        // Reset transformation matrix to the identity matrix
+        // ctx.setTransform(1, 0, 0, 1, 0, 0)
+    </script>
+</body>
+
+</html>
