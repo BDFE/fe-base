@@ -14,13 +14,19 @@ function addElements(elements, cb) {
         switch (e.type) {
             case 'Dot':
                 {
-                    let dot = new Dot(e.x, e.y, e.radius, e.color);
+                    let dot = new Dot(~~e.x, ~~e.y, e.radius, e.color);
                     list.push(dot);
+                    break;
+                }
+            case 'Text':
+                {
+                    let t = new Text(e.text, ~~e.x, ~~e.y, e.options);
+                    list.push(t);
                     break;
                 }
             case 'Line':
                 {
-                    let l = new Line(e.x, e.y, e.toX, e.toY, e.lineWidth, e.color, e.options);
+                    let l = new Line(~~e.x, ~~e.y, ~~e.toX, ~~e.toY, ~~e.lineWidth, e.color, e.options);
                     list.push(l);
                     break;
                 }
@@ -30,7 +36,7 @@ function addElements(elements, cb) {
                     image.crossOrigin = "";
                     image.src = e.src;
                     image.onload = function () {
-                        let l = new ImageIcon(image, e.x, e.y, e.width, e.height, e.color, );
+                        let l = new ImageIcon(image, ~~e.x, ~~e.y, ~~e.width, ~~e.height, e.color, );
                         list.push(l);
                         cb && cb()
                     }

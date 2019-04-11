@@ -17,69 +17,152 @@
     </div>
 
     <script>
-        let ctx = init("canvas", 1050, 850)
+        let cWidth = 800;
+        let cHeight = 800;
+        let ctx = init("canvas", cWidth, cHeight)
+        let roadColor = '#333'
 
-        function getVirtueCanvas(picWidth = 100, picHeight = 200) {
+        function getVirtueCanvas(oneDir, cb) {
+            let {
+                width,
+                height,
+                bgColor,
+                rotateAngle,
+                order,
+            } = oneDir;
             let vCanvas = document.createElement("CANVAS");
-            vCanvas.width = picWidth;
-            vCanvas.height = picHeight;
+            vCanvas.width = width;
+            vCanvas.height = height;
             let ctx = vCanvas.getContext("2d");
+            ctx.fillStyle = bgColor;
+            ctx.fillRect(0, 0, width, height);
             var list = [];
 
-            let sources = [{
-                type: 'Dot',
-                x: 40,
-                y: 40,
-                radius: 8,
-                color: '#0f0'
-            }, {
-                type: 'ImageIcon',
-                src: "../left&back.png",
-                x: 30,
-                y: 50,
-                width: 20,
-                height: 20,
-                color: '#f00'
-            }, {
-                type: 'Line',
-                x: 30,
-                y: 50,
-                toX: 30,
-                toY: 160,
-                lineWidth: 2,
-                color: '#f00',
-                options: {
+            let roadW = width / 6;
+            let roadH = height;
+
+            let eles = [];
+            for (let i = 1; i < 6; i++) {
+                let lineW = 1;
+                let color = '#ccc';
+                let options = {
                     dashed: true
                 }
-            }, {
-                type: 'Line',
-                x: 50,
-                y: 50,
-                toX: 50,
-                toY: 160,
-                lineWidth: 2,
-                color: '#f00'
-            }];
+                if (i == 3) {
+                    lineW = 1.5;
+                    color = 'yellow';
+                    options = null;
+                }
+                eles.push({
+                    type: 'Line',
+                    x: i * roadW,
+                    y: 0,
+                    toX: i * roadW,
+                    toY: roadH,
+                    lineWidth: lineW,
+                    color: color,
+                    options: options
+                })
+                if (i > 2 && i < 6) {
+                    let icons = {
+                        3: {
+                            icon: "./turnLeft.png",
+                            color: '#0f0',
+                        },
+                        4: {
+                            icon: "./直行.png",
+                            color: '#0f0',
+                        },
+                        5: {
+                            icon: "./turnRight.png",
+                            color: '#ccc',
+                        },
+                    }
 
-            list = addElements(sources, () => {
+                    // eles.push({
+                    //     type: 'Dot',
+                    //     x: i * roadW,
+                    //     y: roadW / 2,
+                    //     radius: roadW * .8,
+                    //     color: '#0f0'
+                    // });
+                    eles.push({
+                        type: 'ImageIcon',
+                        src: icons[i].icon,
+                        x: (i + .1) * roadW,
+                        y: roadW * (1 + ~~(i == 4) * .3),
+                        width: roadW * .8,
+                        height: roadW * (2 - ~~(i == 4) * .5),
+                        color: icons[i].color,
+                    })
+                    if (i == 4) {
+                        eles.push({
+                            type: 'Text',
+                            text: order,
+                            x: (i + .5) * roadW,
+                            y: (0 + .1) * roadW,
+                            options: {
+                                color: 'white',
+                                angle: -rotateAngle || 0,
+                                font: `${~~(roadW*2/3)}px sans-serif`,
+                                // textAlign: 'left',
+                                // isChinese: false,
+                            }
+                        });
+                    }
+
+                }
+            }
+            list = addElements(eles, () => {
+                // console.log('list', list);
                 startDraw(ctx, list);
             })
 
             function startDraw(ctx, list) {
                 for (let e of list) {
                     e.draw(ctx);
+                    cb && cb(vCanvas);
                 }
             }
-            return vCanvas;
         }
-        // let image = getVirtueCanvas();
-        for (let i = 0; i < 4; i++) {
-            // Rotated rectangle
-            ctx.rotate(10 * Math.PI / 180);
-            ctx.fillStyle = 'red'
-            ctx.fillRect(100, 0, 80, 20);
+
+        let cnt = 4;
+        // ctx.save();
+        for (let i = 0; i < cnt; i++) {
+            let rotateAngle = 2 * Math.PI / cnt;
+            let oneDir = {
+                width: 150,
+                height: 200,
+            }
+            getVirtueCanvas({
+                width: oneDir.width,
+                height: oneDir.height,
+                bgColor: roadColor,
+                rotateAngle: rotateAngle * i,
+                order: i + 1
+            }, image => {
+                document.body.appendChild(image);
+                let x = 100;
+                let y = 100;
+                ctx.fillStyle = roadColor
+
+                let _w = oneDir.width * (1 + ~~(cnt > 4) * .2)
+                ctx.fillRect(
+                    cWidth / 2 - _w / 2,
+                    cHeight / 2 - _w / 2,
+                    _w,
+                    _w
+                );
+                ctx.translate(cWidth / 2, cHeight / 2);
+                ctx.rotate(rotateAngle);
+                ctx.translate(-cWidth / 2, -cHeight / 2);
+                ctx.drawImage(image,
+                    cWidth / 2 - oneDir.width / 2, cHeight / 2 + oneDir.width / 2,
+                    oneDir.width, oneDir.height);
+            });
+
         }
-        ctx.setTransform(1, 0, 0, 1, 0, 0)
+        // ctx.restore();
     </script>
 </body>
 

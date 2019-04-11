@@ -71,9 +71,9 @@
     }();
 
     function Dot(x, y, radius, fillStyle, border) {
-        this.x = x;
-        this.y = y;
-        this.radius = radius;
+        this.x = ~~x;
+        this.y = ~~y;
+        this.radius = ~~radius;
         this.fillStyle = fillStyle;
         if (border) {
             border['width'] && (this.lineWidth = border['width']);
@@ -108,10 +108,78 @@
         ctx.lineWidth = _lineWidth;
     });
 
+    function Text(_text = '19', x, y, options) {
+        this._text = _text;
+        this.x = ~~x;
+        this.y = ~~y;
+        this.options = {
+            width: null,
+            height: null,
+            color: 'red',
+            angle: 0,
+            font: '25px sans-serif',
+            textAlign: 'left',
+            isChinese: false,
+        };
+        if (options) {
+            for (let k in this.options) {
+                options.hasOwnProperty(k) && (this.options[k] = options[k]);
+            }
+        }
+
+    }
+
+    Text.method("draw", function (ctx) {
+        let {
+            x,
+            y,
+            _text,
+            options
+        } = this;
+
+        ctx.save();
+        _text = _text.toString();
+        if (!options.width || !options.height) {
+            let h = parseInt(options.font.split('px')[0]);
+            let n = _text.split('').length;
+            options.height = h
+            options.width = (options.isChinese ? 1 : .5) * h * n;
+        }
+        ctx.font = options.font;
+        ctx.fillStyle = options.color;
+        ctx.textAlign = options.textAlign;
+
+        let modifiedXY = {
+            x: x,
+            y: y,
+        }
+        // ctx.fillText(_text, x, y);
+
+        modifiedXY = {
+            x: x - (options.width * .5),
+            y: y + (options.height * .5),
+        }
+        ctx.translate(modifiedXY.x + (options.width / 2), modifiedXY.y + (options.height) / 2);
+        ctx.rotate(options.angle);
+        ctx.translate(-modifiedXY.x - (options.width / 2), -modifiedXY.y - (options.height / 2));
+        // ctx.translate(modifiedXY.x + (options.width / 2), modifiedXY.y + (options.height) / 2);
+        // ctx.rotate(options.angle);
+        // ctx.translate(-modifiedXY.x - (options.width / 2), -modifiedXY.y - (options.height / 2));
+
+        // ctx.fillRect(modifiedXY.x, modifiedXY.y, options.width, options.height);
+        ctx.translate(0, options.height);
+        ctx.fillStyle = 'red';
+        ctx.fillText(_text, modifiedXY.x, modifiedXY.y);
+        // ctx.fillRect(x, y, options.width, options.height);
+        // ctx.fillRect(modifiedXY.x, modifiedXY.y, options.width, options.height);
+        ctx.restore();
+
+    });
+
     function ImageIcon(image, dx, dy, dWidth, dHeight, color) {
         this.image = image;
-        this.dx = dx;
-        this.dy = dy;
+        this.dx = ~~dx;
+        this.dy = ~~dy;
         this.dWidth = dWidth;
         this.dHeight = dHeight;
         this.color = color;
@@ -181,7 +249,7 @@
                 this.lines.push([sx, sy, sx + xdiff, sy + ydiff])
             }
         } else {
-            this.lines.push([x, y, toX, toY])
+            this.lines.push([~~x, ~~y, ~~toX, ~~toY])
         }
     }
 
@@ -200,7 +268,6 @@
             ctx.moveTo(line[0], line[1])
             ctx.lineTo(line[2], line[3]);
             ctx.stroke();
-
         }
 
         ctx.lineWidth = _lineWidth;
