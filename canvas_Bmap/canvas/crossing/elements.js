@@ -108,7 +108,7 @@
         ctx.lineWidth = _lineWidth;
     });
 
-    function Text(_text = '19', x, y, options) {
+    function Text(_text, x, y, options) {
         this._text = _text;
         this.x = ~~x;
         this.y = ~~y;
@@ -165,10 +165,10 @@
         // ctx.translate(modifiedXY.x + (options.width / 2), modifiedXY.y + (options.height) / 2);
         // ctx.rotate(options.angle);
         // ctx.translate(-modifiedXY.x - (options.width / 2), -modifiedXY.y - (options.height / 2));
-
+        // console.log('tttt',~~(options.angle/Math.PI*180), _text)
         // ctx.fillRect(modifiedXY.x, modifiedXY.y, options.width, options.height);
         ctx.translate(0, options.height);
-        ctx.fillStyle = 'red';
+        // ctx.fillStyle = 'red';
         ctx.fillText(_text, modifiedXY.x, modifiedXY.y);
         // ctx.fillRect(x, y, options.width, options.height);
         // ctx.fillRect(modifiedXY.x, modifiedXY.y, options.width, options.height);
@@ -269,7 +269,6 @@
             ctx.lineTo(line[2], line[3]);
             ctx.stroke();
         }
-
         ctx.lineWidth = _lineWidth;
         ctx.strokeStyle = _strokeStyle;
     });
