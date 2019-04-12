@@ -43,22 +43,22 @@ function addElements(elements, cb) {
             case 'ImageIcon':
                 {
                     if (e.image) {
+                        console.log('providid image');
                         let l = new ImageIcon(e.image, ~~e.x, ~~e.y, ~~e.width, ~~e.height, e.color, );
                         list.push(l);
                         judgeCallback();
-                        console.log('providid image');
                     } else {
                         let image = new Image(); // Create a new blank image.
                         image.crossOrigin = "";
                         image.src = e.src;
+                        // console.log(e, '...');
                         if (image.complete) {
                             let l = new ImageIcon(image, ~~e.x, ~~e.y, ~~e.width, ~~e.height, e.color, );
                             list.push(l);
                             judgeCallback();
                         } else {
-                            console.log(e.src, '...');
                             image.onload = function () {
-                                console.log(e.src, 'done');
+                                // console.log(e.src, 'done');
                                 let l = new ImageIcon(image, ~~e.x, ~~e.y, ~~e.width, ~~e.height, e.color, );
                                 list.push(l);
                                 judgeCallback();
@@ -78,10 +78,9 @@ function getVirtueCanvas(oneDir, cb) {
         height,
         bgColor,
         rotateAngle,
-        order,
         images,
         lanes,
-    } = JSON.parse(JSON.stringify(oneDir));
+    } = oneDir;
     let vCanvas = document.createElement("CANVAS");
     vCanvas.width = width;
     vCanvas.height = height;
@@ -127,12 +126,14 @@ function getVirtueCanvas(oneDir, cb) {
             Object.keys(lanePair).map(k => {
                 let dirName = lanePair[k];
                 _lanes[k] = {
-                    // image: images['left'],
+                    image: images && images[dirName],
                     icon: `./${dirName}.png`,
                     color: lanes[dirName].color,
                     text: lanes[dirName].text || '',
                 }
             })
+            console.log('ii', images, _lanes)
+
             // eles.push({
             //     type: 'Dot',
             //     x: i * roadW,
@@ -177,6 +178,7 @@ function drawDirs(cWidth, cHeight, dirNums = 4, oneDir = {
     width: 150,
     height: 200,
     bgColor: '#333',
+    images: null,
 }) {
     context.clearRect(0, 0, cWidth, cHeight);
     context.fillStyle = oneDir.bgColor
@@ -214,9 +216,8 @@ function drawDirs(cWidth, cHeight, dirNums = 4, oneDir = {
             height: oneDir.height,
             bgColor: oneDir.bgColor,
             rotateAngle: lanes.angle,
-            order: i + 1,
             lanes: lanes,
-            // images: images
+            images: oneDir.images
         }, _vCanvas => {
             document.body.appendChild(_vCanvas);
             context.save();
