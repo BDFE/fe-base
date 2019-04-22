@@ -95,7 +95,7 @@
         if (fillStyle) {
             ctx.fillStyle = fillStyle;
         }
-        ctx.lineTo(this.x, this.y);
+        ctx.moveTo(this.x, this.y);
         ctx.arc(x, y, radius, 0, Math.PI * 2);
         ctx.fill();
         if (this.lineWidth && this.strokeStyle) {

@@ -43,7 +43,7 @@ function addElements(elements, cb) {
             case 'ImageIcon':
                 {
                     if (e.image) {
-                        console.log('providid image');
+                        // console.log('providid image');
                         let l = new ImageIcon(e.image, ~~e.x, ~~e.y, ~~e.width, ~~e.height, e.color, );
                         list.push(l);
                         judgeCallback();
@@ -132,8 +132,6 @@ function getVirtueCanvas(oneDir, cb) {
                     text: lanes[dirName].text || '',
                 }
             })
-            console.log('ii', images, _lanes)
-
             // eles.push({
             //     type: 'Dot',
             //     x: i * roadW,
