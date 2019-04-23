@@ -19,9 +19,11 @@
         var testFun = new fun()
 
         testFun.name = "set name"
-        console.log(testFun.name) // set name
+        console.log(testFun.name) 
+        
         testFun.say()
-        console.log(testFun.__proto__) //    "prototype name"
+        
+        console.log(testFun.__proto__.name) 
         console.log("****************************************")
         let fn = testFun.say;
         fn && fn();

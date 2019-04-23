@@ -1,13 +1,15 @@
 /* VARIABLES */
 
-var canvas, scene, renderer, data;
-
+var canvas, scene, renderer, raycaster, mouse, intersects;
+var INTERSECTED;
+var gl;
+var lineObjects = [];
 // Cache DOM selectors
 var container = document.getElementsByClassName('js-globe')[0];
-
 // Object for country HTML elements and variables
 var elements = {};
-
+var data = {};
+var initWindowSize = {};
 // Three group objects
 var groups = {
 	main: null, // A group containing everything
@@ -21,11 +23,12 @@ var groups = {
 var props = {
 	mapSize: {
 		// Size of the map from the intial source image (on which the dots are positioned on)
-		width: 2048 / 2,
-		height: 1024 / 2
+		width: 400,
+		height: 300
 	},
-	globeRadius: 200, // Radius of the globe (used for many calculations)
-	dotsAmount: 20, // Amount of dots to generate and animate randomly across the lines
+	control: {},
+	globeRadius: 50, // Radius of the globe (used for many calculations)
+	dotsAmount: 10, // Amount of dots to generate and animate randomly across the lines
 	startingCountry: 'hongkong', // The key of the country to rotate the camera to during the introduction animation (and which country to start the cycle at)
 	colours: {
 		// Cache the colours
@@ -91,39 +94,137 @@ var isHidden = false;
 
 function getData() {
 
+	// var request = new XMLHttpRequest();
+	// // request.open('GET', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/617753/globe-points.json', true);
+	// request.open('GET', './globe-points.json', true);
+	// request.onload = function () {
+	// 	if (request.status >= 200 && request.status < 400) {
+	// 		data = JSON.parse(request.responseText);
+	// 	} else {
+	// 		showFallback();
+	// 	}
+	// };
+	// request.onerror = showFallback;
+	// request.send();
+	getBoundaryPoints(ps => {
+		data['points'] = ps;
+		useTestCountryData()
+		formatCountryData(data.countries);
+		let firstCountryName = Object.keys(data.countries)[0];
+		props.startingCountry = firstCountryName;
+		setupScene();
+	});
+}
+
+function getBoundaryPoints(cb) {
 	var request = new XMLHttpRequest();
-	request.open('GET', 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/617753/globe-points.json', true);
-
-	request.onload = function() {
+	request.open('GET', './custom.geo.json', true);
+	request.onload = function () {
 		if (request.status >= 200 && request.status < 400) {
-			data = JSON.parse(request.responseText);
-			setupScene();
-		}
-		else {
-			showFallback();
-		}
+			let gj = JSON.parse(request.responseText);
+			let points = [];
+			for (let c of gj.features) {
+
+				for (let cors of c.geometry.coordinates) {
+					if (c.geometry.type == 'MultiPolygon') {
+						for (let locs of cors) {
+							for (let loc of locs) {
+								points.push(lnglatToScreenPos(loc[0], loc[1]));
+							}
+						}
+					} else {
+						for (let loc of cors) {
+							points.push(lnglatToScreenPos(loc[0], loc[1]))
+						}
+					}
+				}
+			}
+			cb && cb(points);
+		} else {}
 	};
-
 	request.onerror = showFallback;
-
 	request.send();
+}
 
+function useTestCountryData() {
+	// data.countries = {
+	// 	"pakistan": {
+	// 		"x": 525,
+	// 		"y": 279,
+	// 		"name": "WalletPAK",
+	// 		"country": "Pakistan"
+	// 	},
+	// 	"hongkong": {
+	// 		"x": 768,
+	// 		"y": 342,
+	// 		"name": "TNG Wallet",
+	// 		"country": "Hong Kong"
+	// 	},
+
+	// }
+	data.countries = {
+		"test": {
+			"name": "test",
+			"country": "test",
+			"lat": 0,
+			"lng": 0
+		},
+		"Canada": {
+			"name": "Canada",
+			"country": "Canada",
+			"lat": 62.110521,
+			"lng": 111.7530810
+		},
+		"India": {
+			"name": "India",
+			"country": "India",
+			"lat": 21.682407,
+			"lng": 77.816056,
+		},
+		"China": {
+			"name": "China",
+			"country": "China",
+			"lat": 33.207797,
+			"lng": 106.589429,
+		},
+	}
+}
+
+function formatCountryData(countries) {
+	Object.keys(countries).map(k => {
+		let country = countries[k];
+		if (country.hasOwnProperty('lng') && country.hasOwnProperty('lat')) {
+			let {
+				x,
+				y
+			} = lnglatToScreenPos(country['lng'], country['lat']);
+			country['x'] = x;
+			country['y'] = y;
+		} else {
+			if (country.hasOwnProperty('x') && country.hasOwnProperty('y')) {
+				let {
+					lat,
+					lng
+				} = screenPosToLngLat(country['x'], country['y']);
+				country['lat'] = lat;
+				country['lng'] = lng;
+			}
+		}
+	})
 }
 
 function showFallback() {
-
-	/*
-		This function will display an alert if WebGL is not supported.
-	*/
-
 	alert('WebGL not supported. Please use a browser that supports WebGL.');
-
 }
 
 function setupScene() {
-
 	canvas = container.getElementsByClassName('js-canvas')[0];
+	gl = canvas.getContext('webgl');
 
+	initWindowSize = {
+		width: window.innerWidth,
+		height: window.innerHeight,
+	}
 	scene = new THREE.Scene();
 	renderer = new THREE.WebGLRenderer({
 		canvas: canvas,
@@ -163,18 +264,23 @@ function setupScene() {
 		addLines();
 		createListElements();
 	}
-
+	addMouseEvents()
 	// Start the requestAnimationFrame loop
 	render();
 	animate();
 
-	var canvasResizeBehaviour = function() {
-
-		container.width = window.innerWidth;
-		container.height = window.innerHeight;
-		container.style.width = window.innerWidth + 'px';
-		container.style.height = window.innerHeight + 'px';
-
+	var canvasResizeBehaviour = function () {
+		// let cs = window.getComputedStyle(container)
+		// let width = cs.width.replace('px', '');
+		// let height = cs.height.replace('px', '');
+		// if (width && height) {
+		// 	let w = ~~(width * window.innerWidth / initWindowSize.width);
+		// 	let h = ~~(height * window.innerHeight / initWindowSize.height);
+		// 	container.width = w;
+		// 	container.height = h;
+		// 	container.style.width = w + 'px';
+		// 	container.style.height = h + 'px';
+		// }
 		camera.object.aspect = container.offsetWidth / container.offsetHeight;
 		camera.object.updateProjectionMatrix();
 		renderer.setSize(container.offsetWidth, container.offsetHeight);
@@ -182,38 +288,55 @@ function setupScene() {
 	};
 
 	window.addEventListener('resize', canvasResizeBehaviour);
-	window.addEventListener('orientationchange', function() {
+	window.addEventListener('orientationchange', function () {
 		setTimeout(canvasResizeBehaviour, 0);
 	});
 	canvasResizeBehaviour();
+}
+/* Mouse Events And RayCaster to get clicked Objects */
+function addMouseEvents() {
+	try {
+		raycaster = new THREE.Raycaster();
+		mouse = new THREE.Vector2();
+		window.addEventListener('resize', onWindowResize, false);
+		document.addEventListener('mousemove', onDocumentMouseMove, false);
+		raycaster.setFromCamera(mouse, camera.object);
+	} catch (error) {
+		console.log('RayCaster error', scene.children, error);
+	}
 
 }
 
+function onDocumentMouseMove(event) {
+	event.preventDefault();
+	mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+	mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+}
 
+function onWindowResize() {
+	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.updateProjectionMatrix();
+	renderer.setSize(window.innerWidth, window.innerHeight);
+}
 
 /* CAMERA AND CONTROLS */
-
 function addCamera() {
-
 	camera.object = new THREE.PerspectiveCamera(60, canvas.clientWidth / canvas.clientHeight, 1, 10000);
 	camera.object.position.z = props.globeRadius * 2.2;
-
 }
 
 function addControls() {
-
 	camera.controls = new OrbitControls(camera.object, canvas);
 	// camera.controls.enableKeys = false;
 	// camera.controls.enablePan = false;
 	// camera.controls.enableZoom = false;
 	// camera.controls.enableDamping = false;
 	// camera.controls.enableRotate = false;
-	camera.controls.autoRotate = true
+	camera.controls.autoRotate = !!props.control.autoRotate
 
 	// Set the initial camera angles to something crazy for the introduction animation
 	camera.angles.current.azimuthal = -Math.PI;
 	camera.angles.current.polar = 0;
-
 }
 
 
@@ -226,20 +349,15 @@ function render() {
 
 if ('hidden' in document) {
 	document.addEventListener('visibilitychange', onFocusChange);
-}
-else if ('mozHidden' in document) {
+} else if ('mozHidden' in document) {
 	document.addEventListener('mozvisibilitychange', onFocusChange);
-}
-else if ('webkitHidden' in document) {
+} else if ('webkitHidden' in document) {
 	document.addEventListener('webkitvisibilitychange', onFocusChange);
-}
-else if ('msHidden' in document) {
+} else if ('msHidden' in document) {
 	document.addEventListener('msvisibilitychange', onFocusChange);
-}
-else if ('onfocusin' in document) {
+} else if ('onfocusin' in document) {
 	document.onfocusin = document.onfocusout = onFocusChange;
-}
-else {
+} else {
 	window.onpageshow = window.onpagehide = window.onfocus = window.onblur = onFocusChange;
 }
 
@@ -260,14 +378,19 @@ function onFocusChange(event) {
 
 	if (event.type in eventMap) {
 		isHidden = true;
-	}
-	else {
+	} else {
 		isHidden = false;
 	}
 
 }
 
 function animate() {
+	// intersects = raycaster.intersectObjects(scene.children);
+	intersects = raycaster.intersectObjects(groups.globeDots.children, false);
+	console.log(intersects, groups.globeDots.children)
+	if (intersects && intersects.length > 0) {
+		if (INTERSECTED != intersects[0].index) {}
+	}
 
 	if (isHidden === false) {
 		requestAnimationFrame(animate);
@@ -298,13 +421,9 @@ function animate() {
 /* GLOBE */
 
 function addGlobe() {
-
-	var textureLoader = new THREE.TextureLoader();
-	textureLoader.setCrossOrigin(true);
-
 	var radius = props.globeRadius - (props.globeRadius * 0.02);
-	var segments = 64;
-	var rings = 64;
+	var segments = 128;
+	var rings = 128;
 
 	// Make gradient
 	var canvasSize = 128;
@@ -314,22 +433,33 @@ function addGlobe() {
 	var canvasContext = textureCanvas.getContext('2d');
 	canvasContext.rect(0, 0, canvasSize, canvasSize);
 	var canvasGradient = canvasContext.createLinearGradient(0, 0, 0, canvasSize);
-	canvasGradient.addColorStop(0, '#5B0BA0');
-	canvasGradient.addColorStop(0.5, '#260F76');
-	canvasGradient.addColorStop(1, '#130D56');
+	canvasGradient.addColorStop(0, '#ff0000');
+	canvasGradient.addColorStop(0.5, '#0000ff');
+	canvasGradient.addColorStop(1, '#fff');
 	canvasContext.fillStyle = canvasGradient;
 	canvasContext.fill();
 
+	var textureLoader = new THREE.TextureLoader();
+	textureLoader.setCrossOrigin(true);
+	// var MapIndexBase64 = require();
+
+	var mapIndexedTexture = textureLoader.load('./data/MapIndex.js');
+
 	// Make texture
-	var texture = new THREE.Texture(textureCanvas);
-	texture.needsUpdate = true;
+	// var texture = new THREE.Texture(textureCanvas);
+	// texture.needsUpdate = true;
 
 	var geometry = new THREE.SphereGeometry(radius, segments, rings);
 	var material = new THREE.MeshBasicMaterial({
-		map: texture,
+		// map: texture,
+		map: mapIndexedTexture,
 		transparent: true,
-		opacity: 0
+		opacity: 1
 	});
+
+	// var u_Sampler0 = gl.getUniformLocation(gl.program, 'u_Sampler0');
+
+
 	globe = new THREE.Mesh(geometry, material);
 
 	groups.globe = new THREE.Group();
@@ -340,6 +470,38 @@ function addGlobe() {
 
 	addGlobeDots();
 
+}
+
+// Specify whether the texture unit is ready to use
+var g_texUnit0 = false,
+	g_texUnit1 = false;
+
+function loadTexture(gl, n, texture, u_Sampler, image, texUnit) {
+	gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, 1); // Flip the image's y-axis
+	// Make the texture unit active
+	if (texUnit == 0) {
+		gl.activeTexture(gl.TEXTURE0);
+		g_texUnit0 = true;
+	} else {
+		gl.activeTexture(gl.TEXTURE1);
+		g_texUnit1 = true;
+	}
+	// Bind the texture object to the target
+	gl.bindTexture(gl.TEXTURE_2D, texture);
+
+	// Set texture parameters
+	gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+	// Set the image to texture
+	gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);
+
+	gl.uniform1i(u_Sampler, texUnit); // Pass the texure unit to u_Sampler
+
+	// Clear <canvas>
+	gl.clear(gl.COLOR_BUFFER_BIT);
+
+	if (g_texUnit0 && g_texUnit1) {
+		gl.drawArrays(gl.TRIANGLE_STRIP, 0, n); // Draw the rectangle
+	}
 }
 
 function addGlobeDots() {
@@ -367,7 +529,7 @@ function addGlobeDots() {
 		size: props.globeRadius / 120
 	});
 
-	var addDot = function(targetX, targetY) {
+	var addDot = function (targetX, targetY) {
 
 		// Add a point with zero coordinates
 		var point = new THREE.Vector3(0, 0, 0);
@@ -397,7 +559,6 @@ function addGlobeDots() {
 }
 
 
-
 /* COUNTRY LINES AND DOTS */
 
 function addLines() {
@@ -406,7 +567,6 @@ function addLines() {
 	var geometry = new THREE.Geometry();
 
 	for (var countryStart in data.countries) {
-
 		var group = new THREE.Group();
 		group.name = countryStart;
 
@@ -439,23 +599,23 @@ function addLines() {
 			var line = new MeshLine();
 			line.setGeometry(geometry);
 
-			// Create the mesh line material using the plugin
+			// // Create the mesh line material using the plugin
 			var material = new MeshLineMaterial({
 				color: props.colours.lines,
 				transparent: true,
 				opacity: props.alphas.lines
 			});
+			// var material = new THREE.LineBasicMaterial( { vertexColors: THREE.VertexColors } );
 
 			// Create the final object to add to the scene
 			var curveObject = new THREE.Mesh(line.geometry, material);
 			curveObject._path = geometry.vertices;
-
+			// lineObjects.push(curveObject);
 			group.add(curveObject);
 
 		}
 
 		group.visible = false;
-
 		groups.lines.add(group);
 
 	}
@@ -480,7 +640,7 @@ function addLineDots() {
 	});
 
 	// Returns a sphere geometry positioned at coordinates
-	var returnLineDot = function() {
+	var returnLineDot = function () {
 		var sphere = new THREE.Mesh(geometry, material);
 		return sphere;
 	};
@@ -543,8 +703,7 @@ function animateDots() {
 				dot._pathIndex = 0;
 			}
 
-		}
-		else if (dot._path !== null && dot._pathIndex < dot._path.length - 1) {
+		} else if (dot._path !== null && dot._pathIndex < dot._path.length - 1) {
 
 			// Show the dot
 			if (dot.visible === false) {
@@ -559,8 +718,7 @@ function animateDots() {
 			// Advance the path index by 1
 			dot._pathIndex++;
 
-		}
-		else {
+		} else {
 
 			// Hide the dot
 			dot.visible = false;
@@ -582,18 +740,21 @@ var list;
 
 function createListElements() {
 
- 	list = document.getElementsByClassName('js-list')[0];
+	list = document.getElementsByClassName('js-list')[0];
 
-	var pushObject = function(coordinates, target) {
+	var pushObject = function (coordinates, countryName) {
 
 		// Create the element
 		var element = document.createElement('li');
 
 		var innerContent;
-		var targetCountry = data.countries[target];
+		var targetCountry = data.countries[countryName];
 
 		element.innerHTML = '<span class="text">' + targetCountry.country + '</span>';
-
+		element.addEventListener('click', (e) => {
+			console.log('click start', e)
+			changeCountry(countryName, false)
+		})
 		var object = {
 			position: coordinates,
 			element: element
@@ -601,7 +762,7 @@ function createListElements() {
 
 		// Add the element to the DOM and add the object to the array
 		list.appendChild(element);
-		elements[target] = object;
+		elements[countryName] = object;
 
 	};
 
@@ -632,8 +793,7 @@ function createListElements() {
 			camera.angles.target.azimuthal = angles.azimuthal;
 			camera.angles.target.polar = angles.polar;
 
-		}
-		else {
+		} else {
 			i++;
 		}
 
@@ -676,15 +836,15 @@ function positionElements() {
 
 // Easing reference: https://gist.github.com/gre/1650294
 
-var easeInOutCubic = function(t) {
+var easeInOutCubic = function (t) {
 	return t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
 };
 
-var easeOutCubic = function(t) {
+var easeOutCubic = function (t) {
 	return (--t) * t * t + 1;
 };
 
-var easeInOutQuad = function(t) {
+var easeInOutQuad = function (t) {
 	return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 };
 
@@ -784,8 +944,7 @@ function changeCountry(key, init) {
 	for (var name in elements) {
 		if (name === key) {
 			elements[name].element.classList.add('active');
-		}
-		else {
+		} else {
 			elements[name].element.classList.remove('active');
 		}
 	}
@@ -826,8 +985,7 @@ function animateCountryCycle() {
 
 		animations.countries.current++;
 
-	}
-	else {
+	} else {
 
 		animations.countries.animating = false;
 		animations.countries.current = 0;
@@ -847,34 +1005,53 @@ function showNextCountry() {
 	}
 
 	var key = Object.keys(data.countries)[animations.countries.index];
-	changeCountry(key, false);
+	// changeCountry(key, false);
 
 }
 
 
 
+function lnglatToScreenPos(lng, lat) {
+	let x = ((lng + 180) / (360)) * props.mapSize.width;
+	let y = ((lat + 90) / (180)) * props.mapSize.height;
+	return {
+		x,
+		y
+	}
+}
+
+function screenPosToLngLat(x, y) {
+	let lng = ((x % props.mapSize.width) / props.mapSize.width) * 360 - 180;
+	let lat = ((y % props.mapSize.height) / props.mapSize.height) * 180 - 90;
+
+	return {
+		lat,
+		lng
+	}
+}
+
+
 /* COORDINATE CALCULATIONS */
 
 // Returns an object of 3D spherical coordinates
-function returnSphericalCoordinates(latitude, longitude) {
+function returnSphericalCoordinates(x, y) {
 
 	/*
-		This function will take a latitude and longitude and calcualte the
-		projected 3D coordiantes using Mercator projection relative to the
+		This function will take a x and y and calcualte the
+		projected 3D coordiantes using Mercator projection rexive to the
 		radius of the globe.
 
 		Reference: https://stackoverflow.com/a/12734509
 	*/
 
-	// Convert latitude and longitude on the 90/180 degree axis
-	latitude = ((latitude - props.mapSize.width) / props.mapSize.width) * -180;
-	longitude = ((longitude - props.mapSize.height) / props.mapSize.height) * -90;
-
-	// Calculate the projected starting point
-	var radius = Math.cos(longitude / 180 * Math.PI) * props.globeRadius;
-	var targetX = Math.cos(latitude / 180 * Math.PI) * radius;
-	var targetY = Math.sin(longitude / 180 * Math.PI) * props.globeRadius;
-	var targetZ = Math.sin(latitude / 180 * Math.PI) * radius;
+	// Convert x and y on the 90/180 degree axis
+	lng = ((x % props.mapSize.width) / props.mapSize.width) * 360 - 180;
+	lat = ((y % props.mapSize.height) / props.mapSize.height) * 180 - 90;
+	// Calcuxe the projected starting point
+	var equatorProjectL = Math.cos(lat / 180 * Math.PI) * props.globeRadius;
+	var targetX = Math.cos(lng / 180 * Math.PI) * equatorProjectL;
+	var targetY = Math.sin(lat / 180 * Math.PI) * props.globeRadius;
+	var targetZ = Math.sin(lng / 180 * Math.PI) * equatorProjectL;
 
 	return {
 		x: targetX,
@@ -885,13 +1062,13 @@ function returnSphericalCoordinates(latitude, longitude) {
 }
 
 // Reference: https://codepen.io/ya7gisa0/pen/pisrm?editors=0010
-function returnCurveCoordinates(latitudeA, longitudeA, latitudeB, longitudeB) {
+function returnCurveCoordinates(xA, yA, xB, yB) {
 
 	// Calculate the starting point
-	var start = returnSphericalCoordinates(latitudeA, longitudeA);
+	var start = returnSphericalCoordinates(xA, yA);
 
 	// Calculate the end point
-	var end = returnSphericalCoordinates(latitudeB, longitudeB);
+	var end = returnSphericalCoordinates(xB, yB);
 
 	// Calculate the mid-point
 	var midPointX = (start.x + end.x) / 2;
@@ -909,8 +1086,10 @@ function returnCurveCoordinates(latitudeA, longitudeA, latitudeB, longitudeB) {
 	multipleVal += Math.pow(midPointY, 2);
 	multipleVal += Math.pow(midPointZ, 2);
 	multipleVal = Math.pow(distance, 2) / multipleVal;
-	multipleVal = multipleVal * 0.7;
-
+	multipleVal = multipleVal * 0.5;
+	if (multipleVal > 10) {
+		multipleVal /= 2
+	}
 	// Apply the vector length to get new mid-points
 	var midX = midPointX + multipleVal * midPointX;
 	var midY = midPointY + multipleVal * midPointY;
@@ -973,7 +1152,7 @@ function returnCameraAngles(latitude, longitude) {
 	var targetAzimuthalAngle = ((latitude - props.mapSize.width) / props.mapSize.width) * Math.PI;
 	targetAzimuthalAngle = targetAzimuthalAngle + (Math.PI / 2);
 	targetAzimuthalAngle = targetAzimuthalAngle + 0.1; // Add a small offset
-	
+
 	var targetPolarAngle = (longitude / (props.mapSize.height * 2)) * Math.PI;
 
 	return {
@@ -989,7 +1168,6 @@ function returnCameraAngles(latitude, longitude) {
 
 if (!window.WebGLRenderingContext) {
 	showFallback();
-}
-else {
+} else {
 	getData();
 }
