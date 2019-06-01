@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EventEmitter</title>
+</head>
+
+<body>
+    <script>
+        class EventEmitter {
+            constructor() {
+                this.events = {};
+            }
+            on(key, cb) {
+                let eventKey = Symbol.for(key);
+                if (this.events[eventKey]) {
+                    let ons = this.events[eventKey] && this.events[eventKey].callbacks;
+                    ons.push(cb);
+                } else {
+                    this.events[eventKey] = {
+                        callbacks: [cb]
+                    }
+                }
+            }
+            emit(key, args) {
+                let eventKey = Symbol.for(key);
+                let ons = this.events[eventKey] && this.events[eventKey].callbacks;
+                if (ons && ons.length) {
+                    for (let i = 0; i < ons.length; i++) {
+                        let on = ons[i];
+                        on && on.apply(this, args);
+                    }
+                }
+            }
+        }
+
+        let ev = new EventEmitter();
+        ev.on('name', data => {
+            console.log('your name:', data);
+        })
+        ev.on('name', data => {
+            console.log('HI:', data);
+        })
+        ev.emit('name', 'kong')
+    </script>
+</body>
+
+</html>

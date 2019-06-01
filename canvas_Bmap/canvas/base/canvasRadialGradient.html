@@ -17,11 +17,10 @@
             // var canvas = document.getElementById('canvas');
 
             var canvas = document.createElement('canvas');
+            var context = canvas.getContext('2d');
+           
             canvas.width = 546;
             canvas.height = 306;
-
-            var context = canvas.getContext('2d');
-            // var ctx = canvas.getContext('2d');
 
             var gradient = context.createRadialGradient(canvas.width / 2, canvas.height / 2, 0, canvas.width / 2,
                 canvas.height / 2, canvas.width / 2);

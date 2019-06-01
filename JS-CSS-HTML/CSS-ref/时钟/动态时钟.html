@@ -21,10 +21,10 @@
         .clock_minute{width:4px;height:120px;background:#ff0;animation:clockrotate 3600s linear infinite;}
         /* 通过animation-timing-function:steps(60,start) 达到秒针跳动的效果 */
         .clock_second{width:2px;height:150px;background:#f00;animation:clockrotate 60s steps(60,start) infinite;}
-        @keyframes clockrotate{
+        /* @keyframes clockrotate{
             0%{transform:translate(-50%,-100%) rotate(0deg);}
-            100%{transform:translate(-50%,-100%) rotate(360deg);}
-        }
+            100%{transform:translate(-50%,-100%) rotate(180deg);}
+        } */
     </style>
 </head>
 <body>

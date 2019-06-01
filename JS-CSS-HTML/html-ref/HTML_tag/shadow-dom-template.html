@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>shadow-dom</title>
+    <style>
+        h1,
+        p {
+            color: #db73ff !important;
+        }
+        #host {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="host">
+        <h1 class="title">H1 title</h1>
+        <p class="subtitle">p subtitle</p>
+    </div>
+    <template id="temp">
+
+        <style>
+            p {
+                color: red;
+            }
+
+            ::content * {
+                background-color: blue;
+            }
+            
+            
+
+            :host {
+                border: 2px solid #0f0;
+            }
+        </style>
+
+        <!-- 绑定#host h1的内容 -->
+        <!-- host中的h2会绑定到这里 -->
+        <content select="h1"></content>
+
+        <h1 onclick="alert('hello~');" pseudo="test">template h1 点我吧~~</h1>
+        <p> template p 点我吧</p>
+        <!-- 绑定#host所有内容 -->
+        <!--<content></content>-->
+
+        <!-- 绑定#host p的内容 -->
+        <!-- host中的subtitle会绑定到这里 -->
+        <content select=".subtitle"></content>
+    </template>
+
+    <script>
+        var host = document.querySelector('#host');
+        var root = host.createShadowRoot();
+        var temp = document.querySelector('#temp');
+        var clone = document.importNode(temp.content, true);
+
+        root.appendChild(clone);
+        document.addEventListener('click', function (e) {
+            console.log(e.target.innerHTML + ' click!');
+        });
+
+    // 主dom可以修改shadow-host的样式；
+    // 在shadow-dom中用 :host 
+    //     选择器表示shadow-host；
+    // 在shadow-dom中用 ::content
+    
+    //     选择器表示在template标签中用到的<content>， 只能通过该选择器来操作其后代元素
+    //     （即通过select来选中的元素，该元素既受主dom样式影响也受template里的style声明的样式::content影响）。；
+    // 要更改shadow-root里面元素的样式，可以直接在template标签内添加style标签像平时写样式一样即可。
+    // （content里面指代的元素样式要用::content更改
+    // shadow-dom 和 主dom的样式互不影响；
+    // 注意：
+    //     这里面涉及的<content>的select属性指向的外部shadow-host里面的元素只会出现一次，重复指定是没有效果的，
+    //     select属性值为空时则引用shadow-host里面的所有元素。
+
+    </script>
