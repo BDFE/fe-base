@@ -1,28 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+
 <body>
-<script>
-    var flags = ['+','-','*','/']
-    var test = ["*",'+']
-    test.forEach(function (v) {
-        switch (v){
-            case "+":{
-                console.log("+")
-                break
-            }
-            case '*':{
-                console.log("*")
-            }
+    <style>
+        #block{
+            width:100px;
+            height: 100px;
+            background: red;
         }
-        Integer.
+        </style>
+    <div id="block"></div>
+    <script>
+        var start = null;
+        var element = document.getElementById('block');
 
+        function step(timestamp) {
+            if (!start) start = timestamp;
+            var progress = timestamp - start;
+            // element.style.transform = 'translateX(' + Math.min(progress / 10, 200) + 'px)';
+            if (progress < 2000) {
+                window.requestAnimationFrame(step);
+            }
+            console.log('progress',progress);
+        }
 
-    })
-
-</script>
+        window.requestAnimationFrame(step);
+    </script>
 </body>
+
 </html>
