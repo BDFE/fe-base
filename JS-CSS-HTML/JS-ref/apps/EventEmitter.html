@@ -23,7 +23,19 @@
                     }
                 }
             }
-            emit(key, args) {
+            off(key, cb) {
+                let eventKey = Symbol.for(key);
+                if (this.events[eventKey]) {
+                    let ons = this.events[eventKey] && this.events[eventKey].callbacks;
+                    let pos = ons.indexOf(cb);
+                    if (pos > -1) {
+                        ons.splice(pos, 1);
+                    }
+                    return true;
+                }
+                return false;
+            }
+            emit(key, ...args) {
                 let eventKey = Symbol.for(key);
                 let ons = this.events[eventKey] && this.events[eventKey].callbacks;
                 if (ons && ons.length) {
@@ -33,16 +45,28 @@
                     }
                 }
             }
+
         }
 
         let ev = new EventEmitter();
         ev.on('name', data => {
             console.log('your name:', data);
         })
-        ev.on('name', data => {
-            console.log('HI:', data);
+
+        function hi(data) {
+            console.log('hi', data);
+        }
+        ev.on('name', hi)
+        ev.emit('name', 'kong');
+        console.log('-----');
+        ev.off('name', data => {
+            console.log('your name:', data);
         })
-        ev.emit('name', 'kong')
+        ev.off('name', hi)
+        ev.emit('name', {
+            id: 11,
+            name: 'daniel'
+        });
     </script>
 </body>
 
