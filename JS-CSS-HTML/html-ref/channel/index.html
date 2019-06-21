@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <title>Channel messaging demo</title>
+  <link rel="stylesheet" href="">
+  <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+  <h1>Channel messaging demo</h1>
+  <p id="output">1 info</p>
+  <iframe id='p1' src="./p1.html" width='480' height='320'></iframe>
+  <hr>
+  <p id="output2">2 info</p>
+  <iframe id='p2' src="./p2.html" width='480' height='320'></iframe>
+</body>
+<script>
+
+  // channel [port1,port2]
+    // port1和port2一个是接受通道，一个是发送通道，任意选择，不能发送接收使用同一个
+  var channel = new MessageChannel();
+  var output = document.getElementById('output');
+
+  var p1 = document.getElementById('p1');
+  p1.addEventListener("load", onLoad1);
+
+  function onLoad1() {
+    // Listen for messages on port1
+    channel.port2.onmessage = onMessage1;
+    // Transfer port2 to the p1
+    p1.contentWindow.postMessage('Hello p1 page!', '*', [channel.port1]);
+
+  }
+
+  // Handle messages received on port1
+  function onMessage1(e) {
+    console.log('p1 message', e.data, e)
+    output.innerHTML = e.data;
+  }
+
+
+  var channel2 = new MessageChannel();
+
+  // Wait for the p1 to load
+  var p2 = document.getElementById('p2');
+  var output2 = document.getElementById('output2');
+  p2.addEventListener("load", onLoad2);
+
+  function onLoad2() {
+    // Listen for messages on port1
+    channel2.port1.onmessage = onMessage2;
+    // Transfer port2 to the p1
+    p2.contentWindow.postMessage('Hello port2 page!', '*', [channel2.port2]);
+
+  }
+
+  function onMessage2(e) {
+    console.log('p2 message', e.data, e)
+    output2.innerHTML = e.data;
+  }
+</script>
+
+</html>

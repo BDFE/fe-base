@@ -15,7 +15,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background: #000;
+            background: white;
         }
     </style>
 </head>
@@ -91,7 +91,10 @@
                 cvs.width = width = bound.width;
                 cvs.height = height = bound.height;
 
-                ctx.fillStyle = "rgba(0,0,0,.05)";
+                ctx.fillStyle = "#fff";
+                ctx.fillRect(0, 0, width, height);
+
+                ctx.fillStyle = "rgba(0,0,0,.01)";
                 ctx.lineCap = "round";
 
                 mouse.x = width / 2;

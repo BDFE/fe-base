@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>offscreen</title>
+</head>
+
+<body>
+    <canvas id="one"></canvas>
+    <canvas id="two"></canvas>
+    <style>
+        canvas {
+            cursor: pointer;
+            border: 1px solid black;
+            margin: 50px;
+        }
+    </style>
+
+    <script>
+        var offscreen = new OffscreenCanvas(256, 256);
+        var ctx = offscreen.getContext('2d');
+
+
+        var drawOffCanvas = (id) => {
+            ctx.beginPath();
+            let r = ~~(Math.random() * 250);
+            let g = ~~(Math.random() * 250);
+            let b = ~~(Math.random() * 250);
+            let color = `rgb(${r},${g},${b})`;
+            console.log(r, color);
+            ctx.fillStyle = color;
+            ctx.fillRect(0, 0, r, r);
+            ctx.closePath();
+            ctx.fill();
+            // 每次transfer之后离屏canvas清空
+            let bitmap = offscreen.transferToImageBitmap();
+            
+            let one = document.getElementById(id).getContext("bitmaprenderer");
+            one.transferFromImageBitmap(bitmap);
+        }
+
+        var wait = (second) => {
+            let st = new Date().valueOf();
+            let diff = 0;
+            while (diff < second * 1000) {
+                t2 = new Date().valueOf();
+                diff = t2 - st;
+            }
+        }
+
+        function draw() {
+            drawOffCanvas('one')
+            wait(.5);
+            console.log('.')
+            requestAnimationFrame(draw)
+        }
+        draw();
+
+
+
+        // drawOffCanvas('two')
+    </script>
+</body>
+
+</html>

@@ -123,15 +123,15 @@ function getVirtueCanvas(oneDir, cb) {
             }
 
             let _lanes = {};
-            Object.keys(lanePair).map(k => {
-                let dirName = lanePair[k];
-                _lanes[k] = {
-                    image: images && images[dirName],
-                    icon: `./${dirName}.png`,
-                    color: lanes[dirName].color,
-                    text: lanes[dirName].text || '',
-                }
-            })
+            // Object.keys(lanePair).map(k => {
+            //     let dirName = lanePair[k];
+            //     _lanes[k] = {
+            //         image: images && images[dirName],
+            //         icon: `./${dirName}.png`,
+            //         color: lanes[dirName].color,
+            //         text: lanes[dirName].text || '',
+            //     }
+            // })
             // eles.push({
             //     type: 'Dot',
             //     x: i * roadW,
@@ -139,29 +139,29 @@ function getVirtueCanvas(oneDir, cb) {
             //     radius: roadW * .8,
             //     color: '#0f0'
             // });
-            eles.push({
-                type: 'ImageIcon',
-                src: _lanes[i].icon,
-                image: _lanes[i].image,
-                x: (i + .1) * roadW,
-                y: roadW * (1 + ~~(i == 4) * .3),
-                width: roadW * .8,
-                height: roadW * (2 - ~~(i == 4) * .5),
-                color: _lanes[i].color,
-            })
-            eles.push({
-                type: 'Text',
-                text: _lanes[i].text,
-                x: (i + .5) * roadW,
-                y: (0 + .1) * roadW,
-                options: {
-                    color: 'white',
-                    angle: -rotateAngle || 0,
-                    font: `${~~(roadW*2/3)}px sans-serif`,
-                    // textAlign: 'left',
-                    // isChinese: false,
-                }
-            });
+            // eles.push({
+            //     type: 'ImageIcon',
+            //     src: _lanes[i].icon,
+            //     image: _lanes[i].image,
+            //     x: (i + .1) * roadW,
+            //     y: roadW * (1 + ~~(i == 4) * .3),
+            //     width: roadW * .8,
+            //     height: roadW * (2 - ~~(i == 4) * .5),
+            //     color: _lanes[i].color,
+            // })
+            // eles.push({
+            //     type: 'Text',
+            //     text: _lanes[i].text,
+            //     x: (i + .5) * roadW,
+            //     y: (0 + .1) * roadW,
+            //     options: {
+            //         color: 'white',
+            //         angle: -rotateAngle || 0,
+            //         font: `${~~(roadW*2/3)}px sans-serif`,
+            //         // textAlign: 'left',
+            //         // isChinese: false,
+            //     }
+            // });
         }
     }
     addElements(eles, (_list) => {
@@ -180,13 +180,20 @@ function drawDirs(cWidth, cHeight, dirNums = 4, oneDir = {
 }) {
     context.clearRect(0, 0, cWidth, cHeight);
     context.fillStyle = oneDir.bgColor
-    let _w = oneDir.width * (1 + ~~(dirNums > 4) * .2)
-    context.fillRect(
-        cWidth / 2 - _w / 2,
-        cHeight / 2 - _w / 2,
-        _w,
-        _w
-    );
+    let _w = oneDir.width;
+    // context.fillRect(
+    //     cWidth / 2 - _w / 2,
+    //     cHeight / 2 - _w / 2,
+    //     _w,
+    //     _w
+    // );
+    if (dirNums < 5) {
+    }
+    _w *= 1.5
+    
+    context.arc(cWidth / 2, cHeight / 2, _w / 2, 0, 2 * Math.PI);
+    context.stroke();
+    context.fill();
 
     let angleDiff = 2 * Math.PI / dirNums;
     let roadList = [];
@@ -208,6 +215,7 @@ function drawDirs(cWidth, cHeight, dirNums = 4, oneDir = {
     let lanes = JSON.parse(JSON.stringify(roadDefaultStatus))
     for (let i = 0; i < dirNums; i++) {
         lanes.angle = angleDiff * i;
+        
         // console.log('angle', (angleDiff * i) / (2 * Math.PI) * 360);
         getVirtueCanvas({
             width: oneDir.width,
@@ -231,6 +239,7 @@ function drawDirs(cWidth, cHeight, dirNums = 4, oneDir = {
                 oneDir.width, oneDir.height
             );
             context.restore();
+
         });
     }
 }

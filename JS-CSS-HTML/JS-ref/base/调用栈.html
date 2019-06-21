@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <script>
+        'use strict'
+        console.log(1);
+        //Time1
+        setTimeout(function () {
+            console.log(2);
+        }, 300);
+        //Time2
+        setTimeout(function () {
+            console.log(3)
+        }, 400);
+
+        for (var i = 0; i < 1000; i++) {
+            console.log(4);
+        }
+        //Time3
+        setTimeout(function () {
+            console.log(5);
+        }, 100);
+        for (var i = 0; i < 7000; i++) {
+            console.log(6);
+        }
+    </script>
+</body>
+
+</html>

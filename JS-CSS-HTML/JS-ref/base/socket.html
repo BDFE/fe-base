@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>socket</title>
+</head>
+
+<body>
+    <script>
+        var connectServer = (url = "ws:localhost:4001") => {
+            let ws = new WebSocket(url)
+            ws.onopen = (evt) => {
+                // Web Socket 已连接上，使用 send() 方法发送数据
+                console.warn("opened", evt);
+                setInterval(() => {
+                    let o = {
+                        name: 'Daniel',
+                        id: 'hhhhh'
+                    }
+                    ws.send(JSON.stringify(o));
+                    console.warn("数据发送中...");
+                }, 1000)
+            };
+
+            ws.onmessage = (evt) => {
+                var s = evt.data;
+                console.warn("数据已接收...", JSON.parse(s));
+            };
+
+            ws.onclose = (evt) => {
+                // 关闭 websocket
+                console.warn("连接已关闭...", evt);
+                this.connectServer();
+            };
+        }
+        connectServer()
+    </script>
+</body>
+
+</html>
