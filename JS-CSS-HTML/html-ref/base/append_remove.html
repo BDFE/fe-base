@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" manifest="./html-buffer.manifest">
+
+<head></head>
+
+<body>
+    <div id="first">
+        <div id="test">
+        </div>
+    </div>
+    <div id="second" onclick="append(this)">
+    </div>
+
+    <style>
+        #first {
+            width: 300px;
+            height: 300px;
+            background: blue;
+        }
+
+        #second {
+            width: 400px;
+            height: 400px;
+            background: #ccc;
+        }
+
+        #test {
+            width: 200px;
+            height: 200px;
+            background: red;
+            color: green;
+        }
+    </style>
+    <script>
+        const mask = document.getElementById('test');
+        const second = document.getElementById('second');
+
+        function append(e) {
+            document.body.appendChild(mask);
+            // e.target.appendChild(mask);
+            setTimeout(() => {
+                mask.parentNode.removeChild(mask);
+            }, 5000);
+        }
+    </script>
+</body>
+
+</html>
