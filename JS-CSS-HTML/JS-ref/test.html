@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
+<html lang="en">
+=======
 <html>
+>>>>>>> 7daaccf0f9a84bf6ddeed764c980012ad2843273
 
 <head>
   <style>
@@ -15,6 +19,32 @@
 </head>
 
 <body>
+<<<<<<< HEAD
+    <style>
+        #block{
+            width:100px;
+            height: 100px;
+            background: red;
+        }
+        </style>
+    <div id="block"></div>
+    <script>
+        var start = null;
+        var element = document.getElementById('block');
+
+        function step(timestamp) {
+            if (!start) start = timestamp;
+            var progress = timestamp - start;
+            // element.style.transform = 'translateX(' + Math.min(progress / 10, 200) + 'px)';
+            if (progress < 2000) {
+                window.requestAnimationFrame(step);
+            }
+            console.log('progress',progress);
+        }
+
+        window.requestAnimationFrame(step);
+    </script>
+=======
   <div id="container">
     <div> src: <input id='src' value='gerenzhongxin' /></div>
     <div> appKey: <input id='appKey' value='mapmnp://swan/UdnFfTQh7lwKSE5IxM5okcV55o84sPU' /></div>
@@ -50,6 +80,7 @@
     getCode();
   </script>
 
+>>>>>>> 7daaccf0f9a84bf6ddeed764c980012ad2843273
 </body>
 
 </html>
