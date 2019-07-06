@@ -1,0 +1,53 @@
+<html>
+
+<head>
+  <title>requestIdleCallback</title>
+  <meta charset="utf-8">
+  <style text="txt/css">
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    let num = 0;
+    setInterval(() => {
+      let s = new Date().valueOf();
+      let e = new Date().valueOf();
+      while (e - s < 1 * 200) {
+        // console.clear();
+        // console.log('num:', num);
+        console.log('-')
+        e = new Date().valueOf();
+        num++;
+      }
+    }, 1000)
+
+
+    let cnt = 0;
+
+    function idleLoop() {
+      requestIdleCallback(() => {
+        console.log('idle', cnt);
+        cnt++;
+        idleLoop();
+      })
+    }
+    idleLoop();
+
+
+    let x = 0;
+
+    function rAF() {
+      requestAnimationFrame(() => {
+        console.log('animation', x);
+        x++;
+        rAF();
+      })
+    }
+    rAF();
+  </script>
+</body>
+
+</html>

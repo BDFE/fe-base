@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<body>
+  <script>
+    function testString(fileName = './stringify.js') {
+      let w1 = new Worker(fileName);
+      let startTs = new Date().valueOf();
+      w1.postMessage({
+        type: 'string',
+        cnt: 1000 * 1000,
+      });
+      let ts = 0;
+
+      w1.onmessage = function (e) {
+
+        if (!ts) {
+          ts = e.data.time;
+        } else {
+          console.log(`-------${fileName}----------`)
+          let rs = e.data;
+          let t1 = new Date().valueOf();
+          console.log('post time:', t1 - ts)
+          if (rs.type == 'string') {
+            let d = JSON.parse(rs.data);
+            let t2 = new Date().valueOf();
+            console.log('string parse time:', t2 - t1, d)
+          } else {
+            let t2 = new Date().valueOf();
+            console.log('transfer parse time:', t2 - t1, rs)
+          }
+        }
+        // console.warn('uInt8Array.toString() = ' + uInt8Array.toString());
+        // w1.close()
+      };
+    }
+    // for (let i = 0; i < 10; i++) {
+    //   setTimeout(() => {
+    //     console.log(`-------${i}----------`)
+    //     testString();
+    //   }, i * 1000);
+    // }
+
+    testString();
+
+    testString('./transfer.js');
+    setTimeout(e => {}, 2 * 1000)
+  </script>
+</body>
+
+</html>

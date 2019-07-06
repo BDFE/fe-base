@@ -1,0 +1,25 @@
+<html>
+
+<head>
+  <title>String prototype</title>
+  <meta charset="utf-8">
+  <style text="txt/css">
+
+  </style>
+</head>
+
+<body>
+
+  <script>
+    var s = 'hello'
+    String.prototype.fn = function () {
+      // let s = Array.prototype.shift.call(arguments);
+      let ss = this.valueOf();
+      return ss.split('').join('_')
+    }
+    let j = s.fn();
+    console.log(this, j)
+  </script>
+</body>
+
+</html>
