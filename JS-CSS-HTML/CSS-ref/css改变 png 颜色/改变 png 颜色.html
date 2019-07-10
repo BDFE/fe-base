@@ -9,6 +9,7 @@
 <body>
     <div class="demo1">
         <div class="del"></div>
+        <div class="del2"></div>
     </div>
 </body>
 
@@ -19,21 +20,24 @@
         width: 36px;
         height: 36px;
         overflow: hidden;
+        padding: 100px;
         /* margin: 50px auto; */
+
     }
 
-    .demo1 .del {
+    .demo1>div {
         width: 36px;
         height: 36px;
         position: relative;
         background: url("./sex.png") no-repeat center;
     }
 
-    .demo1 .del:hover {
+    .demo1>.del:hover,
+    .del2 {
         left: -36px;
         border-right: 36px solid transparent;
         /* -webkit-filter: drop-shadow(36px 0 0px red); */
-        filter: drop-shadow( 36px 0 0px #ff00d4);
+        filter: drop-shadow(36px 0px 0px #ff00d4);
     }
 </style>
 
