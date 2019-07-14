@@ -13,10 +13,49 @@
     div没有设置宽度的情况下会继承父元素的宽度； 如果用p等其他标签达不到此效果； -->
   <div class="float_div">
     float:实现
-    <hr>
-    <div class="box1"></div>
-    <div class="box2"></div>
+
+    <div class="f_left"></div>
+    <div class="f_right"></div>
+    <div class="box2 "></div>
   </div>
+  <style>
+    .float_div {
+      /* position: relative; */
+      background: black;
+      /* width: 800px; */
+      /* height: 200px; */
+    }
+
+    .f_left {
+      float: left;
+      height: 150px;
+      width: 240px;
+      /* height: calc(30% - 10px); */
+      background: red;
+    }
+
+    .f_right {
+      float: right;
+      width: 240px;
+      height: 150px;
+      /* height: calc(30% - 10px); */
+      background: red;
+    }
+
+    .box2 {
+      margin: 0px 280px;
+      background: blue;
+      height: 100px;
+    }
+
+    .float_div:after {
+      zoom: 1;
+      content: "";
+      clear: both;
+      display: block;
+      visibility: hidden;
+    }
+  </style>
 
   <hr> display:table-cell实现：
   <div class="cell_div">
@@ -25,6 +64,29 @@
       <div class="cell_box2"></div>
     </div>
   </div>
+  <style>
+    .cell_div {
+      height: 300px;
+    }
+
+    .cell_box {
+      display: table;
+      width: 100%;
+    }
+
+    .cell_box1 {
+      width: 300px;
+      height: 150px;
+      background: red;
+      display: table-cell;
+    }
+
+    .cell_box2 {
+      background: green;
+      height: 150px;
+      display: table-cell;
+    }
+  </style>
   <!-- 利用BFC（块级格式化上下文）来防止蚊子环绕的原理来实现；BFC就是一个相对独立的布局环境，它内部元素的布局不受外面布局的影响，它可以通过多种方式来创建：
 1.float不为none；
 2.position不为static或者relative；
@@ -37,7 +99,8 @@
   <div>
     bfc 实现：
     <hr>
-    <div class="bfc_box1"></div>
+    <div class="bfc_l"></div>
+    <div class="bfc_r"></div>
     <div class="bfc_box2"></div>
   </div>
   <hr>
@@ -45,54 +108,15 @@
 </body>
 
 <style>
-  .float_div {
-    /* position: relative; */
-    width: 900px;
-    height: 300px;
-  }
-
-  .box1 {
+  .bfc_l {
     float: left;
     width: 300px;
-    height: calc(30% - 10px);
+    height: 150px;
     background: red;
   }
 
-  .clearfloat {
-    clear: both
-  }
-
-  .box2 {
-    margin-left: 300px;
-    background: blue;
-    height: 150px;
-  }
-
-
-  .cell_div {
-    height: 300px;
-  }
-
-  .cell_box {
-    display: table;
-    width: 100%;
-  }
-
-  .cell_box1 {
-    width: 300px;
-    height: 150px;
-    background: red;
-    display: table-cell;
-  }
-
-  .cell_box2 {
-    background: green;
-    height: 150px;
-    display: table-cell;
-  }
-
-  .bfc_box1 {
-    float: left;
+  .bfc_r {
+    float: right;
     width: 300px;
     height: 150px;
     background: red;
