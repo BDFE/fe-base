@@ -33,7 +33,9 @@ func fn(i int, s string) string {
 }
 
 
+
 func switchType ()  {
+	// switch 语句还可以被用于 type-switch 来判断某个 interface 变量中实际存储的变量类型。
 	var x interface{}
 	//  x,y := "Daniel","hello"
 
@@ -90,6 +92,21 @@ func main() {
 	fmt.Println("====== func  args range ======")
 	multi('a', 10, false)
 	
+	fmt.Println("====== switch case ======")
+	grade := "B"
+	switch {
+	case grade == "A" :
+	   fmt.Printf("优秀!\n" )    
+	case grade == "B", grade == "C" :
+	   fmt.Printf("良好\n" )      
+	case grade == "D" :
+	   fmt.Printf("及格\n" )      
+	case grade == "F":
+	   fmt.Printf("不及格\n" )
+	default:
+	   fmt.Printf("差\n" );
+ }
+ fmt.Printf("你的等级是 %s\n", grade ); 
 	fmt.Println("====== switchType ======")
 	switchType()
 
