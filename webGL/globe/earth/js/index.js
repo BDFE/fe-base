@@ -124,7 +124,6 @@ function getBoundaryPoints(cb) {
 			let gj = JSON.parse(request.responseText);
 			let points = [];
 			for (let c of gj.features) {
-
 				for (let cors of c.geometry.coordinates) {
 					if (c.geometry.type == 'MultiPolygon') {
 						for (let locs of cors) {
