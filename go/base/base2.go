@@ -26,7 +26,7 @@ func sliceTest() {
 	sli := []int{1, 2, 3}
 	fmt.Println(sli, "\n")
 
-	var arr = [11]int{1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10}
+	var arr = [11]int{0, 1, 2, 3, 4,  5, 6, 7, 8, 9, 10}
 	var s1 = arr[4:]
 	var s2 = arr[:7]
 	var s3 = arr[8:15]
