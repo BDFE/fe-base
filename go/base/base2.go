@@ -29,14 +29,21 @@ func sliceTest() {
 	var arr = [11]int{1, 2, 3, 4, 4, 5, 6, 7, 8, 9, 10}
 	var s1 = arr[4:]
 	var s2 = arr[:7]
-	var s3 = arr[4:7]
+	var s3 = arr[8:15]
 	fmt.Println(s1, s2, s3, "\n")
 
 	var x = make([]int, 3, 5)
 	fmt.Printf("len=%d cap=%d slice=%v\n", len(x), cap(x), x)
 
+	fmt.Println("====== append ======")
+
 	slice := []int{1, 2, 3}
 	var con = append(slice, 44, 55)
+	a := []int{1, 2, 3}
+    b := []int{2, 3, 4, 5, 6}
+    a = append(a, b...)
+    fmt.Println(a)
+
 	fmt.Println("append:", slice, "\n", "con:", con, "\n")
 	var arrs = make([]int, len(con), cap(con))
 	copy(arrs, con)
