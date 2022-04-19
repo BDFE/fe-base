@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+
+<body>
+    <div id='replaceImg'></div>
+
+    <script type="text/javascript">
+        // 红3 黄3 绿1
+        // Promise 
+        let list = [{
+            color: 'red',
+            time: 4,
+        }, {
+            color: 'green',
+            time: 4,
+        }]
+
+
+        index = 0;
+        const exec = () => {
+            let cur = list[index];
+            index++;
+            if (cur) {
+                const p = new Promise((resole, reject) => {
+                    console.log(cur.color)
+                    setTimeout(() => {
+                        resole();
+                        exec();
+                    }, cur.time * 1000);
+                })
+            }
+        }
+        exec()
+
+        class CancelablePromise {
+            constructor(args) {
+                this.cancelStatus = 0;
+                this.p = new Promise((resolve, reject) => {
+                    fetch().then(rs => {
+                        this._resolve(resolve, rs)
+                    })
+                })
+            }
+            cancel() {
+                this.cancelStatus = 1;
+            }
+            _resolve(r, rs) {
+                if (!this.cancelStatus) {
+                    r(rs);
+                } else {
+                    this.reject();
+                }
+            }
+
+        }
+    </script>
+
+
+
+</body>
+
+</html>

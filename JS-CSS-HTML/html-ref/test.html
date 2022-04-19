@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+
+<body>
+    <div id='replaceImg'></div>
+
+    <script type="text/javascript">
+        function trim(s) {
+            let res = [];
+            let first = -1
+            let last = -1
+            for (let i = 0, len = s.length; i < len; i++) {
+                let c = s[i];
+                if (c !== ' ') {
+                    first = i;
+                    break;
+                }
+            }
+            for (let i = s.length - 1, len = s.length;; i--) {
+                let c = s[i];
+                if (c !== ' ') {
+                    last = i;
+                    break;
+                }
+            }
+            return s.slice(first, last + 1)
+        }
+
+
+        let s = '  dfdfsd dfsdf fdf  '
+        console.log(s)
+        console.log(trim(s))
+
+
+
+        var list = [1, 2, 3, 9, 8, 1, 2, 3, 1, 3, 4]
+
+        function count(nums) {
+            let obj = {};
+            for (let i = 0, len = nums.length; i < len; i++) {
+                let n = nums[i];
+                let cnt = obj[n] || 0;
+                obj[n] = cnt + 1;
+            }
+            return obj;
+        }
+
+
+        function stringify(obj) {
+            const loop = (o) => {
+                let subs = Object.keys(o).map(k => {
+                    let v = o[k];
+                    let s = v;
+                    if (typeof v == 'object') {
+                        s = loop(v);
+                    }
+                    s = `${k}:${s}`
+                    return s;
+                })
+                return `{${subs.join(',')}}`
+            }
+            return loop(obj)
+        }
+
+        var o = {
+            1: 11,
+            b: 22,
+            c: {
+                c: 2
+            }
+        }
+        let r = stringify(o)
+        console.log(r)
+    </script>
+
+
+
+</body>
+
+</html>

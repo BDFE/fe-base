@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+
+<body>
+    <div id="mypic1">onloading……</div>
+    <div id="mypic2">onloading……</div>
+    <div id='replaceImg'>onloading……</div>
+
+    <script type="text/javascript">
+        var obj = new Image();
+        obj.src = "http://www.w3school.com.cn/i/eg_tulip.jpg";
+        obj.onload = function () {
+            console.log('图片的宽度为：' + obj.width + '；图片的高度为：' + obj.height);
+            document.getElementById("mypic1").innerHTML = "<img src='" + this.src + "' />";
+        }
+    </script>
+
+    <script type="text/javascript">
+        var obj1 = new Image();
+        obj1.src = "http://www.w3school.com.cn/i/eg_tulip.jpg";
+        obj1.onreadystatechange = function () {
+            console.log('ready')
+            if (obj1.readyState == "complete") {
+                console.log('图片的宽度为：' + obj1.width + '；图片的高度为：' + obj1.height);
+                document.getElementById("mypic2").innerHTML = "<img src='" + this.src + "' />";
+            }
+        }
+    </script>
+
+    <script>
+        // 原数组：
+
+        const arr = [{
+                "name": "aa",
+                "parentId": 0,
+                "id": 1
+            },
+            {
+                "name": "bb",
+                "parentId": 0,
+                "id": 2
+            },
+            {
+                "name": "cc",
+                "parentId": 0,
+                "id": 3
+            },
+            {
+                "name": "dd",
+                "parentId": 0,
+                "id": 4
+            },
+            {
+                "name": "dd1",
+                "parentId": 4,
+                "id": 6
+            },
+            {
+                "name": "dd2",
+                "parentId": 4,
+                "id": 7
+            },
+            {
+                "name": "dd1-1",
+                "parentId": 6,
+                "id": 16
+            },
+            {
+                "name": "aa1-1",
+                "parentId": 39,
+                "id": 23
+            },
+            {
+                "name": "aa1-2",
+                "parentId": 39,
+                "id": 24
+            },
+            {
+                "name": "bb1",
+                "parentId": 2,
+                "id": 31
+            },
+            {
+                "name": "bb2",
+                "parentId": 2,
+                "id": 32
+            },
+            {
+                "name": "bb1-1",
+                "parentId": 31,
+                "id": 33
+            },
+            {
+                "name": "bb2-2",
+                "parentId": 32,
+                "id": 34
+            },
+            {
+                "name": "aa1",
+                "parentId": 1,
+                "id": 39
+            },
+            {
+                "name": "cc1",
+                "parentId": 3,
+                "id": 48
+            },
+            {
+                "name": "cc2",
+                "parentId": 3,
+                "id": 49
+            },
+            {
+                "name": "cc1-1",
+                "parentId": 48,
+                "id": 50
+            },
+            {
+                "name": "cc2-2",
+                "parentId": 49,
+                "id": 51
+            },
+            {
+                "name": "aa4-1",
+                "parentId": 70,
+                "id": 60
+            },
+            {
+                "name": "aa4-2",
+                "parentId": 70,
+                "id": 61
+            },
+            {
+                "name": "aa1-3",
+                "parentId": 39,
+                "id": 62
+            },
+            {
+                "name": "dd3",
+                "parentId": 4,
+                "id": 68
+            },
+            {
+                "name": "aa4",
+                "parentId": 1,
+                "id": 70
+            },
+            {
+                "name": "aa1-4",
+                "parentId": 39,
+                "id": 73
+            },
+            {
+                "name": "aa1-4-2222",
+                "parentId": 73,
+                "id": 74
+            },
+        ];
+        [{
+            name: 'aa',
+            id: 1,
+            children: [{ //子级, 没有子级为空或不用输出该属性
+                name: 'aa1',
+                id: 39,
+            }, {
+                name: 'aa4',
+                id: 70,
+                children: [{
+                    name: 'aa4',
+                    id: 73
+                }]
+            }]
+        }, {
+            name: 'bb',
+            id: 2,
+        }]
+
+        // 把一个一维数组，转化成父子关系的多维数组
+        // 原数组： (parentId: 上一级的ID,第一级为0， 例如 parentId=4的dd1,它的上一级为id=4的dd)
+        // 需求把原数级格式化为层级着的多维数组,例如：
+
+
+        const resultList = [];
+
+        // 记录数据位置的索引值
+        let indexMap = {};
+
+        // 1. 处理当前数据，构造数据的Tree关系
+        // 2. 构造Tree的同时记录id对应的数据索引位置
+        // 3. 遍历下一个元素时查找当前元素的parent是否在dataMap中存在，以及寻找dataMap中的key对应的数据是否为自己的子元素
+        // 4. 若存在自己的父级别，push数组，记录当前元素在结果数组中的多级索引值
+        // 5. Loop 
+
+
+        const getElement = (path) => {
+            let _parent = null;
+            path.forEach((k, i) => {
+                if (_parent == null) {
+                    _parent = resultList[k]
+                } else {
+                    _parent = _parent.children[k]
+                }
+            })
+            return _parent;
+        }
+
+
+        function parser(list) {
+            list.map(item => {
+                let parentLocPath = indexMap[item.parentId]
+
+                if (parentLocPath) {
+                    let _parent = getElement(parentLocPath);
+                    let children = _parent.children || [];
+                    children.push(item)
+                    _parent.children = children;
+                } else {
+                    Object.keys(indexMap).forEach(id => {
+                        let _loop_item = indexMap[id];
+                        if (item.id == _loop_item.parentId) {
+
+                        }
+                    })
+                }
+            })
+        }
+    </script>
+
+
+</body>
+
+</html>

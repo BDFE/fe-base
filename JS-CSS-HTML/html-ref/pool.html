@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+
+<body>
+    <div id='replaceImg'></div>
+
+    <script type="text/javascript">
+        // 重连 cnt
+        // cancel requst
+
+        function fetchPool(url, cnt, timeMax) {
+            let http = null
+            let num = 0;
+            let p = Promise((resolve, reject) => {
+                let t = new Date().valueOf()
+                let loopGet = () => {
+                    num++;
+                    http = fetch({
+                        url,
+                        expireTime: timeMax,
+                    }).then((rs) => {
+                        resolve(rs);
+                    }).catch((e) => {
+                        let t1 = new Date().valueOf()
+                        if (t1 - t < timeMax && num <= cnt) {
+                            loopGet()
+                        } else {
+                            reject()
+                        }
+                    })
+                }
+                loopGet();
+            })
+            return {
+                get: p,
+                cancel: http.cancel
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>
