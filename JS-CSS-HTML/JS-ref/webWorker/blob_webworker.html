@@ -3,22 +3,60 @@
 <body>
   <script id="worker" type="app/worker">
     addEventListener('message', function(e) { 
-      console.log('i am worker,you send:',e.data);
-      postMessage('Work done!');
+      let msg = e.data
+      let cnt = 0
+      let t = new Date().valueOf()
+      let kv={}
+      let con = ()=>{
+        let ts = new Date().valueOf()
+        let diff = ts - t;
+        let pre = Math.floor(diff/10)
+        if(!kv[pre]){
+          cnt ++
+          kv[pre] = true
+          console.log(msg,cnt)
+        }
+      }
+       setInterval(()=>{
+        con()
+       },1)
+    }, false);
+  </script>
+  <script id="worker2" type="app/worker">
+    addEventListener('message', function(e) { 
+      let msg = e.data
+       while(1){}
+    }, false);
+  </script>
+  <script id="worker3" type="app/worker">
+    addEventListener('message', function(e) { 
+      let msg = e.data
+       while(1){}
     }, false);
   </script>
 
   <script>
     (function () {
-      var blob = new Blob([document.querySelector('#worker').textContent]);
-      var url = window.URL.createObjectURL(blob);
-      var worker = new Worker(url);
+      const initWorker=(id)=>{
+        var blob = new Blob([document.querySelector(id).textContent]);
+        var url = window.URL.createObjectURL(blob);
+        var worker = new Worker(url);
 
-      worker.addEventListener('message', function (e) {
-        console.log('get from worker:', e.data);
-      }, false);
+        worker.addEventListener('message', function (e) {
+          console.log('get from worker:', e.data);
+        }, false);
+        worker.postMessage(id);
+      }
+      initWorker('#worker')
+      initWorker('#worker2')
+      initWorker('#worker3')
 
-      worker.postMessage('hello xiaodi');
+      let cnt = 0
+      setInterval(()=>{
+        cnt++;
+        console.log('=',cnt);
+      },10)
+
     })();
   </script>
 <!-- 
