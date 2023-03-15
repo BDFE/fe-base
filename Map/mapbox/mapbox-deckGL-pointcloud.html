@@ -1,0 +1,162 @@
+<html>
+  <head>
+    <title>Interleaving deck.gl with Mapbox Layers</title>
+    <script src="https://unpkg.com/deck.gl@^8.8.0/dist.min.js"></script>
+    <!-- <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.css"
+      rel="stylesheet"
+    /> -->
+
+    <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
+    <link
+      href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body style="margin: 0"></body>
+
+  <script type="text/javascript">
+    const center = [-122.486052, 37.830348];
+
+    const {
+      MapboxLayer,
+      ScatterplotLayer,
+      ArcLayer,
+      COORDINATE_SYSTEM,
+      PointCloudLayer,
+    } = deck;
+
+    console.log("COORDINATE_SYSTEM: ", COORDINATE_SYSTEM);
+
+    // One million points
+    const SURFACE_EQUATION = (x, y) => (Math.sin(x * x + y * y) * x) / Math.PI;
+    const EPSILON = 1e-4;
+
+    function getPosition(u, v) {
+      const x = (u - 1 / 2) * Math.PI * 2;
+      const y = (v - 1 / 2) * Math.PI * 2;
+      const z = SURFACE_EQUATION(x, y);
+
+      return [x, y, z];
+    }
+
+    function getNormal(u, v) {
+      const p0 = getPosition(u - EPSILON, v - EPSILON);
+      const p1 = getPosition(u + EPSILON, v + EPSILON);
+
+      const nx = (p1[1] - p0[1]) * (p1[2] - p0[2]);
+      const ny = (p1[2] - p0[2]) * (p1[0] - p0[0]);
+      const nz = (p1[0] - p0[0]) * (p1[1] - p0[1]);
+
+      return [nx, ny, nz];
+    }
+
+    const getPoints = (SAMPLE_SIZE = 1e6) => {
+      const dim = Math.sqrt(SAMPLE_SIZE);
+      const points = [];
+      for (let i = 0; i < dim; i++) {
+        for (let j = 0; j < dim; j++) {
+          const u = i / (dim - 1);
+          const v = j / (dim - 1);
+
+          const p = getPosition(u, v);
+          const n = getNormal(u, v);
+          points.push({
+            position: p,
+            normal: n,
+            color: [u * 128, v * 128, p[2] * 255],
+          });
+        }
+      }
+      return points;
+    };
+    const getRandomPoints = (SAMPLE_SIZE = 1e6) => {
+      const dim = Math.sqrt(SAMPLE_SIZE);
+      const points = [];
+      for (let i = 0; i < dim; i++) {
+        let color = [((i - 100) % 255, i + 100) % 255, 100];
+        let z = i % dim;
+        for (let j = 0; j < dim; j++) {
+          // let x = i * Math.random();
+          // let y = j * Math.random();
+          // let z = +j + i * Math.random();
+          // let z = i * 10 - j * 10 + dim;
+
+          points.push({
+            position: [i, j, z],
+            normal: [0, 0, 1],
+            color: color,
+          });
+        }
+      }
+      return points;
+    };
+
+    var map = new maplibregl.Map({
+      container: document.body,
+      style: { version: 8, sources: {}, layers: [] },
+      // "https://api.maptiler.com/maps/streets/style.json?key=get_your_own_OpIi9ZULNHzrESv6T2vL",
+      center: center,
+      zoom: 15,
+      pitch: 60,
+    });
+    let layer = null;
+
+    const render = () => {
+      console.time("getData:");
+      // let points = getPoints(1e6);
+      let points = getRandomPoints(1e6);
+      console.timeEnd("getData:");
+      console.time("render");
+
+      const color = [
+        ~~(255 * Math.random()),
+        ~~(255 * Math.random()),
+        ~~(255 * Math.random()),
+      ];
+      console.log("points: ", color);
+
+      if (!layer) {
+        layer = new MapboxLayer({
+          id: "deckgl-PointCloudLayer",
+          type: PointCloudLayer,
+          //REPLACE THIS WITH THE URL OF THE FILE
+          data: points,
+          coordinateSystem: COORDINATE_SYSTEM.METER_OFFSETS,
+          coordinateOrigin: center,
+          radiusPixels: 1,
+          getPosition: (d) => d.position,
+          getNormal: (d) => d.normal,
+          getColor: (d) => color,
+          sizeUnits: "meter",
+          pointSize: 1,
+        });
+        map.addLayer(layer);
+      } else {
+        layer.setProps({ data: points, getColor: (d) => color });
+      }
+      console.timeEnd("render");
+      requestAnimationFrame(render);
+    };
+
+    window._map = map;
+    map.on("load", () => {
+      requestAnimationFrame(render);
+
+      map.addLayer(
+        new MapboxLayer({
+          id: "deckgl-arc",
+          type: ArcLayer,
+          data: [{ source: center, target: [center[0], center[1] + 0.1] }],
+          getSourcePosition: (d) => d.source,
+          getTargetPosition: (d) => d.target,
+          getSourceColor: [255, 208, 0],
+          getTargetColor: [0, 128, 255],
+          getWidth: 8,
+        })
+      );
+    });
+  </script>
+</html>
