@@ -107,7 +107,7 @@
     const render = () => {
       console.time("getData:");
       // let points = getPoints(1e6);
-      let points = getRandomPoints(1e6);
+      let points = getRandomPoints(1e2);
       console.timeEnd("getData:");
       console.time("render");
 
@@ -130,33 +130,33 @@
           getPosition: (d) => d.position,
           getNormal: (d) => d.normal,
           getColor: (d) => color,
-          sizeUnits: "meter",
-          pointSize: 1,
+          sizeUnits: "meters",
+          pointSize: 2,
         });
         map.addLayer(layer);
       } else {
         layer.setProps({ data: points, getColor: (d) => color });
       }
       console.timeEnd("render");
-      requestAnimationFrame(render);
+      // requestAnimationFrame(render);
     };
 
     window._map = map;
     map.on("load", () => {
-      requestAnimationFrame(render);
+      setInterval(render, 1000);
 
-      map.addLayer(
-        new MapboxLayer({
-          id: "deckgl-arc",
-          type: ArcLayer,
-          data: [{ source: center, target: [center[0], center[1] + 0.1] }],
-          getSourcePosition: (d) => d.source,
-          getTargetPosition: (d) => d.target,
-          getSourceColor: [255, 208, 0],
-          getTargetColor: [0, 128, 255],
-          getWidth: 8,
-        })
-      );
+      // map.addLayer(
+      //   new MapboxLayer({
+      //     id: "deckgl-arc",
+      //     type: ArcLayer,
+      //     data: [{ source: center, target: [center[0], center[1] + 0.1] }],
+      //     getSourcePosition: (d) => d.source,
+      //     getTargetPosition: (d) => d.target,
+      //     getSourceColor: [255, 208, 0],
+      //     getTargetColor: [0, 128, 255],
+      //     getWidth: 8,
+      //   })
+      // );
     });
   </script>
 </html>
